@@ -1,0 +1,1 @@
+var v=Object.defineProperty;var E=(t,e,n)=>e in t?v(t,e,{enumerable:!0,configurable:!0,writable:!0,value:n}):t[e]=n;var s=(t,e,n)=>(E(t,typeof e!="symbol"?e+"":e,n),n);class a extends H5PEvent{constructor(){super(...arguments);s(this,"type")}}

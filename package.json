@@ -1,15 +1,18 @@
 {
   "name": "h5p-types",
   "version": "0.0.1",
-  "main": "index.d.ts",
+  "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
-    "combine": "esr combine-types.ts"
+    "build": "vite build",
+    "combine": "esr combine-types.ts",
+    "package": "npm run combine && npm run build"
   },
   "devDependencies": {
     "@types/node": "^17.0.21",
     "esbuild-runner": "^2.2.1",
-    "typescript": "^4.5.4"
+    "typescript": "^4.5.4",
+    "vite": "^2.8.6"
   },
   "dependencies": {
     "@types/jquery": "^3.5.14"
