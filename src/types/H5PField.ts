@@ -1,5 +1,4 @@
 import { H5PEnterMode } from "./H5PEnterMode";
-import { H5PFieldType } from "./H5PFieldType";
 import { H5PImportance } from "./H5PImportance";
 import { H5PShowWhenOptions } from "./H5PShowWhenOptions";
 import { H5PTextTags } from "./H5PTextTags";
@@ -94,7 +93,7 @@ export type H5PField =
 export type H5PFieldText =
   | H5PFieldCommon &
       H5PTextFieldWidgetExtension & {
-        type: H5PFieldType.Text;
+        type: "text";
         default?: string;
         widget?: string;
         maxLength?: number;
@@ -125,7 +124,7 @@ export type H5PFieldText =
 export type H5PFieldNumber =
   | H5PFieldCommon &
       H5PFieldWidgetExtension & {
-        type: H5PFieldType.Number;
+        type: "number";
         default?: number;
         widget?: string;
         min?: number;
@@ -145,7 +144,7 @@ export type H5PFieldNumber =
 export type H5PFieldBoolean =
   | H5PFieldCommon &
       H5PFieldWidgetExtension & {
-        type: H5PFieldType.Boolean;
+        type: "boolean";
         default: boolean;
         widget?: string;
       };
@@ -153,7 +152,7 @@ export type H5PFieldBoolean =
 export type H5PFieldGroup =
   | H5PFieldCommon &
       H5PFieldWidgetExtension & {
-        type: H5PFieldType.Group;
+        type: "group";
         widget?: string;
         fields: Array<H5PField>;
         isSubContent?: boolean;
@@ -171,7 +170,7 @@ export type H5PFieldGroup =
 export type H5PFieldList =
   | H5PFieldCommon &
       H5PFieldWidgetExtension & {
-        type: H5PFieldType.List;
+        type: "list";
 
         /**
          * List containing widget(s). A widget is defined as
@@ -212,7 +211,7 @@ export type H5PFieldList =
 export type H5PFieldSelect =
   | H5PFieldCommon &
       H5PFieldWidgetExtension & {
-        type: H5PFieldType.Select;
+        type: "select";
         default: string | number | boolean;
         widget?: string;
         options: Array<{ value: string | number | boolean; label: string }>;
@@ -221,7 +220,7 @@ export type H5PFieldSelect =
 export type H5PFieldLibrary =
   | H5PFieldCommon &
       H5PFieldWidgetExtension & {
-        type: H5PFieldType.Library;
+        type: "library";
         widget?: string;
         default: string;
         options: Array<string>;
@@ -230,27 +229,27 @@ export type H5PFieldLibrary =
 export type H5PFieldImage =
   | H5PFieldCommon &
       H5PFieldWidgetExtension & {
-        type: H5PFieldType.Image;
+        type: "image";
         widget?: string;
       };
 
 export type H5PFieldVideo =
   | H5PFieldCommon &
       H5PFieldWidgetExtension & {
-        type: H5PFieldType.Video;
+        type: "video";
         widget?: string;
       };
 
 export type H5PFieldAudio =
   | H5PFieldCommon &
       H5PFieldWidgetExtension & {
-        type: H5PFieldType.Audio;
+        type: "audio";
         widget?: string;
       };
 
 export type H5PFieldFile =
   | H5PFieldCommon &
       H5PFieldWidgetExtension & {
-        type: H5PFieldType.File;
+        type: "file";
         widget?: string;
       };

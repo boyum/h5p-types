@@ -43,25 +43,6 @@ define("H5PEnterMode", ["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
 });
-define("H5PFieldType", ["require", "exports"], function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.H5PFieldType = void 0;
-    var H5PFieldType;
-    (function (H5PFieldType) {
-        H5PFieldType["Text"] = "text";
-        H5PFieldType["Number"] = "number";
-        H5PFieldType["Boolean"] = "boolean";
-        H5PFieldType["Group"] = "group";
-        H5PFieldType["List"] = "list";
-        H5PFieldType["Select"] = "select";
-        H5PFieldType["Library"] = "library";
-        H5PFieldType["Image"] = "image";
-        H5PFieldType["Video"] = "video";
-        H5PFieldType["Audio"] = "audio";
-        H5PFieldType["File"] = "file";
-    })(H5PFieldType = exports.H5PFieldType || (exports.H5PFieldType = {}));
-});
 define("H5PImportance", ["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
