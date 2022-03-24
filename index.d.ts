@@ -561,7 +561,9 @@ export type H5PTextTags =
   | "blockquote"
   | "a"
   | "table"
-  | "hr";
+  | "hr"
+  | "p"
+  | "br";
 
 export interface IH5PContentType<Params> {
   new (params: Params, contentId: string, extras?: H5PExtras): void;
