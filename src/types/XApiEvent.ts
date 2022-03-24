@@ -2,7 +2,7 @@ import { H5PObject } from "./H5PObject";
 import { IH5PContentType } from "./IH5PContentType";
 import { XAPIVerb } from "./XAPIVerb";
 
-export class XAPIEvent extends H5PEvent {
+export declare class XAPIEvent extends H5PEvent {
   type: "xAPI";
 
   constructor();

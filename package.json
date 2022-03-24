@@ -4,7 +4,7 @@
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
-    "build": "vite build",
+    "build": "tsc --noEmit false --out index.js --module \"amd\"",
     "combine": "esr combine-types.ts",
     "package": "npm run combine && npm run build"
   },

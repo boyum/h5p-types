@@ -9,7 +9,7 @@ export type Copyright = {
   year?: string;
 };
 
-export class EventDispatcher {
+export declare class EventDispatcher {
   /**
    * Add new event listener.
    *
@@ -648,7 +648,7 @@ export type XAPIVerb =
   | "accessed-embed"
   | "accessed-copyright";
 
-export class XAPIEvent extends H5PEvent {
+export declare class XAPIEvent extends H5PEvent {
   type: "xAPI";
   constructor();
   /**
