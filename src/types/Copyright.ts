@@ -1,4 +1,4 @@
-export declare type Copyright = {
+export type Copyright = {
   author?: string;
   license?: string;
   source?: string;

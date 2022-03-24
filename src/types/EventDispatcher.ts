@@ -1,7 +1,7 @@
 import { XAPIEvent } from "./XApiEvent";
 import { XAPIVerb } from "./XAPIVerb";
 
-export declare class EventDispatcher {
+export class EventDispatcher {
   /**
    * Add new event listener.
    *
