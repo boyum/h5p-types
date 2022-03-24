@@ -1,6 +1,8 @@
 {
   "name": "h5p-types",
   "version": "0.0.1",
+  "main": "index.d.ts",
+  "types": "index.d.ts",
   "scripts": {
     "combine": "esr combine-types.ts"
   },
