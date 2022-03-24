@@ -10,4 +10,6 @@ export type H5PTextTags =
   | "blockquote"
   | "a"
   | "table"
-  | "hr";
+  | "hr"
+  | "p"
+  | "br";
