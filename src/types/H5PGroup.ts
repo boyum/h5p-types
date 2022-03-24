@@ -1,4 +1,4 @@
-import { EventDispatcher } from "../../../H5P";
+import { EventDispatcher } from "./EventDispatcher";
 import { H5PForm } from "./H5PForm";
 
 export type H5PGroup = EventDispatcher & {

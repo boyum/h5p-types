@@ -5,7 +5,7 @@ import { H5PSetValue } from "./H5PSetValue";
 
 type UberName = `H5P.${string} ${number}.${number}`;
 
-export type H5PForm = {
+export type H5PForm<TParams = unknown> = {
   parent: H5PForm | null;
   $common: JQuery<HTMLElement> | null;
   $commonButton: JQuery<HTMLElement> | null;
@@ -18,7 +18,7 @@ export type H5PForm = {
    */
   addLanguages: (
     libraryName: string,
-    languageCodes: Array<string | undefined>,
+    languageCodes: Array<string | undefined>
   ) => void;
   children: Array<H5PGroup>;
 
@@ -37,13 +37,12 @@ export type H5PForm = {
   metadata: H5PMetadata;
   metadataForm: H5PMetadataForm | null;
   offset: { top: number; left: number };
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  params: any;
+  params: TParams;
   passReadies: boolean;
   readies: Array<unknown>;
   removeLanguages: (
     libraryName: string,
-    languageCodes: Array<string | undefined>,
+    languageCodes: Array<string | undefined>
   ) => void;
   zebra: "odd" | "even";
   ready: (callback: () => void) => void;
