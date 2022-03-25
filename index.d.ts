@@ -189,6 +189,10 @@ type H5PFieldWidgetExtension =
       // To use the Show When or NDLA Show When widgets, first add them to the editorDependencies list in library.json
       widget: "showWhen" | "NDLAShowWhen";
       showWhen: H5PShowWhenOptions;
+    }
+  | {
+      widget: "NDLATagsPicker";
+      fieldNameToWatch: string;
     };
 type H5PTextFieldWidgetExtension =
   | H5PFieldWidgetExtension
@@ -532,7 +536,7 @@ export type H5PShowWhenOptions = {
 
 export type H5PShowWhenRule = {
   field: string;
-  equals?: Array<string> | boolean;
+  equals?: string | Array<string> | boolean;
 };
 
 export type H5PTextTags =
