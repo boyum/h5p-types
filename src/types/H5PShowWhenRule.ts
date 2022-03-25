@@ -1,4 +1,4 @@
 export type H5PShowWhenRule = {
   field: string;
-  equals?: Array<string> | boolean;
+  equals?: string | Array<string> | boolean;
 };
