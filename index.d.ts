@@ -488,8 +488,7 @@ export type H5PGroup = EventDispatcher & {
 export type H5PImportance = "low" | "medium" | "high";
 
 export type H5PL10n =
-  | H5PFieldGroup
-  | {
+  | H5PFieldGroup & {
       name: "l10n";
       fields: Array<H5PFieldText | { default: string }>;
       common: boolean;
