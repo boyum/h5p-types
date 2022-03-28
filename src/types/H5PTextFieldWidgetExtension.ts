@@ -16,10 +16,5 @@ export type H5PTextFieldWidgetExtension =
         showPalette: boolean;
         showOnlyPalette?: boolean;
         palette?: Array<Array<string>>;
-
-        /**
-         * The default color
-         */
-        color: string;
       };
     };
