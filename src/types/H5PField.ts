@@ -1,27 +1,7 @@
 import { H5PEnterMode } from "./H5PEnterMode";
+import { H5PFieldWidgetExtension } from "./H5PFieldWidgetExtension";
 import { H5PImportance } from "./H5PImportance";
-import { H5PShowWhenOptions } from "./H5PShowWhenOptions";
-import { H5PTextTags } from "./H5PTextTags";
-
-type H5PFieldWidgetExtension =
-  | {
-      widget?: string;
-    }
-  | {
-      // To use the Show When or NDLA Show When widgets, first add them to the editorDependencies list in library.json
-      widget: "showWhen" | "NDLAShowWhen";
-      showWhen: H5PShowWhenOptions;
-    }
-  | {
-      widget: "NDLATagsPicker";
-      fieldNameToWatch: string;
-    };
-
-type H5PTextFieldWidgetExtension =
-  | H5PFieldWidgetExtension
-  | {
-      widget?: "html";
-    };
+import { H5PTextFieldWidgetExtension } from "./H5PTextFieldWidgetExtension";
 
 type H5PFieldCommon = {
   /**
@@ -103,7 +83,6 @@ export type H5PFieldText =
         maxLength?: number;
         regexp?: string;
         enterMode?: H5PEnterMode;
-        tags?: Array<H5PTextTags>;
         font?: string;
 
         /**

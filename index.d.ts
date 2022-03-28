@@ -181,24 +181,6 @@ export type H5PExtras = {
   standalone: boolean;
 };
 
-type H5PFieldWidgetExtension =
-  | {
-      widget?: string;
-    }
-  | {
-      // To use the Show When or NDLA Show When widgets, first add them to the editorDependencies list in library.json
-      widget: "showWhen" | "NDLAShowWhen";
-      showWhen: H5PShowWhenOptions;
-    }
-  | {
-      widget: "NDLATagsPicker";
-      fieldNameToWatch: string;
-    };
-type H5PTextFieldWidgetExtension =
-  | H5PFieldWidgetExtension
-  | {
-      widget?: "html";
-    };
 type H5PFieldCommon = {
   /**
    * Internal name of the field. Must be a valid JavaScript identifier string.
@@ -272,7 +254,6 @@ export type H5PFieldText =
         maxLength?: number;
         regexp?: string;
         enterMode?: H5PEnterMode;
-        tags?: Array<H5PTextTags>;
         font?: string;
         /**
          * This attribute is used to give more detailed instructions and contains two parts, i.e description and example.
@@ -412,6 +393,20 @@ export type H5PFieldFile =
         widget?: string;
       };
 
+export type H5PFieldWidgetExtension =
+  | {
+      widget?: string;
+    }
+  | {
+      // To use the Show When or NDLA Show When widgets, first add them to the editorDependencies list in library.json
+      widget: "showWhen" | "NDLAShowWhen";
+      showWhen: H5PShowWhenOptions;
+    }
+  | {
+      widget: "NDLATagsPicker";
+      fieldNameToWatch: string;
+    };
+
 export type H5PFont = {
   size:
     | boolean
@@ -537,6 +532,28 @@ export type H5PShowWhenRule = {
   field: string;
   equals?: string | Array<string> | boolean;
 };
+
+export type H5PTextFieldWidgetExtension =
+  | H5PFieldWidgetExtension
+  | {
+      widget: "html";
+      tags: Array<H5PTextTags>;
+    }
+  | {
+      widget: "colorSelector";
+      /**
+       * @see http://bgrins.github.io/spectrum/#options
+       */
+      spectrum?: {
+        showPalette: boolean;
+        showOnlyPalette?: boolean;
+        palette?: Array<Array<string>>;
+        /**
+         * The default color
+         */
+        color: string;
+      };
+    };
 
 export type H5PTextTags =
   | "strong"
