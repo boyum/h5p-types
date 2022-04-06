@@ -142,7 +142,19 @@ export type H5PEnterMode = "p" | "div";
 declare class H5PEvent<TData = unknown> {
   type: string;
   data: {
-    statement: unknown;
+    statement: {
+      actor: {
+        name: string;
+        mbox: string;
+        objectType: string;
+      };
+      contentId: number;
+      context: {
+        contextActivities: {
+          category: Array<{ id: string; objectType: string }>;
+        };
+      };
+    } & TData;
   };
   extras?: {
     bubbles?: boolean;
