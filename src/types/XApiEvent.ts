@@ -9,12 +9,6 @@ export declare class XAPIEvent extends H5PEvent {
 
   /**
    * Set scored result statements.
-   *
-   * @param {number} score
-   * @param {number} maxScore
-   * @param {object} instance
-   * @param {boolean} completion
-   * @param {boolean} success
    */
   setScoredResult(
     score: number,

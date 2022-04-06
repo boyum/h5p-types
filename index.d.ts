@@ -624,49 +624,19 @@ export type ParamTypeInferredFromFieldType<TField extends H5PField> =
 
 export type Video = Media;
 
-export type XAPIVerb =
-  | "answered"
-  | "asked"
-  | "attempted"
-  | "attended"
-  | "commented"
-  | "completed"
-  | "exited"
-  | "experienced"
-  | "failed"
-  | "imported"
-  | "initialized"
-  | "interacted"
-  | "launched"
-  | "mastered"
-  | "passed"
-  | "preferred"
-  | "progressed"
-  | "registered"
-  | "responded"
-  | "resumed"
-  | "scored"
-  | "shared"
-  | "suspended"
-  | "terminated"
-  | "voided"
-  | "downloaded"
-  | "copied"
-  | "accessed-reuse"
-  | "accessed-embed"
-  | "accessed-copyright";
+export type XAPIDefinition = {
+  name: Record<string, string>;
+  description: Record<string, string>;
+  type: string;
+  interactionType: string;
+  correctResponsesPattern: string;
+};
 
 export declare class XAPIEvent extends H5PEvent {
   type: "xAPI";
   constructor();
   /**
    * Set scored result statements.
-   *
-   * @param {number} score
-   * @param {number} maxScore
-   * @param {object} instance
-   * @param {boolean} completion
-   * @param {boolean} success
    */
   setScoredResult(
     score: number,
@@ -725,3 +695,35 @@ export declare class XAPIEvent extends H5PEvent {
    */
   getVerifiedStatementValue(keys: Array<string>): unknown;
 }
+
+export type XAPIVerb =
+  | "answered"
+  | "asked"
+  | "attempted"
+  | "attended"
+  | "commented"
+  | "completed"
+  | "exited"
+  | "experienced"
+  | "failed"
+  | "imported"
+  | "initialized"
+  | "interacted"
+  | "launched"
+  | "mastered"
+  | "passed"
+  | "preferred"
+  | "progressed"
+  | "registered"
+  | "responded"
+  | "resumed"
+  | "scored"
+  | "shared"
+  | "suspended"
+  | "terminated"
+  | "voided"
+  | "downloaded"
+  | "copied"
+  | "accessed-reuse"
+  | "accessed-embed"
+  | "accessed-copyright";
