@@ -14,7 +14,14 @@ export type H5PTextFieldWidgetExtension =
        */
       spectrum?: {
         showPalette: boolean;
-        showOnlyPalette?: boolean;
+
+        /**
+         * Hides the custom color picker.
+         * Requires `showPalette` to be set to `true`.
+         * 
+         * @see http://bgrins.github.io/spectrum/#options-showPaletteOnly
+         */
+        showPaletteOnly?: boolean;
         palette?: Array<Array<string>>;
       };
     };
