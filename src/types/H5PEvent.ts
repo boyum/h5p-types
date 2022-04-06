@@ -14,6 +14,11 @@ declare class H5PEvent<TData = unknown> {
           category: Array<{ id: string; objectType: string }>;
         };
       };
+      object: {
+        id: string;
+        objectType: string;
+        definition: import("./XApiDefinition").XAPIDefinition;
+      };
     } & TData;
   };
 

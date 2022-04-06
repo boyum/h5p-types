@@ -148,11 +148,19 @@ declare class H5PEvent<TData = unknown> {
         mbox: string;
         objectType: string;
       };
+      completed: boolean;
       contentId: number;
       context: {
         contextActivities: {
-          category: Array<{ id: string; objectType: string }>;
+          contextActivities: {
+            category: Array<{ id: string; objectType: string }>;
+          };
         };
+      };
+      object: {
+        id: string;
+        objectType: string;
+        definition: import("./XApiDefinition").XAPIDefinition;
       };
     } & TData;
   };
