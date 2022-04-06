@@ -47,7 +47,7 @@ export declare class XAPIEvent extends H5PEvent {
    * @param instance
    *   The H5P instance
    */
-  setObject(instance: IH5PContentType<unknown>): void;
+  setObject(instance: IH5PContentType): void;
 
   /**
    * Set the context part of the statement.
@@ -55,7 +55,7 @@ export declare class XAPIEvent extends H5PEvent {
    * @param instance
    *   The H5P instance
    */
-  setContext(instance: IH5PContentType<unknown>): void;
+  setContext(instance: IH5PContentType): void;
 
   /**
    * Set the actor. Email and name will be added automatically.

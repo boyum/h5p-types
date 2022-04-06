@@ -573,8 +573,10 @@ export type H5PTextTags =
   | "p"
   | "br";
 
-export interface IH5PContentType<Params> {
-  new (params: Params, contentId: string, extras?: H5PExtras): void;
+// 
+export interface IH5PContentType {
+  // export interface IH5PContentType<Params> {
+  // new (params: Params, contentId: string, extras?: H5PExtras): void;
   attach($wrapper: JQuery<HTMLElement>): void;
 }
 
@@ -672,14 +674,14 @@ export declare class XAPIEvent extends H5PEvent {
    * @param instance
    *   The H5P instance
    */
-  setObject(instance: IH5PContentType<unknown>): void;
+  setObject(instance: IH5PContentType): void;
   /**
    * Set the context part of the statement.
    *
    * @param instance
    *   The H5P instance
    */
-  setContext(instance: IH5PContentType<unknown>): void;
+  setContext(instance: IH5PContentType): void;
   /**
    * Set the actor. Email and name will be added automatically.
    */
