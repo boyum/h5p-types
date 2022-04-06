@@ -148,13 +148,10 @@ declare class H5PEvent<TData = unknown> {
         mbox: string;
         objectType: string;
       };
-      completed: boolean;
       contentId: number;
       context: {
         contextActivities: {
-          contextActivities: {
-            category: Array<{ id: string; objectType: string }>;
-          };
+          category: Array<{ id: string; objectType: string }>;
         };
       };
       object: {
@@ -527,9 +524,17 @@ export type H5PMetadataForm = EventDispatcher & {
 };
 
 export type H5PObject = {
+  jQuery: typeof jQuery;
   EventDispatcher: typeof EventDispatcher;
   getPath: (path: string, contentId: string) => string;
   createUUID: () => string;
+  newRunnable: (
+    library: { library: string; params: unknown },
+    contentId: string,
+    $attachTo: JQuery,
+    skipResize?: boolean,
+    extras?: unknown
+  ) => void;
 };
 
 export type H5PSetValue<Params> = (field: H5PField, params: Params) => void;
