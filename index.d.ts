@@ -583,20 +583,26 @@ export type H5PTextFieldWidgetExtension =
     };
 
 export type H5PTextTags =
-  | "strong"
+  | "a"
+  | "blockquote"
+  | "br"
   | "em"
+  | "h1"
+  | "h2"
+  | "h3"
+  | "h4"
+  | "h5"
+  | "h6"
+  | "hr"
+  | "ol"
+  | "p"
+  | "strike"
+  | "strong"
   | "sub"
   | "sup"
-  | "u"
-  | "strike"
-  | "ul"
-  | "ol"
-  | "blockquote"
-  | "a"
   | "table"
-  | "hr"
-  | "p"
-  | "br";
+  | "u"
+  | "ul";
 
 // 
 export interface IH5PContentType {
