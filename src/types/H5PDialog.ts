@@ -15,7 +15,7 @@ export declare class H5PDialog {
   /**
    * @param scrollbar
    */
-  open(scrollbar: boolean): void;
+  open(scrollbar?: boolean): void;
 
   close(): void;
 }
