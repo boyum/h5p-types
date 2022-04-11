@@ -38,7 +38,9 @@ export type H5PEditorObject<
    */
   t: (
     library:
-      | `H5PEditor.${TWidgetMachineName extends string ? TWidgetName : string}`
+      | `H5PEditor.${TWidgetMachineName extends string
+          ? TWidgetMachineName
+          : string}`
       | "core",
     key: string,
     vars?: Record<string, string>
