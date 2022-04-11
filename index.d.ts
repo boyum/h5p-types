@@ -213,9 +213,16 @@ export declare class H5PDialog {
   close(): void;
 }
 
-declare type H5PEditorObject = {
-  // TODO: Improve typing of H5P.widgets.X
-  widgets: Record<string, typeof Function>;
+export type H5PEditorObject<
+  TWidgetName extends string = never,
+  TWidget extends EventDispatcher = never
+> = {
+  widgets: Record<string, EventDispatcher> &
+    (TWidgetName extends never
+      ? never
+      : TWidget extends never
+      ? never
+      : Record<TWidgetName, TWidget>);
   $: typeof jQuery;
   contentId: string;
   /**
@@ -228,7 +235,9 @@ declare type H5PEditorObject = {
    * @returns Translated string, or a default text if the translation is missing.
    */
   t: (
-    library: `H5PEditor.${string}` | "core",
+    library:
+      | `H5PEditor.${TWidgetName extends string ? TWidgetName : string}`
+      | "core",
     key: string,
     vars?: Record<string, string>
   ) => string;
