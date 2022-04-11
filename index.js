@@ -11,6 +11,14 @@ define("Audio", ["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
 });
+define("H5PConfirmationDialog", ["require", "exports", "EventDispatcher"], function (require, exports, EventDispatcher_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+});
+define("H5PDialog", ["require", "exports"], function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+});
 define("H5PObject", ["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });

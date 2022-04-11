@@ -87,6 +87,51 @@ export type H5PBehaviour =
       name: "behaviour";
     };
 
+export declare class H5PConfirmationDialog extends EventDispatcher {
+  constructor(options: {
+    instance: EventDispatcher;
+    headerText?: string;
+    dialogText?: string;
+    cancelText?: string;
+    confirmText?: string;
+    hideCancel?: boolean;
+    hideExit?: boolean;
+    skipRestoreFocus?: boolean;
+    classes?: Array<string>;
+  });
+  show(offsetTop: number): ThisType<H5PConfirmationDialog>;
+  hide(): ThisType<H5PConfirmationDialog>;
+  /**
+   * @return The ConfirmationDialog HTML element
+   */
+  getElement(): HTMLElement;
+  /**
+   * @return The element that had focus before the ConfirmationDialog was opened
+   */
+  getPreviouslyFocused(): HTMLElement;
+  setViewPortMinimumHeight(minimumHeight: number | null): void;
+}
+
+export declare class H5PDialog {
+  /**
+   * @param name Used for the Dialog's HTML class
+   * @param title Inserted as the title in the Dialog
+   * @param content HTML content in the Dialog
+   * @param $element Which element to insert the Dialog _after_
+   */
+  constructor(
+    name: string,
+    title: string,
+    content: string,
+    $element: JQuery<HTMLElement>
+  );
+  /**
+   * @param scrollbar
+   */
+  open(scrollbar: boolean): void;
+  close(): void;
+}
+
 declare type H5PEditorObject = {
   // TODO: Improve typing of H5P.widgets.X
   widgets: Record<string, typeof Function>;
@@ -535,6 +580,8 @@ export type H5PObject = {
     skipResize?: boolean,
     extras?: unknown
   ) => void;
+  Dialog: typeof H5PDialog;
+  ConfirmationDialog: typeof H5PConfirmationDialog;
 };
 
 export type H5PSetValue<Params> = (field: H5PField, params: Params) => void;
