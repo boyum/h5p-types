@@ -1,4 +1,4 @@
-import { H5PCCVersions } from "./H5PCCVersions";
+import type { H5PCCVersions } from "./H5PCCVersions";
 
 export type H5PCopyrightLicenses = {
   U: string;

@@ -1,4 +1,6 @@
-declare class H5PEvent<TData = unknown> {
+import type { XAPIDefinition } from "./XAPIDefinition";
+
+export declare class H5PEvent<TData = unknown> {
   type: string;
 
   data: {
@@ -17,7 +19,7 @@ declare class H5PEvent<TData = unknown> {
       object: {
         id: string;
         objectType: string;
-        definition: import("./XApiDefinition").XAPIDefinition;
+        definition: XAPIDefinition;
       };
     } & TData;
   };

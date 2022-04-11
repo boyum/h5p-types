@@ -98,7 +98,7 @@ export type H5PCCVersions = {
 
 export declare class H5PConfirmationDialog extends EventDispatcher {
   constructor(options: {
-    instance: EventDispatcher;
+    instance: IH5PContentType;
     headerText?: string;
     dialogText?: string;
     cancelText?: string;
@@ -265,7 +265,7 @@ declare type H5PEditorObject = {
 
 export type H5PEnterMode = "p" | "div";
 
-declare class H5PEvent<TData = unknown> {
+export declare class H5PEvent<TData = unknown> {
   type: string;
   data: {
     statement: {
@@ -283,7 +283,7 @@ declare class H5PEvent<TData = unknown> {
       object: {
         id: string;
         objectType: string;
-        definition: import("./XApiDefinition").XAPIDefinition;
+        definition: XAPIDefinition;
       };
     } & TData;
   };
@@ -632,6 +632,28 @@ export type H5PL10n =
       common: boolean;
     };
 
+export declare class H5PMediaCopyright {
+  constructor(
+    copyright: Record<string, string> & {
+      license: string;
+      version?: string;
+    },
+    labels?: Record<string, string>,
+    order?: Array<string>,
+    extraFields?: Record<string, string>
+  );
+  setThumbnail(newThumbnail: H5PThumbnail): void;
+  /**
+   * Checks if this copyright is undisclosed.
+   * I.e. only has the license attribute set, and it's undisclosed.
+   */
+  undisclosed(): boolean;
+  /**
+   * @return HTML representation of Copyright
+   */
+  toString(): string;
+}
+
 export type H5PMetadata = {
   license: string;
   title: string;
@@ -653,8 +675,10 @@ export type H5PObject = {
   // Constants
   copyrightLicenses: H5PCopyrightLicenses;
   // Functions
-  getPath: (path: string, contentId: string) => string;
+  buildMetadataCopyrights(metadata: H5PMetadata): H5PMediaCopyright;
   createUUID: () => string;
+  getCopyrights(instance: IH5PContentType): string;
+  getPath: (path: string, contentId: string) => string;
   newRunnable: (
     library: { library: string; params: unknown },
     contentId: string,
@@ -706,7 +730,7 @@ export type H5PTextFieldWidgetExtension =
         /**
          * Hides the custom color picker.
          * Requires `showPalette` to be set to `true`.
-         * 
+         *
          * @see http://bgrins.github.io/spectrum/#options-showPaletteOnly
          */
         showPaletteOnly?: boolean;
@@ -736,10 +760,15 @@ export type H5PTextTags =
   | "u"
   | "ul";
 
-// 
+export declare class H5PThumbnail {
+  constructor(source: string, width: number, height: number);
+  /**
+   * @return HTML representation of thumbnail
+   */
+  toString(): string;
+}
+
 export interface IH5PContentType {
-  // export interface IH5PContentType<Params> {
-  // new (params: Params, contentId: string, extras?: H5PExtras): void;
   attach($wrapper: JQuery<HTMLElement>): void;
 }
 

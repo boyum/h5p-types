@@ -1,6 +1,6 @@
-import { H5PField } from "./H5PField";
-import { H5PForm } from "./H5PForm";
-import { ParamTypeInferredFromFieldType } from "./ParamTypeInferredFromFieldType";
+import type { H5PField } from "./H5PField";
+import type { H5PForm } from "./H5PForm";
+import type { ParamTypeInferredFromFieldType } from "./ParamTypeInferredFromFieldType";
 
 declare type H5PEditorObject = {
   // TODO: Improve typing of H5P.widgets.X

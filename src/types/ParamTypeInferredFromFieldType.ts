@@ -1,4 +1,4 @@
-import {
+import type {
   H5PField,
   H5PFieldAudio,
   H5PFieldBoolean,
@@ -12,10 +12,10 @@ import {
   H5PFieldText,
   H5PFieldVideo,
 } from "./H5PField";
-import { Audio } from "./Audio";
-import { Image } from "./Image";
-import { Media } from "./Media";
-import { Video } from "./Video";
+import type { Audio } from "./Audio";
+import type { Image } from "./Image";
+import type { Media } from "./Media";
+import type { Video } from "./Video";
 
 export type ParamTypeInferredFromFieldType<TField extends H5PField> =
   TField extends H5PFieldAudio

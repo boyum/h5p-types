@@ -1,5 +1,5 @@
-import { H5PFieldWidgetExtension } from "./H5PFieldWidgetExtension";
-import { H5PTextTags } from "./H5PTextTags";
+import type { H5PFieldWidgetExtension } from "./H5PFieldWidgetExtension";
+import type { H5PTextTags } from "./H5PTextTags";
 
 export type H5PTextFieldWidgetExtension =
   | H5PFieldWidgetExtension
@@ -18,7 +18,7 @@ export type H5PTextFieldWidgetExtension =
         /**
          * Hides the custom color picker.
          * Requires `showPalette` to be set to `true`.
-         * 
+         *
          * @see http://bgrins.github.io/spectrum/#options-showPaletteOnly
          */
         showPaletteOnly?: boolean;

@@ -1,7 +1,7 @@
-import { H5PEnterMode } from "./H5PEnterMode";
-import { H5PFieldWidgetExtension } from "./H5PFieldWidgetExtension";
-import { H5PImportance } from "./H5PImportance";
-import { H5PTextFieldWidgetExtension } from "./H5PTextFieldWidgetExtension";
+import type { H5PEnterMode } from "./H5PEnterMode";
+import type { H5PFieldWidgetExtension } from "./H5PFieldWidgetExtension";
+import type { H5PImportance } from "./H5PImportance";
+import type { H5PTextFieldWidgetExtension } from "./H5PTextFieldWidgetExtension";
 
 type H5PFieldCommon = {
   /**

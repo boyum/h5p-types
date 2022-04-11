@@ -1,4 +1,4 @@
-import { H5PFieldGroup } from "./H5PField";
+import type { H5PFieldGroup } from "./H5PField";
 
 export type H5PBehaviour =
   | H5PFieldGroup

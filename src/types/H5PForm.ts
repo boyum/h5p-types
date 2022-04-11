@@ -1,7 +1,7 @@
-import { H5PGroup } from "./H5PGroup";
-import { H5PMetadata } from "./H5PMetadata";
-import { H5PMetadataForm } from "./H5PMetadataForm";
-import { H5PSetValue } from "./H5PSetValue";
+import type { H5PGroup } from "./H5PGroup";
+import type { H5PMetadata } from "./H5PMetadata";
+import type { H5PMetadataForm } from "./H5PMetadataForm";
+import type { H5PSetValue } from "./H5PSetValue";
 
 type UberName = `H5P.${string} ${number}.${number}`;
 

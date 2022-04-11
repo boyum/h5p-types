@@ -1,4 +1,4 @@
-import { H5PShowWhenOptions } from "./H5PShowWhenOptions";
+import type { H5PShowWhenOptions } from "./H5PShowWhenOptions";
 
 export type H5PFieldWidgetExtension =
   | {

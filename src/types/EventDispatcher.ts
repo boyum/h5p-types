@@ -1,5 +1,5 @@
-import { XAPIEvent } from "./XAPIEvent";
-import { XAPIVerb } from "./XAPIVerb";
+import type { XAPIEvent } from "./XAPIEvent";
+import type { XAPIVerb } from "./XAPIVerb";
 
 export declare class EventDispatcher {
   /**

@@ -1,6 +1,6 @@
-import { EventDispatcher } from "./EventDispatcher";
-import { H5PField } from "./H5PField";
-import { H5PGroup } from "./H5PGroup";
+import type { EventDispatcher } from "./EventDispatcher";
+import type { H5PField } from "./H5PField";
+import type { H5PGroup } from "./H5PGroup";
 
 export type H5PMetadataForm = EventDispatcher & {
   passReadies: boolean;

@@ -1,4 +1,4 @@
-import { H5PShowWhenRule } from "./H5PShowWhenRule";
+import type { H5PShowWhenRule } from "./H5PShowWhenRule";
 
 export type H5PShowWhenOptions = {
   rules: Array<H5PShowWhenRule>;
