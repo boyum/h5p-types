@@ -220,19 +220,11 @@ export declare class H5PDialog {
  */
 export type H5PEditorObject<
   TWidgetMachineName extends string = never,
-  TWidgetName extends string = never,
-  TWidget extends Function = never
+  TWidgetName extends string = never
 > = {
   $: typeof jQuery;
   contentId: string;
-  widgets: Record<string, unknown> &
-    (TWidgetMachineName extends never
-      ? never
-      : TWidgetName extends never
-      ? never
-      : TWidget extends never
-      ? never
-      : Record<TWidgetName, unknown>);
+  widgets: Record<string, unknown> & Record<TWidgetName, unknown>;
   /**
    * Translate text strings.
    *
