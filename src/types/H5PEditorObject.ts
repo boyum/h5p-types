@@ -1,10 +1,6 @@
-import type { EventDispatcher } from "./EventDispatcher";
 import type { H5PField } from "./H5PField";
 import type { H5PForm } from "./H5PForm";
-import type { IH5PWidget } from "./IH5PWidget";
 import type { ParamTypeInferredFromFieldType } from "./ParamTypeInferredFromFieldType";
-
-type WidgetType = IH5PWidget & EventDispatcher;
 
 /**
  * @param TWidgetMachineName Typically PascalCased - MyWidget
@@ -14,18 +10,18 @@ type WidgetType = IH5PWidget & EventDispatcher;
 export type H5PEditorObject<
   TWidgetMachineName extends string = never,
   TWidgetName extends string = never,
-  TWidget extends WidgetType = never
+  TWidget extends Function = never
 > = {
   $: typeof jQuery;
   contentId: string;
-  widgets: Record<string, WidgetType> &
+  widgets: Record<string, unknown> &
     (TWidgetMachineName extends never
       ? never
       : TWidgetName extends never
       ? never
       : TWidget extends never
       ? never
-      : Record<TWidgetName, TWidget>);
+      : Record<TWidgetName, unknown>);
 
   /**
    * Translate text strings.
@@ -37,11 +33,7 @@ export type H5PEditorObject<
    * @returns Translated string, or a default text if the translation is missing.
    */
   t: (
-    library:
-      | `H5PEditor.${TWidgetMachineName extends string
-          ? TWidgetMachineName
-          : string}`
-      | "core",
+    library: "core" | `H5PEditor.${string}` | `H5PEditor.${TWidgetMachineName}`,
     key: string,
     vars?: Record<string, string>
   ) => string;
@@ -76,5 +68,5 @@ export type H5PEditorObject<
     fieldName: string,
     semanticsStructure: H5PField | Array<H5PField>
   ) => H5PField | Array<H5PField> | null;
-} & Record<string, WidgetType> &
-  Record<`${TWidgetMachineName}`, TWidget>;
+} & Record<string, unknown> &
+  Record<`${TWidgetMachineName}`, unknown>;
