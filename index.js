@@ -15,6 +15,14 @@ define("H5PConfirmationDialog", ["require", "exports", "EventDispatcher"], funct
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
 });
+define("H5PCCVersions", ["require", "exports"], function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+});
+define("H5PCopyrightLicenses", ["require", "exports"], function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+});
 define("H5PDialog", ["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });

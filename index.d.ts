@@ -87,6 +87,15 @@ export type H5PBehaviour =
       name: "behaviour";
     };
 
+export type H5PCCVersions = {
+  default: string;
+  "4.0": string;
+  "3.0": string;
+  "2.5": string;
+  "2.0": string;
+  "1.0": string;
+};
+
 export declare class H5PConfirmationDialog extends EventDispatcher {
   constructor(options: {
     instance: EventDispatcher;
@@ -111,6 +120,78 @@ export declare class H5PConfirmationDialog extends EventDispatcher {
   getPreviouslyFocused(): HTMLElement;
   setViewPortMinimumHeight(minimumHeight: number | null): void;
 }
+
+export type H5PCopyrightLicenses = {
+  U: string;
+  "CC BY": {
+    label: string;
+    link: string;
+    versions: H5PCCVersions;
+  };
+  "CC BY-SA": {
+    label: string;
+    link: string;
+    versions: H5PCCVersions;
+  };
+  "CC BY-ND": {
+    label: string;
+    link: string;
+    versions: H5PCCVersions;
+  };
+  "CC BY-NC": {
+    label: string;
+    link: string;
+    versions: H5PCCVersions;
+  };
+  "CC BY-NC-SA": {
+    label: string;
+    link: string;
+    versions: H5PCCVersions;
+  };
+  "CC BY-NC-ND": {
+    label: string;
+    link: string;
+    versions: H5PCCVersions;
+  };
+  "CC0 1.0": {
+    label: string;
+    link: string;
+  };
+  "GNU GPL": {
+    label: string;
+    link: string;
+    linkVersions: {
+      v3: string;
+      v2: string;
+      v1: string;
+    };
+    versions: {
+      default: string;
+      v3: string;
+      v2: string;
+      v1: string;
+    };
+  };
+  PD: {
+    label: string;
+    versions: {
+      "CC0 1.0": {
+        label: string;
+        link: string;
+      };
+      "CC PDM": {
+        label: string;
+        link: string;
+      };
+    };
+  };
+  "ODC PDDL": string;
+  "CC PDM": {
+    label: string;
+    link: string;
+  };
+  C: string;
+};
 
 export declare class H5PDialog {
   /**
@@ -569,8 +650,9 @@ export type H5PMetadataForm = EventDispatcher & {
 };
 
 export type H5PObject = {
-  jQuery: typeof jQuery;
-  EventDispatcher: typeof EventDispatcher;
+  // Constants
+  copyrightLicenses: H5PCopyrightLicenses;
+  // Functions
   getPath: (path: string, contentId: string) => string;
   createUUID: () => string;
   newRunnable: (
@@ -580,8 +662,11 @@ export type H5PObject = {
     skipResize?: boolean,
     extras?: unknown
   ) => void;
-  Dialog: typeof H5PDialog;
+  // Classes
+  jQuery: typeof jQuery;
   ConfirmationDialog: typeof H5PConfirmationDialog;
+  Dialog: typeof H5PDialog;
+  EventDispatcher: typeof EventDispatcher;
 };
 
 export type H5PSetValue<Params> = (field: H5PField, params: Params) => void;
