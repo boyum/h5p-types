@@ -1,6 +1,6 @@
 {
   "name": "h5p-types",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
