@@ -7,7 +7,8 @@
     "build": "tsc --noEmit false --out index.js --module \"amd\"",
     "combine": "esr combine-types.ts",
     "package": "npm run combine && npm run build",
-    "publish-to-npm": "npm run package && np"
+    "publish-to-npm": "npm run package && np",
+    "test": "echo 'No tests'"
   },
   "devDependencies": {
     "@tsconfig/strictest": "^1.0.1",
