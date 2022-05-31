@@ -65,7 +65,7 @@ export type Library = {
   preloadedDependencies?: Dependency[];
 
   /** @see https://h5p.org/library-definition#libdynamic */
-  ddynamicDependencies?: Dependency[];
+  dynamicDependencies?: Dependency[];
 
   /** @see https://h5p.org/library-definition#libpreloadjs */
   preloadedJs?: { path: string }[];
