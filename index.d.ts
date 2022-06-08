@@ -399,7 +399,7 @@ export type H5PField =
 export type H5PFieldText =
   | H5PFieldCommon &
       H5PTextFieldWidgetExtension & {
-        type: "text";
+        type: "text" | H5PFieldType.Text;
         default?: string;
         widget?: string;
         maxLength?: number;
@@ -427,7 +427,7 @@ export type H5PFieldText =
 export type H5PFieldNumber =
   | H5PFieldCommon &
       H5PFieldWidgetExtension & {
-        type: "number";
+        type: "number" | H5PFieldType.Number;
         default?: number;
         widget?: string;
         min?: number;
@@ -445,14 +445,14 @@ export type H5PFieldNumber =
 export type H5PFieldBoolean =
   | H5PFieldCommon &
       H5PFieldWidgetExtension & {
-        type: "boolean";
+        type: "boolean" | H5PFieldType.Boolean;
         default: boolean;
         widget?: string;
       };
 export type H5PFieldGroup =
   | H5PFieldCommon &
       H5PFieldWidgetExtension & {
-        type: "group";
+        type: "group" | H5PFieldType.Group;
         widget?: string;
         fields: Array<H5PField>;
         isSubContent?: boolean;
@@ -468,7 +468,7 @@ export type H5PFieldGroup =
 export type H5PFieldList =
   | H5PFieldCommon &
       H5PFieldWidgetExtension & {
-        type: "list";
+        type: "list" | H5PFieldType.List;
         /**
          * List containing widget(s). A widget is defined as
          * an object with the name of the widget and a label.
@@ -506,7 +506,7 @@ export type H5PFieldList =
 export type H5PFieldSelect =
   | H5PFieldCommon &
       H5PFieldWidgetExtension & {
-        type: "select";
+        type: "select" | H5PFieldType.Select;
         default: string | number | boolean;
         widget?: string;
         options: Array<{ value: string | number | boolean; label: string }>;
@@ -514,7 +514,7 @@ export type H5PFieldSelect =
 export type H5PFieldLibrary =
   | H5PFieldCommon &
       H5PFieldWidgetExtension & {
-        type: "library";
+        type: "library" | H5PFieldType.Library;
         widget?: string;
         default: string;
         options: Array<string>;
@@ -522,27 +522,41 @@ export type H5PFieldLibrary =
 export type H5PFieldImage =
   | H5PFieldCommon &
       H5PFieldWidgetExtension & {
-        type: "image";
+        type: "image" | H5PFieldType.Image;
         widget?: string;
       };
 export type H5PFieldVideo =
   | H5PFieldCommon &
       H5PFieldWidgetExtension & {
-        type: "video";
+        type: "video" | H5PFieldType.Video;
         widget?: string;
       };
 export type H5PFieldAudio =
   | H5PFieldCommon &
       H5PFieldWidgetExtension & {
-        type: "audio";
+        type: "audio" | H5PFieldType.Audio;
         widget?: string;
       };
 export type H5PFieldFile =
   | H5PFieldCommon &
       H5PFieldWidgetExtension & {
-        type: "file";
+        type: "file" | H5PFieldType.File;
         widget?: string;
       };
+
+export enum H5PFieldType {
+  Number = "number",
+  Boolean = "boolean",
+  Audio = "audio",
+  File = "file",
+  Group = "group",
+  Image = "image",
+  Library = "library",
+  List = "list",
+  Select = "select",
+  Text = "text",
+  Video = "video",
+}
 
 export type H5PFieldWidgetExtension =
   | {
