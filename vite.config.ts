@@ -10,9 +10,9 @@ export default defineConfig({
       input: "index.d.ts",
       output: {
         file: "index.js",
-        dir: null,
+        dir: undefined,
         inlineDynamicImports: true,
-        manualChunks: null,
+        manualChunks: undefined,
       },
     },
 
