@@ -67,6 +67,9 @@ export type Library = {
   /** @see https://h5p.org/library-definition#libdynamic */
   dynamicDependencies?: Dependency[];
 
+  /** Undocumented but important feature to load widgets when editing H5Ps */
+  editorDependencies?: Dependency[];
+
   /** @see https://h5p.org/library-definition#libpreloadjs */
   preloadedJs?: { path: string }[];
 
