@@ -33,7 +33,7 @@ export type H5PForm<TParams = unknown> = {
       };
     }
   >;
-  currentLibrary: UberName;
+  currentLibrary?: UberName;
   metadata: H5PMetadata;
   metadataForm: H5PMetadataForm | null;
   offset: { top: number; left: number };
