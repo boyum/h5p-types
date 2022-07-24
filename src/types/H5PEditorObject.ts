@@ -19,6 +19,8 @@ export type H5PEditorObject<
   $: typeof jQuery;
   contentId: string;
   widgets: Record<string, unknown> & Record<TWidgetName, unknown>;
+  isIE: boolean;
+  supportedLanguages: Record<string, string>;
 
   /**
    * Translate text strings.
@@ -54,13 +56,13 @@ export type H5PEditorObject<
    * @param params
    * @param $wrapper
    * @param parent
-   * @param [machineName] Machine name of library that is being processed
+   * @param machineName Machine name of library that is being processed
    */
-  processSemanticsChunk: <TField extends Array<H5PField> = Array<H5PField>>(
-    semanticsChunk: TField,
+  processSemanticsChunk: <TFields extends Array<H5PField> = Array<H5PField>>(
+    semanticsChunk: TFields,
     params: Record<
-      TField[number]["name"],
-      ParamTypeInferredFromFieldType<TField[number]>
+      TFields[number]["name"],
+      ParamTypeInferredFromFieldType<TFields[number]>
     >,
     $wrapper: JQuery<HTMLElement>,
     parent: H5PForm,
@@ -94,6 +96,21 @@ export type H5PEditorObject<
     ancestor: H5PForm,
     skipAppendTo?: boolean
   ): void;
+
+  /**
+   * Render common fields of content type with given machine name.
+   *
+   * @param machineName Machine name of content type with common fields
+   * @param libraries Library data for machine name
+   */
+  renderCommonField(machineName: string, libraries?: Array<Library>): void;
+
+  /**
+   * Recursively traverse parents to find the library our field belongs to
+   *
+   * @param parent
+   */
+  getParentLibrary(parent: H5PForm): H5PForm | null;
 
   /**
    * Find the nearest library ancestor. Used when adding common fields.
@@ -167,6 +184,8 @@ export type H5PEditorObject<
   /**
    * Create the HTML wrapper for field items.
    *
+   * @deprecated since version 1.12 (Jan. 2017, will be removed Jan. 2018). Use `createFieldMarkup` instead.
+   *
    * @param type Field type as string (ie. "text", "image", "number")
    * @param label Label text. Can be HTML
    * @param description  Optional description text for the field. If set, it will be included beneath the field edit form
@@ -180,6 +199,18 @@ export type H5PEditorObject<
   ): string;
 
   /**
+   * Create HTML wrapper for a field item.
+   * Replacement for createItem()
+   *
+   * @since 1.12
+   *
+   * @param field
+   * @param content
+   * @param inputId
+   */
+  createFieldMarkup(field: H5PField, content: string, inputId?: string): string;
+
+  /**
    * Create HTML for select options.
    *
    * @param value The value of the option
@@ -189,6 +220,19 @@ export type H5PEditorObject<
    * @returns Option as string of HTML
    */
   createOption(value: string, text: string, selected?: boolean): string;
+
+  /**
+   * Create HTML wrapper for a boolean field item.
+   *
+   * @param field
+   * @param content
+   * @param inputId
+   */
+  createBooleanFieldMarkup(
+    field: H5PField,
+    content: string,
+    inputId?: string
+  ): string;
 
   /**
    *
@@ -217,6 +261,14 @@ export type H5PEditorObject<
    * @returns Label as string of HTML
    */
   createLabel(field: H5PField, content: string): string;
+
+  /**
+   * Wraps a field with some metadata classes, and adds error field.
+   *
+   * @param field
+   * @param markup
+   */
+  wrapFieldMarkup(field: H5PField, markup: string): string;
 
   /**
    * Check if any errors have been set. Blocks tab-key on $input if $errors is not empty.
