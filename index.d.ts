@@ -989,6 +989,8 @@ export type H5PMetadataForm = EventDispatcher & {
 export type H5PObject = {
   // Constants
   copyrightLicenses: H5PCopyrightLicenses;
+  /** H5P content is rendered inside an iframe */
+  isFramed: boolean;
   // Functions
   buildMetadataCopyrights(metadata: H5PMetadata): H5PMediaCopyright;
   createUUID: () => string;
@@ -997,10 +999,10 @@ export type H5PObject = {
   newRunnable: (
     library: { library: string; params: unknown },
     contentId: string,
-    $attachTo: JQuery,
+    $attachTo?: JQuery,
     skipResize?: boolean,
-    extras?: unknown
-  ) => void;
+    extras?: H5PExtras
+  ) => IH5PContentType;
   // Classes
   jQuery: typeof jQuery;
   ConfirmationDialog: typeof H5PConfirmationDialog;
