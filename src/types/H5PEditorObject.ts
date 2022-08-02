@@ -1,6 +1,7 @@
 import type { H5PField } from "./H5PField";
 import type { H5PForm } from "./H5PForm";
 import type { Library } from "./H5PLibrary";
+import type { IH5PFieldInstance } from "./IH5PFieldInstance";
 import type { IH5PWidget } from "./IH5PWidget";
 import type { ParamTypeInferredFromFieldType } from "./ParamTypeInferredFromFieldType";
 
@@ -121,7 +122,13 @@ export type H5PEditorObject<
    * @param path
    * @param parent
    */
-  findField(path: string | Array<string>, parent: H5PForm): H5PForm | false;
+  findField<
+    TField extends H5PForm = IH5PFieldInstance,
+    TParent extends H5PForm = H5PForm
+  >(
+    path: string | Array<string>,
+    parent: TParent
+  ): TField | false;
 
   /**
    * Observe a field to get changes to its params.This is used to track changes

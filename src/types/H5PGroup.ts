@@ -1,6 +1,7 @@
-import type { EventDispatcher } from "./EventDispatcher";
-import type { H5PForm } from "./H5PForm";
+import type { H5PFieldGroup } from "./H5PField";
+import type { IH5PFieldInstance } from "./IH5PFieldInstance";
 
-export type H5PGroup = EventDispatcher & {
-  parent: H5PForm;
-};
+export type H5PGroup<TParams = unknown> = IH5PFieldInstance<
+  TParams,
+  H5PFieldGroup
+>;
