@@ -321,7 +321,13 @@ export type H5PEditorObject<
    * @param path
    * @param parent
    */
-  findField(path: string | Array<string>, parent: H5PForm): H5PForm | false;
+  findField<
+    TField extends H5PForm = IH5PFieldInstance,
+    TParent extends H5PForm = H5PForm
+  >(
+    path: string | Array<string>,
+    parent: TParent
+  ): TField | false;
   /**
    * Observe a field to get changes to its params.This is used to track changes
    * within an object during editing in case the change needs to be reflected visually.
@@ -813,9 +819,10 @@ export type H5PForm<TParams = unknown> = {
   ready: (callback: () => void) => void;
 };
 
-export type H5PGroup = EventDispatcher & {
-  parent: H5PForm;
-};
+export type H5PGroup<TParams = unknown> = IH5PFieldInstance<
+  TParams,
+  H5PFieldGroup
+>;
 
 export type H5PImportance = "low" | "medium" | "high";
 
@@ -1087,6 +1094,32 @@ export declare class H5PThumbnail {
 
 export interface IH5PContentType {
   attach($wrapper: JQuery<HTMLElement>): void;
+}
+
+export interface IH5PEditorImageField
+  extends IH5PFieldInstance<Image, H5PFieldImage> {
+  changes: Array<unknown>;
+  copyright: Copyright;
+  confirmRemovalDialog: H5PConfirmationDialog;
+  confirmationDialog: H5PConfirmationDialog;
+  id: string;
+  isEditing: boolean;
+  isOriginalImage: boolean;
+  openFileSelector(): void;
+  setValue: H5PSetValue<Image>;
+  upload(file: File, filename: String): void;
+  /** ⚠️ Only uploads the first file in the list ⚠️ */
+  uploadFiles(files: Array<File>): void;
+}
+
+export interface IH5PFieldInstance<
+  TParams = unknown,
+  TField extends H5PField = H5PField
+> extends H5PForm<TParams>,
+    IH5PWidget,
+    EventDispatcher {
+  field: TField;
+  parent: H5PForm | IH5PFieldInstance;
 }
 
 export interface IH5PWidget {
