@@ -121,7 +121,7 @@ export type H5PEditorObject<
    * @param path
    * @param parent
    */
-  findField(path: string | Array<string>, parent: H5PForm): H5PField | false;
+  findField(path: string | Array<string>, parent: H5PForm): H5PForm | false;
 
   /**
    * Observe a field to get changes to its params.This is used to track changes
