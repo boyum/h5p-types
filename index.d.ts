@@ -1029,6 +1029,8 @@ export type H5PObject = {
   copyrightLicenses: H5PCopyrightLicenses;
   /** H5P content is rendered inside an iframe */
   isFramed: boolean;
+  /** H5P content is in fullscreen mode */
+  isFullscreen: boolean;
   // Functions
   buildMetadataCopyrights(metadata: H5PMetadata): H5PMediaCopyright;
   createUUID: () => string;
@@ -1041,11 +1043,6 @@ export type H5PObject = {
     skipResize?: boolean,
     extras?: H5PExtras
   ) => IH5PContentType;
-  // Classes
-  jQuery: typeof jQuery;
-  ConfirmationDialog: typeof H5PConfirmationDialog;
-  Dialog: typeof H5PDialog;
-  EventDispatcher: typeof EventDispatcher;
   exitFullScreen: () => void;
   fullScreen: (
     $element: JQuery,
@@ -1054,7 +1051,11 @@ export type H5PObject = {
     body?: JQuery,
     forceSemiFullScreen?: boolean
   ) => void;
-  isFullscreen: boolean;
+  // Classes
+  jQuery: typeof jQuery;
+  ConfirmationDialog: typeof H5PConfirmationDialog;
+  Dialog: typeof H5PDialog;
+  EventDispatcher: typeof EventDispatcher;
 };
 
 export type H5PSetValue<Params> = (field: H5PField, params: Params) => void;
