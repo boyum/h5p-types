@@ -14,6 +14,9 @@ export type H5PObject = {
   /** H5P content is rendered inside an iframe */
   isFramed: boolean;
 
+  /** H5P content is in fullscreen mode */
+  isFullscreen: boolean;
+
   // Functions
   buildMetadataCopyrights(metadata: H5PMetadata): H5PMediaCopyright;
   createUUID: () => string;
@@ -26,6 +29,14 @@ export type H5PObject = {
     skipResize?: boolean,
     extras?: H5PExtras
   ) => IH5PContentType;
+  exitFullScreen: () => void;
+  fullScreen: (
+    $element: JQuery,
+    instance: IH5PContentType,
+    exitCallback?: () => void,
+    body?: JQuery,
+    forceSemiFullScreen?: boolean
+  ) => void;
 
   // Classes
   jQuery: typeof jQuery;
