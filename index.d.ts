@@ -22,9 +22,9 @@ export declare class EventDispatcher {
    * @param [thisArg]
    *   Optionally specify the this value when calling listener.
    */
-  on: (
+  on: <TData = unknown>(
     type: string,
-    listener: (event: unknown) => void,
+    listener: (event: H5PEvent<TData>) => void,
     thisArg?: ThisType<unknown>
   ) => void;
   /**
@@ -39,9 +39,9 @@ export declare class EventDispatcher {
    * @param thisArg
    *   Optionally specify the this value when calling listener.
    */
-  once: (
+  once: <TData = unknown>(
     type: string,
-    listener: (event: unknown) => void,
+    listener: (event: H5PEvent<TData>) => void,
     thisArg?: ThisType<unknown>
   ) => void;
   /**
@@ -55,7 +55,10 @@ export declare class EventDispatcher {
    * @param listener
    *   Event listener
    */
-  off: (type: string, listener: (event: unknown) => void) => void;
+  off: <TData = unknown>(
+    type: string,
+    listener: (event: TData) => void
+  ) => void;
   /**
    * Dispatch event.
    *
@@ -66,9 +69,9 @@ export declare class EventDispatcher {
    *   argument).
    * @param [extras]
    */
-  trigger: (
+  trigger: <TData = unknown>(
     event: string | unknown,
-    eventData?: unknown,
+    eventData?: TData,
     extras?: {
       bubbles?: boolean;
       external?: boolean;
@@ -500,26 +503,7 @@ export type H5PEnterMode = "p" | "div";
 
 export declare class H5PEvent<TData = unknown> {
   type: string;
-  data: {
-    statement: {
-      actor: {
-        name: string;
-        mbox: string;
-        objectType: string;
-      };
-      contentId: number;
-      context: {
-        contextActivities: {
-          category: Array<{ id: string; objectType: string }>;
-        };
-      };
-      object: {
-        id: string;
-        objectType: string;
-        definition: XAPIDefinition;
-      };
-    } & TData;
-  };
+  data: TData;
   extras?: {
     bubbles?: boolean;
     external?: boolean;
@@ -1223,7 +1207,26 @@ export type XAPIDefinition = {
   correctResponsesPattern: string;
 };
 
-export declare class XAPIEvent extends H5PEvent {
+export declare class XAPIEvent extends H5PEvent<{
+  statement: {
+    actor: {
+      name: string;
+      mbox: string;
+      objectType: string;
+    };
+    contentId: number;
+    context: {
+      contextActivities: {
+        category: Array<{ id: string; objectType: string }>;
+      };
+    };
+    object: {
+      id: string;
+      objectType: string;
+      definition: XAPIDefinition;
+    };
+  };
+}> {
   type: "xAPI";
   constructor();
   /**

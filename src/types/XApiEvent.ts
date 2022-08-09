@@ -1,9 +1,29 @@
 import type { H5PEvent } from "./H5PEvent";
 import type { H5PObject } from "./H5PObject";
 import type { IH5PContentType } from "./IH5PContentType";
+import { XAPIDefinition } from "./XAPIDefinition";
 import type { XAPIVerb } from "./XAPIVerb";
 
-export declare class XAPIEvent extends H5PEvent {
+export declare class XAPIEvent extends H5PEvent<{
+  statement: {
+    actor: {
+      name: string;
+      mbox: string;
+      objectType: string;
+    };
+    contentId: number;
+    context: {
+      contextActivities: {
+        category: Array<{ id: string; objectType: string }>;
+      };
+    };
+    object: {
+      id: string;
+      objectType: string;
+      definition: XAPIDefinition;
+    };
+  };
+}> {
   type: "xAPI";
 
   constructor();

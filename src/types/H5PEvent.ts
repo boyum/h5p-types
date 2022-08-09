@@ -1,28 +1,7 @@
-import type { XAPIDefinition } from "./XAPIDefinition";
-
 export declare class H5PEvent<TData = unknown> {
   type: string;
 
-  data: {
-    statement: {
-      actor: {
-        name: string;
-        mbox: string;
-        objectType: string;
-      };
-      contentId: number;
-      context: {
-        contextActivities: {
-          category: Array<{ id: string; objectType: string }>;
-        };
-      };
-      object: {
-        id: string;
-        objectType: string;
-        definition: XAPIDefinition;
-      };
-    } & TData;
-  };
+  data: TData;
 
   extras?: {
     bubbles?: boolean;

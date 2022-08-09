@@ -1,3 +1,4 @@
+import type { H5PEvent } from "./H5PEvent";
 import type { XAPIEvent } from "./XAPIEvent";
 import type { XAPIVerb } from "./XAPIVerb";
 
@@ -14,9 +15,9 @@ export declare class EventDispatcher {
    * @param [thisArg]
    *   Optionally specify the this value when calling listener.
    */
-  on: (
+  on: <TData = unknown>(
     type: string,
-    listener: (event: unknown) => void,
+    listener: (event: H5PEvent<TData>) => void,
     thisArg?: ThisType<unknown>
   ) => void;
 
@@ -32,9 +33,9 @@ export declare class EventDispatcher {
    * @param thisArg
    *   Optionally specify the this value when calling listener.
    */
-  once: (
+  once: <TData = unknown>(
     type: string,
-    listener: (event: unknown) => void,
+    listener: (event: H5PEvent<TData>) => void,
     thisArg?: ThisType<unknown>
   ) => void;
 
@@ -49,7 +50,10 @@ export declare class EventDispatcher {
    * @param listener
    *   Event listener
    */
-  off: (type: string, listener: (event: unknown) => void) => void;
+  off: <TData = unknown>(
+    type: string,
+    listener: (event: TData) => void
+  ) => void;
 
   /**
    * Dispatch event.
@@ -61,9 +65,9 @@ export declare class EventDispatcher {
    *   argument).
    * @param [extras]
    */
-  trigger: (
+  trigger: <TData = unknown>(
     event: string | unknown,
-    eventData?: unknown,
+    eventData?: TData,
     extras?: {
       bubbles?: boolean;
       external?: boolean;
