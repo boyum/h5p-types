@@ -1139,7 +1139,7 @@ export declare class H5PThumbnail {
   toString(): string;
 }
 
-export interface IH5PContentType {
+export interface IH5PContentType extends EventDispatcher {
   attach($wrapper: JQuery<HTMLElement>): void;
 }
 
