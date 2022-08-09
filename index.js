@@ -62,7 +62,7 @@ define("XAPIVerb", ["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
 });
-define("XAPIEvent", ["require", "exports", "XAPIDefinition"], function (require, exports) {
+define("XAPIEvent", ["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
 });

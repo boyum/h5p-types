@@ -1,7 +1,7 @@
 import type { H5PEvent } from "./H5PEvent";
 import type { H5PObject } from "./H5PObject";
 import type { IH5PContentType } from "./IH5PContentType";
-import { XAPIDefinition } from "./XAPIDefinition";
+import type { XAPIDefinition } from "./XAPIDefinition";
 import type { XAPIVerb } from "./XAPIVerb";
 
 export declare class XAPIEvent extends H5PEvent<{
