@@ -1046,6 +1046,15 @@ export type H5PObject = {
   ConfirmationDialog: typeof H5PConfirmationDialog;
   Dialog: typeof H5PDialog;
   EventDispatcher: typeof EventDispatcher;
+  exitFullScreen: () => void;
+  fullScreen: (
+    $element: JQuery,
+    instance: IH5PContentType,
+    exitCallback?: () => void,
+    body?: JQuery,
+    forceSemiFullScreen?: boolean
+  ) => void;
+  isFullscreen: boolean;
 };
 
 export type H5PSetValue<Params> = (field: H5PField, params: Params) => void;
