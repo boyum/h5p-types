@@ -539,6 +539,7 @@ export declare class H5PEvent<TData = unknown> {
 export type H5PExtras = {
   metadata: H5PMetadata;
   standalone: boolean;
+  subContentId?: string;
 };
 
 type H5PFieldCommon = {
@@ -985,6 +986,14 @@ export type Library = {
   };
 };
 
+export type H5PLibraryInfo = {
+  versionedName: string;
+  versionedNameNoSpaces: string;
+  machineName: string;
+  majorVersion: string;
+  minorVersion: string;
+};
+
 export declare class H5PMediaCopyright {
   constructor(
     copyright: Record<string, string> & {
@@ -1024,6 +1033,14 @@ export type H5PMetadataForm = EventDispatcher & {
   ready: (callback: () => void) => void;
 };
 
+export type H5PNewRunnableLibraryParam = {
+  library: string;
+  params: Record<string | number | symbol, unknown>;
+  subContentId?: string;
+  userDatas?: { state?: unknown };
+  metadata?: H5PMetadata;
+};
+
 export type H5PObject = {
   // Constants
   copyrightLicenses: H5PCopyrightLicenses;
@@ -1036,13 +1053,17 @@ export type H5PObject = {
   createUUID: () => string;
   getCopyrights(instance: IH5PContentType): string;
   getPath: (path: string, contentId: string) => string;
-  newRunnable: (
-    library: { library: string; params: unknown },
+  newRunnable: <TLibraryParam extends H5PNewRunnableLibraryParam>(
+    library: TLibraryParam,
     contentId: string,
     $attachTo?: JQuery,
     skipResize?: boolean,
     extras?: H5PExtras
-  ) => IH5PContentType;
+  ) => IH5PContentType & {
+    $: typeof jQuery;
+    libraryInfo: H5PLibraryInfo;
+    subContentId: TLibraryParam["subContentId"];
+  };
   exitFullScreen: () => void;
   fullScreen: (
     $element: JQuery,

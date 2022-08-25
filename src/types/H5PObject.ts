@@ -3,8 +3,10 @@ import type { H5PConfirmationDialog } from "./H5PConfirmationDialog";
 import type { H5PCopyrightLicenses } from "./H5PCopyrightLicenses";
 import type { H5PDialog } from "./H5PDialog";
 import type { H5PExtras } from "./H5PExtras";
+import type { H5PLibraryInfo } from "./H5PLibraryInfo";
 import type { H5PMediaCopyright } from "./H5PMediaCopyright";
 import type { H5PMetadata } from "./H5PMetadata";
+import type { H5PNewRunnableLibraryParam } from "./H5PNewRunnableLibraryParam";
 import type { IH5PContentType } from "./IH5PContentType";
 
 export type H5PObject = {
@@ -19,17 +21,27 @@ export type H5PObject = {
 
   // Functions
   buildMetadataCopyrights(metadata: H5PMetadata): H5PMediaCopyright;
+
   createUUID: () => string;
+
   getCopyrights(instance: IH5PContentType): string;
+
   getPath: (path: string, contentId: string) => string;
-  newRunnable: (
-    library: { library: string; params: unknown },
+
+  newRunnable: <TLibraryParam extends H5PNewRunnableLibraryParam>(
+    library: TLibraryParam,
     contentId: string,
     $attachTo?: JQuery,
     skipResize?: boolean,
     extras?: H5PExtras
-  ) => IH5PContentType;
+  ) => IH5PContentType & {
+    $: typeof jQuery;
+    libraryInfo: H5PLibraryInfo;
+    subContentId: TLibraryParam["subContentId"];
+  };
+
   exitFullScreen: () => void;
+
   fullScreen: (
     $element: JQuery,
     instance: IH5PContentType,
