@@ -11,7 +11,7 @@
     "test": "echo 'No tests'"
   },
   "devDependencies": {
-    "@tsconfig/strictest": "^1.0.1",
+    "@tsconfig/strictest": "^1.0.2",
     "@types/node": "^18.7.18",
     "esbuild-runner": "^2.2.1",
     "np": "^7.6.2",
