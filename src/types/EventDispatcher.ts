@@ -4,16 +4,13 @@ import type { XAPIVerb } from "./XAPIVerb";
 
 export declare class EventDispatcher {
   /**
-   * Add new event listener.
+   * Add new event listener
    *
-   * @throws {TypeError}
-   *   listener must be a function
-   * @param type
-   *   Event type
-   * @param listener
-   *   Event listener
-   * @param [thisArg]
-   *   Optionally specify the this value when calling listener.
+   * @throws {TypeError} listener must be a function
+   *
+   * @param type Event type
+   * @param listener Event listener
+   * @param thisArg Optionally specify the this value when calling listener
    */
   on: <TData = unknown>(
     type: string,
@@ -22,16 +19,13 @@ export declare class EventDispatcher {
   ) => void;
 
   /**
-   * Add new event listener that will be fired only once.
+   * Add new event listener that will be fired only once
    *
-   * @throws {TypeError}
-   *   listener must be a function
-   * @param type
-   *   Event type
-   * @param listener
-   *   Event listener
-   * @param thisArg
-   *   Optionally specify the this value when calling listener.
+   * @throws {TypeError} listener must be a function
+   *
+   * @param type Event type
+   * @param listener Event listener
+   * @param thisArg Optionally specify the `this` value when calling listener
    */
   once: <TData = unknown>(
     type: string,
@@ -40,30 +34,25 @@ export declare class EventDispatcher {
   ) => void;
 
   /**
-   * Remove event listener.
-   * If no listener is specified, all listeners will be removed.
+   * Remove event listener
+   * If no listener is specified, all listeners will be removed
    *
-   * @throws {TypeError}
-   *   listener must be a function
-   * @param  type
-   *   Event type
-   * @param listener
-   *   Event listener
+   * @throws {TypeError} listener must be a function
+   *
+   * @param type Event type
+   * @param listener Event listener
    */
   off: <TData = unknown>(
     type: string,
-    listener: (event: TData) => void,
+    listener?: (event: TData) => void,
   ) => void;
 
   /**
-   * Dispatch event.
+   * Dispatch event
    *
-   * @param event
-   *   Event object or event type as string
-   * @param [eventData]
-   *   Custom event data(used when event type as string is used as first
-   *   argument).
-   * @param [extras]
+   * @param event Event object or event type as string
+   * @param eventData Custom event data (used when event type as string is used as first argument)
+   * @param extras
    */
   trigger: <TData = unknown>(
     event: string | unknown,

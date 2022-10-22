@@ -1,3 +1,4 @@
+import type { H5PContentId } from "./H5PContentId";
 import type { H5PField } from "./H5PField";
 import type { H5PForm } from "./H5PForm";
 import type { Library } from "./H5PLibrary";
@@ -17,7 +18,7 @@ export type H5PEditorObject<
   TWidgetName extends string = never,
 > = {
   $: typeof jQuery;
-  contentId: string;
+  contentId: H5PContentId;
   widgets: Record<string, unknown> & Record<TWidgetName, unknown>;
   isIE: boolean;
   supportedLanguages: Record<string, string>;

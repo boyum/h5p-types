@@ -1,3 +1,4 @@
+import type { H5PContentId } from "./H5PContentId";
 import type { H5PEvent } from "./H5PEvent";
 import type { H5PObject } from "./H5PObject";
 import type { IH5PContentType } from "./IH5PContentType";
@@ -11,7 +12,7 @@ export declare class XAPIEvent extends H5PEvent<{
       mbox: string;
       objectType: string;
     };
-    contentId: number;
+    contentId: H5PContentId;
     context: {
       contextActivities: {
         category: Array<{ id: string; objectType: string }>;
