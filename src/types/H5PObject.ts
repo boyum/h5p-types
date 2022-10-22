@@ -19,6 +19,8 @@ export type H5PObject = {
   /** H5P content is in fullscreen mode */
   isFullscreen: boolean;
 
+  $window: JQuery;
+
   // Functions
   buildMetadataCopyrights(metadata: H5PMetadata): H5PMediaCopyright;
 
@@ -33,7 +35,7 @@ export type H5PObject = {
     contentId: string,
     $attachTo?: JQuery,
     skipResize?: boolean,
-    extras?: H5PExtras
+    extras?: H5PExtras,
   ) => IH5PContentType & {
     $: typeof jQuery;
     libraryInfo: H5PLibraryInfo;
@@ -47,7 +49,7 @@ export type H5PObject = {
     instance: IH5PContentType,
     exitCallback?: () => void,
     body?: JQuery,
-    forceSemiFullScreen?: boolean
+    forceSemiFullScreen?: boolean,
   ) => void;
 
   // Classes

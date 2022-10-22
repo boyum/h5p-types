@@ -36,7 +36,7 @@ export declare class XAPIEvent extends H5PEvent<{
     maxScore: number,
     instance: H5PObject,
     completion: number,
-    success: number
+    success: number,
   ): void;
 
   /**

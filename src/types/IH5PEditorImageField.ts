@@ -16,7 +16,7 @@ export interface IH5PEditorImageField
   isOriginalImage: boolean;
   openFileSelector(): void;
   setValue: H5PSetValue<Image>;
-  upload(file: File, filename: String): void;
+  upload(file: File, filename: string): void;
   /** ⚠️ Only uploads the first file in the list ⚠️ */
   uploadFiles(files: Array<File>): void;
 }

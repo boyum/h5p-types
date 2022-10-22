@@ -14,7 +14,7 @@ export declare class H5PEvent<TData = unknown> {
     extras?: {
       bubbles?: boolean;
       external?: boolean;
-    }
+    },
   );
 
   /**

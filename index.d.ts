@@ -25,7 +25,7 @@ export declare class EventDispatcher {
   on: <TData = unknown>(
     type: string,
     listener: (event: H5PEvent<TData>) => void,
-    thisArg?: ThisType<unknown>
+    thisArg?: ThisType<unknown>,
   ) => void;
   /**
    * Add new event listener that will be fired only once.
@@ -42,7 +42,7 @@ export declare class EventDispatcher {
   once: <TData = unknown>(
     type: string,
     listener: (event: H5PEvent<TData>) => void,
-    thisArg?: ThisType<unknown>
+    thisArg?: ThisType<unknown>,
   ) => void;
   /**
    * Remove event listener.
@@ -57,7 +57,7 @@ export declare class EventDispatcher {
    */
   off: <TData = unknown>(
     type: string,
-    listener: (event: TData) => void
+    listener: (event: TData) => void,
   ) => void;
   /**
    * Dispatch event.
@@ -75,12 +75,12 @@ export declare class EventDispatcher {
     extras?: {
       bubbles?: boolean;
       external?: boolean;
-    }
+    },
   ) => void;
   triggerXAPI: (verb: XAPIVerb, extra: unknown) => void;
   createXAPIEventTemplate<TVerb extends XAPIVerb>(
     verb: TVerb,
-    extra: unknown
+    extra: unknown,
   ): XAPIEvent;
 }
 
@@ -207,7 +207,7 @@ export declare class H5PDialog {
     name: string,
     title: string,
     content: string,
-    $element: JQuery<HTMLElement>
+    $element: JQuery<HTMLElement>,
   );
   /**
    * @param scrollbar
@@ -225,7 +225,7 @@ export declare class H5PDialog {
  */
 export type H5PEditorObject<
   TWidgetMachineName extends string = never,
-  TWidgetName extends string = never
+  TWidgetName extends string = never,
 > = {
   $: typeof jQuery;
   contentId: string;
@@ -244,7 +244,7 @@ export type H5PEditorObject<
   t(
     library: "core" | `H5PEditor.${string}` | `H5PEditor.${TWidgetMachineName}`,
     key: string,
-    vars?: Record<`:${string}`, string>
+    vars?: Record<`:${string}`, string>,
   ): string;
   /**
    * Loads a complete library, with semantics, scripts and CSS from the server.
@@ -255,7 +255,7 @@ export type H5PEditorObject<
    */
   loadLibrary<TSemantics = unknown>(
     libraryName: `${string} ${number}.${number}`,
-    callback: (semantics: TSemantics) => void
+    callback: (semantics: TSemantics) => void,
   ): void;
   /**
    * Recursive processing of the semantics chunks.
@@ -274,7 +274,7 @@ export type H5PEditorObject<
     >,
     $wrapper: JQuery<HTMLElement>,
     parent: H5PForm,
-    machineName?: string
+    machineName?: string,
   ) => void;
   /**
    * Search for a field or a set of fields. Returns `null` if the field isn't found.
@@ -284,7 +284,7 @@ export type H5PEditorObject<
    */
   findSemanticsField: (
     fieldName: string,
-    semanticsStructure: H5PField | Array<H5PField>
+    semanticsStructure: H5PField | Array<H5PField>,
   ) => H5PField | Array<H5PField> | null;
   /**
    * Adds a field to the Common Fields container. Used internally by `H5PEditor.processSemanticsChunk`.
@@ -300,7 +300,7 @@ export type H5PEditorObject<
     parent: H5PForm,
     params: ParamTypeInferredFromFieldType<TField>,
     ancestor: H5PForm,
-    skipAppendTo?: boolean
+    skipAppendTo?: boolean,
   ): void;
   /**
    * Render common fields of content type with given machine name.
@@ -341,10 +341,10 @@ export type H5PEditorObject<
    */
   findField<
     TField extends H5PForm = IH5PFieldInstance,
-    TParent extends H5PForm = H5PForm
+    TParent extends H5PForm = H5PForm,
   >(
     path: string | Array<string>,
-    parent: TParent
+    parent: TParent,
   ): TField | false;
   /**
    * Observe a field to get changes to its params.This is used to track changes
@@ -368,7 +368,7 @@ export type H5PEditorObject<
   followField<TField extends H5PField = H5PField>(
     parent: H5PForm,
     path: string,
-    callback: (params: ParamTypeInferredFromFieldType<TField>) => void
+    callback: (params: ParamTypeInferredFromFieldType<TField>) => void,
   ): void;
   /**
    * Create an error paragraph with the given message
@@ -392,7 +392,7 @@ export type H5PEditorObject<
     type: H5PField["type"],
     label: string | undefined,
     description: string | undefined,
-    content: string
+    content: string,
   ): string;
   /**
    * Create HTML wrapper for a field item.
@@ -425,7 +425,7 @@ export type H5PEditorObject<
   createBooleanFieldMarkup(
     field: H5PField,
     content: string,
-    inputId?: string
+    inputId?: string,
   ): string;
   /**
    *
@@ -442,7 +442,7 @@ export type H5PEditorObject<
     maxLength?: number,
     placeholder?: string,
     id?: string,
-    describedby?: string
+    describedby?: string,
   ): string;
   /**
    * Create a label to wrap content in.
@@ -468,11 +468,11 @@ export type H5PEditorObject<
    * @param value
    */
   checkErrors<
-    TValue extends string | boolean | number | Record<string, unknown>
+    TValue extends string | boolean | number | Record<string, unknown>,
   >(
     $errors: JQuery,
     $input: JQuery,
-    value: TValue
+    value: TValue,
   ): TValue | false;
   /**
    * Translates a library object to a library string.
@@ -480,7 +480,7 @@ export type H5PEditorObject<
    * @param library Library object with machineName, majorVersion and minorVersion set
    */
   libraryToString<TLib extends Library>(
-    library: TLib
+    library: TLib,
   ): `${TLib["machineName"]} ${TLib["majorVersion"]}.${TLib["minorVersion"]}`;
   /**
    * Mimics a simple version of PHP htmlspecialchars. Basically replaces brackets
@@ -514,7 +514,7 @@ export declare class H5PEvent<TData = unknown> {
     extras?: {
       bubbles?: boolean;
       external?: boolean;
-    }
+    },
   );
   /**
    * Prevent this event from bubbling up to parent
@@ -822,7 +822,7 @@ export type H5PForm<TParams = unknown> = {
    */
   addLanguages: (
     libraryName: string,
-    languageCodes: Array<string | undefined>
+    languageCodes: Array<string | undefined>,
   ) => void;
   children: Array<H5PGroup>;
   commonFields: Record<
@@ -845,7 +845,7 @@ export type H5PForm<TParams = unknown> = {
   readies: Array<unknown>;
   removeLanguages: (
     libraryName: string,
-    languageCodes: Array<string | undefined>
+    languageCodes: Array<string | undefined>,
   ) => void;
   zebra: "odd" | "even";
   ready: (callback: () => void) => void;
@@ -1002,7 +1002,7 @@ export declare class H5PMediaCopyright {
     },
     labels?: Record<string, string>,
     order?: Array<string>,
-    extraFields?: Record<string, string>
+    extraFields?: Record<string, string>,
   );
   setThumbnail(newThumbnail: H5PThumbnail): void;
   /**
@@ -1058,7 +1058,7 @@ export type H5PObject = {
     contentId: string,
     $attachTo?: JQuery,
     skipResize?: boolean,
-    extras?: H5PExtras
+    extras?: H5PExtras,
   ) => IH5PContentType & {
     $: typeof jQuery;
     libraryInfo: H5PLibraryInfo;
@@ -1070,7 +1070,7 @@ export type H5PObject = {
     instance: IH5PContentType,
     exitCallback?: () => void,
     body?: JQuery,
-    forceSemiFullScreen?: boolean
+    forceSemiFullScreen?: boolean,
   ) => void;
   // Classes
   jQuery: typeof jQuery;
@@ -1169,14 +1169,14 @@ export interface IH5PEditorImageField
   isOriginalImage: boolean;
   openFileSelector(): void;
   setValue: H5PSetValue<Image>;
-  upload(file: File, filename: String): void;
+  upload(file: File, filename: string): void;
   /** ⚠️ Only uploads the first file in the list ⚠️ */
   uploadFiles(files: Array<File>): void;
 }
 
 export interface IH5PFieldInstance<
   TParams = unknown,
-  TField extends H5PField = H5PField
+  TField extends H5PField = H5PField,
 > extends H5PForm<TParams>,
     IH5PWidget,
     EventDispatcher {
@@ -1268,7 +1268,7 @@ export declare class XAPIEvent extends H5PEvent<{
     maxScore: number,
     instance: H5PObject,
     completion: number,
-    success: number
+    success: number,
   ): void;
   /**
    * Set a verb.
