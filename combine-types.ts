@@ -14,7 +14,7 @@ async function readFile(fileName: string): Promise<string> {
 function removeImportStatements(fileContents: string): string {
   return fileContents.replace(
     /import(?:["'\s]*([\w*${}\n\r\t, ]+)from\s*)?["'\s]["'\s](.*[@\w_-]+)["'\s].*;$/gm,
-    ""
+    "",
   );
 }
 
@@ -35,7 +35,7 @@ async function run() {
   const typeFileNames = await getTypeFileNames();
   const typeFiles = await Promise.all(typeFileNames.map(readFile));
   const typeFilesWithoutImportStatements = typeFiles.map(
-    removeImportStatements
+    removeImportStatements,
   );
   const filesWithoutHoles =
     typeFilesWithoutImportStatements.map(removeEmptyLines);

@@ -9,7 +9,7 @@ export declare class H5PDialog {
     name: string,
     title: string,
     content: string,
-    $element: JQuery<HTMLElement>
+    $element: JQuery<HTMLElement>,
   );
 
   /**

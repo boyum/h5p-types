@@ -8,7 +8,7 @@ export declare class H5PMediaCopyright {
     },
     labels?: Record<string, string>,
     order?: Array<string>,
-    extraFields?: Record<string, string>
+    extraFields?: Record<string, string>,
   );
 
   setThumbnail(newThumbnail: H5PThumbnail): void;

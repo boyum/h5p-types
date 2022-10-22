@@ -5,7 +5,7 @@ import type { IH5PWidget } from "./IH5PWidget";
 
 export interface IH5PFieldInstance<
   TParams = unknown,
-  TField extends H5PField = H5PField
+  TField extends H5PField = H5PField,
 > extends H5PForm<TParams>,
     IH5PWidget,
     EventDispatcher {

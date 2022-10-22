@@ -14,7 +14,7 @@ import type { ParamTypeInferredFromFieldType } from "./ParamTypeInferredFromFiel
  */
 export type H5PEditorObject<
   TWidgetMachineName extends string = never,
-  TWidgetName extends string = never
+  TWidgetName extends string = never,
 > = {
   $: typeof jQuery;
   contentId: string;
@@ -34,7 +34,7 @@ export type H5PEditorObject<
   t(
     library: "core" | `H5PEditor.${string}` | `H5PEditor.${TWidgetMachineName}`,
     key: string,
-    vars?: Record<`:${string}`, string>
+    vars?: Record<`:${string}`, string>,
   ): string;
 
   /**
@@ -46,7 +46,7 @@ export type H5PEditorObject<
    */
   loadLibrary<TSemantics = unknown>(
     libraryName: `${string} ${number}.${number}`,
-    callback: (semantics: TSemantics) => void
+    callback: (semantics: TSemantics) => void,
   ): void;
 
   /**
@@ -66,7 +66,7 @@ export type H5PEditorObject<
     >,
     $wrapper: JQuery<HTMLElement>,
     parent: H5PForm,
-    machineName?: string
+    machineName?: string,
   ) => void;
 
   /**
@@ -77,7 +77,7 @@ export type H5PEditorObject<
    */
   findSemanticsField: (
     fieldName: string,
-    semanticsStructure: H5PField | Array<H5PField>
+    semanticsStructure: H5PField | Array<H5PField>,
   ) => H5PField | Array<H5PField> | null;
 
   /**
@@ -94,7 +94,7 @@ export type H5PEditorObject<
     parent: H5PForm,
     params: ParamTypeInferredFromFieldType<TField>,
     ancestor: H5PForm,
-    skipAppendTo?: boolean
+    skipAppendTo?: boolean,
   ): void;
 
   /**
@@ -141,10 +141,10 @@ export type H5PEditorObject<
    */
   findField<
     TField extends H5PForm = IH5PFieldInstance,
-    TParent extends H5PForm = H5PForm
+    TParent extends H5PForm = H5PForm,
   >(
     path: string | Array<string>,
-    parent: TParent
+    parent: TParent,
   ): TField | false;
 
   /**
@@ -169,7 +169,7 @@ export type H5PEditorObject<
   followField<TField extends H5PField = H5PField>(
     parent: H5PForm,
     path: string,
-    callback: (params: ParamTypeInferredFromFieldType<TField>) => void
+    callback: (params: ParamTypeInferredFromFieldType<TField>) => void,
   ): void;
 
   /**
@@ -195,7 +195,7 @@ export type H5PEditorObject<
     type: H5PField["type"],
     label: string | undefined,
     description: string | undefined,
-    content: string
+    content: string,
   ): string;
 
   /**
@@ -231,7 +231,7 @@ export type H5PEditorObject<
   createBooleanFieldMarkup(
     field: H5PField,
     content: string,
-    inputId?: string
+    inputId?: string,
   ): string;
 
   /**
@@ -249,7 +249,7 @@ export type H5PEditorObject<
     maxLength?: number,
     placeholder?: string,
     id?: string,
-    describedby?: string
+    describedby?: string,
   ): string;
 
   /**
@@ -278,11 +278,11 @@ export type H5PEditorObject<
    * @param value
    */
   checkErrors<
-    TValue extends string | boolean | number | Record<string, unknown>
+    TValue extends string | boolean | number | Record<string, unknown>,
   >(
     $errors: JQuery,
     $input: JQuery,
-    value: TValue
+    value: TValue,
   ): TValue | false;
 
   /**
@@ -291,7 +291,7 @@ export type H5PEditorObject<
    * @param library Library object with machineName, majorVersion and minorVersion set
    */
   libraryToString<TLib extends Library>(
-    library: TLib
+    library: TLib,
   ): `${TLib["machineName"]} ${TLib["majorVersion"]}.${TLib["minorVersion"]}`;
 
   /**

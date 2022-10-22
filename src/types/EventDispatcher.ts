@@ -18,7 +18,7 @@ export declare class EventDispatcher {
   on: <TData = unknown>(
     type: string,
     listener: (event: H5PEvent<TData>) => void,
-    thisArg?: ThisType<unknown>
+    thisArg?: ThisType<unknown>,
   ) => void;
 
   /**
@@ -36,7 +36,7 @@ export declare class EventDispatcher {
   once: <TData = unknown>(
     type: string,
     listener: (event: H5PEvent<TData>) => void,
-    thisArg?: ThisType<unknown>
+    thisArg?: ThisType<unknown>,
   ) => void;
 
   /**
@@ -52,7 +52,7 @@ export declare class EventDispatcher {
    */
   off: <TData = unknown>(
     type: string,
-    listener: (event: TData) => void
+    listener: (event: TData) => void,
   ) => void;
 
   /**
@@ -71,13 +71,13 @@ export declare class EventDispatcher {
     extras?: {
       bubbles?: boolean;
       external?: boolean;
-    }
+    },
   ) => void;
 
   triggerXAPI: (verb: XAPIVerb, extra: unknown) => void;
 
   createXAPIEventTemplate<TVerb extends XAPIVerb>(
     verb: TVerb,
-    extra: unknown
+    extra: unknown,
   ): XAPIEvent;
 }

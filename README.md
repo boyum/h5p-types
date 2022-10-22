@@ -23,7 +23,7 @@ class MyWidget extends H5PWidget implements IH5PWidget {
 
     const input = document.createElement("input");
     input.addEventListener("change", () =>
-      this.setValue(this.field, input.value)
+      this.setValue(this.field, input.value),
     );
 
     containerElement.appendChild(input);
@@ -52,7 +52,7 @@ class MyWidget extends H5PWidget<H5PFieldText> implements IH5PWidget {
 
     const input = document.createElement("input");
     input.addEventListener("change", () =>
-      this.setValue(this.field, input.value)
+      this.setValue(this.field, input.value),
     );
 
     containerElement.appendChild(input);
@@ -93,7 +93,7 @@ class MyWidget extends H5PWidget<Field, Params> implements IH5PWidget {
       this.setValue(this.field, {
         ...this.params,
         name: input.value,
-      })
+      }),
     );
 
     const ageInput = document.createElement("input");
@@ -101,7 +101,7 @@ class MyWidget extends H5PWidget<Field, Params> implements IH5PWidget {
       this.setValue(this.field, {
         ...this.params,
         age: Number.parseInt(input.value),
-      })
+      }),
     );
 
     containerElement.appendChild(nameInput);
