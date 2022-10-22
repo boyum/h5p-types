@@ -1048,6 +1048,7 @@ export type H5PObject = {
   isFramed: boolean;
   /** H5P content is in fullscreen mode */
   isFullscreen: boolean;
+  $window: JQuery;
   // Functions
   buildMetadataCopyrights(metadata: H5PMetadata): H5PMediaCopyright;
   createUUID: () => string;
