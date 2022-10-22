@@ -24,7 +24,7 @@ export type H5PObject = {
   // Constants
   $body: JQuery<HTMLBodyElement>;
 
-  $windows: JQuery<Window>;
+  $window: JQuery<Window>;
 
   /** @deprecated Use `fullscreenSupported` instead */
   canHasFullscreen: boolean;
