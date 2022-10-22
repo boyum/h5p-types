@@ -34,5 +34,9 @@
   "np": {
     "releaseDraft": true
   },
-  "prettier": "prettier-config"
+  "prettier": "prettier-config",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boyum/h5p-types.git"
+  }
 }
