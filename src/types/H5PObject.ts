@@ -21,7 +21,7 @@ import type { IH5PContentType } from "./IH5PContentType";
 import type { Media } from "./Media";
 
 export type H5PObject = {
-  // Constants
+  // --- Properties ---
   $body: JQuery<HTMLBodyElement>;
 
   $window: JQuery<Window>;
@@ -53,7 +53,7 @@ export type H5PObject = {
 
   safariBrowser: number;
 
-  // Functions
+  // --- Methods ---
   /**
    * Helper for adding a query parameter to an existing path that may already
    * contain one or a hash.
@@ -538,7 +538,7 @@ export type H5PObject = {
    */
   trim: (value: string) => string;
 
-  // Classes
+  // --- Classes ---
   jQuery: typeof jQuery;
 
   ClipboardItem: typeof H5PClipboardItem;
