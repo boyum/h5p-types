@@ -18,8 +18,8 @@
   "devDependencies": {
     "@tsconfig/strictest": "^1.0.2",
     "@types/node": "^18.11.13",
-    "@typescript-eslint/eslint-plugin": "^5.46.0",
-    "@typescript-eslint/parser": "^5.46.0",
+    "@typescript-eslint/eslint-plugin": "^5.46.1",
+    "@typescript-eslint/parser": "^5.46.1",
     "esbuild-runner": "^2.2.2",
     "eslint": "^8.29.0",
     "eslint-plugin-prettier": "^4.2.1",
