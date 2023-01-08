@@ -24,7 +24,7 @@
     "eslint": "^8.30.0",
     "eslint-plugin-prettier": "^4.2.1",
     "np": "^7.6.3",
-    "prettier": "^2.8.1",
+    "prettier": "^2.8.2",
     "prettier-config": "github:boyum/prettier-config",
     "typescript": "^4.9.4"
   },
