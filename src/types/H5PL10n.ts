@@ -1,8 +1,8 @@
 import type { H5PFieldGroup, H5PFieldText } from "./H5PField";
 
 export type H5PL10n =
-  | H5PFieldGroup & {
+  | Omit<H5PFieldGroup, "name" | "fields" | "common"> & {
       name: "l10n";
-      fields: Array<H5PFieldText | { default: string }>;
+      fields: Array<Omit<H5PFieldText, "default"> & { default: string }>;
       common: boolean;
     };
