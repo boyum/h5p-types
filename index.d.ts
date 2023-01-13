@@ -656,7 +656,9 @@ export type H5PEditorObject<
    *
    * @param library Library object with machineName, majorVersion and minorVersion set
    */
-  libraryToString: <TLib extends Library>(
+  libraryToString: <
+    TLib extends Pick<Library, "machineName" | "majorVersion" | "minorVersion">,
+  >(
     library: TLib,
   ) => `${TLib["machineName"]} ${TLib["majorVersion"]}.${TLib["minorVersion"]}`;
   /**
