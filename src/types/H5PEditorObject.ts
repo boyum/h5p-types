@@ -188,7 +188,7 @@ export type H5PEditorObject<
    * Create an important description
    */
   createImportantDescription: (
-    importantDescription: H5PFieldText["importance"],
+    importantDescription: H5PFieldText["important"],
   ) => string;
 
   /**
@@ -216,7 +216,7 @@ export type H5PEditorObject<
    *
    * @returns Label as string of HTML
    */
-  createLabel: (field: H5PField, content: string) => string;
+  createLabel: (field: H5PField, content?: string) => string;
 
   /**
    * Create HTML for select options.
