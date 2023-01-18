@@ -1,4 +1,5 @@
 import type { H5PContentId } from "./H5PContentId";
+import type { H5PEditorContentType } from "./H5PEditorContentType";
 import type { H5PField, H5PFieldText } from "./H5PField";
 import type { H5PForm } from "./H5PForm";
 import type { H5PImportance } from "./H5PImportance";
@@ -525,5 +526,6 @@ export type H5PEditorObject<
 
   // --- Classes ---
   $: typeof jQuery;
+  ContentType: H5PEditorContentType;
 } & Record<string, unknown> &
   Record<`${TWidgetMachineName}`, unknown>;
