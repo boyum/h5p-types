@@ -46,9 +46,9 @@ type InferParamsType<TField extends DeepReadonly<H5PField>> =
 /**
  * ⚠️ Use with caution - if the semantics form has many fields, this might not work ⚠️
  * Infer the params type from a semantics array.
- * 
+ *
  * @example
- * 
+ *
  *  ```ts
  *  const semantics = [
  *  {
@@ -72,7 +72,7 @@ type InferParamsType<TField extends DeepReadonly<H5PField>> =
  * ] as const;
  *
  *  type Params = InferParamsFromSemantics<typeof semantics>;
- *       ^^^^^^ { group: { field1: number; field2: boolean } };
+ *  //   ^^^^^^ { group: { field1: number; field2: boolean } };
  *  ```
  */
 export type InferParamsFromSemantics<

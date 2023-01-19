@@ -1959,8 +1959,7 @@ export type Image = Media & {
   width?: number;
 };
 
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable @typescript-eslint/no-namespace */
+/* eslint-disable @typescript-eslint/ban-ts-comment, @typescript-eslint/no-unused-vars, @typescript-eslint/no-namespace */
 /**
  * If there are no fields in the group, the group's inferred params is only `{}`
  */
@@ -1994,6 +1993,38 @@ type InferParamsType<TField extends DeepReadonly<H5PField>> =
     : TField extends DeepReadonly<H5PFieldList>
     ? Array<InferParamsType<TField["field"]>>
     : ParamTypeInferredFromFieldType<TField>;
+/**
+ * ⚠️ Use with caution - if the semantics form has many fields, this might not work ⚠️
+ * Infer the params type from a semantics array.
+ * 
+ * @example
+ * 
+ *  ```ts
+ *  const semantics = [
+ *  {
+ *    label: "Group",
+ *    name: "group",
+ *    type: "group",
+ *    fields: [
+ *      {
+ *         label: "Field",
+ *         name: "field1",
+ *         type: "number",
+ *       },
+ *       {
+ *         label: "Field",
+ *         name: "field2",
+ *         type: "boolean",
+ *         default: false,
+ *       },
+ *     ],
+ *   },
+ * ] as const;
+ *
+ *  type Params = InferParamsFromSemantics<typeof semantics>;
+ *       ^^^^^^ { group: { field1: number; field2: boolean } };
+ *  ```
+ */
 export type InferParamsFromSemantics<
   TSemantics extends ReadonlyArray<DeepReadonly<H5PField>>,
 > = TSemantics extends readonly [infer TField, ...infer TRestFields]
@@ -2004,7 +2035,7 @@ export type InferParamsFromSemantics<
       : unknown
     : unknown
   : unknown;
-// @ts-expect-error Test
+// @ts-ignore Test
 namespace Test_H5PFieldText {
   const semantics = [
     {
@@ -2017,10 +2048,10 @@ namespace Test_H5PFieldText {
     field: string;
   };
   type Actual = InferParamsFromSemantics<typeof semantics>;
-  // @ts-expect-error Test
+  // @ts-ignore Test
   type Test = Expect<AreEqual<Actual, Expected>>;
 }
-// @ts-expect-error Test
+// @ts-ignore Test
 namespace Test_H5PFieldList {
   const listField = {
     label: "List",
@@ -2038,10 +2069,10 @@ namespace Test_H5PFieldList {
     list: Array<string>;
   };
   type ActualParams = InferParamsFromSemantics<typeof semantics>;
-  // @ts-expect-error Test
+  // @ts-ignore Test
   type Test = Expect<AreEqual<ActualParams, ExpectedParams>>;
 }
-// @ts-expect-error Test
+// @ts-ignore Test
 namespace Test_MultipleFields {
   const semantics = [
     {
@@ -2061,10 +2092,10 @@ namespace Test_MultipleFields {
     field2: boolean;
   };
   type Actual = InferParamsFromSemantics<typeof semantics>;
-  // @ts-expect-error Test
+  // @ts-ignore Test
   type Test = Expect<AreEqual<Actual, Expected>>;
 }
-// @ts-expect-error Test
+// @ts-ignore Test
 namespace Test_H5PFieldGroupWithZeroFields {
   const semantics = [
     {
@@ -2076,10 +2107,10 @@ namespace Test_H5PFieldGroupWithZeroFields {
   ] as const;
   type Expected = { field: Record<string, never> };
   type Actual = InferParamsFromSemantics<typeof semantics>;
-  // @ts-expect-error Test
+  // @ts-ignore Test
   type Test = Expect<AreEqual<Actual, Expected>>;
 }
-// @ts-expect-error Test
+// @ts-ignore Test
 namespace Test_H5PFieldGroupWithOneField {
   const semantics = [
     {
@@ -2097,10 +2128,10 @@ namespace Test_H5PFieldGroupWithOneField {
   ] as const;
   type Expected = { group: number };
   type Actual = InferParamsFromSemantics<typeof semantics>;
-  // @ts-expect-error Test
+  // @ts-ignore Test
   type Test = Expect<AreEqual<Actual, Expected>>;
 }
-// @ts-expect-error Test
+// @ts-ignore Test
 namespace Test_H5PFieldGroupWithMultipleFields {
   const semantics = [
     {
@@ -2124,10 +2155,10 @@ namespace Test_H5PFieldGroupWithMultipleFields {
   ] as const satisfies DeepReadonly<Array<H5PFieldGroup>>;
   type Expected = { group: { field1: number; field2: boolean } };
   type Actual = InferParamsFromSemantics<typeof semantics>;
-  // @ts-expect-error Test
+  // @ts-ignore Test
   type Test = Expect<AreEqual<Actual, Expected>>;
 }
-// @ts-expect-error Test
+// @ts-ignore Test
 namespace Test_Advanced {
   const l10nField = {
     name: "l10n",
@@ -2567,7 +2598,7 @@ namespace Test_Advanced {
       type: "text",
     },
   ] as const satisfies DeepReadonly<Array<H5PField>>;
-  // @ts-expect-error Test
+  // @ts-ignore Test
   type Expected = {
     l10n: Record<
       | "htmlLanguageCode"

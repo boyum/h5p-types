@@ -233,10 +233,11 @@ define("src/types/IH5PEditorImageField", ["require", "exports"], function (requi
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
 });
+/* eslint-disable @typescript-eslint/ban-ts-comment, @typescript-eslint/no-unused-vars, @typescript-eslint/no-namespace */
 define("src/types/InferParamsFromSemantics", ["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    // @ts-expect-error Test
+    // @ts-ignore Test
     var Test_H5PFieldText;
     (function (Test_H5PFieldText) {
         const semantics = [
@@ -247,7 +248,7 @@ define("src/types/InferParamsFromSemantics", ["require", "exports"], function (r
             },
         ];
     })(Test_H5PFieldText || (Test_H5PFieldText = {}));
-    // @ts-expect-error Test
+    // @ts-ignore Test
     var Test_H5PFieldList;
     (function (Test_H5PFieldList) {
         const listField = {
@@ -263,7 +264,7 @@ define("src/types/InferParamsFromSemantics", ["require", "exports"], function (r
         };
         const semantics = [listField];
     })(Test_H5PFieldList || (Test_H5PFieldList = {}));
-    // @ts-expect-error Test
+    // @ts-ignore Test
     var Test_MultipleFields;
     (function (Test_MultipleFields) {
         const semantics = [
@@ -280,7 +281,7 @@ define("src/types/InferParamsFromSemantics", ["require", "exports"], function (r
             },
         ];
     })(Test_MultipleFields || (Test_MultipleFields = {}));
-    // @ts-expect-error Test
+    // @ts-ignore Test
     var Test_H5PFieldGroupWithZeroFields;
     (function (Test_H5PFieldGroupWithZeroFields) {
         const semantics = [
@@ -292,7 +293,7 @@ define("src/types/InferParamsFromSemantics", ["require", "exports"], function (r
             },
         ];
     })(Test_H5PFieldGroupWithZeroFields || (Test_H5PFieldGroupWithZeroFields = {}));
-    // @ts-expect-error Test
+    // @ts-ignore Test
     var Test_H5PFieldGroupWithOneField;
     (function (Test_H5PFieldGroupWithOneField) {
         const semantics = [
@@ -310,7 +311,7 @@ define("src/types/InferParamsFromSemantics", ["require", "exports"], function (r
             },
         ];
     })(Test_H5PFieldGroupWithOneField || (Test_H5PFieldGroupWithOneField = {}));
-    // @ts-expect-error Test
+    // @ts-ignore Test
     var Test_H5PFieldGroupWithMultipleFields;
     (function (Test_H5PFieldGroupWithMultipleFields) {
         const semantics = [
@@ -334,7 +335,7 @@ define("src/types/InferParamsFromSemantics", ["require", "exports"], function (r
             },
         ];
     })(Test_H5PFieldGroupWithMultipleFields || (Test_H5PFieldGroupWithMultipleFields = {}));
-    // @ts-expect-error Test
+    // @ts-ignore Test
     var Test_Advanced;
     (function (Test_Advanced) {
         const l10nField = {
@@ -789,9 +790,6 @@ define("combine-types", ["require", "exports", "fs", "path"], function (require,
     function removeImportStatements(fileContents) {
         return fileContents.replace(/import(?:["'\s]*([\w*${}\n\r\t, ]+)from\s*)?["'\s]["'\s](.*[@\w_-]+)["'\s].*;$/gm, "");
     }
-    function removeTestNamespaces(fileContents) {
-        return fileContents.replace(/namespace Test_.+?\}$/gm, "");
-    }
     function removeEmptyLines(fileContents) {
         const lines = fileContents.split("\n");
         return lines.filter(Boolean).join("\n");
@@ -806,10 +804,7 @@ define("combine-types", ["require", "exports", "fs", "path"], function (require,
         const typeFileNames = await getTypeFileNames();
         const fileNames = ["./src/utility-types.ts", ...typeFileNames];
         let typeFiles = await Promise.all(fileNames.map(readFile));
-        typeFiles = typeFiles
-            .map(removeImportStatements)
-            .map(removeTestNamespaces)
-            .map(removeEmptyLines);
+        typeFiles = typeFiles.map(removeImportStatements).map(removeEmptyLines);
         const combinedFiles = combineFiles(typeFiles);
         await writeDeclarationFile(combinedFiles);
     }
