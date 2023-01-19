@@ -791,10 +791,10 @@ define("combine-types", ["require", "exports", "fs", "path"], function (require,
         return fileContents.replace(/import(?:["'\s]*([\w*${}\n\r\t, ]+)from\s*)?["'\s]["'\s](.*[@\w_-]+)["'\s].*;$/gm, "");
     }
     function removeTestNamespaces(fileContents) {
-        return fileContents.replace(/namespace Test_(.+\n)+?}/g, "");
+        return fileContents.replace(/namespace Test_(.*\n)*?\}/g, "");
     }
     function removeTestTsIgnores(fileContents) {
-        return fileContents.replace(/ {1,}\/\/ @ts-ignore Test\n/g, "");
+        return fileContents.replace(/ {0,}\/\/ @ts-ignore Test\n/g, "");
     }
     function removeEmptyLines(fileContents) {
         const lines = fileContents.split("\n");
