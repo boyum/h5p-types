@@ -15,6 +15,6 @@
     "noImplicitReturns": true,
     "declaration": false
   },
-  "include": ["src"],
+  "include": ["src", "./index.d.ts", "./combine-types.ts"],
   "extends": "@tsconfig/strictest/tsconfig.json"
 }
