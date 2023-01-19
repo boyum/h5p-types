@@ -790,6 +790,12 @@ define("combine-types", ["require", "exports", "fs", "path"], function (require,
     function removeImportStatements(fileContents) {
         return fileContents.replace(/import(?:["'\s]*([\w*${}\n\r\t, ]+)from\s*)?["'\s]["'\s](.*[@\w_-]+)["'\s].*;$/gm, "");
     }
+    function removeTestNamespaces(fileContents) {
+        return fileContents.replace(/namespace Test_(.+\n)+?}/g, "");
+    }
+    function removeTestTsIgnores(fileContents) {
+        return fileContents.replace(/ {1,}\/\/ @ts-ignore Test\n/g, "");
+    }
     function removeEmptyLines(fileContents) {
         const lines = fileContents.split("\n");
         return lines.filter(Boolean).join("\n");
@@ -804,7 +810,11 @@ define("combine-types", ["require", "exports", "fs", "path"], function (require,
         const typeFileNames = await getTypeFileNames();
         const fileNames = ["./src/utility-types.ts", ...typeFileNames];
         let typeFiles = await Promise.all(fileNames.map(readFile));
-        typeFiles = typeFiles.map(removeImportStatements).map(removeEmptyLines);
+        typeFiles = typeFiles
+            .map(removeImportStatements)
+            .map(removeTestNamespaces)
+            .map(removeTestTsIgnores)
+            .map(removeEmptyLines);
         const combinedFiles = combineFiles(typeFiles);
         await writeDeclarationFile(combinedFiles);
     }

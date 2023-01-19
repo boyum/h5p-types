@@ -18,6 +18,14 @@ function removeImportStatements(fileContents: string): string {
   );
 }
 
+function removeTestNamespaces(fileContents: string): string {
+  return fileContents.replace(/namespace Test_(.*\n)*?\}/g, "");
+}
+
+function removeTestTsIgnores(fileContents: string): string {
+  return fileContents.replace(/ {0,}\/\/ @ts-ignore Test\n/g, "");
+}
+
 function removeEmptyLines(fileContents: string): string {
   const lines = fileContents.split("\n");
   return lines.filter(Boolean).join("\n");
@@ -37,7 +45,11 @@ async function run() {
 
   let typeFiles = await Promise.all(fileNames.map(readFile));
 
-  typeFiles = typeFiles.map(removeImportStatements).map(removeEmptyLines);
+  typeFiles = typeFiles
+    .map(removeImportStatements)
+    .map(removeTestNamespaces)
+    .map(removeTestTsIgnores)
+    .map(removeEmptyLines);
 
   const combinedFiles = combineFiles(typeFiles);
 
