@@ -1,7 +1,6 @@
 import type { H5PFieldGroup } from "./H5PField";
 
 export type H5PBehaviour =
-  | H5PFieldGroup
-  | {
+  | Omit<H5PFieldGroup, "name"> & {
       name: "behaviour";
     };

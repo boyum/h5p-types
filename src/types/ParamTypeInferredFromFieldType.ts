@@ -16,28 +16,30 @@ import type { Audio } from "./Audio";
 import type { Image } from "./Image";
 import type { Media } from "./Media";
 import type { Video } from "./Video";
+import type { DeepReadonly } from "../utility-types";
 
-export type ParamTypeInferredFromFieldType<TField extends H5PField> =
-  TField extends H5PFieldAudio
-    ? Audio
-    : TField extends H5PFieldBoolean
-    ? boolean
-    : TField extends H5PFieldFile
-    ? Media
-    : TField extends H5PFieldGroup
-    ? unknown | Record<string, unknown>
-    : TField extends H5PFieldImage
-    ? Image
-    : TField extends H5PFieldLibrary
-    ? unknown
-    : TField extends H5PFieldList
-    ? Array<unknown>
-    : TField extends H5PFieldNumber
-    ? number
-    : TField extends H5PFieldSelect
-    ? string | boolean | number
-    : TField extends H5PFieldText
-    ? string
-    : TField extends H5PFieldVideo
-    ? Video
-    : never;
+export type ParamTypeInferredFromFieldType<
+  TField extends DeepReadonly<H5PField>,
+> = TField extends DeepReadonly<H5PFieldAudio>
+  ? Audio
+  : TField extends DeepReadonly<H5PFieldBoolean>
+  ? boolean
+  : TField extends DeepReadonly<H5PFieldFile>
+  ? Media
+  : TField extends DeepReadonly<H5PFieldGroup>
+  ? unknown | Record<string, unknown>
+  : TField extends DeepReadonly<H5PFieldImage>
+  ? Image
+  : TField extends DeepReadonly<H5PFieldLibrary>
+  ? unknown
+  : TField extends DeepReadonly<H5PFieldList>
+  ? Array<unknown>
+  : TField extends DeepReadonly<H5PFieldNumber>
+  ? number
+  : TField extends DeepReadonly<H5PFieldSelect>
+  ? string | boolean | number
+  : TField extends DeepReadonly<H5PFieldText>
+  ? string
+  : TField extends DeepReadonly<H5PFieldVideo>
+  ? Video
+  : never;

@@ -4,11 +4,11 @@ import { join } from "path";
 const typePath = "./src/types";
 
 async function getTypeFileNames(): Promise<Array<string>> {
-  return fs.readdir(typePath);
+  return (await fs.readdir(typePath)).map(typeFile => join(typePath, typeFile));
 }
 
 async function readFile(fileName: string): Promise<string> {
-  return fs.readFile(join(typePath, fileName), { encoding: "utf-8" });
+  return fs.readFile(fileName, { encoding: "utf-8" });
 }
 
 function removeImportStatements(fileContents: string): string {
@@ -33,13 +33,13 @@ async function writeDeclarationFile(contents: string): Promise<void> {
 
 async function run() {
   const typeFileNames = await getTypeFileNames();
-  const typeFiles = await Promise.all(typeFileNames.map(readFile));
-  const typeFilesWithoutImportStatements = typeFiles.map(
-    removeImportStatements,
-  );
-  const filesWithoutHoles =
-    typeFilesWithoutImportStatements.map(removeEmptyLines);
-  const combinedFiles = combineFiles(filesWithoutHoles);
+  const fileNames = ["./src/utility-types.ts", ...typeFileNames];
+
+  let typeFiles = await Promise.all(fileNames.map(readFile));
+
+  typeFiles = typeFiles.map(removeImportStatements).map(removeEmptyLines);
+
+  const combinedFiles = combineFiles(typeFiles);
 
   await writeDeclarationFile(combinedFiles);
 }
