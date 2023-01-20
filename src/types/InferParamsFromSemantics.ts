@@ -80,7 +80,12 @@ export type InferParamsFromSemantics<
 > = TSemantics extends readonly [infer TField, ...infer TRestFields]
   ? TField extends DeepReadonly<H5PField>
     ? TRestFields extends ReadonlyArray<DeepReadonly<H5PField>>
-      ? Record<TField["name"], InferParamsType<TField>> &
+      ? Record<
+          TField["name"],
+          TField["optional"] extends true
+            ? InferParamsType<TField> | undefined
+            : InferParamsType<TField>
+        > &
           InferParamsFromSemantics<TRestFields>
       : unknown
     : unknown
@@ -226,6 +231,104 @@ namespace Test_H5PFieldGroupWithMultipleFields {
 
   type Expected = { group: { field1: number; field2: boolean } };
   type Actual = InferParamsFromSemantics<typeof semantics>;
+
+  // @ts-ignore Test
+  type Test = Expect<AreEqual<Actual, Expected>>;
+}
+
+// @ts-ignore Test
+namespace Test_OptionalFields {
+  const semantics = [
+    {
+      label: "Group",
+      name: "group",
+      type: "group",
+      fields: [
+        {
+          label: "Field",
+          name: "field1",
+          type: "number",
+          optional: true,
+        },
+        {
+          label: "Field",
+          name: "field2",
+          type: "group",
+          optional: true,
+          fields: [
+            {
+              label: "Field",
+              name: "field1",
+              type: "number",
+            },
+            {
+              label: "Field",
+              name: "field2",
+              type: "text",
+            },
+          ],
+        },
+        {
+          label: "Field",
+          name: "field3",
+          type: "group",
+          optional: true,
+          fields: [
+            {
+              label: "Field",
+              name: "field1",
+              type: "number",
+            },
+          ],
+        },
+        {
+          label: "Field",
+          name: "field4",
+          type: "group",
+          fields: [
+            {
+              label: "Field",
+              name: "field1",
+              type: "number",
+              optional: true,
+            },
+          ],
+        },
+      ],
+    },
+  ] as const satisfies DeepReadonly<Array<H5PFieldGroup>>;
+
+  type Expected = {
+    group: {
+      field1: number | undefined;
+      field2:
+        | {
+            field1: number;
+            field2: string;
+          }
+        | undefined;
+      field3: number | undefined;
+      field4: number | undefined;
+    };
+  };
+  type Actual = InferParamsFromSemantics<typeof semantics>;
+
+  declare const params: Actual;
+
+  // Expect that `group` is not possibly undefined
+  params.group.field1;
+  
+  // @ts-expect-error Expect that `field1` is possibly undefined
+  params.group.field1.toString();
+
+  // @ts-expect-error Expect that `field2` is possibly undefined
+  params.group.field2.field1;
+
+  // @ts-expect-error Expect that `field3` is possibly undefined
+  params.group.field3.toString();
+
+  // @ts-expect-error Expect that `field4` is possibly undefined
+  params.group.field4.toString();
 
   // @ts-ignore Test
   type Test = Expect<AreEqual<Actual, Expected>>;

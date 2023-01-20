@@ -336,6 +336,79 @@ define("src/types/InferParamsFromSemantics", ["require", "exports"], function (r
         ];
     })(Test_H5PFieldGroupWithMultipleFields || (Test_H5PFieldGroupWithMultipleFields = {}));
     // @ts-ignore Test
+    var Test_OptionalFields;
+    (function (Test_OptionalFields) {
+        const semantics = [
+            {
+                label: "Group",
+                name: "group",
+                type: "group",
+                fields: [
+                    {
+                        label: "Field",
+                        name: "field1",
+                        type: "number",
+                        optional: true,
+                    },
+                    {
+                        label: "Field",
+                        name: "field2",
+                        type: "group",
+                        optional: true,
+                        fields: [
+                            {
+                                label: "Field",
+                                name: "field1",
+                                type: "number",
+                            },
+                            {
+                                label: "Field",
+                                name: "field2",
+                                type: "text",
+                            },
+                        ],
+                    },
+                    {
+                        label: "Field",
+                        name: "field3",
+                        type: "group",
+                        optional: true,
+                        fields: [
+                            {
+                                label: "Field",
+                                name: "field1",
+                                type: "number",
+                            },
+                        ],
+                    },
+                    {
+                        label: "Field",
+                        name: "field4",
+                        type: "group",
+                        fields: [
+                            {
+                                label: "Field",
+                                name: "field1",
+                                type: "number",
+                                optional: true,
+                            },
+                        ],
+                    },
+                ],
+            },
+        ];
+        // Expect that `group` is not possibly undefined
+        params.group.field1;
+        // @ts-expect-error Expect that `field1` is possibly undefined
+        params.group.field1.toString();
+        // @ts-expect-error Expect that `field2` is possibly undefined
+        params.group.field2.field1;
+        // @ts-expect-error Expect that `field3` is possibly undefined
+        params.group.field3.toString();
+        // @ts-expect-error Expect that `field4` is possibly undefined
+        params.group.field4.toString();
+    })(Test_OptionalFields || (Test_OptionalFields = {}));
+    // @ts-ignore Test
     var Test_Advanced;
     (function (Test_Advanced) {
         const l10nField = {
