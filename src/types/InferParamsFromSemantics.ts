@@ -317,7 +317,7 @@ namespace Test_OptionalFields {
 
   // Expect that `group` is not possibly undefined
   params.group.field1;
-  
+
   // @ts-expect-error Expect that `field1` is possibly undefined
   params.group.field1.toString();
 
