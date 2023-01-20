@@ -2030,7 +2030,12 @@ export type InferParamsFromSemantics<
 > = TSemantics extends readonly [infer TField, ...infer TRestFields]
   ? TField extends DeepReadonly<H5PField>
     ? TRestFields extends ReadonlyArray<DeepReadonly<H5PField>>
-      ? Record<TField["name"], InferParamsType<TField>> &
+      ? Record<
+          TField["name"],
+          TField["optional"] extends true
+            ? InferParamsType<TField> | undefined
+            : InferParamsType<TField>
+        > &
           InferParamsFromSemantics<TRestFields>
       : unknown
     : unknown
@@ -2044,29 +2049,32 @@ export type Media = {
 
 export type ParamTypeInferredFromFieldType<
   TField extends DeepReadonly<H5PField>,
-> = TField extends DeepReadonly<H5PFieldAudio>
-  ? Audio
-  : TField extends DeepReadonly<H5PFieldBoolean>
-  ? boolean
-  : TField extends DeepReadonly<H5PFieldFile>
-  ? Media
-  : TField extends DeepReadonly<H5PFieldGroup>
-  ? unknown | Record<string, unknown>
-  : TField extends DeepReadonly<H5PFieldImage>
-  ? Image
-  : TField extends DeepReadonly<H5PFieldLibrary>
-  ? unknown
-  : TField extends DeepReadonly<H5PFieldList>
-  ? Array<unknown>
-  : TField extends DeepReadonly<H5PFieldNumber>
-  ? number
-  : TField extends DeepReadonly<H5PFieldSelect>
-  ? string | boolean | number
-  : TField extends DeepReadonly<H5PFieldText>
-  ? string
-  : TField extends DeepReadonly<H5PFieldVideo>
-  ? Video
-  : never;
+> =
+  | (TField extends DeepReadonly<H5PFieldAudio>
+      ? Audio
+      : TField extends DeepReadonly<H5PFieldBoolean>
+      ? boolean
+      : TField extends DeepReadonly<H5PFieldFile>
+      ? Media
+      : TField extends DeepReadonly<H5PFieldGroup>
+      ? unknown | Record<string, unknown>
+      : TField extends DeepReadonly<H5PFieldImage>
+      ? Image
+      : TField extends DeepReadonly<H5PFieldLibrary>
+      ? unknown
+      : TField extends DeepReadonly<H5PFieldList>
+      ? Array<unknown>
+      : TField extends DeepReadonly<H5PFieldNumber>
+      ? number
+      : TField extends DeepReadonly<H5PFieldSelect>
+      ? string | boolean | number
+      : TField extends DeepReadonly<H5PFieldText>
+      ? string
+      : TField extends DeepReadonly<H5PFieldVideo>
+      ? Video
+      : never)
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  | (TField["optional"] extends true ? undefined : {});
 
 export type Video = Media;
 
