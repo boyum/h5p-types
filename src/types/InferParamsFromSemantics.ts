@@ -36,7 +36,7 @@ type InferGroupParams<TGroupField extends DeepReadonly<H5PFieldGroup>> =
     ? InferGroupWithOneFieldParams<TGroupField>
     : InferGroupWithMultipleFieldsParams<TGroupField>;
 
-type InferParamsType<TField extends DeepReadonly<H5PField>> =
+export type InferParamsType<TField extends DeepReadonly<H5PField>> =
   TField extends DeepReadonly<H5PFieldGroup>
     ? InferGroupParams<TField>
     : TField extends DeepReadonly<H5PFieldList>
@@ -83,7 +83,10 @@ export type InferParamsFromSemantics<
       ? Record<
           TField["name"],
           TField["optional"] extends true
-            ? InferParamsType<TField> | undefined
+            ? // eslint-disable-next-line @typescript-eslint/ban-types
+              TField extends { default: {} }
+              ? InferParamsType<TField>
+              : InferParamsType<TField> | undefined
             : InferParamsType<TField>
         > &
           InferParamsFromSemantics<TRestFields>
@@ -294,6 +297,27 @@ namespace Test_OptionalFields {
             },
           ],
         },
+        {
+          label: "Field",
+          name: "field5",
+          type: "group",
+          fields: [
+            {
+              label: "Field",
+              name: "field1",
+              type: "number",
+              optional: true,
+              default: 3,
+            },
+          ],
+        },
+        {
+          label: "Field",
+          name: "field6",
+          type: "number",
+          optional: true,
+          default: 3,
+        },
       ],
     },
   ] as const satisfies DeepReadonly<Array<H5PFieldGroup>>;
@@ -309,6 +333,8 @@ namespace Test_OptionalFields {
         | undefined;
       field3: number | undefined;
       field4: number | undefined;
+      field5: number;
+      field6: number;
     };
   };
   type Actual = InferParamsFromSemantics<typeof semantics>;
@@ -329,6 +355,12 @@ namespace Test_OptionalFields {
 
   // @ts-expect-error Expect that `field4` is possibly undefined
   params.group.field4.toString();
+
+  // Expect that `field5` is not possibly undefined
+  params.group.field5.toString();
+
+  // Expect that `field6` is not possibly undefined
+  params.group.field6.toString();
 
   // @ts-ignore Test
   type Test = Expect<AreEqual<Actual, Expected>>;

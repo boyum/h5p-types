@@ -209,27 +209,7 @@ define("src/types/Video", ["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
 });
-define("src/types/ParamTypeInferredFromFieldType", ["require", "exports"], function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-});
-define("src/types/H5PEditorObject", ["require", "exports"], function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-});
-define("src/types/H5PFont", ["require", "exports"], function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-});
-define("src/types/H5PIntegrationObject", ["require", "exports"], function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-});
 define("src/types/H5PL10n", ["require", "exports"], function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-});
-define("src/types/IH5PEditorImageField", ["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
 });
@@ -394,6 +374,27 @@ define("src/types/InferParamsFromSemantics", ["require", "exports"], function (r
                             },
                         ],
                     },
+                    {
+                        label: "Field",
+                        name: "field5",
+                        type: "group",
+                        fields: [
+                            {
+                                label: "Field",
+                                name: "field1",
+                                type: "number",
+                                optional: true,
+                                default: 3,
+                            },
+                        ],
+                    },
+                    {
+                        label: "Field",
+                        name: "field6",
+                        type: "number",
+                        optional: true,
+                        default: 3,
+                    },
                 ],
             },
         ];
@@ -407,6 +408,10 @@ define("src/types/InferParamsFromSemantics", ["require", "exports"], function (r
         params.group.field3.toString();
         // @ts-expect-error Expect that `field4` is possibly undefined
         params.group.field4.toString();
+        // Expect that `field5` is not possibly undefined
+        params.group.field5.toString();
+        // Expect that `field6` is not possibly undefined
+        params.group.field6.toString();
     })(Test_OptionalFields || (Test_OptionalFields = {}));
     // @ts-ignore Test
     var Test_Advanced;
@@ -849,6 +854,26 @@ define("src/types/InferParamsFromSemantics", ["require", "exports"], function (r
         ];
         // type Test = Expect<AreEqual<Actual, Expected>>;
     })(Test_Advanced || (Test_Advanced = {}));
+});
+define("src/types/ParamTypeInferredFromFieldType", ["require", "exports"], function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+});
+define("src/types/H5PEditorObject", ["require", "exports"], function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+});
+define("src/types/H5PFont", ["require", "exports"], function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+});
+define("src/types/H5PIntegrationObject", ["require", "exports"], function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+});
+define("src/types/IH5PEditorImageField", ["require", "exports"], function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
 });
 define("combine-types", ["require", "exports", "fs", "path"], function (require, exports, fs_1, path_1) {
     "use strict";
