@@ -1963,7 +1963,7 @@ export type Image = Media & {
 /**
  * If there are no fields in the group, the group's inferred params is only `{}`
  */
-type InferEmptyGroupParams = Record<string, never>;
+type InferEmptyGroupParams = Record<never, never>;
 /**
  * If there is only one field in the group,
  * the group's inferred params is the type of that field

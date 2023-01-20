@@ -272,6 +272,8 @@ define("src/types/InferParamsFromSemantics", ["require", "exports"], function (r
                 fields: [],
             },
         ];
+        // @ts-expect-error Expect that `field` has no properties
+        params.field.a;
     })(Test_H5PFieldGroupWithZeroFields || (Test_H5PFieldGroupWithZeroFields = {}));
     // @ts-ignore Test
     var Test_H5PFieldGroupWithOneField;
