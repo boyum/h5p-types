@@ -2049,32 +2049,51 @@ export type Media = {
 
 export type ParamTypeInferredFromFieldType<
   TField extends DeepReadonly<H5PField>,
-> =
-  | (TField extends DeepReadonly<H5PFieldAudio>
-      ? Audio
-      : TField extends DeepReadonly<H5PFieldBoolean>
-      ? boolean
-      : TField extends DeepReadonly<H5PFieldFile>
-      ? Media
-      : TField extends DeepReadonly<H5PFieldGroup>
-      ? unknown | Record<string, unknown>
-      : TField extends DeepReadonly<H5PFieldImage>
-      ? Image
-      : TField extends DeepReadonly<H5PFieldLibrary>
-      ? unknown
-      : TField extends DeepReadonly<H5PFieldList>
-      ? Array<unknown>
-      : TField extends DeepReadonly<H5PFieldNumber>
-      ? number
-      : TField extends DeepReadonly<H5PFieldSelect>
-      ? string | boolean | number
-      : TField extends DeepReadonly<H5PFieldText>
-      ? string
-      : TField extends DeepReadonly<H5PFieldVideo>
-      ? Video
-      : never)
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  | (TField["optional"] extends true ? undefined : {});
+> = TField extends DeepReadonly<H5PFieldAudio>
+  ? TField["optional"] extends true
+    ? Audio | undefined
+    : Audio
+  : TField extends DeepReadonly<H5PFieldBoolean>
+  ? TField["optional"] extends true
+    ? boolean | undefined
+    : boolean
+  : TField extends DeepReadonly<H5PFieldFile>
+  ? TField["optional"] extends true
+    ? Media | undefined
+    : Media
+  : TField extends DeepReadonly<H5PFieldGroup>
+  ? TField["optional"] extends true
+    ? unknown | Record<string, unknown> | undefined
+    : unknown | Record<string, unknown>
+  : TField extends DeepReadonly<H5PFieldImage>
+  ? TField["optional"] extends true
+    ? Image | undefined
+    : Image
+  : TField extends DeepReadonly<H5PFieldLibrary>
+  ? TField["optional"] extends true
+    ? unknown | undefined
+    : unknown
+  : TField extends DeepReadonly<H5PFieldList>
+  ? TField["optional"] extends true
+    ? Array<unknown> | undefined
+    : Array<unknown>
+  : TField extends DeepReadonly<H5PFieldNumber>
+  ? TField["optional"] extends true
+    ? number | undefined
+    : number
+  : TField extends DeepReadonly<H5PFieldSelect>
+  ? TField["optional"] extends true
+    ? TField["options"][number]["value"] | undefined
+    : TField["options"][number]["value"]
+  : TField extends DeepReadonly<H5PFieldText>
+  ? TField["optional"] extends true
+    ? string | undefined
+    : string
+  : TField extends DeepReadonly<H5PFieldVideo>
+  ? TField["optional"] extends true
+    ? Video | undefined
+    : Video
+  : never;
 
 export type Video = Media;
 
