@@ -854,7 +854,6 @@ define("src/types/InferParamsFromSemantics", ["require", "exports"], function (r
                 type: "text",
             },
         ];
-        // type Test = Expect<AreEqual<Actual, Expected>>;
     })(Test_Advanced || (Test_Advanced = {}));
 });
 define("src/types/ParamTypeInferredFromFieldType", ["require", "exports"], function (require, exports) {
