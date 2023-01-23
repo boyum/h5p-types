@@ -6,7 +6,7 @@ import type { H5PImportance } from "./H5PImportance";
 import type { Library } from "./H5PLibrary";
 import type { IH5PFieldInstance } from "./IH5PFieldInstance";
 import type { IH5PWidget } from "./IH5PWidget";
-import type { ParamTypeInferredFromFieldType } from "./ParamTypeInferredFromFieldType";
+import type { InferParamTypeFromFieldType } from "./ParamTypeInferredFromFieldType";
 
 /**
  * @param TWidgetMachineName Typically PascalCased - MyWidget
@@ -58,7 +58,7 @@ export type H5PEditorObject<
   addCommonField: <TField extends H5PField>(
     field: TField,
     parent: H5PForm,
-    params: ParamTypeInferredFromFieldType<TField>,
+    params: InferParamTypeFromFieldType<TField>,
     ancestor: H5PForm,
     skipAppendTo?: boolean,
   ) => void;
@@ -321,7 +321,7 @@ export type H5PEditorObject<
   followField: <TField extends H5PField = H5PField>(
     parent: H5PForm,
     path: string,
-    callback: (params: ParamTypeInferredFromFieldType<TField>) => void,
+    callback: (params: InferParamTypeFromFieldType<TField>) => void,
   ) => void;
 
   /**
@@ -452,7 +452,7 @@ export type H5PEditorObject<
     semanticsChunk: TFields,
     params: Record<
       TFields[number]["name"],
-      ParamTypeInferredFromFieldType<TFields[number]>
+      InferParamTypeFromFieldType<TFields[number]>
     >,
     $wrapper: JQuery<HTMLElement>,
     parent: H5PForm,

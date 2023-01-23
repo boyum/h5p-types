@@ -3,7 +3,7 @@
 import type { AreEqual, DeepReadonly, Expect } from "../utility-types";
 import type { H5PField, H5PFieldGroup, H5PFieldList } from "./H5PField";
 import type { H5PL10n } from "./H5PL10n";
-import type { ParamTypeInferredFromFieldType } from "./ParamTypeInferredFromFieldType";
+import type { InferParamTypeFromFieldType } from "./ParamTypeInferredFromFieldType";
 
 /**
  * If there are no fields in the group, the group's inferred params is only `{}`
@@ -18,7 +18,7 @@ type InferGroupWithOneFieldParams<
   TGroupField extends DeepReadonly<H5PFieldGroup>,
 > = TGroupField["fields"][0] extends H5PFieldGroup
   ? InferGroupParams<DeepReadonly<TGroupField["fields"][0]>>
-  : ParamTypeInferredFromFieldType<TGroupField["fields"][0]>;
+  : InferParamTypeFromFieldType<TGroupField["fields"][0]>;
 
 /**
  * If there are two ore more fields in the group,
@@ -41,7 +41,7 @@ export type InferParamsType<TField extends DeepReadonly<H5PField>> =
     ? InferGroupParams<TField>
     : TField extends DeepReadonly<H5PFieldList>
     ? Array<InferParamsType<TField["field"]>>
-    : ParamTypeInferredFromFieldType<TField>;
+    : InferParamTypeFromFieldType<TField>;
 
 /**
  * ⚠️ Use with caution - if the semantics form has many fields, this might not work ⚠️
@@ -80,15 +80,17 @@ export type InferParamsFromSemantics<
 > = TSemantics extends readonly [infer TField, ...infer TRestFields]
   ? TField extends DeepReadonly<H5PField>
     ? TRestFields extends ReadonlyArray<DeepReadonly<H5PField>>
-      ? Record<
-          TField["name"],
-          TField["optional"] extends true
-            ? // eslint-disable-next-line @typescript-eslint/ban-types
-              TField extends { default: {} }
-              ? InferParamsType<TField>
-              : InferParamsType<TField> | undefined
-            : InferParamsType<TField>
-        > &
+      ? (TField extends DeepReadonly<H5PFieldGroup & { name: "l10n" }>
+          ? Record<"l10n", Record<TField["fields"][number]["name"], string>>
+          : Record<
+              TField["name"],
+              TField["optional"] extends true
+                ? // eslint-disable-next-line @typescript-eslint/ban-types
+                  TField extends { default: {} }
+                  ? InferParamsType<TField>
+                  : InferParamsType<TField> | undefined
+                : InferParamsType<TField>
+            >) &
           InferParamsFromSemantics<TRestFields>
       : unknown
     : unknown
@@ -869,7 +871,7 @@ namespace Test_Advanced {
       | "lang_vie",
       string
     >;
-    defaultLanguages?: Array<
+    defaultLanguages: Array<
       | "ara"
       | "ckb"
       | "dan"
@@ -895,11 +897,11 @@ namespace Test_Advanced {
       | "ukr"
       | "vie"
     >;
-    backendUrl?: string;
+    backendUrl: string;
   };
 
-  // @ts-expect-error InferParamsFromSemantics's stack trace is too big for TypeScript at this time. This will hopefully be fixed some day.
   type Actual = InferParamsFromSemantics<typeof semantics>;
 
-  // type Test = Expect<AreEqual<Actual, Expected>>;
+  // @ts-ignore Test
+  type Test = Expect<AreEqual<Actual, Expected>>;
 }
