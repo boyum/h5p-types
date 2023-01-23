@@ -358,7 +358,7 @@ export type H5PEditorObject<
   addCommonField: <TField extends H5PField>(
     field: TField,
     parent: H5PForm,
-    params: ParamTypeInferredFromFieldType<TField>,
+    params: InferParamTypeFromFieldType<TField>,
     ancestor: H5PForm,
     skipAppendTo?: boolean,
   ) => void;
@@ -598,7 +598,7 @@ export type H5PEditorObject<
   followField: <TField extends H5PField = H5PField>(
     parent: H5PForm,
     path: string,
-    callback: (params: ParamTypeInferredFromFieldType<TField>) => void,
+    callback: (params: InferParamTypeFromFieldType<TField>) => void,
   ) => void;
   /**
    * Helps generating a consistent description ID across fields
@@ -716,7 +716,7 @@ export type H5PEditorObject<
     semanticsChunk: TFields,
     params: Record<
       TFields[number]["name"],
-      ParamTypeInferredFromFieldType<TFields[number]>
+      InferParamTypeFromFieldType<TFields[number]>
     >,
     $wrapper: JQuery<HTMLElement>,
     parent: H5PForm,
@@ -1972,7 +1972,7 @@ type InferGroupWithOneFieldParams<
   TGroupField extends DeepReadonly<H5PFieldGroup>,
 > = TGroupField["fields"][0] extends H5PFieldGroup
   ? InferGroupParams<DeepReadonly<TGroupField["fields"][0]>>
-  : ParamTypeInferredFromFieldType<TGroupField["fields"][0]>;
+  : InferParamTypeFromFieldType<TGroupField["fields"][0]>;
 /**
  * If there are two ore more fields in the group,
  * the group's params is an object where the field's name is the key,
@@ -1992,7 +1992,7 @@ export type InferParamsType<TField extends DeepReadonly<H5PField>> =
     ? InferGroupParams<TField>
     : TField extends DeepReadonly<H5PFieldList>
     ? Array<InferParamsType<TField["field"]>>
-    : ParamTypeInferredFromFieldType<TField>;
+    : InferParamTypeFromFieldType<TField>;
 /**
  * ⚠️ Use with caution - if the semantics form has many fields, this might not work ⚠️
  * Infer the params type from a semantics array.
@@ -2030,15 +2030,17 @@ export type InferParamsFromSemantics<
 > = TSemantics extends readonly [infer TField, ...infer TRestFields]
   ? TField extends DeepReadonly<H5PField>
     ? TRestFields extends ReadonlyArray<DeepReadonly<H5PField>>
-      ? Record<
-          TField["name"],
-          TField["optional"] extends true
-            ? // eslint-disable-next-line @typescript-eslint/ban-types
-              TField extends { default: {} }
-              ? InferParamsType<TField>
-              : InferParamsType<TField> | undefined
-            : InferParamsType<TField>
-        > &
+      ? (TField extends DeepReadonly<H5PFieldGroup & { name: "l10n" }>
+          ? Record<"l10n", Record<TField["fields"][number]["name"], string>>
+          : Record<
+              TField["name"],
+              TField["optional"] extends true
+                ? // eslint-disable-next-line @typescript-eslint/ban-types
+                  TField extends { default: {} }
+                  ? InferParamsType<TField>
+                  : InferParamsType<TField> | undefined
+                : InferParamsType<TField>
+            >) &
           InferParamsFromSemantics<TRestFields>
       : unknown
     : unknown
@@ -2050,63 +2052,68 @@ export type Media = {
   copyright?: Copyright;
 };
 
+export type InferParamTypeFromFieldType<TField extends DeepReadonly<H5PField>> =
+  TField extends DeepReadonly<H5PFieldAudio>
+    ? TField["optional"] extends true
+      ? Audio | undefined
+      : Audio
+    : TField extends DeepReadonly<H5PFieldBoolean>
+    ? TField["optional"] extends true
+      ? TField extends { default: boolean }
+        ? boolean
+        : boolean | undefined
+      : boolean
+    : TField extends DeepReadonly<H5PFieldFile>
+    ? TField["optional"] extends true
+      ? Media | undefined
+      : Media
+    : TField extends DeepReadonly<H5PFieldGroup>
+    ? TField["optional"] extends true
+      ? InferParamsType<TField> | undefined
+      : InferParamsType<TField>
+    : TField extends DeepReadonly<H5PFieldImage>
+    ? TField["optional"] extends true
+      ? Image | undefined
+      : Image
+    : TField extends DeepReadonly<H5PFieldLibrary>
+    ? TField["optional"] extends true
+      ? TField extends { default: unknown }
+        ? unknown
+        : unknown | undefined
+      : unknown
+    : TField extends DeepReadonly<H5PFieldList>
+    ? TField["optional"] extends true
+      ? Array<InferParamsType<TField["field"]>> | undefined
+      : Array<InferParamsType<TField["field"]>>
+    : TField extends DeepReadonly<H5PFieldNumber>
+    ? TField["optional"] extends true
+      ? TField extends { default: number }
+        ? number
+        : number | undefined
+      : number
+    : TField extends DeepReadonly<H5PFieldSelect>
+    ? TField["optional"] extends true
+      ? TField extends { default: string | number | boolean }
+        ? TField["options"][number]["value"]
+        : TField["options"][number]["value"] | undefined
+      : TField["options"][number]["value"]
+    : TField extends DeepReadonly<H5PFieldText>
+    ? TField["optional"] extends true
+      ? TField extends { default: string }
+        ? string
+        : string | undefined
+      : string
+    : TField extends DeepReadonly<H5PFieldVideo>
+    ? TField["optional"] extends true
+      ? Video | undefined
+      : Video
+    : never;
+/**
+ * @deprecated Use InferParamTypeFromFieldType instead
+ */
 export type ParamTypeInferredFromFieldType<
   TField extends DeepReadonly<H5PField>,
-> = TField extends DeepReadonly<H5PFieldAudio>
-  ? TField["optional"] extends true
-    ? Audio | undefined
-    : Audio
-  : TField extends DeepReadonly<H5PFieldBoolean>
-  ? TField["optional"] extends true
-    ? TField extends { default: boolean }
-      ? boolean
-      : boolean | undefined
-    : boolean
-  : TField extends DeepReadonly<H5PFieldFile>
-  ? TField["optional"] extends true
-    ? Media | undefined
-    : Media
-  : TField extends DeepReadonly<H5PFieldGroup>
-  ? TField["optional"] extends true
-    ? InferParamsType<TField> | undefined
-    : InferParamsType<TField>
-  : TField extends DeepReadonly<H5PFieldImage>
-  ? TField["optional"] extends true
-    ? Image | undefined
-    : Image
-  : TField extends DeepReadonly<H5PFieldLibrary>
-  ? TField["optional"] extends true
-    ? TField extends { default: unknown }
-      ? unknown
-      : unknown | undefined
-    : unknown
-  : TField extends DeepReadonly<H5PFieldList>
-  ? TField["optional"] extends true
-    ? Array<InferParamsType<TField["field"]>> | undefined
-    : Array<InferParamsType<TField["field"]>>
-  : TField extends DeepReadonly<H5PFieldNumber>
-  ? TField["optional"] extends true
-    ? TField extends { default: number }
-      ? number
-      : number | undefined
-    : number
-  : TField extends DeepReadonly<H5PFieldSelect>
-  ? TField["optional"] extends true
-    ? TField extends { default: string | number | boolean }
-      ? TField["options"][number]["value"]
-      : TField["options"][number]["value"] | undefined
-    : TField["options"][number]["value"]
-  : TField extends DeepReadonly<H5PFieldText>
-  ? TField["optional"] extends true
-    ? TField extends { default: string }
-      ? string
-      : string | undefined
-    : string
-  : TField extends DeepReadonly<H5PFieldVideo>
-  ? TField["optional"] extends true
-    ? Video | undefined
-    : Video
-  : never;
+> = InferParamTypeFromFieldType<TField>;
 
 export type Video = Media;
 
