@@ -205,11 +205,11 @@ define("src/types/Image", ["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
 });
-define("src/types/Video", ["require", "exports"], function (require, exports) {
+define("src/types/H5PL10n", ["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
 });
-define("src/types/H5PL10n", ["require", "exports"], function (require, exports) {
+define("src/types/InferL10nType", ["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
 });
@@ -848,8 +848,7 @@ define("src/types/InferParamsFromSemantics", ["require", "exports"], function (r
             },
             {
                 label: "Backend Url",
-                description: "The Url to the json database",
-                default: "https://cdn-devbildetema.azureedge.net/data/database.json",
+                default: "https://example.com",
                 name: "backendUrl",
                 type: "text",
             },
@@ -864,9 +863,29 @@ define("src/types/InferParamsType", ["require", "exports"], function (require, e
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
 });
+define("src/types/Video", ["require", "exports"], function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+});
+/* eslint-disable @typescript-eslint/ban-ts-comment, @typescript-eslint/no-unused-vars, @typescript-eslint/no-namespace */
 define("src/types/InferParamTypeFromFieldType", ["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    // @ts-ignore Test
+    var Test_SelectField;
+    (function (Test_SelectField) {
+        const field = {
+            label: "Select",
+            name: "select",
+            type: "select",
+            default: "a",
+            options: [
+                { value: "a", label: "A" },
+                { value: "b", label: "B" },
+                { value: "c", label: "C" },
+            ],
+        };
+    })(Test_SelectField || (Test_SelectField = {}));
 });
 define("src/types/H5PEditorObject", ["require", "exports"], function (require, exports) {
     "use strict";

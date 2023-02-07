@@ -1,4 +1,12 @@
-export type AreEqual<T, U> = T extends U ? (U extends T ? true : false) : false;
+export type AreEqual<A, B> = (<G>() => G extends A ? 1 : 2) extends <
+  G,
+>() => G extends B ? 1 : 2
+  ? true
+  : A extends B
+  ? B extends A
+    ? true
+    : false
+  : false;
 export type Expect<T extends true> = T;
 export type DeepReadonly<T> = {
   readonly [P in keyof T]: DeepReadonly<T[P]>;
@@ -1991,6 +1999,15 @@ export type InferGroupParams<TGroupField extends DeepReadonly<H5PFieldGroup>> =
     ? InferGroupWithOneFieldParams<TGroupField>
     : InferGroupWithMultipleFieldsParams<TGroupField>;
 
+export type InferL10nType<
+  TField extends DeepReadonly<H5PFieldGroup & { name: "l10n" }>,
+> = {
+  l10n: {
+    [TKey in TField["fields"][number]["name"]]: string;
+  };
+};
+
+/* eslint-disable @typescript-eslint/ban-ts-comment, @typescript-eslint/no-unused-vars, @typescript-eslint/no-namespace */
 export type InferParamTypeFromFieldType<TField extends DeepReadonly<H5PField>> =
   Prettify<
     TField extends DeepReadonly<H5PFieldAudio>
@@ -2096,7 +2113,7 @@ export type InferParamsFromSemantics<
     ? TField extends DeepReadonly<H5PField>
       ? TRestFields extends ReadonlyArray<DeepReadonly<H5PField>>
         ? (TField extends DeepReadonly<H5PFieldGroup & { name: "l10n" }>
-            ? Record<"l10n", Record<TField["fields"][number]["name"], string>>
+            ? InferL10nType<TField>
             : Record<
                 TField["name"],
                 TField["optional"] extends true
