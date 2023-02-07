@@ -872,6 +872,34 @@ define("src/types/InferParamTypeFromFieldType", ["require", "exports"], function
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     // @ts-ignore Test
+    var Test_ListField_Group;
+    (function (Test_ListField_Group) {
+        const field = {
+            label: "List",
+            name: "list",
+            type: "list",
+            entity: "Field",
+            field: {
+                label: "Group",
+                name: "group",
+                type: "group",
+                fields: [
+                    {
+                        label: "Name",
+                        name: "name",
+                        type: "text",
+                    },
+                    {
+                        label: "Age",
+                        name: "age",
+                        type: "number",
+                        optional: true,
+                    },
+                ],
+            },
+        };
+    })(Test_ListField_Group || (Test_ListField_Group = {}));
+    // @ts-ignore Test
     var Test_SelectField;
     (function (Test_SelectField) {
         const field = {

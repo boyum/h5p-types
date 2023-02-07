@@ -176,8 +176,48 @@ namespace Test_LibraryField {
 namespace Test_ListField {
   type FieldType = H5PFieldList;
 
-  // eslint-disable-next-line @typescript-eslint/ban-types
   type Expected = InferParamTypeFromFieldType<H5PField>[];
+  type Actual = InferParamTypeFromFieldType<FieldType>;
+
+  // @ts-ignore Test
+  type Test =
+    // prettier-ignore
+    Expect<AreEqual<Actual, Expected>>;
+}
+
+// @ts-ignore Test
+namespace Test_ListField_Group {
+  const field = {
+    label: "List",
+    name: "list",
+    type: "list",
+    entity: "Field",
+    field: {
+      label: "Group",
+      name: "group",
+      type: "group",
+      fields: [
+        {
+          label: "Name",
+          name: "name",
+          type: "text",
+        },
+        {
+          label: "Age",
+          name: "age",
+          type: "number",
+          optional: true,
+        },
+      ],
+    },
+  } as const satisfies DeepReadonly<H5PFieldList>;
+
+  type FieldType = typeof field;
+
+  type Expected = Array<{
+    name: string;
+    age: number | undefined;
+  }>;
   type Actual = InferParamTypeFromFieldType<FieldType>;
 
   // @ts-ignore Test
