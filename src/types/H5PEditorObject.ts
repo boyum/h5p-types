@@ -6,7 +6,7 @@ import type { H5PImportance } from "./H5PImportance";
 import type { Library } from "./H5PLibrary";
 import type { IH5PFieldInstance } from "./IH5PFieldInstance";
 import type { IH5PWidget } from "./IH5PWidget";
-import type { InferParamTypeFromFieldType } from "./ParamTypeInferredFromFieldType";
+import type { InferParamTypeFromFieldType } from "./InferParamTypeFromFieldType";
 
 /**
  * @param TWidgetMachineName Typically PascalCased - MyWidget

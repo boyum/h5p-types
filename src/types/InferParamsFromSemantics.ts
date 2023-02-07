@@ -1,47 +1,14 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment, @typescript-eslint/no-unused-vars, @typescript-eslint/no-namespace */
 
-import type { AreEqual, DeepReadonly, Expect } from "../utility-types";
-import type { H5PField, H5PFieldGroup, H5PFieldList } from "./H5PField";
+import type {
+  AreEqual,
+  DeepReadonly,
+  Expect,
+  Prettify,
+} from "../utility-types";
+import type { H5PField, H5PFieldGroup } from "./H5PField";
 import type { H5PL10n } from "./H5PL10n";
-import type { InferParamTypeFromFieldType } from "./ParamTypeInferredFromFieldType";
-
-/**
- * If there are no fields in the group, the group's inferred params is only `{}`
- */
-type InferEmptyGroupParams = Record<never, never>;
-
-/**
- * If there is only one field in the group,
- * the group's inferred params is the type of that field
- */
-type InferGroupWithOneFieldParams<
-  TGroupField extends DeepReadonly<H5PFieldGroup>,
-> = TGroupField["fields"][0] extends H5PFieldGroup
-  ? InferGroupParams<DeepReadonly<TGroupField["fields"][0]>>
-  : InferParamTypeFromFieldType<TGroupField["fields"][0]>;
-
-/**
- * If there are two ore more fields in the group,
- * the group's params is an object where the field's name is the key,
- * then we infer the field's params for the value
- */
-type InferGroupWithMultipleFieldsParams<
-  TGroupField extends DeepReadonly<H5PFieldGroup>,
-> = InferParamsFromSemantics<TGroupField["fields"]>;
-
-type InferGroupParams<TGroupField extends DeepReadonly<H5PFieldGroup>> =
-  TGroupField["fields"]["length"] extends 0
-    ? InferEmptyGroupParams
-    : TGroupField["fields"]["length"] extends 1
-    ? InferGroupWithOneFieldParams<TGroupField>
-    : InferGroupWithMultipleFieldsParams<TGroupField>;
-
-export type InferParamsType<TField extends DeepReadonly<H5PField>> =
-  TField extends DeepReadonly<H5PFieldGroup>
-    ? InferGroupParams<TField>
-    : TField extends DeepReadonly<H5PFieldList>
-    ? Array<InferParamsType<TField["field"]>>
-    : InferParamTypeFromFieldType<TField>;
+import type { InferParamsType } from "./InferParamsType";
 
 /**
  * ⚠️ Use with caution - if the semantics form has many fields, this might not work ⚠️
@@ -77,24 +44,26 @@ export type InferParamsType<TField extends DeepReadonly<H5PField>> =
  */
 export type InferParamsFromSemantics<
   TSemantics extends ReadonlyArray<DeepReadonly<H5PField>>,
-> = TSemantics extends readonly [infer TField, ...infer TRestFields]
-  ? TField extends DeepReadonly<H5PField>
-    ? TRestFields extends ReadonlyArray<DeepReadonly<H5PField>>
-      ? (TField extends DeepReadonly<H5PFieldGroup & { name: "l10n" }>
-          ? Record<"l10n", Record<TField["fields"][number]["name"], string>>
-          : Record<
-              TField["name"],
-              TField["optional"] extends true
-                ? // eslint-disable-next-line @typescript-eslint/ban-types
-                  TField extends { default: {} }
-                  ? InferParamsType<TField>
-                  : InferParamsType<TField> | undefined
-                : InferParamsType<TField>
-            >) &
-          InferParamsFromSemantics<TRestFields>
+> = Prettify<
+  TSemantics extends readonly [infer TField, ...infer TRestFields]
+    ? TField extends DeepReadonly<H5PField>
+      ? TRestFields extends ReadonlyArray<DeepReadonly<H5PField>>
+        ? (TField extends DeepReadonly<H5PFieldGroup & { name: "l10n" }>
+            ? Record<"l10n", Record<TField["fields"][number]["name"], string>>
+            : Record<
+                TField["name"],
+                TField["optional"] extends true
+                  ? // eslint-disable-next-line @typescript-eslint/ban-types
+                    TField extends { default: {} }
+                    ? InferParamsType<TField>
+                    : InferParamsType<TField> | undefined
+                  : InferParamsType<TField>
+              >) &
+            InferParamsFromSemantics<TRestFields>
+        : unknown
       : unknown
     : unknown
-  : unknown;
+>;
 
 // @ts-ignore Test
 namespace Test_H5PFieldText {
