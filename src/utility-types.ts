@@ -1,4 +1,13 @@
-export type AreEqual<T, U> = T extends U ? (U extends T ? true : false) : false;
+export type AreEqual<A, B> = (<G>() => G extends A ? 1 : 2) extends <
+  G,
+>() => G extends B ? 1 : 2
+  ? true
+  : A extends B
+  ? B extends A
+    ? true
+    : false
+  : false;
+
 export type Expect<T extends true> = T;
 
 export type DeepReadonly<T> = {

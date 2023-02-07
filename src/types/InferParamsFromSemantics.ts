@@ -8,6 +8,7 @@ import type {
 } from "../utility-types";
 import type { H5PField, H5PFieldGroup } from "./H5PField";
 import type { H5PL10n } from "./H5PL10n";
+import type { InferL10nType } from "./InferL10nType";
 import type { InferParamsType } from "./InferParamsType";
 
 /**
@@ -49,7 +50,7 @@ export type InferParamsFromSemantics<
     ? TField extends DeepReadonly<H5PField>
       ? TRestFields extends ReadonlyArray<DeepReadonly<H5PField>>
         ? (TField extends DeepReadonly<H5PFieldGroup & { name: "l10n" }>
-            ? Record<"l10n", Record<TField["fields"][number]["name"], string>>
+            ? InferL10nType<TField>
             : Record<
                 TField["name"],
                 TField["optional"] extends true
@@ -82,7 +83,9 @@ namespace Test_H5PFieldText {
   type Actual = InferParamsFromSemantics<typeof semantics>;
 
   // @ts-ignore Test
-  type Test = Expect<AreEqual<Actual, Expected>>;
+  type Test =
+    // prettier-ignore
+    Expect<AreEqual<Actual, Expected>>;
 }
 
 // @ts-ignore Test
@@ -101,14 +104,16 @@ namespace Test_H5PFieldList {
 
   const semantics = [listField] as const;
 
-  type ExpectedParams = {
+  type Expected = {
     list: Array<string>;
   };
 
-  type ActualParams = InferParamsFromSemantics<typeof semantics>;
+  type Actual = InferParamsFromSemantics<typeof semantics>;
 
   // @ts-ignore Test
-  type Test = Expect<AreEqual<ActualParams, ExpectedParams>>;
+  type Test =
+    // prettier-ignore
+    Expect<AreEqual<Actual, Expected>>;
 }
 
 // @ts-ignore Test
@@ -135,7 +140,9 @@ namespace Test_MultipleFields {
   type Actual = InferParamsFromSemantics<typeof semantics>;
 
   // @ts-ignore Test
-  type Test = Expect<AreEqual<Actual, Expected>>;
+  type Test =
+    // prettier-ignore
+    Expect<AreEqual<Actual, Expected>>;
 }
 
 // @ts-ignore Test
@@ -158,7 +165,9 @@ namespace Test_H5PFieldGroupWithZeroFields {
   params.field.a;
 
   // @ts-ignore Test
-  type Test = Expect<AreEqual<Actual, Expected>>;
+  type Test =
+    // prettier-ignore
+    Expect<AreEqual<Actual, Expected>>;
 }
 
 // @ts-ignore Test
@@ -182,7 +191,9 @@ namespace Test_H5PFieldGroupWithOneField {
   type Actual = InferParamsFromSemantics<typeof semantics>;
 
   // @ts-ignore Test
-  type Test = Expect<AreEqual<Actual, Expected>>;
+  type Test =
+    // prettier-ignore
+    Expect<AreEqual<Actual, Expected>>;
 }
 
 // @ts-ignore Test
@@ -212,7 +223,9 @@ namespace Test_H5PFieldGroupWithMultipleFields {
   type Actual = InferParamsFromSemantics<typeof semantics>;
 
   // @ts-ignore Test
-  type Test = Expect<AreEqual<Actual, Expected>>;
+  type Test =
+    // prettier-ignore
+    Expect<AreEqual<Actual, Expected>>;
 }
 
 // @ts-ignore Test
@@ -339,7 +352,9 @@ namespace Test_OptionalFields {
   params.group.field6.toString();
 
   // @ts-ignore Test
-  type Test = Expect<AreEqual<Actual, Expected>>;
+  type Test =
+    // prettier-ignore
+    Expect<AreEqual<Actual, Expected>>;
 }
 
 // @ts-ignore Test
@@ -777,69 +792,66 @@ namespace Test_Advanced {
     },
     {
       label: "Backend Url",
-      description: "The Url to the json database",
-      default: "https://cdn-devbildetema.azureedge.net/data/database.json",
+      default: "https://example.com",
       name: "backendUrl",
       type: "text",
     },
   ] as const satisfies DeepReadonly<Array<H5PField>>;
 
-  // @ts-ignore Test
   type Expected = {
-    l10n: Record<
-      | "htmlLanguageCode"
-      | "pageIsLoading"
-      | "mainContentLink"
-      | "showWrittenWordsLabel"
-      | "printLabel"
-      | "printImgLabel"
-      | "playAudio"
-      | "pauseAudio"
-      | "footerContactInfoLabel"
-      | "footerContactInfoHref"
-      | "footerLink1Label"
-      | "footerLink1Href"
-      | "footerLink2Label"
-      | "footerLink2Href"
-      | "footerLink3Label"
-      | "footerLink3Href"
-      | "breadcrumbsTopic"
-      | "breadcrumbsHome"
-      | "selectLanguage"
-      | "footerCopyright"
-      | "headerTitle"
-      | "headerSubtitle"
-      | "bigTopics"
-      | "compactTopics"
-      | "prevImageLabel"
-      | "nextImageLabel"
-      | "noTopicSelected"
-      | "lang_ara"
-      | "lang_ckb"
-      | "lang_dan"
-      | "lang_eng"
-      | "lang_fas"
-      | "lang_fra"
-      | "lang_isl"
-      | "lang_kmr"
-      | "lang_lit"
-      | "lang_nno"
-      | "lang_nob"
-      | "lang_pol"
-      | "lang_prs"
-      | "lang_pus"
-      | "lang_rus"
-      | "lang_sme"
-      | "lang_som"
-      | "lang_spa"
-      | "lang_swe"
-      | "lang_tgl"
-      | "lang_tha"
-      | "lang_tir"
-      | "lang_ukr"
-      | "lang_vie",
-      string
-    >;
+    l10n: {
+      htmlLanguageCode: string;
+      pageIsLoading: string;
+      mainContentLink: string;
+      showWrittenWordsLabel: string;
+      printLabel: string;
+      printImgLabel: string;
+      playAudio: string;
+      pauseAudio: string;
+      footerContactInfoLabel: string;
+      footerContactInfoHref: string;
+      footerLink1Label: string;
+      footerLink1Href: string;
+      footerLink2Label: string;
+      footerLink2Href: string;
+      footerLink3Label: string;
+      footerLink3Href: string;
+      breadcrumbsTopic: string;
+      breadcrumbsHome: string;
+      selectLanguage: string;
+      footerCopyright: string;
+      headerTitle: string;
+      headerSubtitle: string;
+      bigTopics: string;
+      compactTopics: string;
+      prevImageLabel: string;
+      nextImageLabel: string;
+      noTopicSelected: string;
+      lang_ara: string;
+      lang_ckb: string;
+      lang_dan: string;
+      lang_eng: string;
+      lang_fas: string;
+      lang_fra: string;
+      lang_isl: string;
+      lang_kmr: string;
+      lang_lit: string;
+      lang_nno: string;
+      lang_nob: string;
+      lang_pol: string;
+      lang_prs: string;
+      lang_pus: string;
+      lang_rus: string;
+      lang_sme: string;
+      lang_som: string;
+      lang_spa: string;
+      lang_swe: string;
+      lang_tgl: string;
+      lang_tha: string;
+      lang_tir: string;
+      lang_ukr: string;
+      lang_vie: string;
+    };
     defaultLanguages: Array<
       | "ara"
       | "ckb"
@@ -872,5 +884,7 @@ namespace Test_Advanced {
   type Actual = InferParamsFromSemantics<typeof semantics>;
 
   // @ts-ignore Test
-  type Test = Expect<AreEqual<Actual, Expected>>;
+  type Test =
+    // prettier-ignore
+    Expect<AreEqual<Actual, Expected>>;
 }
