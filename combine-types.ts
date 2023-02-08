@@ -4,7 +4,12 @@ import { join } from "path";
 const typePath = "./src/types";
 
 async function getTypeFileNames(): Promise<Array<string>> {
-  return (await fs.readdir(typePath)).map(typeFile => join(typePath, typeFile));
+  return (await fs.readdir(typePath))
+    .filter(
+      typeFile =>
+        !typeFile.endsWith(".test.ts") && typeFile !== "test-utility-types.ts",
+    )
+    .map(typeFile => join(typePath, typeFile));
 }
 
 async function readFile(fileName: string): Promise<string> {
@@ -16,14 +21,6 @@ function removeImportStatements(fileContents: string): string {
     /import(?:["'\s]*([\w*${}\n\r\t, ]+)from\s*)?["'\s]["'\s](.*[@\w_-]+)["'\s].*;$/gm,
     "",
   );
-}
-
-function removeTestNamespaces(fileContents: string): string {
-  return fileContents.replace(/namespace Test_(.*\n)*?\}/g, "");
-}
-
-function removeTestTsIgnores(fileContents: string): string {
-  return fileContents.replace(/ {0,}\/\/ @ts-ignore Test\n/g, "");
 }
 
 function removeEmptyLines(fileContents: string): string {
@@ -45,11 +42,7 @@ async function run() {
 
   let typeFiles = await Promise.all(fileNames.map(readFile));
 
-  typeFiles = typeFiles
-    .map(removeImportStatements)
-    .map(removeTestNamespaces)
-    .map(removeTestTsIgnores)
-    .map(removeEmptyLines);
+  typeFiles = typeFiles.map(removeImportStatements).map(removeEmptyLines);
 
   const combinedFiles = combineFiles(typeFiles);
 
