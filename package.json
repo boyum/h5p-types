@@ -1,12 +1,13 @@
 {
   "name": "h5p-types",
   "version": "1.6.1",
-  "main": "index.js",
   "types": "index.d.ts",
+  "files": [
+    "index.d.ts"
+  ],
   "scripts": {
-    "build": "tsc --noEmit false --out index.js --module \"amd\"",
     "combine": "esr combine-types.ts",
-    "package": "npm run combine && npm run build",
+    "package": "npm run combine",
     "publish-to-npm": "npm run package && np",
     "test": "echo 'No tests'",
     "format:check": "prettier --check .",
