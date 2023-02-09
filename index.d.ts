@@ -14,7 +14,20 @@ export { H5PCopyrightLicenses } from "./src/types/H5PCopyrightLicenses";
 export { H5PDisplayOptions } from "./src/types/H5PDisplayOptions";
 export { H5PEnterMode } from "./src/types/H5PEnterMode";
 export { H5PExtras } from "./src/types/H5PExtras";
-export { H5PField } from "./src/types/H5PField";
+export {
+  H5PField,
+  H5PFieldAudio,
+  H5PFieldBoolean,
+  H5PFieldFile,
+  H5PFieldGroup,
+  H5PFieldImage,
+  H5PFieldLibrary,
+  H5PFieldList,
+  H5PFieldNumber,
+  H5PFieldSelect,
+  H5PFieldText,
+  H5PFieldVideo,
+} from "./src/types/H5PField";
 export { H5PFieldWidgetExtension } from "./src/types/H5PFieldWidgetExtension";
 // export {H5PFont} from "./src/types/H5PFont";
 export { H5PForm } from "./src/types/H5PForm";
