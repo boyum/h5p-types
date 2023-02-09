@@ -83,9 +83,3 @@ export type InferParamTypeFromFieldType<TField extends ReadonlyDeep<H5PField>> =
       : never
   >;
 
-/**
- * @deprecated Use InferParamTypeFromFieldType instead
- */
-export type ParamTypeInferredFromFieldType<
-  TField extends ReadonlyDeep<H5PField>,
-> = InferParamTypeFromFieldType<TField>;
