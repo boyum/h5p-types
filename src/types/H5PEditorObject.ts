@@ -3,7 +3,7 @@ import type { H5PEditorContentType } from "./H5PEditorContentType";
 import type { H5PField, H5PFieldText } from "./H5PField";
 import type { H5PForm } from "./H5PForm";
 import type { H5PImportance } from "./H5PImportance";
-import type { Library } from "./H5PLibrary";
+import type { H5PLibrary } from "./H5PLibrary";
 import type { IH5PFieldInstance } from "./IH5PFieldInstance";
 import type { IH5PWidget } from "./IH5PWidget";
 import type { InferParamTypeFromFieldType } from "./InferParamTypeFromFieldType";
@@ -417,7 +417,10 @@ export type H5PEditorObject<
    * @param library Library object with machineName, majorVersion and minorVersion set
    */
   libraryToString: <
-    TLib extends Pick<Library, "machineName" | "majorVersion" | "minorVersion">,
+    TLib extends Pick<
+      H5PLibrary,
+      "machineName" | "majorVersion" | "minorVersion"
+    >,
   >(
     library: TLib,
   ) => `${TLib["machineName"]} ${TLib["majorVersion"]}.${TLib["minorVersion"]}`;
@@ -472,7 +475,10 @@ export type H5PEditorObject<
    * @param machineName Machine name of content type with common fields
    * @param libraries Library data for machine name
    */
-  renderCommonField: (machineName: string, libraries?: Array<Library>) => void;
+  renderCommonField: (
+    machineName: string,
+    libraries?: Array<H5PLibrary>,
+  ) => void;
 
   /**
    * Reset loaded libraries - i.e removes CSS added previously

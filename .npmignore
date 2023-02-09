@@ -1,7 +1,6 @@
 tsconfig.json
-src/
-combine-types.ts
 .eslintignore
 .eslintrc.cjs
 .github
 .prettierignore
+test

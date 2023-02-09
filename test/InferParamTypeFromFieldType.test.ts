@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment, @typescript-eslint/no-unused-vars, @typescript-eslint/no-namespace */
 
-import type { AreEqual, Expect } from "../test-utility-types";
-import type { DeepReadonly } from "../utility-types";
-import type { Audio } from "./Audio";
+import type { EmptyObject, ReadonlyDeep } from "type-fest";
+import type { AreEqual, Expect } from "../src/test-utility-types";
+import type { H5PAudio } from "../src/types/H5PAudio";
 import type {
   H5PFieldAudio,
   H5PFieldBoolean,
@@ -15,17 +15,17 @@ import type {
   H5PFieldSelect,
   H5PFieldText,
   H5PFieldVideo,
-} from "./H5PField";
-import type { Image } from "./Image";
-import type { InferParamTypeFromFieldType } from "./InferParamTypeFromFieldType";
-import type { Media } from "./Media";
-import type { Video } from "./Video";
+} from "../src/types/H5PField";
+import type { H5PImage } from "../src/types/H5PImage";
+import type { InferParamTypeFromFieldType } from "../src/types/InferParamTypeFromFieldType";
+import type { H5PMedia } from "../src/types/H5PMedia";
+import type { H5PVideo } from "../src/types/H5PVideo";
 
 // @ts-ignore Test
 namespace Test_AudioField {
   type FieldType = H5PFieldAudio;
 
-  type Expected = Audio;
+  type Expected = H5PAudio;
   type Actual = InferParamTypeFromFieldType<FieldType>;
 
   // @ts-ignore Test
@@ -51,7 +51,7 @@ namespace Test_BooleanField {
 namespace Test_FileField {
   type FieldType = H5PFieldFile;
 
-  type Expected = Media;
+  type Expected = H5PMedia;
   type Actual = InferParamTypeFromFieldType<FieldType>;
 
   // @ts-ignore Test
@@ -64,8 +64,7 @@ namespace Test_FileField {
 namespace Test_GroupField {
   type FieldType = H5PFieldGroup;
 
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  type Expected = {};
+  type Expected = EmptyObject;
   type Actual = InferParamTypeFromFieldType<FieldType>;
 
   // @ts-ignore Test
@@ -78,7 +77,7 @@ namespace Test_GroupField {
 namespace Test_ImageField {
   type FieldType = H5PFieldImage;
 
-  type Expected = Image;
+  type Expected = H5PImage;
   type Actual = InferParamTypeFromFieldType<FieldType>;
 
   // @ts-ignore Test
@@ -91,8 +90,7 @@ namespace Test_ImageField {
 namespace Test_LibraryField {
   type FieldType = H5PFieldLibrary;
 
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  type Expected = {};
+  type Expected = EmptyObject;
   type Actual = InferParamTypeFromFieldType<FieldType>;
 
   // @ts-ignore Test
@@ -150,8 +148,8 @@ namespace Test_ListField_Group {
           optional: true,
         } as const satisfies H5PFieldNumber,
       ],
-    } as const satisfies DeepReadonly<H5PFieldGroup>,
-  } as const satisfies DeepReadonly<H5PFieldList>;
+    } as const satisfies ReadonlyDeep<H5PFieldGroup>,
+  } as const satisfies ReadonlyDeep<H5PFieldList>;
 
   type FieldType = typeof field;
 
@@ -193,7 +191,7 @@ namespace Test_ListField_Group {
         },
       ],
     },
-  } as const satisfies DeepReadonly<H5PFieldList>;
+  } as const satisfies ReadonlyDeep<H5PFieldList>;
 
   type FieldType = typeof field;
 
@@ -234,7 +232,7 @@ namespace Test_SelectField {
       { value: "b", label: "B" },
       { value: "c", label: "C" },
     ],
-  } as const satisfies DeepReadonly<H5PFieldSelect>;
+  } as const satisfies ReadonlyDeep<H5PFieldSelect>;
 
   type FieldType = typeof field;
 
@@ -264,7 +262,7 @@ namespace Test_TextField {
 namespace Test_TextField {
   type FieldType = H5PFieldVideo;
 
-  type Expected = Video;
+  type Expected = H5PVideo;
   type Actual = InferParamTypeFromFieldType<FieldType>;
 
   // @ts-ignore Test

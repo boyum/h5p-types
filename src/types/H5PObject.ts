@@ -18,7 +18,7 @@ import type { H5PMetadata } from "./H5PMetadata";
 import type { H5PNewRunnableLibraryParam } from "./H5PNewRunnableLibraryParam";
 import type { H5PThumbnail } from "./H5PThumbnail";
 import type { IH5PContentType } from "./IH5PContentType";
-import type { Media } from "./Media";
+import type { H5PMedia } from "./H5PMedia";
 
 export type H5PObject = {
   // --- Properties ---
@@ -184,17 +184,17 @@ export type H5PObject = {
           string,
           | ({
               library?: string | { library: string };
-            } & Partial<Media>)
+            } & Partial<H5PMedia>)
           | Array<
               {
                 library?: string | { library: string };
-              } & Partial<Media>
+              } & Partial<H5PMedia>
             >
         >
       | Array<
           {
             library?: string | { library: string };
-          } & Partial<Media>
+          } & Partial<H5PMedia>
         >,
     contentId: H5PContentId,
     extras?: { metadata: H5PMetadata; machineName: string },
@@ -269,7 +269,7 @@ export type H5PObject = {
    */
   getCrossOrigin:
     | ((source: string) => string | null)
-    | ((source: Media) => string | undefined);
+    | ((source: H5PMedia) => string | undefined);
 
   /**
    * Get config for a library
@@ -459,7 +459,7 @@ export type H5PObject = {
    */
   setSource: (
     element: HTMLImageElement | HTMLVideoElement | HTMLAudioElement,
-    source: Media,
+    source: H5PMedia,
     contentId: H5PContentId,
   ) => void;
 
