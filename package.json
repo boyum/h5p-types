@@ -8,7 +8,7 @@
   "scripts": {
     "combine": "esr combine-types.ts",
     "package": "npm run combine",
-    "publish-to-npm": "npm run package && np",
+    "publish-to-npm": "npm run package && release-it",
     "test": "echo 'No tests'",
     "format:check": "prettier --check .",
     "format:fix": "prettier --write .",
@@ -17,6 +17,7 @@
     "lint:fix": "npm run lint:check -- --fix"
   },
   "devDependencies": {
+    "@release-it/conventional-changelog": "^5.1.1",
     "@tsconfig/strictest": "^1.0.2",
     "@types/node": "^18.13.0",
     "@typescript-eslint/eslint-plugin": "^5.51.0",
@@ -24,9 +25,10 @@
     "esbuild-runner": "^2.2.2",
     "eslint": "^8.33.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "np": "^7.6.3",
     "prettier": "^2.8.4",
     "prettier-config": "github:boyum/prettier-config",
+    "release-it": "^15.6.0",
+    "type-fest": "^3.5.6",
     "typescript": "^4.9.5"
   },
   "dependencies": {
