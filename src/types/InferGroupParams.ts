@@ -1,3 +1,4 @@
+import type { EmptyObject } from "type-fest";
 import type { DeepReadonly } from "../utility-types";
 import type { H5PFieldGroup } from "./H5PField";
 import type { InferParamsFromSemantics } from "./InferParamsFromSemantics";
@@ -6,7 +7,7 @@ import type { InferParamTypeFromFieldType } from "./InferParamTypeFromFieldType"
 /**
  * If there are no fields in the group, the group's inferred params is only `{}`
  */
-type InferEmptyGroupParams = Record<never, never>;
+type InferEmptyGroupParams = EmptyObject;
 
 /**
  * If there is only one field in the group,
@@ -27,7 +28,7 @@ type InferGroupWithMultipleFieldsParams<
   TGroupField extends DeepReadonly<H5PFieldGroup>,
 > = InferParamsFromSemantics<TGroupField["fields"]>;
 
-export type InferGroupParams<TGroupField extends DeepReadonly<H5PFieldGroup>> =
+export type InferGroupParams<TGroupField extends H5PFieldGroup | DeepReadonly<H5PFieldGroup>> =
   TGroupField["fields"]["length"] extends 0
     ? InferEmptyGroupParams
     : TGroupField["fields"]["length"] extends 1

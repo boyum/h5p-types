@@ -74,7 +74,7 @@ type FieldTypesThatSupportsOptionalAndDefault =
 
 export type InferParamTypeFromFieldType<TField extends DeepReadonly<H5PField>> =
   Prettify<
-    TField extends DeepReadonly<FieldTypesThatSupportsOnlyOptional>
+    TField extends FieldTypesThatSupportsOnlyOptional | DeepReadonly<FieldTypesThatSupportsOnlyOptional>
       ? InferOptional<TField>
       : TField extends DeepReadonly<FieldTypesThatSupportsOptionalAndDefault>
       ? InferOptionalWithDefault<TField>

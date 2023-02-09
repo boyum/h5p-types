@@ -36,18 +36,23 @@ import type { InferParamsType } from "./InferParamsType";
  *  ```
  */
 export type InferParamsFromSemantics<
-  TSemantics extends ReadonlyArray<DeepReadonly<H5PField>>,
+  TSemantics extends Array<H5PField> | ReadonlyArray<DeepReadonly<H5PField>>,
 > = Prettify<
-  TSemantics extends readonly [infer TField, ...infer TRestFields]
-    ? TField extends DeepReadonly<H5PField>
-      ? TRestFields extends ReadonlyArray<DeepReadonly<H5PField>>
-        ? (TField extends DeepReadonly<H5PFieldGroup & { name: "l10n" }>
+  TSemantics extends
+    | [infer TField, ...infer TRestFields]
+    | readonly [infer TField, ...infer TRestFields]
+    ? TField extends H5PField | DeepReadonly<H5PField>
+      ? TRestFields extends
+          | Array<H5PField>
+          | ReadonlyArray<DeepReadonly<H5PField>>
+        ? (TField extends
+            | (H5PFieldGroup & { name: "l10n" })
+            | DeepReadonly<H5PFieldGroup & { name: "l10n" }>
             ? InferL10nType<TField>
             : Record<
                 TField["name"],
                 TField["optional"] extends true
-                  ? // eslint-disable-next-line @typescript-eslint/ban-types
-                    TField extends { default: {} }
+                  ? TField extends { default: InferParamsType<TField> }
                     ? InferParamsType<TField>
                     : InferParamsType<TField> | undefined
                   : InferParamsType<TField>

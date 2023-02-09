@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment, @typescript-eslint/no-unused-vars, @typescript-eslint/no-namespace */
 
+import type { EmptyObject } from "type-fest";
 import type { AreEqual, Expect } from "../test-utility-types";
 import type { DeepReadonly } from "../utility-types";
 import type { Audio } from "./Audio";
@@ -64,8 +65,7 @@ namespace Test_FileField {
 namespace Test_GroupField {
   type FieldType = H5PFieldGroup;
 
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  type Expected = {};
+  type Expected = EmptyObject;
   type Actual = InferParamTypeFromFieldType<FieldType>;
 
   // @ts-ignore Test
@@ -91,8 +91,7 @@ namespace Test_ImageField {
 namespace Test_LibraryField {
   type FieldType = H5PFieldLibrary;
 
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  type Expected = {};
+  type Expected = EmptyObject;
   type Actual = InferParamTypeFromFieldType<FieldType>;
 
   // @ts-ignore Test
