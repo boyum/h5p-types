@@ -1,4 +1,4 @@
-export type Copyright = {
+export type H5PCopyright = {
   author?: string;
   license?: string;
   source?: string;

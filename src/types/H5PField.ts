@@ -198,7 +198,10 @@ export type H5PFieldSelect =
         type: "select" | H5PFieldType.Select;
         default: string | number | boolean;
         widget?: string;
-        options: Array<{ value: string | number | boolean; label: string }>;
+        options: Array<{
+          value: string | number | boolean;
+          label: string;
+        }>;
       };
 
 export type H5PFieldLibrary =

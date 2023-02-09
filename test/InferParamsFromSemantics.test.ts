@@ -1,11 +1,10 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment, @typescript-eslint/no-unused-vars, @typescript-eslint/no-namespace */
 
-import type { AreEqual, Expect } from "../test-utility-types";
-import type { DeepReadonly } from "../utility-types";
-import type { H5PField, H5PFieldGroup } from "./H5PField";
-import type { H5PL10n } from "./H5PL10n";
-import type { InferParamsFromSemantics } from "./InferParamsFromSemantics";
-import type { EmptyObject } from "type-fest";
+import type { EmptyObject, ReadonlyDeep } from "type-fest";
+import type { AreEqual, Expect } from "../src/test-utility-types";
+import type { H5PField, H5PFieldGroup } from "../src/types/H5PField";
+import type { H5PL10n } from "../src/types/H5PL10n";
+import type { InferParamsFromSemantics } from "../src/types/InferParamsFromSemantics";
 
 // @ts-ignore Test
 namespace Test_H5PFieldText {
@@ -158,7 +157,7 @@ namespace Test_H5PFieldGroupWithMultipleFields {
         },
       ],
     },
-  ] as const satisfies DeepReadonly<Array<H5PFieldGroup>>;
+  ] as const satisfies ReadonlyDeep<Array<H5PFieldGroup>>;
 
   type Expected = { group: { field1: number; field2: boolean } };
   type Actual = InferParamsFromSemantics<typeof semantics>;
@@ -250,7 +249,7 @@ namespace Test_OptionalFields {
         },
       ],
     },
-  ] as const satisfies DeepReadonly<Array<H5PFieldGroup>>;
+  ] as const satisfies ReadonlyDeep<Array<H5PFieldGroup>>;
 
   type Expected = {
     group: {
@@ -299,7 +298,7 @@ namespace Test_OptionalFields {
 }
 
 // @ts-ignore Test
-namespace Test_Advanced {
+namespace Test_Bildetema {
   const l10nField = {
     name: "l10n",
     type: "group",
@@ -615,7 +614,7 @@ namespace Test_Advanced {
         type: "text",
       },
     ],
-  } as const satisfies DeepReadonly<H5PL10n>;
+  } as const satisfies ReadonlyDeep<H5PL10n>;
 
   const semantics = [
     l10nField,
@@ -737,7 +736,7 @@ namespace Test_Advanced {
       name: "backendUrl",
       type: "text",
     },
-  ] as const satisfies DeepReadonly<Array<H5PField>>;
+  ] as const satisfies ReadonlyDeep<Array<H5PField>>;
 
   type Expected = {
     l10n: {

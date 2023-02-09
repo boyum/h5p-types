@@ -1,5 +1,6 @@
-import type { DeepReadonly, Prettify } from "../utility-types";
-import type { Audio } from "./Audio";
+import type { ReadonlyDeep } from "type-fest";
+import type { Prettify } from "../utility-types";
+import type { H5PAudio } from "./H5PAudio";
 import type {
   H5PField,
   H5PFieldAudio,
@@ -14,43 +15,43 @@ import type {
   H5PFieldText,
   H5PFieldVideo,
 } from "./H5PField";
-import type { Image } from "./Image";
+import type { H5PImage } from "./H5PImage";
 import type { InferGroupParams } from "./InferGroupParams";
-import type { Media } from "./Media";
-import type { Video } from "./Video";
+import type { H5PMedia } from "./H5PMedia";
+import type { H5PVideo } from "./H5PVideo";
 
-type FieldToParamType<TField extends DeepReadonly<H5PField>> =
-  TField extends DeepReadonly<H5PFieldAudio>
-    ? Audio
-    : TField extends DeepReadonly<H5PFieldBoolean>
+type FieldToParamType<TField extends ReadonlyDeep<H5PField>> =
+  TField extends ReadonlyDeep<H5PFieldAudio>
+    ? H5PAudio
+    : TField extends ReadonlyDeep<H5PFieldBoolean>
     ? boolean
-    : TField extends DeepReadonly<H5PFieldFile>
-    ? Media
-    : TField extends DeepReadonly<H5PFieldGroup>
+    : TField extends ReadonlyDeep<H5PFieldFile>
+    ? H5PMedia
+    : TField extends ReadonlyDeep<H5PFieldGroup>
     ? InferGroupParams<TField>
-    : TField extends DeepReadonly<H5PFieldImage>
-    ? Image
-    : TField extends DeepReadonly<H5PFieldLibrary>
+    : TField extends ReadonlyDeep<H5PFieldImage>
+    ? H5PImage
+    : TField extends ReadonlyDeep<H5PFieldLibrary>
     ? unknown
-    : TField extends DeepReadonly<H5PFieldList>
+    : TField extends ReadonlyDeep<H5PFieldList>
     ? Array<FieldToParamType<TField["field"]>>
-    : TField extends DeepReadonly<H5PFieldNumber>
+    : TField extends ReadonlyDeep<H5PFieldNumber>
     ? number
-    : TField extends DeepReadonly<H5PFieldSelect>
+    : TField extends ReadonlyDeep<H5PFieldSelect>
     ? TField["options"][number]["value"]
-    : TField extends DeepReadonly<H5PFieldText>
+    : TField extends ReadonlyDeep<H5PFieldText>
     ? string
-    : TField extends DeepReadonly<H5PFieldVideo>
-    ? Video
+    : TField extends ReadonlyDeep<H5PFieldVideo>
+    ? H5PVideo
     : never;
 
-type InferOptional<TField extends DeepReadonly<H5PField>> =
+type InferOptional<TField extends ReadonlyDeep<H5PField>> =
   TField["optional"] extends true
     ? FieldToParamType<TField> | undefined
     : FieldToParamType<TField>;
 
-type InferOptionalWithDefault<
-  TField extends DeepReadonly<H5PField>,
+export type InferOptionalWithDefault<
+  TField extends ReadonlyDeep<H5PField>,
   TType = FieldToParamType<TField>,
 > = TField["optional"] extends true
   ? TField extends { default: TType }
@@ -70,20 +71,15 @@ type FieldTypesThatSupportsOptionalAndDefault =
   | H5PFieldBoolean
   | H5PFieldLibrary
   | H5PFieldNumber
+  | H5PFieldSelect
   | H5PFieldText;
 
-export type InferParamTypeFromFieldType<TField extends DeepReadonly<H5PField>> =
+export type InferParamTypeFromFieldType<TField extends ReadonlyDeep<H5PField>> =
   Prettify<
-    TField extends FieldTypesThatSupportsOnlyOptional | DeepReadonly<FieldTypesThatSupportsOnlyOptional>
+    TField extends ReadonlyDeep<FieldTypesThatSupportsOnlyOptional>
       ? InferOptional<TField>
-      : TField extends DeepReadonly<FieldTypesThatSupportsOptionalAndDefault>
+      : TField extends ReadonlyDeep<FieldTypesThatSupportsOptionalAndDefault>
       ? InferOptionalWithDefault<TField>
-      : TField extends DeepReadonly<H5PFieldSelect>
-      ? TField["optional"] extends true
-        ? TField extends FieldToParamType<TField>
-          ? FieldToParamType<TField>
-          : FieldToParamType<TField> | undefined
-        : FieldToParamType<TField>
       : never
   >;
 
@@ -91,5 +87,5 @@ export type InferParamTypeFromFieldType<TField extends DeepReadonly<H5PField>> =
  * @deprecated Use InferParamTypeFromFieldType instead
  */
 export type ParamTypeInferredFromFieldType<
-  TField extends DeepReadonly<H5PField>,
+  TField extends ReadonlyDeep<H5PField>,
 > = InferParamTypeFromFieldType<TField>;

@@ -4,7 +4,7 @@ type Dependency = {
   minorVersion: number;
 };
 
-export type Library = {
+export type H5PLibrary = {
   /**
    * Textual library name
    *
