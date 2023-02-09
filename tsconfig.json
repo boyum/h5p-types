@@ -15,6 +15,7 @@
     "noImplicitReturns": true,
     "declaration": false
   },
+  "ignoreDeprecations": "5.0",
   "include": ["src", "index.d.ts", "test"],
   "extends": "@tsconfig/strictest/tsconfig.json"
 }
