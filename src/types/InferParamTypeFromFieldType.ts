@@ -82,4 +82,3 @@ export type InferParamTypeFromFieldType<TField extends ReadonlyDeep<H5PField>> =
       ? InferOptionalWithDefault<TField>
       : never
   >;
-
