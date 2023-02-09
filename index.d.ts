@@ -90,4 +90,7 @@ export { XAPIVerb } from "./src/types/XAPIVerb";
 // Type-fest
 // We re-export type-fest types to avoid having to install it as a dependency
 // Until TS 5, the ReadonlyDeep type is needed when inputting types to `InferParamsFromSemantics`
-export { ReadonlyDeep, /** @obsolete Use {@link ReadonlyDeep} */ ReadonlyDeep as DeepReadonly } from "type-fest";
+export {
+  ReadonlyDeep,
+  /** @obsolete Use {@link ReadonlyDeep} */ ReadonlyDeep as DeepReadonly,
+} from "type-fest";
