@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.8.1](https://github.com/boyum/h5p-types/compare/v1.8.0...v1.8.1) (2023-02-09)
+
+
+### Bug Fixes
+
+* add `type-fest` as prod dependency ([9517386](https://github.com/boyum/h5p-types/commit/95173865c51a191168702994bc32884d4e7c547c))
+
 ## [1.8.0](https://github.com/boyum/h5p-types/compare/v1.7.1...v1.8.0) (2023-02-09)
 
 
