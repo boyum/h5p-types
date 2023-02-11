@@ -97,6 +97,10 @@ export {
   InferParamTypeFromFieldType,
   /** @deprecated Use {@link InferParamTypeFromFieldType} */ InferParamTypeFromFieldType as ParamTypeInferredFromFieldType,
 } from "./src/types/InferParamTypeFromFieldType";
+export {
+  TranslationHasParams,
+  TranslationParams,
+} from "./src/types/InferTranslationParams";
 
 // XAPI
 export { XAPIDefinition } from "./src/types/XAPIDefinition";
