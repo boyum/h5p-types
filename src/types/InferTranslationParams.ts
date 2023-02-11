@@ -33,12 +33,10 @@ export type TranslationParams<
                 : TRestWords extends Array<string>
                 ? TranslationParams<Join<TRestWords, " ">>
                 : {})
-        : TRestWords extends string[]
-        ? TRestWords extends []
-          ? {}
-          : TRestWords extends Array<string>
-          ? TranslationParams<Join<TRestWords, " ">>
-          : {}
+        : TRestWords extends []
+        ? {}
+        : TRestWords extends Array<string>
+        ? TranslationParams<Join<TRestWords, " ">>
         : {}
       : {}
     : {}
