@@ -1,6 +1,6 @@
 {
   "name": "h5p-types",
-  "version": "1.8.2",
+  "version": "1.9.0",
   "main": "",
   "types": "index.d.ts",
   "files": [

@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.0](https://github.com/boyum/h5p-types/compare/v1.8.2...v1.9.0) (2023-02-11)
+
+
+### Features
+
+* use the `TranslationParams` type to infer translation params ([#139](https://github.com/boyum/h5p-types/issues/139)) ([c8f0a21](https://github.com/boyum/h5p-types/commit/c8f0a21cf9c4e7ef43078f31a39aaf2519fbe101))
+
 ## [1.8.2](https://github.com/boyum/h5p-types/compare/v1.8.1...v1.8.2) (2023-02-09)
 
 
