@@ -17,7 +17,7 @@ import type { H5PMediaCopyright } from "./H5PMediaCopyright";
 import type { H5PMetadata } from "./H5PMetadata";
 import type { H5PNewRunnableLibraryParam } from "./H5PNewRunnableLibraryParam";
 import type { H5PThumbnail } from "./H5PThumbnail";
-import type { IH5PContentType } from "./IH5PContentType";
+import type { IH5PContentType } from "./Interfaces/IH5PContentType";
 import type { H5PMedia } from "./H5PMedia";
 
 export type H5PObject = {

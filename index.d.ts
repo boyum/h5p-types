@@ -85,11 +85,12 @@ export { H5PTextFieldWidgetExtension } from "./src/types/H5PTextFieldWidgetExten
 export { H5PTextTags } from "./src/types/H5PTextTags";
 
 // Interfaces
-export { IH5PContentType } from "./src/types/IH5PContentType";
-export { IH5PEditorImageField } from "./src/types/IH5PEditorImageField";
-export { IH5PFieldInstance } from "./src/types/IH5PFieldInstance";
-export { IH5PQuestionType } from "./src/types/IH5PQuestionType";
-export { IH5PWidget } from "./src/types/IH5PWidget";
+export { IH5PContentType } from "./src/types/Interfaces/IH5PContentType";
+export { IH5PEditorImageField } from "./src/types/Interfaces/IH5PEditorImageField";
+export { IH5PFieldInstance } from "./src/types/Interfaces/IH5PFieldInstance";
+export { IH5PQuestionType } from "./src/types/Interfaces/IH5PQuestionType";
+export { IH5PResumableType } from "./src/types/Interfaces/IH5PResumableType";
+export { IH5PWidget } from "./src/types/Interfaces/IH5PWidget";
 
 // Infer utils
 export { InferGroupParams } from "./src/types/InferGroupParams";
