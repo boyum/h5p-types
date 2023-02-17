@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.10.0](https://github.com/boyum/h5p-types/compare/v1.9.0...v1.10.0) (2023-02-17)
+
+
+### Features
+
+* `IH5PQuestionType` to be used with content types that use some sort of score system ([#142](https://github.com/boyum/h5p-types/issues/142)) ([f97579e](https://github.com/boyum/h5p-types/commit/f97579e19a3480c933374aaba37aae995559b6bd))
+
 ## [1.9.0](https://github.com/boyum/h5p-types/compare/v1.8.2...v1.9.0) (2023-02-11)
 
 
