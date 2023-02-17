@@ -1,6 +1,6 @@
 import type { H5PEvent } from "./H5PEvent";
-import type { XAPIEvent } from "./XAPIEvent";
-import type { XAPIVerb } from "./XAPIVerb";
+import type { XAPIEvent } from "./XAPI/XAPIEvent";
+import type { XAPIVerb } from "./XAPI/XAPIVerb";
 
 export declare class EventDispatcher {
   /**

@@ -88,6 +88,7 @@ export { H5PTextTags } from "./src/types/H5PTextTags";
 export { IH5PContentType } from "./src/types/IH5PContentType";
 export { IH5PEditorImageField } from "./src/types/IH5PEditorImageField";
 export { IH5PFieldInstance } from "./src/types/IH5PFieldInstance";
+export { IH5PQuestionType } from "./src/types/IH5PQuestionType";
 export { IH5PWidget } from "./src/types/IH5PWidget";
 
 // Infer utils
@@ -103,9 +104,11 @@ export {
 } from "./src/types/InferTranslationParams";
 
 // XAPI
-export { XAPIDefinition } from "./src/types/XAPIDefinition";
-export { XAPIEvent } from "./src/types/XAPIEvent";
-export { XAPIVerb } from "./src/types/XAPIVerb";
+export { XAPIDefinition } from "./src/types/XAPI/XAPIDefinition";
+export { XAPIEvent } from "./src/types/XAPI/XAPIEvent";
+export { XAPIInteractionType } from "./src/types/XAPI/XAPIInteractionType";
+export { XAPIStatement } from "./src/types/XAPI/XAPIStatement";
+export { XAPIVerb } from "./src/types/XAPI/XAPIVerb";
 
 // Type-fest
 // We re-export type-fest types to avoid having to install it as a dependency
