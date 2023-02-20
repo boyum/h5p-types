@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.11.0](https://github.com/boyum/h5p-types/compare/v1.10.0...v1.11.0) (2023-02-20)
+
+
+### Features
+
+* IH5PResumableType ([#143](https://github.com/boyum/h5p-types/issues/143)) ([5a15c90](https://github.com/boyum/h5p-types/commit/5a15c90b6d8a9e67d834faa86d67f5c4edc1723a))
+
 ## [1.10.0](https://github.com/boyum/h5p-types/compare/v1.9.0...v1.10.0) (2023-02-17)
 
 
