@@ -4,9 +4,9 @@ import type { H5PField, H5PFieldText } from "./H5PField";
 import type { H5PForm } from "./H5PForm";
 import type { H5PImportance } from "./H5PImportance";
 import type { H5PLibrary } from "./H5PLibrary";
-import type { IH5PFieldInstance } from "./IH5PFieldInstance";
-import type { IH5PWidget } from "./IH5PWidget";
 import type { InferParamTypeFromFieldType } from "./InferParamTypeFromFieldType";
+import type { IH5PFieldInstance } from "./Interfaces/IH5PFieldInstance";
+import type { IH5PWidget } from "./Interfaces/IH5PWidget";
 
 /**
  * @param TWidgetMachineName Typically PascalCased - MyWidget

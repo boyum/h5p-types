@@ -1,5 +1,5 @@
 import type { EventDispatcher } from "./EventDispatcher";
-import type { IH5PContentType } from "./IH5PContentType";
+import type { IH5PContentType } from "./Interfaces/IH5PContentType";
 
 export declare class H5PConfirmationDialog extends EventDispatcher {
   constructor(options: {

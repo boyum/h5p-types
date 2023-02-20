@@ -1,5 +1,5 @@
-import type { XAPIDefinition } from "../..";
-import type { XAPIEvent } from "./XAPI/XAPIEvent";
+import type { XAPIDefinition } from "../XAPI/XAPIDefinition";
+import type { XAPIEvent } from "../XAPI/XAPIEvent";
 
 export interface IH5PQuestionType {
   /**

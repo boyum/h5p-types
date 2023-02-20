@@ -1,9 +1,9 @@
-import type { H5PCopyright } from "./H5PCopyright";
-import type { H5PConfirmationDialog } from "./H5PConfirmationDialog";
-import type { H5PFieldImage } from "./H5PField";
-import type { H5PSetValue } from "./H5PSetValue";
+import type { H5PConfirmationDialog } from "../H5PConfirmationDialog";
+import type { H5PCopyright } from "../H5PCopyright";
+import type { H5PFieldImage } from "../H5PField";
+import type { H5PImage } from "../H5PImage";
+import type { H5PSetValue } from "../H5PSetValue";
 import type { IH5PFieldInstance } from "./IH5PFieldInstance";
-import type { H5PImage } from "./H5PImage";
 
 export interface IH5PEditorImageField
   extends IH5PFieldInstance<H5PImage, H5PFieldImage> {
