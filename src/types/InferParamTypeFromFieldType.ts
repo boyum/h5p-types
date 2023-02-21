@@ -19,6 +19,7 @@ import type { H5PImage } from "./H5PImage";
 import type { InferGroupParams } from "./InferGroupParams";
 import type { H5PMedia } from "./H5PMedia";
 import type { H5PVideo } from "./H5PVideo";
+import type { IH5PContentType } from "./Interfaces/IH5PContentType";
 
 type FieldToParamType<TField extends ReadonlyDeep<H5PField>> =
   TField extends ReadonlyDeep<H5PFieldAudio>
@@ -32,7 +33,7 @@ type FieldToParamType<TField extends ReadonlyDeep<H5PField>> =
     : TField extends ReadonlyDeep<H5PFieldImage>
     ? H5PImage
     : TField extends ReadonlyDeep<H5PFieldLibrary>
-    ? unknown
+    ? IH5PContentType
     : TField extends ReadonlyDeep<H5PFieldList>
     ? Array<FieldToParamType<TField["field"]>>
     : TField extends ReadonlyDeep<H5PFieldNumber>
