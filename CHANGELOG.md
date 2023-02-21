@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.11.1](https://github.com/boyum/h5p-types/compare/v1.11.0...v1.11.1) (2023-02-21)
+
+
+### Features
+
+* allow `IH5PResumableType#getCurrentState` to return `undefined` ([f73c030](https://github.com/boyum/h5p-types/commit/f73c03099f5b11405d60a71f961056640e217199))
+
 ## [1.11.0](https://github.com/boyum/h5p-types/compare/v1.10.0...v1.11.0) (2023-02-20)
 
 
