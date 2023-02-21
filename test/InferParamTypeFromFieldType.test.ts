@@ -20,6 +20,7 @@ import type { H5PImage } from "../src/types/H5PImage";
 import type { InferParamTypeFromFieldType } from "../src/types/InferParamTypeFromFieldType";
 import type { H5PMedia } from "../src/types/H5PMedia";
 import type { H5PVideo } from "../src/types/H5PVideo";
+import type { IH5PContentType } from "../src/types/Interfaces/IH5PContentType";
 
 // @ts-ignore Test
 namespace Test_AudioField {
@@ -90,13 +91,16 @@ namespace Test_ImageField {
 namespace Test_LibraryField {
   type FieldType = H5PFieldLibrary;
 
-  type Expected = EmptyObject;
+  type Expected = IH5PContentType;
   type Actual = InferParamTypeFromFieldType<FieldType>;
 
   // @ts-ignore Test
   type Test =
     // prettier-ignore
     Expect<AreEqual<Actual, Expected>>;
+
+  declare const library: Actual;
+  library.attach;
 }
 
 // @ts-ignore Test
