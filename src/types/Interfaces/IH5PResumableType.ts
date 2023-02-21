@@ -1,3 +1,3 @@
 export interface IH5PResumableType<TState = unknown> {
-  getCurrentState(): TState;
+  getCurrentState(): TState | undefined;
 }
