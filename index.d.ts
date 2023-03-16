@@ -14,6 +14,7 @@ export { H5PCopyrightLicenses } from "./src/types/H5PCopyrightLicenses";
 export { H5PDisplayOptions } from "./src/types/H5PDisplayOptions";
 export { H5PEnterMode } from "./src/types/H5PEnterMode";
 export { H5PExtras } from "./src/types/H5PExtras";
+export { H5PExtrasWithState } from "./src/types/H5PExtrasWithState";
 export {
   H5PField,
   H5PFieldAudio,

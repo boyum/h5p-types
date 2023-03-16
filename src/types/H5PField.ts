@@ -197,20 +197,20 @@ export type H5PFieldSelect =
       H5PFieldWidgetExtension & {
         type: "select" | H5PFieldType.Select;
         default: string | number | boolean;
-        widget?: string;
         options: Array<{
           value: string | number | boolean;
           label: string;
         }>;
+        widget?: string;
       };
 
 export type H5PFieldLibrary =
   | H5PFieldCommon &
       H5PFieldWidgetExtension & {
         type: "library" | H5PFieldType.Library;
-        widget?: string;
-        default: string;
         options: Array<string>;
+        default?: string;
+        widget?: string;
       };
 
 export type H5PFieldImage =

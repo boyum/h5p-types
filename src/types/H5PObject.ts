@@ -10,15 +10,15 @@ import type { H5PDefinitionList } from "./H5PDefinitionList";
 import type { H5PDialog } from "./H5PDialog";
 import type { H5PDisplayOptions } from "./H5PDisplayOptions";
 import type { H5PEvent } from "./H5PEvent";
-import type { H5PExtras } from "./H5PExtras";
+import type { H5PExtrasWithState } from "./H5PExtrasWithState";
 import type { H5PFieldClass } from "./H5PFieldClass";
 import type { H5PLibraryInfo } from "./H5PLibraryInfo";
+import type { H5PMedia } from "./H5PMedia";
 import type { H5PMediaCopyright } from "./H5PMediaCopyright";
 import type { H5PMetadata } from "./H5PMetadata";
 import type { H5PNewRunnableLibraryParam } from "./H5PNewRunnableLibraryParam";
 import type { H5PThumbnail } from "./H5PThumbnail";
 import type { IH5PContentType } from "./Interfaces/IH5PContentType";
-import type { H5PMedia } from "./H5PMedia";
 
 export type H5PObject = {
   // --- Properties ---
@@ -359,12 +359,15 @@ export type H5PObject = {
    *
    * @returns Instance
    */
-  newRunnable: <TLibraryParam extends H5PNewRunnableLibraryParam>(
+  newRunnable: <
+    TLibraryParam extends H5PNewRunnableLibraryParam,
+    TState = unknown,
+  >(
     library: TLibraryParam,
     contentId: H5PContentId,
     $attachTo?: JQuery,
     skipResize?: boolean,
-    extras?: H5PExtras,
+    extras?: H5PExtrasWithState<TState>,
   ) => IH5PContentType & {
     $: typeof jQuery;
     libraryInfo: H5PLibraryInfo;
