@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.13.0](https://github.com/boyum/h5p-types/compare/v1.12.0...v1.13.0) (2023-03-16)
+
+
+### Features
+
+* extras with state ([#155](https://github.com/boyum/h5p-types/issues/155)) ([d5ea59d](https://github.com/boyum/h5p-types/commit/d5ea59ded7f850b83e5f95ed0c2c1a47d7474d6c))
+
 ## [1.12.0](https://github.com/boyum/h5p-types/compare/v1.11.1...v1.12.0) (2023-02-21)
 
 
