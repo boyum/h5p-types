@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.14.0](https://github.com/boyum/h5p-types/compare/v1.13.1...v1.14.0) (2023-03-17)
+
+
+### Features
+
+* **event-dispatcher:** on/once: if event name is "xAPI", return (e: XAPIEvent) => void; ([#156](https://github.com/boyum/h5p-types/issues/156)) ([1f841f4](https://github.com/boyum/h5p-types/commit/1f841f43ed3920126d52a860ea00b0125be8b43e))
+
 ### [1.13.1](https://github.com/boyum/h5p-types/compare/v1.13.0...v1.13.1) (2023-03-16)
 
 ## [1.13.0](https://github.com/boyum/h5p-types/compare/v1.12.0...v1.13.0) (2023-03-16)
