@@ -8,13 +8,15 @@ export declare class EventDispatcher {
    *
    * @throws {TypeError} listener must be a function
    *
-   * @param type Event type
+   * @param type Event type. If the event type is `xAPI`, the listener's event parameter will be of type `XAPIEvent`. Any dispatched XAPIEvent will trigger the `xAPI` event.
    * @param listener Event listener
-   * @param thisArg Optionally specify the this value when calling listener
+   * @param thisArg Optionally specify the listener's `this` value
    */
-  on: <TData = unknown>(
-    type: string,
-    listener: (event: H5PEvent<TData>) => void,
+  on: <TData = unknown, TType extends string = string>(
+    type: TType,
+    listener: (
+      event: TType extends "xAPI" ? XAPIEvent : H5PEvent<TData>,
+    ) => void,
     thisArg?: ThisType<unknown>,
   ) => void;
 
@@ -23,13 +25,15 @@ export declare class EventDispatcher {
    *
    * @throws {TypeError} listener must be a function
    *
-   * @param type Event type
+   * @param type Event type. If the event type is `xAPI`, the listener's event parameter will be of type `XAPIEvent`. Any dispatched XAPIEvent will trigger the `xAPI` event.
    * @param listener Event listener
-   * @param thisArg Optionally specify the `this` value when calling listener
+   * @param thisArg Optionally specify the listener's `this` value
    */
-  once: <TData = unknown>(
-    type: string,
-    listener: (event: H5PEvent<TData>) => void,
+  once: <TData = unknown, TType extends string = string>(
+    type: TType,
+    listener: (
+      event: TType extends "xAPI" ? XAPIEvent : H5PEvent<TData>,
+    ) => void,
     thisArg?: ThisType<unknown>,
   ) => void;
 
@@ -55,7 +59,7 @@ export declare class EventDispatcher {
    * @param extras
    */
   trigger: <TData = unknown>(
-    event: string | unknown,
+    event: string | XAPIEvent | unknown,
     eventData?: TData,
     extras?: {
       bubbles?: boolean;
