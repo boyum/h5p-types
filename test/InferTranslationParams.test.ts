@@ -26,10 +26,29 @@ namespace Test_InferParams_Multiple {
     ":count": string;
     ":animal": string;
     ":zoo-name": string;
+    ":adjective": string;
   };
 
-  type Actual = TranslationParams<"We have :count :animal in :zoo-name">;
-  // type Actual = TranslationParams<"We have :count :animal in :zoo-name.">;
+  type Actual =
+    TranslationParams<"We have :count :animal in :zoo-name. They are :adjective!">;
+
+  // @ts-ignore Test
+  type Test =
+    // prettier-ignore
+    Expect<AreEqual<Actual, Expected>>;
+}
+
+// @ts-ignore Test
+namespace Test_InferParams_MultiLine {
+  type Expected = {
+    ":count": string;
+    ":animal": string;
+    ":zoo-name": string;
+    ":adjective": string;
+  };
+
+  type Actual = TranslationParams<`We have :count :animal in :zoo-name.
+  They are :adjective!`>;
 
   // @ts-ignore Test
   type Test =

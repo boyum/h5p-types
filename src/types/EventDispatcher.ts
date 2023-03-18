@@ -2,6 +2,10 @@ import type { H5PEvent } from "./H5PEvent";
 import type { XAPIEvent } from "./XAPI/XAPIEvent";
 import type { XAPIVerb } from "./XAPI/XAPIVerb";
 
+type EventListener<TData, TType extends string> = (
+  event: TType extends "xAPI" ? XAPIEvent : H5PEvent<TData>,
+) => void;
+
 export declare class EventDispatcher {
   /**
    * Add new event listener
@@ -14,9 +18,7 @@ export declare class EventDispatcher {
    */
   on: <TData = unknown, TType extends string = string>(
     type: TType,
-    listener: (
-      event: TType extends "xAPI" ? XAPIEvent : H5PEvent<TData>,
-    ) => void,
+    listener: EventListener<TData, TType>,
     thisArg?: ThisType<unknown>,
   ) => void;
 
@@ -31,9 +33,7 @@ export declare class EventDispatcher {
    */
   once: <TData = unknown, TType extends string = string>(
     type: TType,
-    listener: (
-      event: TType extends "xAPI" ? XAPIEvent : H5PEvent<TData>,
-    ) => void,
+    listener: EventListener<TData, TType>,
     thisArg?: ThisType<unknown>,
   ) => void;
 

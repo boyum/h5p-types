@@ -8,15 +8,63 @@ type StartsWith<
   TPrefix extends string,
 > = TString extends `${TPrefix}${string}` ? true : false;
 
-// TODO: Split by punctuation (".", ",", ";", ":") and line breaks as well
 type SplitWords<TString extends string> = Split<TString, " ">;
+
+type Replace<
+  TString extends string,
+  TSearch extends string,
+  TReplace extends string,
+> = Join<Split<TString, TSearch>, TReplace>;
+
+type TrimEnd<
+  TString extends string,
+  TChar extends string,
+> = TString extends `${infer THead}${TChar}`
+  ? THead extends `${THead}${TChar}`
+    ? TrimEnd<THead, TChar>
+    : THead
+  : TString;
+
+type StopChars =
+  | "."
+  | ","
+  | ":"
+  | ";"
+  | "<"
+  | ">"
+  | "("
+  | ")"
+  | "["
+  | "]"
+  | "{"
+  | "}"
+  | "!"
+  | "?"
+  | "-"
+  | '"'
+  | "'"
+  | "@"
+  | "^"
+  | "¨"
+  | "*"
+  | "–"
+  | "—"
+  | "#"
+  | "$"
+  | "%"
+  | "`"
+  | "´"
+  | "+"
+  | "="
+  | "\n"
+  | "\r\n";
 
 export type TranslationHasParams<TTranslation extends string> =
   TTranslation extends `${string}:${string}` ? true : false;
 
 export type TranslationParams<
   TTranslation extends string,
-  TWords extends Array<string> = SplitWords<TTranslation>,
+  TWords extends Array<string> = SplitWords<Replace<TTranslation, "\n", " ">>,
 > = Prettify<
   TWords extends [infer TFirstWord, ...infer TRestWords]
     ? TFirstWord extends string
@@ -27,7 +75,7 @@ export type TranslationParams<
             : TRestWords extends Array<string>
             ? TranslationParams<Join<TRestWords, " ">>
             : {}
-          : Record<TFirstWord, string> &
+          : Record<TrimEnd<TFirstWord, StopChars>, string> &
               (TRestWords extends []
                 ? {}
                 : TRestWords extends Array<string>
