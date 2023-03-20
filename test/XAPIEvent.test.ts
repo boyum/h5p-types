@@ -24,7 +24,6 @@ namespace Test_XAPIEvent_getVerb_False {
   verb?.length;
 }
 
-
 // @ts-ignore Test
 namespace Test_XAPIEvent_getVerb_Undefined {
   declare const event: XAPIEvent;
