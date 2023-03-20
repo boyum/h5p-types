@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.15.0](https://github.com/boyum/h5p-types/compare/v1.14.0...v1.15.0) (2023-03-20)
+
+
+### Features
+
+* **translation-params:** split by returns and stop characters ([ad955c8](https://github.com/boyum/h5p-types/commit/ad955c81b5e8ab5fabba4205ab8285b606ee4313))
+* **xapievent:** type `getVerb` correctly ([#158](https://github.com/boyum/h5p-types/issues/158)) ([392f788](https://github.com/boyum/h5p-types/commit/392f788846b82fe15517adfb67b7bc0f72cbed53))
+
 ## [1.14.0](https://github.com/boyum/h5p-types/compare/v1.13.1...v1.14.0) (2023-03-17)
 
 
