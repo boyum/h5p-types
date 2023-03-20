@@ -39,9 +39,18 @@ export declare class XAPIEvent extends H5PEvent<{
    *   if true the full verb id prefixed by http://adlnet.gov/expapi/verbs/
    *   will be returned
    * @returns
-   *   Verb or null if no verb with an id has been defined
+   *   Verb or null if no verb with an id has been defined.
+   *   If the parameter `full` is `true`, the return type is
+   *   an object with an `id` property (the verb with full url)
+   *   and a `display` property (a record of translated labels,
+   *   for instance `{ "en-US: "Answered" }`).
    */
-  getVerb(full: boolean): `http://adlnet.gov/expapi/verbs/${XAPIVerb}` | null;
+  getVerb(full: true): {
+    id: `http://adlnet.gov/expapi/verbs/${XAPIVerb}`;
+    display: Record<string, string>;
+  } | null;
+  getVerb(full: false): XAPIVerb | null;
+  getVerb(full?: undefined): XAPIVerb | null;
 
   /**
    * Set the object part of the statement.
