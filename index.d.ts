@@ -60,6 +60,7 @@ export { H5PIntegrationObject } from "./src/types/H5PIntegrationObject";
 export { H5PObject } from "./src/types/H5PObject";
 
 // Classes
+export { EventDispatcher } from "./src/types/EventDispatcher";
 export { H5PClipboardItem } from "./src/types/H5PClipboardItem";
 export { H5PCommunicator } from "./src/types/H5PCommunicator";
 export { H5PConfirmationDialog } from "./src/types/H5PConfirmationDialog";
@@ -95,6 +96,7 @@ export { IH5PWidget } from "./src/types/Interfaces/IH5PWidget";
 
 // Infer utils
 export { InferGroupParams } from "./src/types/InferGroupParams";
+export { InferL10nType } from "./src/types/InferL10nType";
 export { InferParamsFromSemantics } from "./src/types/InferParamsFromSemantics";
 export {
   InferParamTypeFromFieldType,
