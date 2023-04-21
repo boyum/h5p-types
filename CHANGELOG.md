@@ -1,5 +1,22 @@
 # Changelog
 
+### [1.15.2](https://github.com/boyum/h5p-types/compare/v1.15.1...v1.15.2) (2023-04-21)
+
+
+### Features
+
+* export EventDispatcher and InferL10nType ([207d4a3](https://github.com/boyum/h5p-types/commit/207d4a3c498e9919cbfd7f49298feb72bdc80d5b))
+
+
+### Tests
+
+* import tests from module instead of directly from files ([80cca01](https://github.com/boyum/h5p-types/commit/80cca010cb6ee77bcbc391c6321c1b39531a45d8))
+
+
+### Build System
+
+* update `@tsconfig/strictest` to v2 ([c8faee0](https://github.com/boyum/h5p-types/commit/c8faee036ef75b071b2354f10837cef316148cb1))
+
 ### [1.15.1](https://github.com/boyum/h5p-types/compare/v1.15.0...v1.15.1) (2023-04-21)
 
 
