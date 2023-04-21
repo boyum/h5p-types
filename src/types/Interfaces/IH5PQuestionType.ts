@@ -1,5 +1,4 @@
-import type { XAPIDefinition } from "../XAPI/XAPIDefinition";
-import type { XAPIEvent } from "../XAPI/XAPIEvent";
+import type { XAPIData } from "../XAPI/XAPIData";
 
 export interface IH5PQuestionType {
   /**
@@ -60,8 +59,5 @@ export interface IH5PQuestionType {
    *
    * @see https://h5p.org/documentation/developers/contracts#guides-header-6
    */
-  getXAPIData(): {
-    statement: XAPIDefinition;
-    children?: Array<XAPIEvent>;
-  };
+  getXAPIData(): XAPIData;
 }

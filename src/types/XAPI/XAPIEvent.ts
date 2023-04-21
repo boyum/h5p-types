@@ -1,12 +1,10 @@
 import type { H5PEvent } from "../H5PEvent";
 import type { H5PObject } from "../H5PObject";
 import type { IH5PContentType } from "../Interfaces/IH5PContentType";
-import type { XAPIStatement } from "./XAPIStatement";
+import type { XAPIData } from "./XAPIData";
 import type { XAPIVerb } from "./XAPIVerb";
 
-export declare class XAPIEvent extends H5PEvent<{
-  statement: XAPIStatement;
-}> {
+export declare class XAPIEvent extends H5PEvent<XAPIData> {
   type: "xAPI";
 
   constructor();
@@ -17,9 +15,9 @@ export declare class XAPIEvent extends H5PEvent<{
   setScoredResult(
     score: number,
     maxScore: number,
-    instance: H5PObject,
-    completion: number,
-    success: number,
+    instance: IH5PContentType,
+    completion: boolean,
+    success: boolean,
   ): void;
 
   /**
