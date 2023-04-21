@@ -1,5 +1,4 @@
 import type { H5PEvent } from "../H5PEvent";
-import type { H5PObject } from "../H5PObject";
 import type { IH5PContentType } from "../Interfaces/IH5PContentType";
 import type { XAPIData } from "./XAPIData";
 import type { XAPIVerb } from "./XAPIVerb";

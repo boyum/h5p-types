@@ -1,5 +1,3 @@
-import type { XAPIInteractionType } from "./XAPIInteractionType";
-
 export type XAPIDefinition = {
   name: Record<string, string>;
   description: Record<string, string>;

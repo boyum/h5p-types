@@ -1,4 +1,4 @@
-import type { XAPIStatement } from './XAPIStatement';
+import type { XAPIStatement } from "./XAPIStatement";
 
 export type XAPIData = {
   statement: XAPIStatement;
