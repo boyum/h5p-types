@@ -1,9 +1,8 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment, @typescript-eslint/no-unused-vars, @typescript-eslint/no-namespace */
 
 import type { EmptyObject, ReadonlyDeep } from "type-fest";
-import type { AreEqual, Expect } from "../src/test-utility-types";
-import type { H5PAudio } from "../src/types/H5PAudio";
 import type {
+  H5PAudio,
   H5PFieldAudio,
   H5PFieldBoolean,
   H5PFieldFile,
@@ -15,12 +14,13 @@ import type {
   H5PFieldSelect,
   H5PFieldText,
   H5PFieldVideo,
-} from "../src/types/H5PField";
-import type { H5PImage } from "../src/types/H5PImage";
-import type { InferParamTypeFromFieldType } from "../src/types/InferParamTypeFromFieldType";
-import type { H5PMedia } from "../src/types/H5PMedia";
-import type { H5PVideo } from "../src/types/H5PVideo";
-import type { IH5PContentType } from "../src/types/Interfaces/IH5PContentType";
+  H5PImage,
+  H5PMedia,
+  H5PVideo,
+  IH5PContentType,
+  InferParamTypeFromFieldType,
+} from "..";
+import type { AreEqual, Expect } from "../src/test-utility-types";
 
 // @ts-ignore Test
 namespace Test_AudioField {

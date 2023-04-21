@@ -1,8 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars, @typescript-eslint/ban-ts-comment, @typescript-eslint/no-namespace */
 
+import type { H5PFieldGroup, InferL10nType } from "..";
 import type { AreEqual, Expect } from "../src/test-utility-types";
-import type { H5PFieldGroup } from "../src/types/H5PField";
-import type { InferL10nType } from "../src/types/InferL10nType";
 
 // @ts-ignore Test
 namespace Test_InferL10nType {

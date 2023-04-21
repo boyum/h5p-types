@@ -1,9 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars, @typescript-eslint/ban-ts-comment, @typescript-eslint/no-namespace */
 
 import type { EmptyObject, ReadonlyDeep } from "type-fest";
+import type { H5PFieldGroup, InferGroupParams } from "..";
 import type { AreEqual, Expect } from "../src/test-utility-types";
-import type { H5PFieldGroup } from "../src/types/H5PField";
-import type { InferGroupParams } from "../src/types/InferGroupParams";
 
 // @ts-ignore Test
 namespace Test_EmptyGroup {

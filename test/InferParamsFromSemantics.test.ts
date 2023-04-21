@@ -1,10 +1,8 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment, @typescript-eslint/no-unused-vars, @typescript-eslint/no-namespace */
 
 import type { EmptyObject, ReadonlyDeep } from "type-fest";
+import type { H5PField, H5PFieldGroup, H5PL10n, InferParamsFromSemantics } from "..";
 import type { AreEqual, Expect } from "../src/test-utility-types";
-import type { H5PField, H5PFieldGroup } from "../src/types/H5PField";
-import type { H5PL10n } from "../src/types/H5PL10n";
-import type { InferParamsFromSemantics } from "../src/types/InferParamsFromSemantics";
 
 // @ts-ignore Test
 namespace Test_H5PFieldText {

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars, @typescript-eslint/ban-ts-comment, @typescript-eslint/no-namespace */
 
-import type { XAPIEvent } from "../src/types/XAPI/XAPIEvent";
+import type { XAPIEvent } from "..";
 
 // @ts-ignore Test
 namespace Test_XAPIEvent_getVerb_True {
