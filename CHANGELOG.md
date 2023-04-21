@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.16.0](https://github.com/boyum/h5p-types/compare/v1.15.2...v1.16.0) (2023-04-21)
+
+
+### Features
+
+* add H5P specific XAPIInteractionType `compound` ([b7f457e](https://github.com/boyum/h5p-types/commit/b7f457ee08cadcfa18cb7520acaba7f750e8f1d1))
+
 ### [1.15.2](https://github.com/boyum/h5p-types/compare/v1.15.1...v1.15.2) (2023-04-21)
 
 
