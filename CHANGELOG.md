@@ -1,5 +1,13 @@
 # Changelog
 
+### [1.15.1](https://github.com/boyum/h5p-types/compare/v1.15.0...v1.15.1) (2023-04-21)
+
+
+### Bug Fixes
+
+* improve XAPI related types ([#177](https://github.com/boyum/h5p-types/issues/177)) ([e43f5c4](https://github.com/boyum/h5p-types/commit/e43f5c4b248a758ccc23693396fe8bb5b7467a2f))
+* update dependency with critical vulnerability ([bb04a93](https://github.com/boyum/h5p-types/commit/bb04a935d752a1d93f4112d09bb8de25e07f57d7))
+
 ## [1.15.0](https://github.com/boyum/h5p-types/compare/v1.14.0...v1.15.0) (2023-03-20)
 
 
@@ -31,7 +39,7 @@
 
 * infer that H5PFieldLibrary returns `IH5PContentType` ([#145](https://github.com/boyum/h5p-types/issues/145)) ([bf9d43e](https://github.com/boyum/h5p-types/commit/bf9d43e210c2c036999a17b410e460e44a4023fe))
 
-## [1.11.1](https://github.com/boyum/h5p-types/compare/v1.11.0...v1.11.1) (2023-02-21)
+### [1.11.1](https://github.com/boyum/h5p-types/compare/v1.11.0...v1.11.1) (2023-02-21)
 
 
 ### Features
@@ -59,14 +67,14 @@
 
 * use the `TranslationParams` type to infer translation params ([#139](https://github.com/boyum/h5p-types/issues/139)) ([c8f0a21](https://github.com/boyum/h5p-types/commit/c8f0a21cf9c4e7ef43078f31a39aaf2519fbe101))
 
-## [1.8.2](https://github.com/boyum/h5p-types/compare/v1.8.1...v1.8.2) (2023-02-09)
+### [1.8.2](https://github.com/boyum/h5p-types/compare/v1.8.1...v1.8.2) (2023-02-09)
 
 
 ### Bug Fixes
 
 * export every `H5PField*` type ([afe4cd3](https://github.com/boyum/h5p-types/commit/afe4cd3d20797fcc9e459f4b1e649de58d0904de))
 
-## [1.8.1](https://github.com/boyum/h5p-types/compare/v1.8.0...v1.8.1) (2023-02-09)
+### [1.8.1](https://github.com/boyum/h5p-types/compare/v1.8.0...v1.8.1) (2023-02-09)
 
 
 ### Bug Fixes
