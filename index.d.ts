@@ -108,6 +108,7 @@ export {
 } from "./src/types/InferTranslationParams";
 
 // XAPI
+export { XAPIData } from "./src/types/XAPI/XAPIData";
 export { XAPIDefinition } from "./src/types/XAPI/XAPIDefinition";
 export { XAPIEvent } from "./src/types/XAPI/XAPIEvent";
 export { XAPIInteractionType } from "./src/types/XAPI/XAPIInteractionType";
