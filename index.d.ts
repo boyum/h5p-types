@@ -76,9 +76,6 @@ export {
   /** @deprecated Use {@link H5PVideo} */ H5PVideo as Video,
 } from "./src/types/H5PVideo";
 
-// Enums
-export { H5PFieldType } from "./src/types/H5PFieldType";
-
 // Widget helpers
 export { H5PShowWhenOptions } from "./src/types/H5PShowWhenOptions";
 export { H5PShowWhenRule } from "./src/types/H5PShowWhenRule";

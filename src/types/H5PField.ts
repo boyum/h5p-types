@@ -1,5 +1,4 @@
 import type { H5PEnterMode } from "./H5PEnterMode";
-import type { H5PFieldType } from "./H5PFieldType";
 import type { H5PFieldWidgetExtension } from "./H5PFieldWidgetExtension";
 import type { H5PImportance } from "./H5PImportance";
 import type { H5PTextFieldWidgetExtension } from "./H5PTextFieldWidgetExtension";
@@ -78,7 +77,7 @@ export type H5PField =
 export type H5PFieldText =
   | H5PFieldCommon &
       H5PTextFieldWidgetExtension & {
-        type: "text" | H5PFieldType.Text;
+        type: "text";
         default?: string;
         widget?: string;
         maxLength?: number;
@@ -108,7 +107,7 @@ export type H5PFieldText =
 export type H5PFieldNumber =
   | H5PFieldCommon &
       H5PFieldWidgetExtension & {
-        type: "number" | H5PFieldType.Number;
+        type: "number";
         default?: number;
         widget?: string;
         min?: number;
@@ -128,7 +127,7 @@ export type H5PFieldNumber =
 export type H5PFieldBoolean =
   | H5PFieldCommon &
       H5PFieldWidgetExtension & {
-        type: "boolean" | H5PFieldType.Boolean;
+        type: "boolean";
         default: boolean;
         widget?: string;
       };
@@ -136,7 +135,7 @@ export type H5PFieldBoolean =
 export type H5PFieldGroup =
   | H5PFieldCommon &
       H5PFieldWidgetExtension & {
-        type: "group" | H5PFieldType.Group;
+        type: "group";
         widget?: string;
         fields: Array<H5PField>;
         isSubContent?: boolean;
@@ -154,7 +153,7 @@ export type H5PFieldGroup =
 export type H5PFieldList =
   | H5PFieldCommon &
       H5PFieldWidgetExtension & {
-        type: "list" | H5PFieldType.List;
+        type: "list";
 
         /**
          * List containing widget(s). A widget is defined as
@@ -195,7 +194,7 @@ export type H5PFieldList =
 export type H5PFieldSelect =
   | H5PFieldCommon &
       H5PFieldWidgetExtension & {
-        type: "select" | H5PFieldType.Select;
+        type: "select";
         default: string | number | boolean;
         options: Array<{
           value: string | number | boolean;
@@ -207,7 +206,7 @@ export type H5PFieldSelect =
 export type H5PFieldLibrary =
   | H5PFieldCommon &
       H5PFieldWidgetExtension & {
-        type: "library" | H5PFieldType.Library;
+        type: "library";
         options: Array<string>;
         default?: string;
         widget?: string;
@@ -216,27 +215,27 @@ export type H5PFieldLibrary =
 export type H5PFieldImage =
   | H5PFieldCommon &
       H5PFieldWidgetExtension & {
-        type: "image" | H5PFieldType.Image;
+        type: "image";
         widget?: string;
       };
 
 export type H5PFieldVideo =
   | H5PFieldCommon &
       H5PFieldWidgetExtension & {
-        type: "video" | H5PFieldType.Video;
+        type: "video";
         widget?: string;
       };
 
 export type H5PFieldAudio =
   | H5PFieldCommon &
       H5PFieldWidgetExtension & {
-        type: "audio" | H5PFieldType.Audio;
+        type: "audio";
         widget?: string;
       };
 
 export type H5PFieldFile =
   | H5PFieldCommon &
       H5PFieldWidgetExtension & {
-        type: "file" | H5PFieldType.File;
+        type: "file";
         widget?: string;
       };
