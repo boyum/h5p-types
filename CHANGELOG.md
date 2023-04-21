@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.16.1](https://github.com/boyum/h5p-types/compare/v1.16.0...v1.16.1) (2023-04-21)
+
+
+### Features
+
+* export XAPIData ([3fb8ede](https://github.com/boyum/h5p-types/commit/3fb8ede3a6495a7e7013fd55865667b12a4e3eed))
+
 ## [1.16.0](https://github.com/boyum/h5p-types/compare/v1.15.2...v1.16.0) (2023-04-21)
 
 
