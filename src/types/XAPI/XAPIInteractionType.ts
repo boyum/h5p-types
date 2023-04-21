@@ -1,7 +1,14 @@
 /**
- * @see https://github.com/adlnet/xAPI-Spec/blob/master/xAPI-Data.md#interaction-types
+ * - `"compound"`: Not part of the xAPI specification, but is used by H5P for reporting
  */
-export type XAPIInteractionType =
+type H5PSpecificInteractionType = "compound";
+
+/**
+ * @see https://github.com/adlnet/xAPI-Spec/blob/master/xAPI-Data.md#interaction-types
+ *
+ *
+ */
+export type XAPIInteractionType = (
   | "true-false"
   | "choice"
   | "fill-in"
@@ -11,4 +18,6 @@ export type XAPIInteractionType =
   | "sequencing"
   | "likert"
   | "numeric"
-  | "other";
+  | "other"
+) &
+  H5PSpecificInteractionType;
