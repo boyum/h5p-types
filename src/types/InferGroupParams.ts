@@ -1,6 +1,9 @@
 import type { EmptyObject, ReadonlyDeep } from "type-fest";
 import type { H5PFieldGroup } from "./H5PField";
-import type { InferParamsFromSemantics } from "./InferParamsFromSemantics";
+import type {
+  H5PFieldWithOptionalLabel,
+  InferParamsFromSemantics,
+} from "./InferParamsFromSemantics";
 import type { InferParamTypeFromFieldType } from "./InferParamTypeFromFieldType";
 
 /**
@@ -13,7 +16,7 @@ type InferEmptyGroupParams = EmptyObject;
  * the group's inferred params is the type of that field
  */
 type InferGroupWithOneFieldParams<
-  TGroupField extends ReadonlyDeep<H5PFieldGroup>,
+  TGroupField extends ReadonlyDeep<H5PFieldWithOptionalLabel<H5PFieldGroup>>,
 > = TGroupField["fields"][0] extends H5PFieldGroup
   ? InferGroupParams<ReadonlyDeep<TGroupField["fields"][0]>>
   : InferParamTypeFromFieldType<TGroupField["fields"][0]>;
@@ -24,11 +27,13 @@ type InferGroupWithOneFieldParams<
  * then we infer the field's params for the value
  */
 type InferGroupWithMultipleFieldsParams<
-  TGroupField extends ReadonlyDeep<H5PFieldGroup>,
+  TGroupField extends ReadonlyDeep<H5PFieldWithOptionalLabel<H5PFieldGroup>>,
 > = InferParamsFromSemantics<TGroupField["fields"]>;
 
 export type InferGroupParams<
-  TGroupField extends ReadonlyDeep<H5PFieldGroup>,
+  TGroupField extends ReadonlyDeep<
+    H5PFieldGroup | H5PFieldWithOptionalLabel<H5PFieldGroup>
+  >,
   TNumberOfFields = TGroupField["fields"]["length"],
 > = TNumberOfFields extends 0
   ? InferEmptyGroupParams

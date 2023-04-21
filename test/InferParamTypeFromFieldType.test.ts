@@ -36,6 +36,21 @@ namespace Test_AudioField {
 }
 
 // @ts-ignore Test
+namespace Test_AudioField_NoLabel {
+  type FieldType = Omit<H5PFieldAudio, "label"> & {
+    label?: H5PFieldAudio["label"];
+  };
+
+  type Expected = H5PAudio;
+  type Actual = InferParamTypeFromFieldType<FieldType>;
+
+  // @ts-ignore Test
+  type Test =
+    // prettier-ignore
+    Expect<AreEqual<Actual, Expected>>;
+}
+
+// @ts-ignore Test
 namespace Test_BooleanField {
   type FieldType = H5PFieldBoolean;
 
