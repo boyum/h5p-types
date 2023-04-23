@@ -8,7 +8,7 @@ type H5PSpecificInteractionType = "compound";
  *
  *
  */
-export type XAPIInteractionType = (
+export type XAPIInteractionType =
   | "true-false"
   | "choice"
   | "fill-in"
@@ -19,5 +19,4 @@ export type XAPIInteractionType = (
   | "likert"
   | "numeric"
   | "other"
-) &
-  H5PSpecificInteractionType;
+  | H5PSpecificInteractionType;
