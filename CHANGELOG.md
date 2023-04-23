@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.16.2](https://github.com/boyum/h5p-types/compare/v1.16.1...v1.16.2) (2023-04-23)
+
+
+### Bug Fixes
+
+* make `XAPIInteractionType` a union of specified interaction types and H5P specific ones ([5020935](https://github.com/boyum/h5p-types/commit/5020935298b86e41d6ced3704a203445128510dc))
+
 ### [1.16.1](https://github.com/boyum/h5p-types/compare/v1.16.0...v1.16.1) (2023-04-21)
 
 
