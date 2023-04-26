@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@types/jquery": "^3.5.16",
-    "type-fest": "^3.8.0"
+    "type-fest": "^3.9.0"
   },
   "prettier": "prettier-config",
   "repository": {
