@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.17.0](https://github.com/boyum/h5p-types/compare/v1.16.2...v1.17.0) (2023-05-03)
+
+
+### Code Refactoring
+
+* **H5PObject:** change from type to interface ([#187](https://github.com/boyum/h5p-types/issues/187)) ([26bd616](https://github.com/boyum/h5p-types/commit/26bd616d10571ba9336a172a052cf66c16ac57cb))
+
 ### [1.16.2](https://github.com/boyum/h5p-types/compare/v1.16.1...v1.16.2) (2023-04-23)
 
 
