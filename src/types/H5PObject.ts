@@ -20,7 +20,7 @@ import type { H5PNewRunnableLibraryParam } from "./H5PNewRunnableLibraryParam";
 import type { H5PThumbnail } from "./H5PThumbnail";
 import type { IH5PContentType } from "./Interfaces/IH5PContentType";
 
-export type H5PObject = {
+export interface H5PObject {
   // --- Properties ---
   $body: JQuery<HTMLBodyElement>;
 
@@ -580,4 +580,4 @@ export type H5PObject = {
    * A simple and elegant class for creating thumbnails of images
    */
   Thumbnail: typeof H5PThumbnail;
-};
+}
