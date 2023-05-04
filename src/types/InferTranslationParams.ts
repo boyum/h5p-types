@@ -56,35 +56,41 @@ type StopChars =
   | "´"
   | "+"
   | "="
+  | "\t"
   | "\n"
   | "\r\n";
 
-export type TranslationHasParams<TTranslation extends string> =
-  TTranslation extends `${string}:${string}` ? true : false;
+type DefaultPrefix = ":";
+
+export type TranslationHasParams<
+  TTranslation extends string,
+  TPrefix extends string = DefaultPrefix,
+> = TTranslation extends `${string}${TPrefix}${string}` ? true : false;
 
 export type TranslationParams<
   TTranslation extends string,
-  TWords extends Array<string> = SplitWords<Replace<TTranslation, "\n", " ">>,
+  TPrefix extends string = DefaultPrefix,
+  _TWords extends Array<string> = SplitWords<Replace<TTranslation, "\n", " ">>,
 > = Prettify<
-  TWords extends [infer TFirstWord, ...infer TRestWords]
+  _TWords extends [infer TFirstWord, ...infer TRestWords]
     ? TFirstWord extends string
-      ? StartsWith<TFirstWord, ":"> extends true
-        ? TFirstWord extends ":"
+      ? StartsWith<TFirstWord, TPrefix> extends true
+        ? TFirstWord extends TPrefix
           ? TRestWords extends []
             ? {}
             : TRestWords extends Array<string>
-            ? TranslationParams<Join<TRestWords, " ">>
+            ? TranslationParams<Join<TRestWords, " ">, TPrefix>
             : {}
           : Record<TrimEnd<TFirstWord, StopChars>, string> &
               (TRestWords extends []
                 ? {}
                 : TRestWords extends Array<string>
-                ? TranslationParams<Join<TRestWords, " ">>
+                ? TranslationParams<Join<TRestWords, " ">, TPrefix>
                 : {})
         : TRestWords extends []
         ? {}
         : TRestWords extends Array<string>
-        ? TranslationParams<Join<TRestWords, " ">>
+        ? TranslationParams<Join<TRestWords, " ">, TPrefix>
         : {}
       : {}
     : {}
