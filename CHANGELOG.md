@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.18.0](https://github.com/boyum/h5p-types/compare/v1.17.0...v1.18.0) (2023-05-04)
+
+
+### Features
+
+* **translation-params:** add possibility for optional prefix ([#188](https://github.com/boyum/h5p-types/issues/188)) ([de06e6b](https://github.com/boyum/h5p-types/commit/de06e6b44031172e61a944f33c03f6f72a328e54))
+
 ## [1.17.0](https://github.com/boyum/h5p-types/compare/v1.16.2...v1.17.0) (2023-05-03)
 
 
