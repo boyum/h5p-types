@@ -143,7 +143,7 @@ export type H5PEditorObject<
    * @param handler Action handler when triggered
    * @param displayTitle Show button with text. Default: `false`
    */
-  createButon: (
+  createButton: (
     id: string,
     title: string,
     handler: () => void,
