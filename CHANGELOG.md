@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.18.1](https://github.com/boyum/h5p-types/compare/v1.18.0...v1.18.1) (2023-05-16)
+
+
+### Bug Fixes
+
+* **H5PEditor:** `createButon` -> `createButton` ([#192](https://github.com/boyum/h5p-types/issues/192)) ([ae6d9c8](https://github.com/boyum/h5p-types/commit/ae6d9c8c865900a56bb2a6915d9b6df641c24670))
+
+
+### Build System
+
+* update deps ([6543213](https://github.com/boyum/h5p-types/commit/6543213e383f9836156fbe6da88eab47a04ab2d9))
+* update vm2 to 3.9.19 ([e194b39](https://github.com/boyum/h5p-types/commit/e194b39229202c81945986cbe094b829197925e3))
+
 ## [1.18.0](https://github.com/boyum/h5p-types/compare/v1.17.0...v1.18.0) (2023-05-04)
 
 
