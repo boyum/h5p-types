@@ -6,6 +6,17 @@ These H5P types, with the exception of `Params` are copies of models found in th
 
 `Params` is the type of the `params` parameter in the `H5PWrapper` and is structured after `semantics.json`.
 
+## Usage
+
+Install the package:
+
+```bash
+npm install --save-dev h5p-types
+```
+
+`h5p-types` depends on TypeScript and requires TypeScript version 4.7 or higher to be installed.
+TypeScript 5 is supported.
+
 ## Creating a new widget
 
 A new H5P widget is a class that has certain properties and is found on the global `window.H5P` object.
