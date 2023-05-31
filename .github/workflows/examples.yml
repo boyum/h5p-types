@@ -24,23 +24,27 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set project
-        run: cd examples/${{ matrix.project }}
-
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
+        with:
+          working-directory: examples/${{ matrix.project }}
 
       - name: Set TypeScript version
         run: npm install typescript@${{ matrix.typescript-version }} --save-dev
+        working-directory: examples/${{ matrix.project }}
 
       - name: Typecheck
         run: npm run typecheck --if-present
+        working-directory: examples/${{ matrix.project }}
 
       - name: Test
         run: npm test --if-present
+        working-directory: examples/${{ matrix.project }}
 
       - name: Lint
         run: npm run lint --if-present
+        working-directory: examples/${{ matrix.project }}
 
       - name: Build
         run: npm run build --if-present
+        working-directory: examples/${{ matrix.project }}
