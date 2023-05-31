@@ -33,7 +33,7 @@ jobs:
 
       matrix:
         typescript-version:
-          - 4.7
+          - 4.9
           - next
           - latest
 
