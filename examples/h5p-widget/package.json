@@ -1,0 +1,24 @@
+{
+  "name": "h5p-widget",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "build": "webpack --mode=production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "h5p-utils": "^3.2.1"
+  },
+  "devDependencies": {
+    "@tsconfig/strictest": "^2.0.1",
+    "h5p-types": "file:../..",
+    "h5p-types-joubel-ui": "^1.0.5",
+    "ts-loader": "^9.4.2",
+    "unplugin-json-dts": "^1.2.0",
+    "webpack": "^5.82.1",
+    "webpack-cli": "^5.1.1"
+  }
+}
