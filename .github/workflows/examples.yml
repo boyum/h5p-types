@@ -24,7 +24,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install dependencies
+      - name: Install root dependencies
+        uses: bahmutov/npm-install@v1
+
+      - name: Install ${{ matrix.project }} dependencies
         uses: bahmutov/npm-install@v1
         with:
           working-directory: examples/${{ matrix.project }}
