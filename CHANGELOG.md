@@ -7,23 +7,9 @@
 
 * add example projects for h5p content type and widget ([89a69cc](https://github.com/boyum/h5p-types/commit/89a69cc53b379fb21bb752a24f7c776ae4c881aa))
 
-
-### Continuous Integration
-
-* check that the project works with ts 4.7 ([323065b](https://github.com/boyum/h5p-types/commit/323065b015d4c4da39ed3585afba94d66a03f68f))
-* ignore deprecations for TS 5 ([2c91dcd](https://github.com/boyum/h5p-types/commit/2c91dcdda18ad8abb02ec74f3a7b793499e5903e))
-* install root dependencies in examples' ci ([619d2bf](https://github.com/boyum/h5p-types/commit/619d2bfe13a5536ba962d51bc521de11acf778b1))
-* set example project correctly ([781e0a9](https://github.com/boyum/h5p-types/commit/781e0a929da0884a0cd2c1cbb857ecae79bf1f3d))
-* set working directory for examples' ci ([ea503b5](https://github.com/boyum/h5p-types/commit/ea503b5d4848da65d3303e1c2f45f382c4098657))
-* test old TS versions only in example projects ([4bdf147](https://github.com/boyum/h5p-types/commit/4bdf14764be6edc80192692709aeaaa3e89b5be1))
-* verify multiple TS versions ([ed3dcd7](https://github.com/boyum/h5p-types/commit/ed3dcd769a95f04e00da936ed5ae9bcc8ab063b6))
-
-
 ### Build System
 
-* ignore generated library and semantics files ([30b9ed5](https://github.com/boyum/h5p-types/commit/30b9ed5d187c04f105324495db0d2630700371e9))
 * set minimum TS version to 4.9 ([4a6d287](https://github.com/boyum/h5p-types/commit/4a6d2874965de8405c9fb6a304f7d42d026aba8a))
-* set minimum TS version to v4.7 ([dc2be70](https://github.com/boyum/h5p-types/commit/dc2be70c6fea2d34a9ee0a3ee29907d14f4f3685))
 
 ### [1.18.1](https://github.com/boyum/h5p-types/compare/v1.18.0...v1.18.1) (2023-05-16)
 
