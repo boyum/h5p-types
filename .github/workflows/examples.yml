@@ -1,0 +1,46 @@
+name: Validate example projects
+
+on: [push, pull_request]
+
+jobs:
+  run:
+    name: Validate example projects
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+
+      matrix:
+        project:
+          - h5p-content-type
+          - h5p-widget
+
+        typescript-version:
+          - 4.5
+          - 5
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set project
+        run: cd ${{ matrix.project }}
+
+      - name: Install dependencies
+        uses: bahmutov/npm-install@v1
+
+      - name: Set TypeScript version
+        run: npm install typescript@${{ matrix.typescript-version }} --save-dev
+
+      - name: Typecheck
+        run: npm run typecheck --if-present
+
+      - name: Test
+        run: npm test --if-present
+
+      - name: Lint
+        run: npm run lint --if-present
+
+      - name: Build
+        run: npm run build --if-present

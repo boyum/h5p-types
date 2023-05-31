@@ -6,9 +6,9 @@
     "moduleResolution": "Node",
     "sourceMap": true,
     "resolveJsonModule": true,
-    "noEmit": true,
-    "declaration": false
+    "declaration": false,
+    "verbatimModuleSyntax": true
   },
-  "include": ["src", "index.d.ts", "test"],
+  "include": ["src", "h5p-extensions.d.ts"],
   "extends": "@tsconfig/strictest/tsconfig.json"
 }
