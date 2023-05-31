@@ -17,7 +17,7 @@ jobs:
           - h5p-widget
 
         typescript-version:
-          - 4.7
+          - 4.9
           - 5
 
     steps:
