@@ -13,6 +13,7 @@
     "format:check": "prettier --check .",
     "format:fix": "prettier --write .",
     "typecheck": "tsc",
+    "typecheck:ts-4": "tsc --project ./tsconfig.ts-4.json",
     "lint:check": "eslint .",
     "lint:fix": "npm run lint:check -- --fix"
   },
