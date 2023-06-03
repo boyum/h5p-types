@@ -3,6 +3,7 @@
 import type { EmptyObject, ReadonlyDeep } from "type-fest";
 import type { H5PFieldGroup, InferGroupParams } from "..";
 import type { AreEqual, Expect } from "../src/test-utility-types";
+import type { H5PFieldWithOptionalLabel } from "../src/types/InferParamsFromSemantics";
 
 // @ts-ignore Test
 namespace Test_EmptyGroup {
@@ -69,6 +70,71 @@ namespace Test_GroupWithMultipleFields {
       },
     ],
   } as const satisfies ReadonlyDeep<H5PFieldGroup>;
+
+  type Group = typeof groupWithMultipleFields;
+
+  type Expected = {
+    text: string;
+    number: number;
+  };
+  type Actual = InferGroupParams<Group>;
+
+  // @ts-ignore Test
+  type Test =
+    // prettier-ignore
+    Expect<AreEqual<Actual, Expected>>;
+}
+
+// @ts-ignore Test
+namespace Test_GroupWithMultipleFields_GroupNoLabel {
+  const groupWithMultipleFields = {
+    name: "group",
+    type: "group",
+    fields: [
+      {
+        label: "Text",
+        name: "text",
+        type: "text",
+      },
+      {
+        label: "Number",
+        name: "number",
+        type: "number",
+      },
+    ],
+  } as const satisfies ReadonlyDeep<H5PFieldWithOptionalLabel<H5PFieldGroup>>;
+
+  type Group = typeof groupWithMultipleFields;
+
+  type Expected = {
+    text: string;
+    number: number;
+  };
+  type Actual = InferGroupParams<Group>;
+
+  // @ts-ignore Test
+  type Test =
+    // prettier-ignore
+    Expect<AreEqual<Actual, Expected>>;
+}
+
+// @ts-ignore Test
+namespace Test_GroupWithMultipleFields_GroupFieldsNoLabel {
+  const groupWithMultipleFields = {
+    label: "Group",
+    name: "group",
+    type: "group",
+    fields: [
+      {
+        name: "text",
+        type: "text",
+      },
+      {
+        name: "number",
+        type: "number",
+      },
+    ],
+  } as const satisfies ReadonlyDeep<H5PFieldWithOptionalLabel<H5PFieldGroup>>;
 
   type Group = typeof groupWithMultipleFields;
 
