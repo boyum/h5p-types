@@ -4,6 +4,7 @@
   "description": "",
   "private": true,
   "scripts": {
+    "watch": "webpack serve --hot --mode=development",
     "build": "webpack --mode=production"
   },
   "keywords": [],
@@ -14,8 +15,8 @@
   },
   "devDependencies": {
     "@tsconfig/strictest": "^2.0.1",
-    "h5p-types": "../..",
-    "h5p-types-joubel-ui": "^1.0.5",
+    "h5p-types": "*",
+    "h5p-types-joubel-ui": "*",
     "ts-loader": "^9.4.2",
     "unplugin-json-dts": "^1.2.0",
     "webpack": "^5.82.1",
