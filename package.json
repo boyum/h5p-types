@@ -1,44 +1,25 @@
 {
   "name": "h5p-types",
-  "version": "2.0.0",
-  "main": "",
-  "types": "index.d.ts",
-  "files": [
-    "index.d.ts",
-    "src"
-  ],
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
   "scripts": {
-    "publish-to-npm": "release-it",
-    "test": "echo 'No tests'",
-    "format:check": "prettier --check .",
-    "format:fix": "prettier --write .",
-    "typecheck": "tsc",
-    "typecheck:ts-4": "tsc --project ./tsconfig.ts-4.json",
-    "lint:check": "eslint .",
-    "lint:fix": "npm run lint:check -- --fix"
+    "prettier": "prettier .",
+    "format:fix": "npm run prettier -- --write",
+    "format:check": "npm run prettier -- --check",
+    "lint": "npm run format:fix && turbo run lint",
+    "test": "turbo run test"
   },
-  "dependencies": {
-    "@types/jquery": "^3.5.16",
-    "type-fest": "^3.11.1"
-  },
+  "keywords": [],
+  "author": "",
+  "license": "Apache-2.0",
+  "workspaces": [
+    "packages/*",
+    "examples/*"
+  ],
   "devDependencies": {
-    "@release-it/conventional-changelog": "^5.1.1",
-    "@tsconfig/strictest": "^2.0.1",
-    "@typescript-eslint/eslint-plugin": "^5.59.8",
-    "@typescript-eslint/parser": "^5.59.8",
-    "eslint": "^8.42.0",
-    "eslint-plugin-prettier": "^4.2.1",
     "prettier": "^2.8.8",
     "prettier-config": "github:boyum/prettier-config",
-    "release-it": "^15.10.5",
-    "typescript": "^4.9.5"
-  },
-  "peerDependencies": {
-    "typescript": ">= 4.9.x"
-  },
-  "prettier": "prettier-config",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/boyum/h5p-types.git"
+    "turbo": "^1.10.1"
   }
 }
