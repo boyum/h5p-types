@@ -62,8 +62,8 @@
     "@release-it-plugins/workspaces": {
       "workspaces": ["packages/*"],
       "additionalManifests": {
-        "dependencyUpdates": [],
-        "versionUpdates": ["packages/*"]
+        "dependencyUpdates": ["!packages/*"],
+        "versionUpdates": [".", "packages/*"]
       }
     }
   }
