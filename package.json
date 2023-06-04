@@ -11,7 +11,8 @@
     "test": "turbo run test",
     "build": "turbo run build",
     "typecheck": "turbo run typecheck",
-    "typecheck:ts-4": "turbo run typecheck:ts-4"
+    "typecheck:ts-4": "turbo run typecheck:ts-4",
+    "publish-to-npm": "release-it"
   },
   "keywords": [],
   "author": "",
@@ -21,8 +22,11 @@
     "examples/*"
   ],
   "devDependencies": {
+    "@release-it-plugins/workspaces": "^3.2.0",
+    "@release-it/conventional-changelog": "^5.1.1",
     "prettier": "^2.8.8",
     "prettier-config": "github:boyum/prettier-config",
+    "release-it": "^15.10.5",
     "turbo": "^1.10.1"
   }
 }

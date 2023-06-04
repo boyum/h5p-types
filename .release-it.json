@@ -58,6 +58,9 @@
       },
       "header": "# Changelog",
       "infile": "CHANGELOG.md"
+    },
+    "@release-it-plugins/workspaces": {
+      "workspaces": ["packages/*"]
     }
   }
 }
