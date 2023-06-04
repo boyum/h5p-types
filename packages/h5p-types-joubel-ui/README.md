@@ -1,3 +1,9 @@
-# h5p-types-joubelui
+# h5p-types-joubel-ui
 
-Types for H5P JoubelUI.
+Type definitions for [H5P JoubelUI](https://github.com/h5p/h5p-joubel-ui).
+
+## Installation
+
+```sh
+npm install h5p-types-joubel-ui --save-dev
+```
