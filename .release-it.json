@@ -60,7 +60,11 @@
       "infile": "CHANGELOG.md"
     },
     "@release-it-plugins/workspaces": {
-      "workspaces": ["packages/*"]
+      "workspaces": ["packages/*"],
+      "additionalManifests": {
+        "dependencyUpdates": [],
+        "versionUpdates": ["packages/*"]
+      }
     }
   }
 }
