@@ -1,5 +1,4 @@
 import type { ReadonlyDeep } from "type-fest";
-import type { Prettify } from "../utility-types";
 import type { H5PField, H5PFieldGroup } from "./H5PField";
 import type { InferL10nType } from "./InferL10nType";
 import type { InferOptionalWithDefault } from "./InferParamTypeFromFieldType";
@@ -42,15 +41,13 @@ import type { InferOptionalWithDefault } from "./InferParamTypeFromFieldType";
  */
 export type InferParamsFromSemantics<
   TSemantics extends ReadonlyArray<ReadonlyDeep<H5PField>>,
-> = Prettify<
-  TSemantics extends readonly [infer TField, ...infer TRestFields]
-    ? TField extends ReadonlyDeep<H5PField>
-      ? TRestFields extends ReadonlyArray<ReadonlyDeep<H5PField>>
-        ? (TField extends ReadonlyDeep<H5PFieldGroup & { name: "l10n" }>
-            ? InferL10nType<TField>
-            : Record<TField["name"], InferOptionalWithDefault<TField>>) &
-            InferParamsFromSemantics<TRestFields>
-        : unknown
+> = TSemantics extends readonly [infer TField, ...infer TRestFields]
+  ? TField extends ReadonlyDeep<H5PField>
+    ? TRestFields extends ReadonlyArray<ReadonlyDeep<H5PField>>
+      ? (TField extends ReadonlyDeep<H5PFieldGroup & { name: "l10n" }>
+          ? InferL10nType<TField>
+          : Record<TField["name"], InferOptionalWithDefault<TField>>) &
+          InferParamsFromSemantics<TRestFields>
       : unknown
     : unknown
->;
+  : unknown;

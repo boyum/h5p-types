@@ -6,12 +6,9 @@
     "index.d.ts",
     "src"
   ],
-
   "scripts": {
     "publish-to-npm": "release-it",
     "test": "echo 'No tests'",
-    "format:check": "prettier --check .",
-    "format:fix": "prettier --write .",
     "typecheck": "tsc",
     "typecheck:ts-4": "tsc --project ./tsconfig.ts-4.json",
     "lint:check": "eslint .",
@@ -28,13 +25,11 @@
     "@typescript-eslint/parser": "^5.59.8",
     "eslint": "^8.42.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "prettier": "^2.8.8",
-    "prettier-config": "github:boyum/prettier-config",
     "release-it": "^15.10.5",
     "typescript": "^4.9.5"
   },
   "peerDependencies": {
-    "typescript": ">= 4.9.x"
+    "typescript": ">= 4.7.x"
   },
   "prettier": "prettier-config",
   "repository": {

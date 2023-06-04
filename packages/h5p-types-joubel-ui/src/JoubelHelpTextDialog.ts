@@ -1,4 +1,4 @@
-import { EventDispatcher } from "h5p-types";
+import type { EventDispatcher } from "h5p-types";
 
 export declare class JoubelHelpTextDialog extends EventDispatcher {
   /**

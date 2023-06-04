@@ -1,13 +1,13 @@
-import { JoubelHelpTextDialog } from "./src/JoubelHelpTextDialog";
-import { JoubelMessageDialog } from "./src/JoubelMessageDialog";
-import { JoubelProgressbar } from "./src/JoubelProgressbar";
-import { JoubelProgressCircle } from "./src/JoubelProgressCircle";
-import { JoubelScoreBar } from "./src/JoubelScoreBar";
-import { JoubelSlider } from "./src/JoubelSlider";
-import { JoubelSpeechBubble } from "./src/JoubelSpeechBubble";
-import { JoubelThrobber } from "./src/JoubelThrobber";
-import { JoubelTip } from "./src/JoubelTip";
-import { SimpleRoundedButton } from "./src/SimpleRoundedButton";
+import type { JoubelHelpTextDialog } from "./src/JoubelHelpTextDialog";
+import type { JoubelMessageDialog } from "./src/JoubelMessageDialog";
+import type { JoubelProgressbar } from "./src/JoubelProgressbar";
+import type { JoubelProgressCircle } from "./src/JoubelProgressCircle";
+import type { JoubelScoreBar } from "./src/JoubelScoreBar";
+import type { JoubelSlider } from "./src/JoubelSlider";
+import type { JoubelSpeechBubble } from "./src/JoubelSpeechBubble";
+import type { JoubelThrobber } from "./src/JoubelThrobber";
+import type { JoubelTip } from "./src/JoubelTip";
+import type { SimpleRoundedButton } from "./src/SimpleRoundedButton";
 
 declare module "h5p-types" {
   interface H5PObject {
@@ -24,7 +24,7 @@ declare module "h5p-types" {
 
     JoubelUI: {
       createButton: <T extends {}>(
-        params: T & { class?: string; href?: string; },
+        params: T & { class?: string; href?: string },
       ) => T extends { href: string }
         ? T extends { href: "" }
           ? JQuery<HTMLButtonElement>
