@@ -11,7 +11,7 @@ These H5P types, with the exception of `Params` are copies of models found in th
 Install the package:
 
 ```bash
-npm install --save-dev h5p-types
+npm install h5p-types --save-dev
 ```
 
 `h5p-types` depends on TypeScript and requires TypeScript version 4.7 or higher to be installed.

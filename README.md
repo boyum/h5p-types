@@ -5,10 +5,10 @@ Each package contains type definitions for a specific H5P content type or librar
 This project aims to provide examples on how to use the type definitions in a TypeScript project.
 Check out the [examples](./examples) folder for more information.
 
-| Package                                                                          | Description                                                           |
-| -------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| [`h5p-types`](https://www.npmjs.com/package/boyum/h5p-types)                     | Type definitions for H5P Core                                         |
-| [`h5p-types-joubel-ui`](https://www.npmjs.com/package/boyum/h5p-types-joubel-ui) | Type definitions for [JoubelUI](https://github.com/h5p/h5p-joubel-ui) |
+| Package                                                  | Description                                                               |
+| -------------------------------------------------------- | ------------------------------------------------------------------------- |
+| [`h5p-types`](./packages/h5p-types/)                     | Type definitions for H5P Core                                             |
+| [`h5p-types-joubel-ui`](./packages/h5p-types-joubel-ui/) | Type definitions for [H5P JoubelUI](https://github.com/h5p/h5p-joubel-ui) |
 
 ## Contributing
 
