@@ -7,8 +7,9 @@
     "prettier": "prettier .",
     "format:fix": "npm run prettier -- --write",
     "format:check": "npm run prettier -- --check",
-    "lint": "npm run format:fix && turbo run lint",
-    "test": "turbo run test"
+    "lint:check": "npm run format:fix && turbo run lint:check",
+    "test": "turbo run test",
+    "build": "turbo run build"
   },
   "keywords": [],
   "author": "",

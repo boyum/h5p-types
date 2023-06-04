@@ -1,5 +1,5 @@
-import { H5PObject } from "h5p-types";
-import { Expect, AreEqual } from "./test-utility-types";
+import type { H5PObject } from "h5p-types";
+import type { Expect, AreEqual } from "./test-utility-types";
 
 declare const H5P: H5PObject;
 H5P.$body;
