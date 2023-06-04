@@ -1,5 +1,27 @@
 # Changelog
 
+### [2.0.1](https://github.com/boyum/h5p-types/compare/v2.0.0...v2.0.1) (2023-06-04)
+
+
+### Documentation
+
+* add links to packages ([46327c8](https://github.com/boyum/h5p-types/commit/46327c87790fb6cf399055ee66a7033593184b85))
+* add readme for root project ([6eaf4c5](https://github.com/boyum/h5p-types/commit/6eaf4c5c5d44a1a56eddb0479c324b56d055f690))
+* clean up changelog ([269f784](https://github.com/boyum/h5p-types/commit/269f784e7eb0f3d631f7f2dcf98b9b0880ca75f5))
+
+
+### Build System
+
+* 1.0.6 ([063f4e2](https://github.com/boyum/h5p-types/commit/063f4e280c5aeb77b01774e802f188da56c8a891))
+* 2.0.1 ([b2c9cc3](https://github.com/boyum/h5p-types/commit/b2c9cc32915110d069d05d2f6f20b6c5c85b75ed))
+* add `homepage` to package.json ([9afa516](https://github.com/boyum/h5p-types/commit/9afa516311c79b1e33c316691f0a55f380d24bc1))
+* add `typecheck` commands ([d8794e5](https://github.com/boyum/h5p-types/commit/d8794e5b26812c09454471d050eb693e6b8fe4a3))
+* install both arm64 and x64 versions of turbo ([b296b50](https://github.com/boyum/h5p-types/commit/b296b504bac3e708f67c113d8bbb80231e832979))
+* move `prettierignore` to root project ([38ef9eb](https://github.com/boyum/h5p-types/commit/38ef9ebd9a4cdab6fccef1a6270b9dbedc7da917))
+* refactor project into a monorepo with Turborepo ([9489743](https://github.com/boyum/h5p-types/commit/9489743625e75c2c9e8e1fbab6e83d477fb1900a))
+* refactor project into a monorepo with Turborepo ([3e2fe78](https://github.com/boyum/h5p-types/commit/3e2fe783e6795d10627055486b3e8c63058edb56))
+* v2.0.0 ([802f963](https://github.com/boyum/h5p-types/commit/802f9632a4e63f64193daec82a030b6131e20b13))
+
 ## [2.0.0](https://github.com/boyum/h5p-types/compare/v1.18.1...v2.0.0) (2023-05-31)
 
 
