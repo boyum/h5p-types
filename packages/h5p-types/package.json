@@ -36,5 +36,5 @@
     "type": "git",
     "url": "git+https://github.com/boyum/h5p-types.git"
   },
-  "homepage": "https://github.com/boyum/h5p-types/tree/main/packages/h5p-types"
+  "homepage": "https://github.com/boyum/h5p-types/tree/main/packages/h5p-types#readme"
 }
