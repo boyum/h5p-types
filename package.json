@@ -9,7 +9,9 @@
     "format:check": "npm run prettier -- --check",
     "lint:check": "npm run format:fix && turbo run lint:check",
     "test": "turbo run test",
-    "build": "turbo run build"
+    "build": "turbo run build",
+    "typecheck": "turbo run typecheck",
+    "typecheck:ts-4": "turbo run typecheck:ts-4"
   },
   "keywords": [],
   "author": "",
