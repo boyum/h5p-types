@@ -18,7 +18,7 @@
     "prettier": "^2.8.8",
     "prettier-config": "github:boyum/prettier-config",
     "type-fest": "^3.9.0",
-    "typescript": "^5.0.4"
+    "typescript": "^5.1.3"
   },
   "peerDependencies": {
     "h5p-types": ">= 1.17.0"
