@@ -27,14 +27,8 @@ jobs:
       - name: Install root dependencies
         uses: bahmutov/npm-install@v1
 
-      - name: Install ${{ matrix.project }} dependencies
-        uses: bahmutov/npm-install@v1
-        with:
-          working-directory: examples/${{ matrix.project }}
-
       - name: Set TypeScript version
         run: npm install typescript@${{ matrix.typescript-version }} --save-dev
-        working-directory: examples/${{ matrix.project }}
 
       - name: Typecheck
         run: npm run typecheck --if-present
