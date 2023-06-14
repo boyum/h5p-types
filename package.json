@@ -1,5 +1,5 @@
 {
-  "name": "h5p-types",
+  "name": "h5p-types-root",
   "version": "1.0.0",
   "description": "",
   "private": true,
@@ -23,6 +23,6 @@
   "devDependencies": {
     "prettier": "^2.8.8",
     "prettier-config": "github:boyum/prettier-config",
-    "turbo": "^1.10.1"
+    "turbo": "^1.10.3"
   }
 }
