@@ -11,7 +11,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "h5p-utils": "^3.2.1"
+    "h5p-utils": "3.2.2"
   },
   "devDependencies": {
     "@tsconfig/strictest": "^2.0.1",
