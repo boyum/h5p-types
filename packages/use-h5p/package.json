@@ -1,0 +1,63 @@
+{
+  "name": "use-h5p",
+  "version": "1.3.0",
+  "description": "React Hooks to be used with H5P.",
+  "main": "dist/index.cjs",
+  "types": "dist/index.d.cts",
+  "files": [
+    "dist/**/*",
+    "tsconfig.json"
+  ],
+  "module": "dist/index.js",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "build": "tsup ./src/index.ts --format esm,cjs --dts",
+    "publish-to-npm": "npm run build && np"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tietoevry-Create/use-h5p.git"
+  },
+  "keywords": [
+    "h5p",
+    "react"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tietoevry-Create/use-h5p/issues"
+  },
+  "homepage": "https://github.com/Tietoevry-Create/use-h5p#readme",
+  "devDependencies": {
+    "@testing-library/react": "^14.0.0",
+    "@tsconfig/strictest": "^2.0.1",
+    "@types/node": "^18.16.3",
+    "@types/react": "^18.2.5",
+    "@types/react-dom": "^18.2.3",
+    "h5p-types": "^1.17.0",
+    "h5p-utils": "^3.2.1",
+    "happy-dom": "^9.10.9",
+    "np": "^7.7.0",
+    "react-dom": "^18.2.0",
+    "tsup": "^7.1.0",
+    "typescript": "^5.0.4",
+    "vitest": "^0.31.0"
+  },
+  "peerDependencies": {
+    "react": ">= 17.0.1"
+  }
+}

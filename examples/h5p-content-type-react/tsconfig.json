@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "lib": ["ESNext", "DOM", "ES2021.String"],
+    "moduleResolution": "Node",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "declaration": false,
+    "jsx": "react-jsx"
+  },
+  "include": ["src", "index.d.ts"],
+  "extends": "@tsconfig/strictest/tsconfig.json"
+}
