@@ -11,13 +11,11 @@
   "keywords": [],
   "author": "",
   "license": "MIT",
-  "dependencies": {
-    "h5p-utils": "^3.2.2"
-  },
   "devDependencies": {
     "@tsconfig/strictest": "^2.0.1",
     "h5p-types": "*",
     "h5p-types-joubel-ui": "*",
+    "h5p-utils": "^3.2.3-0",
     "ts-loader": "^9.4.4",
     "unplugin-json-dts": "^1.2.0",
     "webpack": "^5.88.1",
