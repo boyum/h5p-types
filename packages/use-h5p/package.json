@@ -45,17 +45,17 @@
   "devDependencies": {
     "@testing-library/react": "^14.0.0",
     "@tsconfig/strictest": "^2.0.1",
-    "@types/node": "^18.16.3",
-    "@types/react": "^18.2.5",
-    "@types/react-dom": "^18.2.3",
+    "@types/node": "^20.4.0",
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
     "h5p-types": "*",
     "h5p-utils": "*",
-    "happy-dom": "^9.10.9",
-    "np": "^7.7.0",
+    "happy-dom": "^10.0.3",
+    "np": "^8.0.4",
     "react-dom": "^18.2.0",
     "tsup": "^7.1.0",
-    "typescript": "^5.0.4",
-    "vitest": "^0.31.0"
+    "typescript": "^5.1.6",
+    "vitest": "^0.33.0"
   },
   "peerDependencies": {
     "react": ">= 17.0.1"
