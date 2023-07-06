@@ -6,7 +6,8 @@
     "moduleResolution": "Node",
     "sourceMap": true,
     "resolveJsonModule": true,
-    "declaration": false
+    "declaration": false,
+    "verbatimModuleSyntax": true
   },
   "include": ["src"],
   "extends": "@tsconfig/strictest/tsconfig.json"

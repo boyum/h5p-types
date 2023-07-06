@@ -1,6 +1,6 @@
 declare const json: {
-  "title": "Content Type",
-  "machineName": "H5P.ContentType",
+  "title": "Resumable Content Type",
+  "machineName": "H5P.ResumableContentType",
   "majorVersion": 1,
   "minorVersion": 0,
   "patchVersion": 0,
@@ -8,16 +8,9 @@ declare const json: {
   "license": "MIT",
   "author": "",
   "embedTypes": ["iframe"],
-  "preloadedDependencies": [
-    {
-      "machineName": "H5P.JoubelUI",
-      "majorVersion": 1,
-      "minorVersion": 3
-    }
-  ],
   "preloadedJs": [
     {
-      "path": "dist/h5p-content-type.js"
+      "path": "dist/h5p-resumable-content-type.js"
     }
   ]
 }

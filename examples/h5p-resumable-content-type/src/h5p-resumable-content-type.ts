@@ -1,9 +1,9 @@
-import { H5PExtras } from "h5p-types";
+import type { H5PExtras, InferParamsFromSemantics, ReadonlyDeep } from "h5p-types";
 import { H5PResumableContentType, registerContentType } from "h5p-utils";
+import library from "../library.json";
+import semantics from "../semantics.json"
 
-type Params = {
-  person: string;
-};
+type Params = InferParamsFromSemantics<ReadonlyDeep<typeof semantics>>;
 
 type State = {
   isActive: boolean;
@@ -52,4 +52,5 @@ export class ResumableContentType extends H5PResumableContentType<
   }
 }
 
-registerContentType("ResumableContentType", ResumableContentType);
+const contentTypeName = library.machineName.replace("H5P.", "");
+registerContentType(contentTypeName, ResumableContentType);
