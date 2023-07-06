@@ -138,22 +138,22 @@ export type H5PFieldBoolean = Prettify<
 >;
 
 export type H5PFieldGroup = Prettify<
-  | H5PFieldCommon &
-      H5PFieldWidgetExtension & {
-        type: "group" | H5PFieldType.Group;
-        widget?: string;
-        fields: Array<H5PField>;
-        isSubContent?: boolean;
+  H5PFieldCommon &
+    H5PFieldWidgetExtension & {
+      type: "group" | H5PFieldType.Group;
+      widget?: string;
+      fields: Array<H5PField>;
+      isSubContent?: boolean;
 
-        /**
-         * If set to true, group will be expanded. If set to false or not set at all, group will be collapsed. An exception is for groups in lists - they will be expanded except if this value is false.
-         *
-         * @default false
-         *
-         * @see https://h5p.org/semantics#attribute-expanded
-         */
-        expanded?: boolean;
-      }
+      /**
+       * If set to true, group will be expanded. If set to false or not set at all, group will be collapsed. An exception is for groups in lists - they will be expanded except if this value is false.
+       *
+       * @default false
+       *
+       * @see https://h5p.org/semantics#attribute-expanded
+       */
+      expanded?: boolean;
+    }
 >;
 
 export type H5PFieldList = Prettify<

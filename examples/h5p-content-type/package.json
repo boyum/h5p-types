@@ -12,15 +12,15 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "h5p-utils": "^3.2.1"
+    "h5p-utils": "^3.2.3"
   },
   "devDependencies": {
     "@tsconfig/strictest": "^2.0.1",
     "h5p-types": "*",
     "h5p-types-joubel-ui": "*",
-    "ts-loader": "^9.4.3",
+    "ts-loader": "^9.4.4",
     "unplugin-json-dts": "^1.2.0",
-    "webpack": "^5.86.0",
+    "webpack": "^5.88.1",
     "webpack-cli": "^5.1.4"
   }
 }
