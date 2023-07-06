@@ -1,7 +1,11 @@
-import type { H5PExtras, InferParamsFromSemantics, ReadonlyDeep } from "h5p-types";
+import type {
+  H5PExtras,
+  InferParamsFromSemantics,
+  ReadonlyDeep,
+} from "h5p-types";
 import { H5PResumableContentType, registerContentType } from "h5p-utils";
 import library from "../library.json";
-import semantics from "../semantics.json"
+import semantics from "../semantics.json";
 
 type Params = InferParamsFromSemantics<ReadonlyDeep<typeof semantics>>;
 
