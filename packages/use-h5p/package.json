@@ -26,7 +26,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "build": "tsup ./src/index.ts --format esm,cjs --dts",
-    "publish-to-npm": "npm run build && npm publish"
+    "publish-to-npm": "release-it"
   },
   "repository": {
     "type": "git",
@@ -43,6 +43,7 @@
   },
   "homepage": "https://github.com/Tietoevry-Create/use-h5p#readme",
   "devDependencies": {
+    "@release-it/conventional-changelog": "^6.0.0",
     "@testing-library/react": "^14.0.0",
     "@tsconfig/strictest": "^2.0.1",
     "@types/node": "^20.4.0",
@@ -51,8 +52,8 @@
     "h5p-types": "*",
     "h5p-utils": "*",
     "happy-dom": "^10.0.3",
-    "np": "^8.0.4",
     "react-dom": "^18.2.0",
+    "release-it": "^15.11.0",
     "tsup": "^7.1.0",
     "typescript": "^5.1.6",
     "vitest": "^0.33.0"
