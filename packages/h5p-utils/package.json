@@ -31,15 +31,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/boyum/h5p-utils.git"
+    "url": "git+https://github.com/boyum/h5p-types.git"
   },
-  "keywords": [],
+  "homepage": "https://github.com/boyum/h5p-types/tree/main/packages/h5p-types#readme",
+  "bugs": {
+    "url": "https://github.com/boyum/h5p-types/issues"
+  },
+  "keywords": [
+    "h5p"
+  ],
   "author": "",
   "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/boyum/h5p-utils/issues"
-  },
-  "homepage": "https://github.com/boyum/h5p-utils#readme",
   "devDependencies": {
     "@tsconfig/strictest": "^2.0.1",
     "h5p-types": "^2.0.1",
