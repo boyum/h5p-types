@@ -25,8 +25,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install root dependencies
+      - name: Install dependencies
         uses: bahmutov/npm-install@v1
+
+      - name: Build all packages
+        run: npm run build
 
       - name: Set TypeScript version
         run: npm install typescript@${{ matrix.typescript-version }} --save-dev
