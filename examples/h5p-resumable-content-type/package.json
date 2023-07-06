@@ -1,0 +1,25 @@
+{
+  "name": "h5p-resumable-content-type",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "watch": "webpack serve --hot --mode=development",
+    "build": "webpack --mode=production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "h5p-utils": "^3.2.3"
+  },
+  "devDependencies": {
+    "@tsconfig/strictest": "^2.0.1",
+    "h5p-types": "*",
+    "ts-loader": "^9.4.4",
+    "unplugin-json-dts": "^1.2.0",
+    "webpack": "^5.88.1",
+    "webpack-cli": "^5.1.4"
+  }
+}
