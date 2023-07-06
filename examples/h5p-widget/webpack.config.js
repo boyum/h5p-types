@@ -14,10 +14,6 @@ const config = {
     // @ts-expect-error
     require("unplugin-json-dts/webpack")(),
   ],
-  resolve: {
-    modules: [path.resolve("./src"), path.resolve("./node_modules")],
-    extensions: [".ts", ".tsx", ".js", ".jsx", ".css"],
-  },
   module: {
     rules: [
       {
