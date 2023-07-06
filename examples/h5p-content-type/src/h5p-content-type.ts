@@ -1,8 +1,7 @@
 import type {
-  H5PExtras,
   IH5PContentType,
   InferParamsFromSemantics,
-  ReadonlyDeep,
+  ReadonlyDeep
 } from "h5p-types";
 import { H5P, H5PContentType, registerContentType } from "h5p-utils";
 import library from "../library.json";
