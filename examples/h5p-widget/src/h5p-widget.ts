@@ -1,5 +1,5 @@
 import type { H5PFieldGroup, IH5PWidget } from "h5p-types";
-import { H5P, H5PWidget, registerWidget } from "h5p-utils";
+import { H5P, H5PEditor, H5PWidget, registerWidget } from "h5p-utils";
 import library from "../library.json";
 
 type Field = H5PFieldGroup;
@@ -18,6 +18,13 @@ class Widget extends H5PWidget<Field, Params> implements IH5PWidget {
       title: "",
     });
 
+    H5PEditor.processSemanticsChunk(
+      [this.field],
+      {},
+      $(this.wrapper),
+      this.parent,
+    );
+
     // The field is a group
     arrayTest(this.field.fields);
 
@@ -25,9 +32,11 @@ class Widget extends H5PWidget<Field, Params> implements IH5PWidget {
     this.wrapper.append(button.get(0)!);
     $container.append(this.wrapper);
   }
+
   override validate(): boolean {
     return true;
   }
+
   override remove(): void {
     this.wrapper.remove();
   }
