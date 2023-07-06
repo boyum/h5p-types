@@ -44,7 +44,7 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "@tsconfig/strictest": "^2.0.1",
-    "h5p-types": "^2.0.1",
+    "h5p-types": "*",
     "np": "^8.0.4",
     "prettier": "^3.0.0",
     "prettier-config": "github:boyum/prettier-config",
