@@ -10,7 +10,7 @@ Check out the [examples](./examples) folder for more information.
 | [`h5p-types`](./packages/h5p-types/)                     | Type definitions for H5P Core                                             |
 | [`h5p-types-joubel-ui`](./packages/h5p-types-joubel-ui/) | Type definitions for [H5P JoubelUI](https://github.com/h5p/h5p-joubel-ui) |
 | [`h5p-utils`](./packages/h5p-utils/)                     | Abstractions and utilities for creating H5P Widgets and Content Types     |
-| [`use-h5p`](./packages/use-h5p/)                       | React Hooks to be used with H5P Widgets and Content Types                 |
+| [`use-h5p`](./packages/use-h5p/)                         | React Hooks to be used with H5P Widgets and Content Types                 |
 
 ## Contributing
 
