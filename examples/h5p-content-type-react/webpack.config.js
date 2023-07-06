@@ -4,7 +4,11 @@ const path = require("path");
 
 const config = {
   entry: {
-    "h5p-content-type": path.join(__dirname, "src", "h5p-content-type.ts"),
+    "h5p-content-type-react": path.join(
+      __dirname,
+      "src",
+      "h5p-content-type-react.tsx",
+    ),
   },
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -17,7 +21,7 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.ts$/,
+        test: /\.tsx?$/,
         use: [{ loader: "ts-loader" }],
         exclude: /node_modules/,
       },

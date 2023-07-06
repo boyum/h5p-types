@@ -31,7 +31,6 @@
   "peerDependencies": {
     "typescript": ">= 4.7.x"
   },
-  "prettier": "prettier-config",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/boyum/h5p-types.git"
