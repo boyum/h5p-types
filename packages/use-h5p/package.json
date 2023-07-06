@@ -1,6 +1,6 @@
 {
   "name": "use-h5p",
-  "version": "1.3.0",
+  "version": "2.0.0",
   "description": "React Hooks to be used with H5P.",
   "main": "dist/index.cjs",
   "types": "dist/index.d.cts",
