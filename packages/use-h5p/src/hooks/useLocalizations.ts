@@ -29,7 +29,7 @@ export const useLocalizations = <
   const translations = useContext(L10nContext);
 
   return Object.fromEntries(
-    translationKeys.map((key) => [
+    translationKeys.map(key => [
       key,
       translations[key] ?? getFallbackString(key),
     ]),
