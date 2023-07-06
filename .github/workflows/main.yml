@@ -79,3 +79,18 @@ jobs:
 
       - name: Check lint
         run: npm run lint:check
+
+  build:
+    name: Build
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        uses: bahmutov/npm-install@v1
+
+      - name: Build
+        run: npm run build
