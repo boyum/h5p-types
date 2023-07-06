@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "lib": ["ESNext", "DOM", "ES2021.String"],
+    "moduleResolution": "Node",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "declaration": false
+  },
+  "include": ["src"],
+  "extends": "@tsconfig/strictest/tsconfig.json"
+}

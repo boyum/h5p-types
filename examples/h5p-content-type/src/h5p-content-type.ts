@@ -1,4 +1,5 @@
 import type {
+  H5PExtras,
   IH5PContentType,
   InferParamsFromSemantics,
   ReadonlyDeep,
