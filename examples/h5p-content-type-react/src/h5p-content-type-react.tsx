@@ -16,10 +16,14 @@ import { Params } from "./types/semantics";
 const DemoApp: React.FC = () => {
   const contentId = useContentId();
   const h5pInstance = useH5PInstance();
+
   const { t } = useTranslation();
 
   return (
     <>
+      <button type="button" onClick={() => h5pInstance.trigger("my-event")}>
+        Click me
+      </button>
       <span className="content-id">{contentId}</span>
       <span className="h5p-instance">{JSON.stringify(h5pInstance)}</span>
       <span className="label">{t("answerModeLabel")}</span>

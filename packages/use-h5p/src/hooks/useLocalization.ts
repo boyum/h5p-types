@@ -1,8 +1,11 @@
 import { useContext } from "react";
 import { L10nContext } from "../contexts/LocalizationContext";
-import { getFallbackString } from "../utils";
 import { TranslationKey } from "../types/Translations";
+import { getFallbackString } from "../utils";
 
+/**
+ * @deprecated Use `useTranslation` instead
+ */
 export const useLocalization = <
   TTranslationKey extends TranslationKey = TranslationKey,
 >(
@@ -13,4 +16,7 @@ export const useLocalization = <
   return translations?.[translationKey] ?? getFallbackString(translationKey);
 };
 
+/**
+ * @deprecated Use `useTranslation` instead
+ */
 export const useL10n = useLocalization;

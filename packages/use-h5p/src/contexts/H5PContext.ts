@@ -1,4 +1,4 @@
-import type { IH5PContentType } from "h5p-types";
+import type { H5PContentType } from "h5p-utils";
 import { createContext } from "react";
 
-export const H5PContext = createContext<IH5PContentType>({} as IH5PContentType);
+export const H5PContext = createContext<H5PContentType>({} as H5PContentType);

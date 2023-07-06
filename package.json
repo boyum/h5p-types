@@ -21,8 +21,9 @@
     "examples/*"
   ],
   "devDependencies": {
-    "prettier": "^3.0.0",
+    "prettier": "^2.8.8",
     "prettier-config": "github:boyum/prettier-config",
     "turbo": "^1.10.7"
-  }
+  },
+  "prettier": "prettier-config"
 }
