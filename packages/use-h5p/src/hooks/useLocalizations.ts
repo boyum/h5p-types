@@ -4,6 +4,8 @@ import { TranslationKey } from "../types/Translations";
 import { getFallbackString } from "../utils";
 
 /**
+ * @deprecated Use `useTranslation` instead
+ *
  * @param translationKeys A list of valid translation keys
  * @returns An object where the translation keys are keys and their translations are values
  *
@@ -33,4 +35,8 @@ export const useLocalizations = <
     ]),
   ) as Record<TTranslationKey, string>;
 };
+
+/**
+ * @deprecated Use `useTranslation` instead
+ */
 export const useL10ns = useLocalizations;
