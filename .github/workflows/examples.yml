@@ -14,6 +14,7 @@ jobs:
       matrix:
         project:
           - h5p-content-type
+          - h5p-resumable-content-type
           - h5p-widget
 
         typescript-version:
