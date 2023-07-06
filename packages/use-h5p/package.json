@@ -26,7 +26,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "build": "tsup ./src/index.ts --format esm,cjs --dts",
-    "publish-to-npm": "npm run build && np"
+    "publish-to-npm": "npm run build && npm publish"
   },
   "repository": {
     "type": "git",
