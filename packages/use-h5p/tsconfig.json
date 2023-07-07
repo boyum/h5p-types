@@ -1,18 +1,4 @@
 {
-  "compilerOptions": {
-    "target": "ESNext",
-    "module": "NodeNext",
-    "lib": ["ESNext", "DOM"],
-    "moduleResolution": "Node",
-    "sourceMap": true,
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "declaration": true,
-    "emitDeclarationOnly": true,
-    "outDir": "dist",
-    "allowSyntheticDefaultImports": true,
-    "jsx": "react-jsx"
-  },
   "exclude": ["vite.config.ts", "demo", "dist"],
-  "extends": "@tsconfig/strictest/tsconfig.json"
+  "extends": "tsconfig/react.json"
 }
