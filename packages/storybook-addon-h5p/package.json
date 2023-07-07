@@ -1,0 +1,47 @@
+{
+  "name": "storybook-addon-h5p",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "build": "tsup src/index.ts src/preview.ts --format esm,cjs --dts --clean"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "default": "./dist/index.js",
+        "types": "./dist/index.d.ts"
+      },
+      "require": {
+        "default": "./dist/index.cjs",
+        "types": "./dist/index.d.cts"
+      }
+    },
+    "./preview": {
+      "import": {
+        "default": "./dist/preview.js",
+        "types": "./dist/preview.d.ts"
+      },
+      "require": {
+        "default": "./dist/preview.cjs",
+        "types": "./dist/preview.d.cts"
+      }
+    }
+  },
+  "keywords": [
+    "storybook-addons",
+    "h5p"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@storybook/global": "^5.0.0",
+    "@storybook/preview-api": "^7.0.26",
+    "simple-git": "^3.19.1"
+  },
+  "devDependencies": {
+    "h5p-types": "*",
+    "tsconfig": "*",
+    "tsup": "^7.1.0"
+  }
+}
