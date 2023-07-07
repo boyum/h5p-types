@@ -7,7 +7,6 @@
     "moduleResolution": "Node",
     "sourceMap": true,
     "resolveJsonModule": true,
-    "noEmit": true,
     "declaration": false
   },
   "extends": "@tsconfig/strictest/tsconfig.json"

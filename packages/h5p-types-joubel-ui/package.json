@@ -7,7 +7,9 @@
     "index.d.ts",
     "src"
   ],
-  "scripts": {},
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
   "keywords": [],
   "author": "Sindre Bøyum",
   "license": "Apache-2.0",
