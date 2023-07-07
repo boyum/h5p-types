@@ -1,14 +1,4 @@
 {
-  "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "lib": ["ESNext", "DOM", "ES2021.String"],
-    "moduleResolution": "Node",
-    "sourceMap": true,
-    "resolveJsonModule": true,
-    "noEmit": true,
-    "declaration": false
-  },
   "include": ["src", "index.d.ts", "test"],
-  "extends": "@tsconfig/strictest/tsconfig.json"
+  "extends": "tsconfig/base.json"
 }
