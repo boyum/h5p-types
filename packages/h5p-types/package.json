@@ -9,7 +9,7 @@
   "scripts": {
     "publish-to-npm": "release-it",
     "typecheck": "tsc --noEmit",
-    "typecheck:ts-4": "tsc --project ./tsconfig.ts-4.json",
+    "typecheck:ts-4": "tsc --project ./tsconfig.ts-4.json --noEmit",
     "lint:check": "eslint .",
     "lint:fix": "npm run lint:check -- --fix"
   },
