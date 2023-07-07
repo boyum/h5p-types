@@ -45,7 +45,7 @@
     "h5p-types": "*",
     "prettier": "^3.0.0",
     "prettier-config": "github:boyum/prettier-config",
-    "release-it": "^15.11.0",
+    "release-it": "^16.0.0",
     "replace-in-file": "^7.0.1",
     "tsconfig": "*",
     "tsup": "^7.1.0",
