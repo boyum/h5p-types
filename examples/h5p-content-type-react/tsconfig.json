@@ -1,7 +1,4 @@
 {
-  "compilerOptions": {
-    "noEmit": false
-  },
   "include": ["src", "index.d.ts"],
   "extends": "tsconfig/react.json"
 }
