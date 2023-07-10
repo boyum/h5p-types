@@ -1,7 +1,7 @@
 import type { EmptyObject, ReadonlyDeep } from "type-fest";
 import type { H5PFieldGroup } from "./H5PField";
-import type { InferParamsFromSemantics } from "./InferParamsFromSemantics";
 import type { InferParamTypeFromFieldType } from "./InferParamTypeFromFieldType";
+import type { InferParamsFromSemantics } from "./InferParamsFromSemantics";
 
 /**
  * If there are no fields in the group, the group's inferred params is only `{}`

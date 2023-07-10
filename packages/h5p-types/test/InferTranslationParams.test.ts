@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars, @typescript-eslint/ban-ts-comment, @typescript-eslint/no-namespace */
 
-import type { AreEqual, Expect } from "../src/test-utility-types";
 import type { TranslationHasParams, TranslationParams } from "..";
+import type { AreEqual, Expect } from "../src/test-utility-types";
 
 // @ts-ignore Test
 namespace Test_InferParams_One {
