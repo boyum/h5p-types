@@ -16,9 +16,9 @@ import type {
   H5PFieldVideo,
 } from "./H5PField";
 import type { H5PImage } from "./H5PImage";
-import type { InferGroupParams } from "./InferGroupParams";
 import type { H5PMedia } from "./H5PMedia";
 import type { H5PVideo } from "./H5PVideo";
+import type { InferGroupParams } from "./InferGroupParams";
 import type { IH5PContentType } from "./Interfaces/IH5PContentType";
 
 type FieldToParamType<TField extends ReadonlyDeep<H5PField>> =
