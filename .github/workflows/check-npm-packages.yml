@@ -1,0 +1,25 @@
+name: Check and validate package.json
+
+on:
+  - pull_request
+
+jobs:
+  check-package:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        project:
+          - projects/h5p-types
+          - projects/h5p-types-joubel-ui
+          - projects/h5p-utils
+          - projects/use-h5p
+
+    steps:
+      - name: Clone the repository
+        uses: actions/checkout@v3
+
+      - name: Check and validate ${{ matrix.project }}'s package.json
+        uses: boyum/attw-action@v1
+        with:
+          working-directory: ${{ matrix.project }}
