@@ -10,15 +10,12 @@ jobs:
     strategy:
       matrix:
         project:
-          - projects/h5p-types
-          - projects/h5p-types-joubel-ui
-          - projects/h5p-utils
-          - projects/use-h5p
+          - packages/h5p-types
+          - packages/h5p-types-joubel-ui
+          - packages/h5p-utils
+          - packages/use-h5p
 
     steps:
-      - name: Clone the repository
-        uses: actions/checkout@v3
-
       - name: Check and validate ${{ matrix.project }}'s package.json
         uses: boyum/attw-action@v1
         with:
