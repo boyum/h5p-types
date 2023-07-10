@@ -41,11 +41,11 @@
   "author": "",
   "license": "Apache-2.0",
   "devDependencies": {
-    "@release-it/conventional-changelog": "^6.0.0",
+    "@release-it/conventional-changelog": "^7.0.0",
     "h5p-types": "*",
     "prettier": "^3.0.0",
     "prettier-config": "github:boyum/prettier-config",
-    "release-it": "^15.11.0",
+    "release-it": "^16.1.0",
     "replace-in-file": "^7.0.1",
     "tsconfig": "*",
     "tsup": "^7.1.0",
