@@ -16,6 +16,16 @@ jobs:
           - packages/use-h5p
 
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        uses: bahmutov/npm-install@v1
+
+      - name: Build package
+        run: npm run build
+        working-directory: ${{ matrix.project }}
+
       - name: Check and validate ${{ matrix.project }}'s package.json
         uses: boyum/attw-action@v1
         with:
