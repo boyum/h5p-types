@@ -16,6 +16,10 @@
                     "type": "number"
                 }
             },
+            "required": [
+                "majorVersion",
+                "minorVersion"
+            ],
             "type": "object"
         },
         "description": {
@@ -34,6 +38,11 @@
                         "type": "number"
                     }
                 },
+                "required": [
+                    "machineName",
+                    "majorVersion",
+                    "minorVersion"
+                ],
                 "type": "object"
             },
             "type": "array"
@@ -52,6 +61,11 @@
                         "type": "number"
                     }
                 },
+                "required": [
+                    "machineName",
+                    "majorVersion",
+                    "minorVersion"
+                ],
                 "type": "object"
             },
             "type": "array"
@@ -108,6 +122,10 @@
                     "type": "number"
                 }
             },
+            "required": [
+                "disable",
+                "disableExtraTitleField"
+            ],
             "type": "object"
         },
         "minorVersion": {
@@ -123,6 +141,9 @@
                         "type": "string"
                     }
                 },
+                "required": [
+                    "path"
+                ],
                 "type": "object"
             },
             "type": "array"
@@ -140,6 +161,11 @@
                         "type": "number"
                     }
                 },
+                "required": [
+                    "machineName",
+                    "majorVersion",
+                    "minorVersion"
+                ],
                 "type": "object"
             },
             "type": "array"
@@ -151,6 +177,9 @@
                         "type": "string"
                     }
                 },
+                "required": [
+                    "path"
+                ],
                 "type": "object"
             },
             "type": "array"
@@ -169,6 +198,13 @@
             "type": "string"
         }
     },
+    "required": [
+        "machineName",
+        "majorVersion",
+        "minorVersion",
+        "patchVersion",
+        "title"
+    ],
     "type": "object"
 }
 

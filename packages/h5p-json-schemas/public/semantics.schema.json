@@ -1,6 +1,124 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "definitions": {
+        "Array": {
+            "items": {
+                "properties": {
+                    "equals": {
+                        "anyOf": [
+                            {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            {
+                                "type": [
+                                    "string",
+                                    "boolean"
+                                ]
+                            }
+                        ]
+                    },
+                    "field": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "field"
+                ],
+                "type": "object"
+            },
+            "type": "array"
+        },
+        "Array_1": {
+            "items": {
+                "$ref": "#/definitions/H5PField"
+            },
+            "type": "array"
+        },
+        "Array_2": {
+            "items": {
+                "type": "string"
+            },
+            "type": "array"
+        },
+        "Array_3": {
+            "items": {
+                "properties": {
+                    "label": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "label",
+                    "name"
+                ],
+                "type": "object"
+            },
+            "type": "array"
+        },
+        "Array_4": {
+            "items": {
+                "properties": {
+                    "label": {
+                        "type": "string"
+                    },
+                    "value": {
+                        "type": [
+                            "string",
+                            "number",
+                            "boolean"
+                        ]
+                    }
+                },
+                "required": [
+                    "label",
+                    "value"
+                ],
+                "type": "object"
+            },
+            "type": "array"
+        },
+        "Array_5": {
+            "items": {
+                "$ref": "#/definitions/H5PTextTags"
+            },
+            "type": "array"
+        },
+        "Array_6": {
+            "items": {
+                "items": {
+                    "type": "string"
+                },
+                "type": "array"
+            },
+            "type": "array"
+        },
+        "Array_7": {
+            "items": {
+                "allOf": [
+                    {
+                        "$ref": "#/definitions/StrictOmit<H5PFieldText,\"default\">"
+                    },
+                    {
+                        "properties": {
+                            "default": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "default"
+                        ],
+                        "type": "object"
+                    }
+                ]
+            },
+            "type": "array"
+        },
         "H5PEnterMode": {
             "enum": [
                 "div",
@@ -125,6 +243,9 @@
             ],
             "type": "string"
         },
+        "H5PShowWhenOptions": {
+            "$ref": "#/definitions/__type"
+        },
         "H5PTextTags": {
             "enum": [
                 "a",
@@ -211,6 +332,37 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "label",
+                "name",
+                "type"
+            ],
+            "type": "object"
+        },
+        "__type": {
+            "properties": {
+                "detach": {
+                    "description": "True means field is removed from DOM when hidden.\nDefault behaviour is hiding it using CSS (display: none).",
+                    "type": "boolean"
+                },
+                "rules": {
+                    "$ref": "#/definitions/Array"
+                },
+                "type": {
+                    "default": "or",
+                    "enum": [
+                        "and",
+                        "or"
+                    ],
+                    "type": "string"
+                },
+                "widget": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "rules"
+            ],
             "type": "object"
         },
         "{name:\"behaviour\";label:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget?:string;type:H5PFieldType.Group|\"group\";fields:H5PField[];isSubContent?:boolean;expanded?:boolean;}": {
@@ -230,10 +382,7 @@
                     "type": "boolean"
                 },
                 "fields": {
-                    "items": {
-                        "$ref": "#/definitions/H5PField"
-                    },
-                    "type": "array"
+                    "$ref": "#/definitions/Array_1"
                 },
                 "importance": {
                     "$ref": "#/definitions/H5PImportance",
@@ -264,6 +413,12 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "fields",
+                "label",
+                "name",
+                "type"
+            ],
             "type": "object"
         },
         "{name:\"l10n\";fields:(StrictOmit<H5PFieldText,\"default\">&{default:string;})[];common:boolean;label:string;description?:string;optional?:boolean;importance?:H5PImportance;widget?:string;type:H5PFieldType.Group|\"group\";isSubContent?:boolean;expanded?:boolean;}": {
@@ -281,22 +436,7 @@
                     "type": "boolean"
                 },
                 "fields": {
-                    "items": {
-                        "allOf": [
-                            {
-                                "$ref": "#/definitions/StrictOmit<H5PFieldText,\"default\">"
-                            },
-                            {
-                                "properties": {
-                                    "default": {
-                                        "type": "string"
-                                    }
-                                },
-                                "type": "object"
-                            }
-                        ]
-                    },
-                    "type": "array"
+                    "$ref": "#/definitions/Array_7"
                 },
                 "importance": {
                     "$ref": "#/definitions/H5PImportance",
@@ -327,6 +467,13 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "common",
+                "fields",
+                "label",
+                "name",
+                "type"
+            ],
             "type": "object"
         },
         "{name:string;label:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"NDLATagsPicker\";fieldNameToWatch:string;type:\"boolean\"|H5PFieldType.Boolean;default:boolean;}": {
@@ -373,6 +520,14 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "default",
+                "fieldNameToWatch",
+                "label",
+                "name",
+                "type",
+                "widget"
+            ],
             "type": "object"
         },
         "{name:string;label:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"NDLATagsPicker\";fieldNameToWatch:string;type:\"number\"|H5PFieldType.Number;default?:number;min?:number;max?:number;steps?:number;decimals?:number;}": {
@@ -433,6 +588,13 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "fieldNameToWatch",
+                "label",
+                "name",
+                "type",
+                "widget"
+            ],
             "type": "object"
         },
         "{name:string;label:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"NDLATagsPicker\";fieldNameToWatch:string;type:H5PFieldType.Audio|\"audio\";}": {
@@ -476,6 +638,13 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "fieldNameToWatch",
+                "label",
+                "name",
+                "type",
+                "widget"
+            ],
             "type": "object"
         },
         "{name:string;label:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"NDLATagsPicker\";fieldNameToWatch:string;type:H5PFieldType.File|\"file\";}": {
@@ -519,6 +688,13 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "fieldNameToWatch",
+                "label",
+                "name",
+                "type",
+                "widget"
+            ],
             "type": "object"
         },
         "{name:string;label:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"NDLATagsPicker\";fieldNameToWatch:string;type:H5PFieldType.Group|\"group\";fields:H5PField[];isSubContent?:boolean;expanded?:boolean;}": {
@@ -541,10 +717,7 @@
                     "type": "string"
                 },
                 "fields": {
-                    "items": {
-                        "$ref": "#/definitions/H5PField"
-                    },
-                    "type": "array"
+                    "$ref": "#/definitions/Array_1"
                 },
                 "importance": {
                     "$ref": "#/definitions/H5PImportance",
@@ -576,6 +749,14 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "fieldNameToWatch",
+                "fields",
+                "label",
+                "name",
+                "type",
+                "widget"
+            ],
             "type": "object"
         },
         "{name:string;label:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"NDLATagsPicker\";fieldNameToWatch:string;type:H5PFieldType.Image|\"image\";}": {
@@ -619,6 +800,13 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "fieldNameToWatch",
+                "label",
+                "name",
+                "type",
+                "widget"
+            ],
             "type": "object"
         },
         "{name:string;label:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"NDLATagsPicker\";fieldNameToWatch:string;type:H5PFieldType.Library|\"library\";options:string[];default?:string;}": {
@@ -657,10 +845,7 @@
                     "type": "boolean"
                 },
                 "options": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
+                    "$ref": "#/definitions/Array_2"
                 },
                 "type": {
                     "const": "library",
@@ -671,6 +856,14 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "fieldNameToWatch",
+                "label",
+                "name",
+                "options",
+                "type",
+                "widget"
+            ],
             "type": "object"
         },
         "{name:string;label:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"NDLATagsPicker\";fieldNameToWatch:string;type:H5PFieldType.List|\"list\";widgets?:{name:string;label:string;}[];field:H5PField;min?:number;max?:number;entity:string;}": {
@@ -727,21 +920,19 @@
                     "type": "string"
                 },
                 "widgets": {
-                    "description": "List containing widget(s). A widget is defined as\nan object with the name of the widget and a label.\nCurrently no widgets are provided by the core system,\nbut the H5PEditor.VerticalTabs library provides\n`verticalTabs` as an option.",
-                    "items": {
-                        "properties": {
-                            "label": {
-                                "type": "string"
-                            },
-                            "name": {
-                                "type": "string"
-                            }
-                        },
-                        "type": "object"
-                    },
-                    "type": "array"
+                    "$ref": "#/definitions/Array_3",
+                    "description": "List containing widget(s). A widget is defined as\nan object with the name of the widget and a label.\nCurrently no widgets are provided by the core system,\nbut the H5PEditor.VerticalTabs library provides\n`verticalTabs` as an option."
                 }
             },
+            "required": [
+                "entity",
+                "field",
+                "fieldNameToWatch",
+                "label",
+                "name",
+                "type",
+                "widget"
+            ],
             "type": "object"
         },
         "{name:string;label:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"NDLATagsPicker\";fieldNameToWatch:string;type:H5PFieldType.Select|\"select\";default:string|number|boolean;options:{value:string|number|boolean;label:string;}[];}": {
@@ -784,22 +975,7 @@
                     "type": "boolean"
                 },
                 "options": {
-                    "items": {
-                        "properties": {
-                            "label": {
-                                "type": "string"
-                            },
-                            "value": {
-                                "type": [
-                                    "string",
-                                    "number",
-                                    "boolean"
-                                ]
-                            }
-                        },
-                        "type": "object"
-                    },
-                    "type": "array"
+                    "$ref": "#/definitions/Array_4"
                 },
                 "type": {
                     "const": "select",
@@ -810,6 +986,15 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "default",
+                "fieldNameToWatch",
+                "label",
+                "name",
+                "options",
+                "type",
+                "widget"
+            ],
             "type": "object"
         },
         "{name:string;label:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"NDLATagsPicker\";fieldNameToWatch:string;type:H5PFieldType.Text|\"text\";default?:string;maxLength?:number;regexp?:string;enterMode?:H5PEnterMode;font?:string;important?:{description?:string;example?:string;};}": {
@@ -880,6 +1065,13 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "fieldNameToWatch",
+                "label",
+                "name",
+                "type",
+                "widget"
+            ],
             "type": "object"
         },
         "{name:string;label:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"NDLATagsPicker\";fieldNameToWatch:string;type:H5PFieldType.Video|\"video\";}": {
@@ -923,6 +1115,13 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "fieldNameToWatch",
+                "label",
+                "name",
+                "type",
+                "widget"
+            ],
             "type": "object"
         },
         "{name:string;label:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"colorSelector\";spectrum?:{showPalette:boolean;showPaletteOnly?:boolean;palette?:string[][];};type:H5PFieldType.Text|\"text\";default?:string;maxLength?:number;regexp?:string;enterMode?:H5PEnterMode;font?:string;important?:{description?:string;example?:string;};}": {
@@ -984,13 +1183,7 @@
                 "spectrum": {
                     "properties": {
                         "palette": {
-                            "items": {
-                                "items": {
-                                    "type": "string"
-                                },
-                                "type": "array"
-                            },
-                            "type": "array"
+                            "$ref": "#/definitions/Array_6"
                         },
                         "showPalette": {
                             "type": "boolean"
@@ -1000,6 +1193,9 @@
                             "type": "boolean"
                         }
                     },
+                    "required": [
+                        "showPalette"
+                    ],
                     "type": "object"
                 },
                 "type": {
@@ -1011,6 +1207,12 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "label",
+                "name",
+                "type",
+                "widget"
+            ],
             "type": "object"
         },
         "{name:string;label:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"html\";tags:H5PTextTags[];type:H5PFieldType.Text|\"text\";default?:string;maxLength?:number;regexp?:string;enterMode?:H5PEnterMode;font?:string;important?:{description?:string;example?:string;};}": {
@@ -1070,10 +1272,7 @@
                     "type": "string"
                 },
                 "tags": {
-                    "items": {
-                        "$ref": "#/definitions/H5PTextTags"
-                    },
-                    "type": "array"
+                    "$ref": "#/definitions/Array_5"
                 },
                 "type": {
                     "const": "text",
@@ -1084,6 +1283,13 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "label",
+                "name",
+                "tags",
+                "type",
+                "widget"
+            ],
             "type": "object"
         },
         "{name:string;label:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"showWhen\"|\"NDLAShowWhen\";showWhen:H5PShowWhenOptions;type:\"boolean\"|H5PFieldType.Boolean;default:boolean;}": {
@@ -1119,51 +1325,7 @@
                     "type": "boolean"
                 },
                 "showWhen": {
-                    "properties": {
-                        "detach": {
-                            "description": "True means field is removed from DOM when hidden.\nDefault behaviour is hiding it using CSS (display: none).",
-                            "type": "boolean"
-                        },
-                        "rules": {
-                            "items": {
-                                "properties": {
-                                    "equals": {
-                                        "anyOf": [
-                                            {
-                                                "items": {
-                                                    "type": "string"
-                                                },
-                                                "type": "array"
-                                            },
-                                            {
-                                                "type": [
-                                                    "string",
-                                                    "boolean"
-                                                ]
-                                            }
-                                        ]
-                                    },
-                                    "field": {
-                                        "type": "string"
-                                    }
-                                },
-                                "type": "object"
-                            },
-                            "type": "array"
-                        },
-                        "type": {
-                            "default": "or",
-                            "enum": [
-                                "and",
-                                "or"
-                            ],
-                            "type": "string"
-                        },
-                        "widget": {
-                            "type": "string"
-                        }
-                    },
-                    "type": "object"
+                    "$ref": "#/definitions/H5PShowWhenOptions"
                 },
                 "type": {
                     "const": "boolean",
@@ -1177,6 +1339,14 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "default",
+                "label",
+                "name",
+                "showWhen",
+                "type",
+                "widget"
+            ],
             "type": "object"
         },
         "{name:string;label:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"showWhen\"|\"NDLAShowWhen\";showWhen:H5PShowWhenOptions;type:\"number\"|H5PFieldType.Number;default?:number;min?:number;max?:number;steps?:number;decimals?:number;}": {
@@ -1223,51 +1393,7 @@
                     "type": "boolean"
                 },
                 "showWhen": {
-                    "properties": {
-                        "detach": {
-                            "description": "True means field is removed from DOM when hidden.\nDefault behaviour is hiding it using CSS (display: none).",
-                            "type": "boolean"
-                        },
-                        "rules": {
-                            "items": {
-                                "properties": {
-                                    "equals": {
-                                        "anyOf": [
-                                            {
-                                                "items": {
-                                                    "type": "string"
-                                                },
-                                                "type": "array"
-                                            },
-                                            {
-                                                "type": [
-                                                    "string",
-                                                    "boolean"
-                                                ]
-                                            }
-                                        ]
-                                    },
-                                    "field": {
-                                        "type": "string"
-                                    }
-                                },
-                                "type": "object"
-                            },
-                            "type": "array"
-                        },
-                        "type": {
-                            "default": "or",
-                            "enum": [
-                                "and",
-                                "or"
-                            ],
-                            "type": "string"
-                        },
-                        "widget": {
-                            "type": "string"
-                        }
-                    },
-                    "type": "object"
+                    "$ref": "#/definitions/H5PShowWhenOptions"
                 },
                 "steps": {
                     "type": "number"
@@ -1284,6 +1410,13 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "label",
+                "name",
+                "showWhen",
+                "type",
+                "widget"
+            ],
             "type": "object"
         },
         "{name:string;label:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"showWhen\"|\"NDLAShowWhen\";showWhen:H5PShowWhenOptions;type:H5PFieldType.Audio|\"audio\";}": {
@@ -1316,51 +1449,7 @@
                     "type": "boolean"
                 },
                 "showWhen": {
-                    "properties": {
-                        "detach": {
-                            "description": "True means field is removed from DOM when hidden.\nDefault behaviour is hiding it using CSS (display: none).",
-                            "type": "boolean"
-                        },
-                        "rules": {
-                            "items": {
-                                "properties": {
-                                    "equals": {
-                                        "anyOf": [
-                                            {
-                                                "items": {
-                                                    "type": "string"
-                                                },
-                                                "type": "array"
-                                            },
-                                            {
-                                                "type": [
-                                                    "string",
-                                                    "boolean"
-                                                ]
-                                            }
-                                        ]
-                                    },
-                                    "field": {
-                                        "type": "string"
-                                    }
-                                },
-                                "type": "object"
-                            },
-                            "type": "array"
-                        },
-                        "type": {
-                            "default": "or",
-                            "enum": [
-                                "and",
-                                "or"
-                            ],
-                            "type": "string"
-                        },
-                        "widget": {
-                            "type": "string"
-                        }
-                    },
-                    "type": "object"
+                    "$ref": "#/definitions/H5PShowWhenOptions"
                 },
                 "type": {
                     "const": "audio",
@@ -1374,6 +1463,13 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "label",
+                "name",
+                "showWhen",
+                "type",
+                "widget"
+            ],
             "type": "object"
         },
         "{name:string;label:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"showWhen\"|\"NDLAShowWhen\";showWhen:H5PShowWhenOptions;type:H5PFieldType.File|\"file\";}": {
@@ -1406,51 +1502,7 @@
                     "type": "boolean"
                 },
                 "showWhen": {
-                    "properties": {
-                        "detach": {
-                            "description": "True means field is removed from DOM when hidden.\nDefault behaviour is hiding it using CSS (display: none).",
-                            "type": "boolean"
-                        },
-                        "rules": {
-                            "items": {
-                                "properties": {
-                                    "equals": {
-                                        "anyOf": [
-                                            {
-                                                "items": {
-                                                    "type": "string"
-                                                },
-                                                "type": "array"
-                                            },
-                                            {
-                                                "type": [
-                                                    "string",
-                                                    "boolean"
-                                                ]
-                                            }
-                                        ]
-                                    },
-                                    "field": {
-                                        "type": "string"
-                                    }
-                                },
-                                "type": "object"
-                            },
-                            "type": "array"
-                        },
-                        "type": {
-                            "default": "or",
-                            "enum": [
-                                "and",
-                                "or"
-                            ],
-                            "type": "string"
-                        },
-                        "widget": {
-                            "type": "string"
-                        }
-                    },
-                    "type": "object"
+                    "$ref": "#/definitions/H5PShowWhenOptions"
                 },
                 "type": {
                     "const": "file",
@@ -1464,6 +1516,13 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "label",
+                "name",
+                "showWhen",
+                "type",
+                "widget"
+            ],
             "type": "object"
         },
         "{name:string;label:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"showWhen\"|\"NDLAShowWhen\";showWhen:H5PShowWhenOptions;type:H5PFieldType.Group|\"group\";fields:H5PField[];isSubContent?:boolean;expanded?:boolean;}": {
@@ -1483,10 +1542,7 @@
                     "type": "boolean"
                 },
                 "fields": {
-                    "items": {
-                        "$ref": "#/definitions/H5PField"
-                    },
-                    "type": "array"
+                    "$ref": "#/definitions/Array_1"
                 },
                 "importance": {
                     "$ref": "#/definitions/H5PImportance",
@@ -1510,51 +1566,7 @@
                     "type": "boolean"
                 },
                 "showWhen": {
-                    "properties": {
-                        "detach": {
-                            "description": "True means field is removed from DOM when hidden.\nDefault behaviour is hiding it using CSS (display: none).",
-                            "type": "boolean"
-                        },
-                        "rules": {
-                            "items": {
-                                "properties": {
-                                    "equals": {
-                                        "anyOf": [
-                                            {
-                                                "items": {
-                                                    "type": "string"
-                                                },
-                                                "type": "array"
-                                            },
-                                            {
-                                                "type": [
-                                                    "string",
-                                                    "boolean"
-                                                ]
-                                            }
-                                        ]
-                                    },
-                                    "field": {
-                                        "type": "string"
-                                    }
-                                },
-                                "type": "object"
-                            },
-                            "type": "array"
-                        },
-                        "type": {
-                            "default": "or",
-                            "enum": [
-                                "and",
-                                "or"
-                            ],
-                            "type": "string"
-                        },
-                        "widget": {
-                            "type": "string"
-                        }
-                    },
-                    "type": "object"
+                    "$ref": "#/definitions/H5PShowWhenOptions"
                 },
                 "type": {
                     "const": "group",
@@ -1568,6 +1580,14 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "fields",
+                "label",
+                "name",
+                "showWhen",
+                "type",
+                "widget"
+            ],
             "type": "object"
         },
         "{name:string;label:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"showWhen\"|\"NDLAShowWhen\";showWhen:H5PShowWhenOptions;type:H5PFieldType.Image|\"image\";}": {
@@ -1600,51 +1620,7 @@
                     "type": "boolean"
                 },
                 "showWhen": {
-                    "properties": {
-                        "detach": {
-                            "description": "True means field is removed from DOM when hidden.\nDefault behaviour is hiding it using CSS (display: none).",
-                            "type": "boolean"
-                        },
-                        "rules": {
-                            "items": {
-                                "properties": {
-                                    "equals": {
-                                        "anyOf": [
-                                            {
-                                                "items": {
-                                                    "type": "string"
-                                                },
-                                                "type": "array"
-                                            },
-                                            {
-                                                "type": [
-                                                    "string",
-                                                    "boolean"
-                                                ]
-                                            }
-                                        ]
-                                    },
-                                    "field": {
-                                        "type": "string"
-                                    }
-                                },
-                                "type": "object"
-                            },
-                            "type": "array"
-                        },
-                        "type": {
-                            "default": "or",
-                            "enum": [
-                                "and",
-                                "or"
-                            ],
-                            "type": "string"
-                        },
-                        "widget": {
-                            "type": "string"
-                        }
-                    },
-                    "type": "object"
+                    "$ref": "#/definitions/H5PShowWhenOptions"
                 },
                 "type": {
                     "const": "image",
@@ -1658,6 +1634,13 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "label",
+                "name",
+                "showWhen",
+                "type",
+                "widget"
+            ],
             "type": "object"
         },
         "{name:string;label:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"showWhen\"|\"NDLAShowWhen\";showWhen:H5PShowWhenOptions;type:H5PFieldType.Library|\"library\";options:string[];default?:string;}": {
@@ -1693,57 +1676,10 @@
                     "type": "boolean"
                 },
                 "options": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
+                    "$ref": "#/definitions/Array_2"
                 },
                 "showWhen": {
-                    "properties": {
-                        "detach": {
-                            "description": "True means field is removed from DOM when hidden.\nDefault behaviour is hiding it using CSS (display: none).",
-                            "type": "boolean"
-                        },
-                        "rules": {
-                            "items": {
-                                "properties": {
-                                    "equals": {
-                                        "anyOf": [
-                                            {
-                                                "items": {
-                                                    "type": "string"
-                                                },
-                                                "type": "array"
-                                            },
-                                            {
-                                                "type": [
-                                                    "string",
-                                                    "boolean"
-                                                ]
-                                            }
-                                        ]
-                                    },
-                                    "field": {
-                                        "type": "string"
-                                    }
-                                },
-                                "type": "object"
-                            },
-                            "type": "array"
-                        },
-                        "type": {
-                            "default": "or",
-                            "enum": [
-                                "and",
-                                "or"
-                            ],
-                            "type": "string"
-                        },
-                        "widget": {
-                            "type": "string"
-                        }
-                    },
-                    "type": "object"
+                    "$ref": "#/definitions/H5PShowWhenOptions"
                 },
                 "type": {
                     "const": "library",
@@ -1757,6 +1693,14 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "label",
+                "name",
+                "options",
+                "showWhen",
+                "type",
+                "widget"
+            ],
             "type": "object"
         },
         "{name:string;label:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"showWhen\"|\"NDLAShowWhen\";showWhen:H5PShowWhenOptions;type:H5PFieldType.List|\"list\";widgets?:{name:string;label:string;}[];field:H5PField;min?:number;max?:number;entity:string;}": {
@@ -1802,51 +1746,7 @@
                     "type": "boolean"
                 },
                 "showWhen": {
-                    "properties": {
-                        "detach": {
-                            "description": "True means field is removed from DOM when hidden.\nDefault behaviour is hiding it using CSS (display: none).",
-                            "type": "boolean"
-                        },
-                        "rules": {
-                            "items": {
-                                "properties": {
-                                    "equals": {
-                                        "anyOf": [
-                                            {
-                                                "items": {
-                                                    "type": "string"
-                                                },
-                                                "type": "array"
-                                            },
-                                            {
-                                                "type": [
-                                                    "string",
-                                                    "boolean"
-                                                ]
-                                            }
-                                        ]
-                                    },
-                                    "field": {
-                                        "type": "string"
-                                    }
-                                },
-                                "type": "object"
-                            },
-                            "type": "array"
-                        },
-                        "type": {
-                            "default": "or",
-                            "enum": [
-                                "and",
-                                "or"
-                            ],
-                            "type": "string"
-                        },
-                        "widget": {
-                            "type": "string"
-                        }
-                    },
-                    "type": "object"
+                    "$ref": "#/definitions/H5PShowWhenOptions"
                 },
                 "type": {
                     "const": "list",
@@ -1860,21 +1760,19 @@
                     "type": "string"
                 },
                 "widgets": {
-                    "description": "List containing widget(s). A widget is defined as\nan object with the name of the widget and a label.\nCurrently no widgets are provided by the core system,\nbut the H5PEditor.VerticalTabs library provides\n`verticalTabs` as an option.",
-                    "items": {
-                        "properties": {
-                            "label": {
-                                "type": "string"
-                            },
-                            "name": {
-                                "type": "string"
-                            }
-                        },
-                        "type": "object"
-                    },
-                    "type": "array"
+                    "$ref": "#/definitions/Array_3",
+                    "description": "List containing widget(s). A widget is defined as\nan object with the name of the widget and a label.\nCurrently no widgets are provided by the core system,\nbut the H5PEditor.VerticalTabs library provides\n`verticalTabs` as an option."
                 }
             },
+            "required": [
+                "entity",
+                "field",
+                "label",
+                "name",
+                "showWhen",
+                "type",
+                "widget"
+            ],
             "type": "object"
         },
         "{name:string;label:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"showWhen\"|\"NDLAShowWhen\";showWhen:H5PShowWhenOptions;type:H5PFieldType.Select|\"select\";default:string|number|boolean;options:{value:string|number|boolean;label:string;}[];}": {
@@ -1914,69 +1812,10 @@
                     "type": "boolean"
                 },
                 "options": {
-                    "items": {
-                        "properties": {
-                            "label": {
-                                "type": "string"
-                            },
-                            "value": {
-                                "type": [
-                                    "string",
-                                    "number",
-                                    "boolean"
-                                ]
-                            }
-                        },
-                        "type": "object"
-                    },
-                    "type": "array"
+                    "$ref": "#/definitions/Array_4"
                 },
                 "showWhen": {
-                    "properties": {
-                        "detach": {
-                            "description": "True means field is removed from DOM when hidden.\nDefault behaviour is hiding it using CSS (display: none).",
-                            "type": "boolean"
-                        },
-                        "rules": {
-                            "items": {
-                                "properties": {
-                                    "equals": {
-                                        "anyOf": [
-                                            {
-                                                "items": {
-                                                    "type": "string"
-                                                },
-                                                "type": "array"
-                                            },
-                                            {
-                                                "type": [
-                                                    "string",
-                                                    "boolean"
-                                                ]
-                                            }
-                                        ]
-                                    },
-                                    "field": {
-                                        "type": "string"
-                                    }
-                                },
-                                "type": "object"
-                            },
-                            "type": "array"
-                        },
-                        "type": {
-                            "default": "or",
-                            "enum": [
-                                "and",
-                                "or"
-                            ],
-                            "type": "string"
-                        },
-                        "widget": {
-                            "type": "string"
-                        }
-                    },
-                    "type": "object"
+                    "$ref": "#/definitions/H5PShowWhenOptions"
                 },
                 "type": {
                     "const": "select",
@@ -1990,6 +1829,15 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "default",
+                "label",
+                "name",
+                "options",
+                "showWhen",
+                "type",
+                "widget"
+            ],
             "type": "object"
         },
         "{name:string;label:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"showWhen\"|\"NDLAShowWhen\";showWhen:H5PShowWhenOptions;type:H5PFieldType.Text|\"text\";default?:string;maxLength?:number;regexp?:string;enterMode?:H5PEnterMode;font?:string;important?:{description?:string;example?:string;};}": {
@@ -2049,51 +1897,7 @@
                     "type": "string"
                 },
                 "showWhen": {
-                    "properties": {
-                        "detach": {
-                            "description": "True means field is removed from DOM when hidden.\nDefault behaviour is hiding it using CSS (display: none).",
-                            "type": "boolean"
-                        },
-                        "rules": {
-                            "items": {
-                                "properties": {
-                                    "equals": {
-                                        "anyOf": [
-                                            {
-                                                "items": {
-                                                    "type": "string"
-                                                },
-                                                "type": "array"
-                                            },
-                                            {
-                                                "type": [
-                                                    "string",
-                                                    "boolean"
-                                                ]
-                                            }
-                                        ]
-                                    },
-                                    "field": {
-                                        "type": "string"
-                                    }
-                                },
-                                "type": "object"
-                            },
-                            "type": "array"
-                        },
-                        "type": {
-                            "default": "or",
-                            "enum": [
-                                "and",
-                                "or"
-                            ],
-                            "type": "string"
-                        },
-                        "widget": {
-                            "type": "string"
-                        }
-                    },
-                    "type": "object"
+                    "$ref": "#/definitions/H5PShowWhenOptions"
                 },
                 "type": {
                     "const": "text",
@@ -2107,6 +1911,13 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "label",
+                "name",
+                "showWhen",
+                "type",
+                "widget"
+            ],
             "type": "object"
         },
         "{name:string;label:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"showWhen\"|\"NDLAShowWhen\";showWhen:H5PShowWhenOptions;type:H5PFieldType.Video|\"video\";}": {
@@ -2139,51 +1950,7 @@
                     "type": "boolean"
                 },
                 "showWhen": {
-                    "properties": {
-                        "detach": {
-                            "description": "True means field is removed from DOM when hidden.\nDefault behaviour is hiding it using CSS (display: none).",
-                            "type": "boolean"
-                        },
-                        "rules": {
-                            "items": {
-                                "properties": {
-                                    "equals": {
-                                        "anyOf": [
-                                            {
-                                                "items": {
-                                                    "type": "string"
-                                                },
-                                                "type": "array"
-                                            },
-                                            {
-                                                "type": [
-                                                    "string",
-                                                    "boolean"
-                                                ]
-                                            }
-                                        ]
-                                    },
-                                    "field": {
-                                        "type": "string"
-                                    }
-                                },
-                                "type": "object"
-                            },
-                            "type": "array"
-                        },
-                        "type": {
-                            "default": "or",
-                            "enum": [
-                                "and",
-                                "or"
-                            ],
-                            "type": "string"
-                        },
-                        "widget": {
-                            "type": "string"
-                        }
-                    },
-                    "type": "object"
+                    "$ref": "#/definitions/H5PShowWhenOptions"
                 },
                 "type": {
                     "const": "video",
@@ -2197,6 +1964,13 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "label",
+                "name",
+                "showWhen",
+                "type",
+                "widget"
+            ],
             "type": "object"
         },
         "{name:string;label:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget?:string;type:\"boolean\"|H5PFieldType.Boolean;default:boolean;}": {
@@ -2239,6 +2013,12 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "default",
+                "label",
+                "name",
+                "type"
+            ],
             "type": "object"
         },
         "{name:string;label:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget?:string;type:\"number\"|H5PFieldType.Number;default?:number;min?:number;max?:number;steps?:number;decimals?:number;}": {
@@ -2295,6 +2075,11 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "label",
+                "name",
+                "type"
+            ],
             "type": "object"
         },
         "{name:string;label:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget?:string;type:H5PFieldType.Audio|\"audio\";}": {
@@ -2334,6 +2119,11 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "label",
+                "name",
+                "type"
+            ],
             "type": "object"
         },
         "{name:string;label:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget?:string;type:H5PFieldType.File|\"file\";}": {
@@ -2373,6 +2163,11 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "label",
+                "name",
+                "type"
+            ],
             "type": "object"
         },
         "{name:string;label:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget?:string;type:H5PFieldType.Group|\"group\";fields:H5PField[];isSubContent?:boolean;expanded?:boolean;}": {
@@ -2392,10 +2187,7 @@
                     "type": "boolean"
                 },
                 "fields": {
-                    "items": {
-                        "$ref": "#/definitions/H5PField"
-                    },
-                    "type": "array"
+                    "$ref": "#/definitions/Array_1"
                 },
                 "importance": {
                     "$ref": "#/definitions/H5PImportance",
@@ -2426,6 +2218,12 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "fields",
+                "label",
+                "name",
+                "type"
+            ],
             "type": "object"
         },
         "{name:string;label:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget?:string;type:H5PFieldType.Image|\"image\";}": {
@@ -2465,6 +2263,11 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "label",
+                "name",
+                "type"
+            ],
             "type": "object"
         },
         "{name:string;label:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget?:string;type:H5PFieldType.Library|\"library\";options:string[];default?:string;}": {
@@ -2500,10 +2303,7 @@
                     "type": "boolean"
                 },
                 "options": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
+                    "$ref": "#/definitions/Array_2"
                 },
                 "type": {
                     "const": "library",
@@ -2513,6 +2313,12 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "label",
+                "name",
+                "options",
+                "type"
+            ],
             "type": "object"
         },
         "{name:string;label:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget?:string;type:H5PFieldType.List|\"list\";widgets?:{name:string;label:string;}[];field:H5PField;min?:number;max?:number;entity:string;}": {
@@ -2565,21 +2371,17 @@
                     "type": "string"
                 },
                 "widgets": {
-                    "description": "List containing widget(s). A widget is defined as\nan object with the name of the widget and a label.\nCurrently no widgets are provided by the core system,\nbut the H5PEditor.VerticalTabs library provides\n`verticalTabs` as an option.",
-                    "items": {
-                        "properties": {
-                            "label": {
-                                "type": "string"
-                            },
-                            "name": {
-                                "type": "string"
-                            }
-                        },
-                        "type": "object"
-                    },
-                    "type": "array"
+                    "$ref": "#/definitions/Array_3",
+                    "description": "List containing widget(s). A widget is defined as\nan object with the name of the widget and a label.\nCurrently no widgets are provided by the core system,\nbut the H5PEditor.VerticalTabs library provides\n`verticalTabs` as an option."
                 }
             },
+            "required": [
+                "entity",
+                "field",
+                "label",
+                "name",
+                "type"
+            ],
             "type": "object"
         },
         "{name:string;label:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget?:string;type:H5PFieldType.Select|\"select\";default:string|number|boolean;options:{value:string|number|boolean;label:string;}[];}": {
@@ -2619,22 +2421,7 @@
                     "type": "boolean"
                 },
                 "options": {
-                    "items": {
-                        "properties": {
-                            "label": {
-                                "type": "string"
-                            },
-                            "value": {
-                                "type": [
-                                    "string",
-                                    "number",
-                                    "boolean"
-                                ]
-                            }
-                        },
-                        "type": "object"
-                    },
-                    "type": "array"
+                    "$ref": "#/definitions/Array_4"
                 },
                 "type": {
                     "const": "select",
@@ -2644,6 +2431,13 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "default",
+                "label",
+                "name",
+                "options",
+                "type"
+            ],
             "type": "object"
         },
         "{name:string;label:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget?:string;type:H5PFieldType.Text|\"text\";default?:string;maxLength?:number;regexp?:string;enterMode?:H5PEnterMode;font?:string;important?:{description?:string;example?:string;};}": {
@@ -2710,6 +2504,11 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "label",
+                "name",
+                "type"
+            ],
             "type": "object"
         },
         "{name:string;label:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget?:string;type:H5PFieldType.Video|\"video\";}": {
@@ -2749,6 +2548,11 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "label",
+                "name",
+                "type"
+            ],
             "type": "object"
         }
     },

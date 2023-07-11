@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Schemas for H5P related JSON files",
   "scripts": {
-    "generate-base": "typescript-json-schema --skipLibCheck index.d.ts",
+    "generate-base": "typescript-json-schema --skipLibCheck --strictNullCheck --required index.d.ts",
     "generate:library": "npm run generate-base -- H5PLibrary -o public/library.schema.json",
     "generate:semantics": "npm run generate-base -- H5PSemantics -o public/semantics.schema.json",
     "build": "npm-run-all --parallel generate:**",
