@@ -1,8 +1,6 @@
 {
   "name": "h5p-content-type",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "private": true,
   "scripts": {
     "watch": "webpack serve --hot --mode=development",
@@ -10,8 +8,6 @@
     "lint:check": "eslint .",
     "lint:fix": "npm run lint:check -- --fix"
   },
-  "keywords": [],
-  "author": "",
   "license": "MIT",
   "dependencies": {
     "h5p-utils": "*"

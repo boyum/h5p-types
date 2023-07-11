@@ -1,14 +1,14 @@
 // Structs
 export {
-  H5PAudio,
   /** @deprecated Use {@link H5PAudio} */ H5PAudio as Audio,
+  H5PAudio,
 } from "./src/types/H5PAudio";
 export { H5PBehaviour } from "./src/types/H5PBehaviour";
 export { H5PCCVersions } from "./src/types/H5PCCVersions";
 export { H5PContentId } from "./src/types/H5PContentId";
 export {
-  H5PCopyright,
   /** @deprecated Use {@link H5PCopyright} */ H5PCopyright as Copyright,
+  H5PCopyright,
 } from "./src/types/H5PCopyright";
 export { H5PCopyrightLicenses } from "./src/types/H5PCopyrightLicenses";
 export { H5PDisplayOptions } from "./src/types/H5PDisplayOptions";
@@ -52,6 +52,7 @@ export { H5PMediaCopyright } from "./src/types/H5PMediaCopyright";
 export { H5PMetadata } from "./src/types/H5PMetadata";
 export { H5PMetadataForm } from "./src/types/H5PMetadataForm";
 export { H5PNewRunnableLibraryParam } from "./src/types/H5PNewRunnableLibraryParam";
+export { H5PSemantics } from "./src/types/H5PSemantics";
 export { H5PSetValue } from "./src/types/H5PSetValue";
 
 // Object structs
@@ -97,11 +98,11 @@ export { IH5PWidget } from "./src/types/Interfaces/IH5PWidget";
 // Infer utils
 export { InferGroupParams } from "./src/types/InferGroupParams";
 export { InferL10nType } from "./src/types/InferL10nType";
-export { InferParamsFromSemantics } from "./src/types/InferParamsFromSemantics";
 export {
   InferParamTypeFromFieldType,
   /** @deprecated Use {@link InferParamTypeFromFieldType} */ InferParamTypeFromFieldType as ParamTypeInferredFromFieldType,
 } from "./src/types/InferParamTypeFromFieldType";
+export { InferParamsFromSemantics } from "./src/types/InferParamsFromSemantics";
 export {
   TranslationHasParams,
   TranslationParams,
@@ -119,6 +120,6 @@ export { XAPIVerb } from "./src/types/XAPI/XAPIVerb";
 // We re-export type-fest types to avoid having to install it as a dependency
 // Until TS 5, the ReadonlyDeep type is needed when inputting types to `InferParamsFromSemantics`
 export {
-  ReadonlyDeep,
   /** @deprecated Use {@link ReadonlyDeep} */ ReadonlyDeep as DeepReadonly,
+  ReadonlyDeep,
 } from "type-fest";

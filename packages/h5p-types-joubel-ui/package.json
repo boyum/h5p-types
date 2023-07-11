@@ -12,7 +12,10 @@
     "lint:check": "eslint .",
     "lint:fix": "npm run lint:check -- --fix"
   },
-  "keywords": [],
+  "keywords": [
+    "h5p",
+    "JoubelUI"
+  ],
   "author": "Sindre Bøyum",
   "license": "Apache-2.0",
   "devDependencies": {
