@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars, @typescript-eslint/ban-ts-comment, @typescript-eslint/no-namespace */
+
 import type { H5PObject } from "h5p-types";
 import type { AreEqual, Expect } from "./test-utility-types";
 
