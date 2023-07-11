@@ -2,3 +2,4 @@ CHANGELOG.md
 library.json.d.ts
 semantics.json.d.ts
 *.schema.json
+.vscode-test-web
