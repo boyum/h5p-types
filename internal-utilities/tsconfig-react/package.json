@@ -1,12 +1,9 @@
 {
   "name": "tsconfig-react",
   "version": "1.0.0",
-  "description": "",
   "type": "module",
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "main": "index.json",
+  "private": true,
   "devDependencies": {
     "tsconfig-base": "*"
   }

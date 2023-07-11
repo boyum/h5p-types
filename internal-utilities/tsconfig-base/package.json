@@ -1,13 +1,9 @@
 {
   "name": "tsconfig-base",
   "version": "1.0.0",
-  "description": "",
   "type": "module",
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "private": true,
   "main": "index.json",
+  "private": true,
   "dependencies": {
     "@tsconfig/strictest": "^2.0.1"
   }

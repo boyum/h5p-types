@@ -1,10 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/eslintrc",
-  "extends": [
-    "./base.json",
-    "plugin:react/recommended",
-    "plugin:react/jsx-runtime"
-  ],
+  "extends": ["base", "plugin:react/recommended", "plugin:react/jsx-runtime"],
   "plugins": ["react", "react-hooks"],
   "settings": {
     "react": {
