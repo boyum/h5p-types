@@ -9,6 +9,13 @@ import type { JoubelThrobber } from "./src/JoubelThrobber";
 import type { JoubelTip } from "./src/JoubelTip";
 import type { SimpleRoundedButton } from "./src/SimpleRoundedButton";
 
+/**
+ * Alias of the `ownerDocument_attributes` parameter in
+ * `$(html: string, ownerDocument_attributes?: Document | JQuery.PlainObject<any> | undefined)`.
+ * This is usually an object of HTML properties for the element.
+ */
+type JQueryParams = Document | JQuery.PlainObject<unknown> | undefined;
+
 declare module "h5p-types" {
   interface H5PObject {
     JoubelHelpTextDialog: typeof JoubelHelpTextDialog;
@@ -23,7 +30,7 @@ declare module "h5p-types" {
     SimpleRoundedButton: typeof SimpleRoundedButton;
 
     JoubelUI: {
-      createButton: <T extends {}>(
+      createButton: <T extends JQueryParams>(
         params: T & { class?: string; href?: string },
       ) => T extends { href: string }
         ? T extends { href: "" }
@@ -118,7 +125,7 @@ declare module "h5p-types" {
        *
        * @param params
        */
-      createSlider: (params?: {}) => JoubelSlider;
+      createSlider: (params?: JQueryParams) => JoubelSlider;
 
       /**
        * Alias of `new H5P.JoubelThrobber(...)`

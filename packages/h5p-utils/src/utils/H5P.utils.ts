@@ -3,7 +3,9 @@ import type { H5PContentType } from "../models/H5PContentType";
 import type { H5PResumableContentType } from "../models/H5PResumableContentType";
 import type { H5PWidget } from "../models/H5PWidget";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const H5P: H5PObject = (window as any).H5P ?? {};
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const H5PEditor: H5PEditorObject = (window as any).H5PEditor ?? {};
 
 /**
@@ -37,6 +39,7 @@ export const registerContentType = <TParams = unknown, TState = unknown>(
     | typeof H5PContentType<TParams>
     | typeof H5PResumableContentType<TParams, TState>,
 ): void => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   (H5P as any)[name] = contentType;
 };
 

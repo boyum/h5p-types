@@ -6,7 +6,9 @@
   "private": true,
   "scripts": {
     "watch": "webpack serve --hot --mode=development",
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production",
+    "lint:check": "eslint .",
+    "lint:fix": "npm run lint:check -- --fix"
   },
   "keywords": [],
   "author": "",
@@ -15,10 +17,11 @@
     "h5p-utils": "*"
   },
   "devDependencies": {
+    "eslint-config-base": "*",
     "h5p-types": "*",
     "h5p-types-joubel-ui": "*",
     "ts-loader": "^9.4.4",
-    "tsconfig": "*",
+    "tsconfig-base": "*",
     "unplugin-json-dts": "^1.2.0",
     "webpack": "^5.88.1",
     "webpack-cli": "^5.1.4"

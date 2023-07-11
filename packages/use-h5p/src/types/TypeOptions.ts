@@ -3,6 +3,7 @@
  */
 type $MergeBy<T, K> = Omit<T, keyof K> & K;
 
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface CustomTypeOptions {}
 
 export type TypeOptions = $MergeBy<

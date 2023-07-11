@@ -25,7 +25,9 @@
   "scripts": {
     "test": "tsc --project demo/tsconfig.json",
     "build": "tsup index.ts --format esm,cjs --dts",
-    "publish-to-npm": "release-it"
+    "publish-to-npm": "release-it",
+    "lint:check": "eslint .",
+    "lint:fix": "npm run lint:check -- --fix"
   },
   "repository": {
     "type": "git",
@@ -42,12 +44,11 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "@release-it/conventional-changelog": "^7.0.0",
+    "eslint-config-base": "*",
     "h5p-types": "*",
-    "prettier": "^3.0.0",
-    "prettier-config": "github:boyum/prettier-config",
     "release-it": "^16.1.0",
     "replace-in-file": "^7.0.1",
-    "tsconfig": "*",
+    "tsconfig-base": "*",
     "tsup": "^7.1.0",
     "typescript": "^4.9.5"
   },

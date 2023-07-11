@@ -1,7 +1,7 @@
 {
   "name": "use-h5p",
   "version": "2.0.0",
-  "description": "React Hooks to be used with H5P.",
+  "description": "React Hooks to be used with H5P",
   "main": "dist/index.cjs",
   "types": "dist/index.d.cts",
   "files": [
@@ -26,11 +26,13 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "build": "tsup ./src/index.ts --format esm,cjs --dts",
-    "publish-to-npm": "release-it"
+    "publish-to-npm": "release-it",
+    "lint:check": "eslint .",
+    "lint:fix": "npm run lint:check -- --fix"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Tietoevry-Create/use-h5p.git"
+    "url": "git+https://github.com/boyum/h5p-types.git"
   },
   "keywords": [
     "h5p",
@@ -39,21 +41,22 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Tietoevry-Create/use-h5p/issues"
+    "url": "https://github.com/boyum/h5p-types/issues"
   },
-  "homepage": "https://github.com/Tietoevry-Create/use-h5p#readme",
+  "homepage": "https://github.com/boyum/h5p-types/tree/main/packages/use-h5p#readme",
   "devDependencies": {
     "@release-it/conventional-changelog": "^7.0.0",
     "@testing-library/react": "^14.0.0",
     "@types/node": "^20.4.1",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
+    "eslint-config-react": "*",
     "h5p-types": "*",
     "h5p-utils": "*",
     "happy-dom": "^10.0.5",
     "react-dom": "^18.2.0",
     "release-it": "^16.1.0",
-    "tsconfig": "*",
+    "tsconfig-react": "*",
     "tsup": "^7.1.0",
     "typescript": "^5.1.6",
     "vitest": "^0.33.0"

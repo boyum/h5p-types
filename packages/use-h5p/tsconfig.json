@@ -1,4 +1,4 @@
 {
   "exclude": ["vite.config.ts", "demo", "dist"],
-  "extends": "tsconfig/react.json"
+  "extends": "tsconfig-react/index.json"
 }

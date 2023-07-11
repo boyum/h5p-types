@@ -1,4 +1,4 @@
 {
   "include": ["src", "index.d.ts"],
-  "extends": "tsconfig/react.json"
+  "extends": "tsconfig-react/index.json"
 }

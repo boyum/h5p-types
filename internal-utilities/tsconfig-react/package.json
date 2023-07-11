@@ -1,0 +1,10 @@
+{
+  "name": "tsconfig-react",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.json",
+  "private": true,
+  "devDependencies": {
+    "tsconfig-base": "*"
+  }
+}

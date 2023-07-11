@@ -1,3 +1,4 @@
+/* eslint-disable no-undef, @typescript-eslint/no-var-requires */
 // @ts-check
 
 const path = require("path");
@@ -15,7 +16,7 @@ const config = {
     filename: "[name].js",
   },
   plugins: [
-    // @ts-expect-error
+    // @ts-expect-error - unplugin-json-dts is not typed correctly
     require("unplugin-json-dts/webpack")(),
   ],
   module: {
