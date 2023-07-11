@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "Schemas for H5P related JSON files",
   "scripts": {
-    "generate:library": "typescript-json-schema index.d.ts H5PLibrary -o public/library.schema.json",
-    "generate:semantics": "typescript-json-schema index.d.ts H5PSemantics -o public/semantics.schema.json",
+    "generate-base": "typescript-json-schema --skipLibCheck index.d.ts",
+    "generate:library": "npm run generate-base -- H5PLibrary -o public/library.schema.json",
+    "generate:semantics": "npm run generate-base -- H5PSemantics -o public/semantics.schema.json",
     "build": "npm-run-all --parallel generate:**",
     "deploy": "vercel --prod",
     "start": "vercel dev"
