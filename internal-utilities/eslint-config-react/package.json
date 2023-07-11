@@ -1,0 +1,17 @@
+{
+  "name": "eslint-config-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.json",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint-config-base": "*",
+    "eslint-plugin-react": "^7.32.2"
+  }
+}

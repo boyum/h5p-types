@@ -19,12 +19,9 @@
   },
   "devDependencies": {
     "@release-it/conventional-changelog": "^7.0.0",
-    "@typescript-eslint/eslint-plugin": "^5.61.0",
-    "@typescript-eslint/parser": "^5.61.0",
-    "eslint": "^8.44.0",
-    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-config-base": "*",
     "release-it": "^16.1.0",
-    "tsconfig": "*",
+    "tsconfig-base": "*",
     "typescript": "^4.9.5"
   },
   "peerDependencies": {

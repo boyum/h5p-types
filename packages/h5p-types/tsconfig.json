@@ -1,4 +1,4 @@
 {
   "include": ["src", "index.d.ts", "test"],
-  "extends": "tsconfig/base.json"
+  "extends": "tsconfig-base/index.json"
 }
