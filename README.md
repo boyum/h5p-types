@@ -5,12 +5,13 @@ Each package contains type definitions for a specific H5P content type or librar
 This project aims to provide examples on how to use the type definitions in a TypeScript project.
 Check out the [examples](./examples) folder for more information.
 
-| Package                                                  | Description                                                               |
-| -------------------------------------------------------- | ------------------------------------------------------------------------- |
-| [`h5p-types`](./packages/h5p-types/)                     | Type definitions for H5P Core                                             |
-| [`h5p-types-joubel-ui`](./packages/h5p-types-joubel-ui/) | Type definitions for [H5P JoubelUI](https://github.com/h5p/h5p-joubel-ui) |
-| [`h5p-utils`](./packages/h5p-utils/)                     | Abstractions and utilities for creating H5P Widgets and Content Types     |
-| [`use-h5p`](./packages/use-h5p/)                         | React Hooks to be used with H5P Widgets and Content Types                 |
+| Package                                                  | Description                                                                              |
+| -------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| [`h5p-json-schemas`](./packages/h5p-json-schemas/)       | Schemas for JSON files related to H5P [(link to schemas)](https://h5p-schema.sindre.is/) |
+| [`h5p-types`](./packages/h5p-types/)                     | Type definitions for H5P Core                                                            |
+| [`h5p-types-joubel-ui`](./packages/h5p-types-joubel-ui/) | Type definitions for [H5P JoubelUI](https://github.com/h5p/h5p-joubel-ui)                |
+| [`h5p-utils`](./packages/h5p-utils/)                     | Abstractions and utilities for creating H5P Widgets and Content Types                    |
+| [`use-h5p`](./packages/use-h5p/)                         | React Hooks to be used with H5P Widgets and Content Types                                |
 
 ## Contributing
 
@@ -25,6 +26,7 @@ Follow these steps to add a new package that will be released to npm:
 
 1. Create a new folder in the `packages` folder
 1. Add that package to the `project` array in the [check-npm-packages workflow](./.github/workflows/check-npm-packages.yml)
+1. Add a note about the package to the table above
 1. If that project is a dependency of another project, add it to that project's npm dependencies and use the version `"*"`
 
 ### Adding a new example
