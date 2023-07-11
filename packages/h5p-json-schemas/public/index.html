@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>H5P JSON Schemas</title>
+
+    <link href="/pico.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>H5P JSON Schemas</h1>
+      <p>
+        This page contains JSON schemas for H5P content types and libraries. The
+        schemas can be used to improve developer experience when creating H5P
+        related JSON files such as <code>library.json</code> and
+        <code>semantics.json</code>.
+      </p>
+
+      <p>
+        Each schema is found on the format
+        <code>&lt;file-name&gt;.schema.json</code>:
+      </p>
+      <ul>
+        <li><a href="library.schema.json">library.json</a></li>
+        <li><a href="semantics.schema.json">semantics.json</a></li>
+      </ul>
+
+      <h2>Usage</h2>
+
+      library.json:
+
+      <pre>
+
+  {
+    "$schema": "https://h5p-schema.sindre.is/library.schema.json",
+    "title": "My Library",
+    "machineName": "H5P.MyLibrary",
+    "majorVersion": 1,
+    "minorVersion": 0,
+    "patchVersion": 0
+  }
+      </pre>
+    </div>
+  </body>
+</html>

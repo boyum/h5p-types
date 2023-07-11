@@ -1,0 +1,174 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "properties": {
+        "author": {
+            "type": "string"
+        },
+        "coreApi": {
+            "description": "Specifies the required version of H5P Core API. If\nnot set, v1.0 is assumed, and the library must not\nuse any functionality added in newer versions of\nH5P Core.",
+            "properties": {
+                "majorVersion": {
+                    "default": 1,
+                    "type": "number"
+                },
+                "minorVersion": {
+                    "default": 0,
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "description": {
+            "type": "string"
+        },
+        "dynamicDependencies": {
+            "items": {
+                "properties": {
+                    "machineName": {
+                        "type": "string"
+                    },
+                    "majorVersion": {
+                        "type": "number"
+                    },
+                    "minorVersion": {
+                        "type": "number"
+                    }
+                },
+                "type": "object"
+            },
+            "type": "array"
+        },
+        "editorDependencies": {
+            "description": "Undocumented but important feature to load widgets when editing H5Ps",
+            "items": {
+                "properties": {
+                    "machineName": {
+                        "type": "string"
+                    },
+                    "majorVersion": {
+                        "type": "number"
+                    },
+                    "minorVersion": {
+                        "type": "number"
+                    }
+                },
+                "type": "object"
+            },
+            "type": "array"
+        },
+        "embedTypes": {
+            "default": [
+                "div"
+            ],
+            "description": "List of possible ways to embed the package in the page",
+            "items": {
+                "enum": [
+                    "div",
+                    "iframe"
+                ],
+                "type": "string"
+            },
+            "type": "array"
+        },
+        "fullscreen": {
+            "default": 0,
+            "description": "Enables the integrated full-screen button",
+            "enum": [
+                0,
+                1
+            ],
+            "type": "number"
+        },
+        "license": {
+            "type": "string"
+        },
+        "machineName": {
+            "type": "string"
+        },
+        "majorVersion": {
+            "type": "number"
+        },
+        "metadataSettings": {
+            "description": "Disable metadata completely or just hide title field from content type's form.",
+            "properties": {
+                "disable": {
+                    "default": 0,
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "type": "number"
+                },
+                "disableExtraTitleField": {
+                    "default": 1,
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "minorVersion": {
+            "type": "number"
+        },
+        "patchVersion": {
+            "type": "number"
+        },
+        "preloadedCss": {
+            "items": {
+                "properties": {
+                    "path": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "type": "array"
+        },
+        "preloadedDependencies": {
+            "items": {
+                "properties": {
+                    "machineName": {
+                        "type": "string"
+                    },
+                    "majorVersion": {
+                        "type": "number"
+                    },
+                    "minorVersion": {
+                        "type": "number"
+                    }
+                },
+                "type": "object"
+            },
+            "type": "array"
+        },
+        "preloadedJs": {
+            "items": {
+                "properties": {
+                    "path": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "type": "array"
+        },
+        "runnable": {
+            "default": 0,
+            "description": "Whether or not this library is runnable. If it is\nrunnable the authoring tool will enable authors to\ncreate new instances of content using this library.\nValues are 0 for not runnable and 1 for runnable.",
+            "enum": [
+                0,
+                1
+            ],
+            "type": "number"
+        },
+        "title": {
+            "description": "Textual library name",
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+

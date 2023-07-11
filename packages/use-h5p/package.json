@@ -38,7 +38,10 @@
     "h5p",
     "react"
   ],
-  "author": "",
+  "author": {
+    "name": "Sindre Bøyum",
+    "url": "https://sinre.dev"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/boyum/h5p-types/issues"

@@ -1,15 +1,11 @@
 {
   "name": "h5p-resumable-content-type",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "private": true,
   "scripts": {
     "watch": "webpack serve --hot --mode=development",
     "build": "webpack --mode=production"
   },
-  "keywords": [],
-  "author": "",
   "license": "MIT",
   "dependencies": {
     "h5p-utils": "*"
