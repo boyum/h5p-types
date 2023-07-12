@@ -3,5 +3,5 @@
     "moduleResolution": "node",
     "target": "ES2018",
     "noEmit": true
-  },
+  }
 }

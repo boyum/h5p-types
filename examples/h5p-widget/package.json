@@ -23,6 +23,6 @@
     "webpack-cli": "^5.1.4"
   },
   "eslintConfig": {
-    "extends": "eslint-base"
+    "extends": "base"
   }
 }
