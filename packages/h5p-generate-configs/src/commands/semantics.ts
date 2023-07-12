@@ -35,8 +35,10 @@ const command: GluegunCommand = {
     );
 
     if (!inputParam) {
+      const { name, alias } = options["input"];
+
       print.error(
-        `Missing path to TypeScript definition of semantics. Please provide one with the \`${options.input.name}\` flag (-${options.input.alias}|--${options.input.name} 'path/to/semantics.ts')`,
+        `Missing path to TypeScript definition of semantics. Please provide one with the \`${name}\` flag (-${alias}|--${name} 'path/to/semantics.ts')`,
       );
 
       return 1;
@@ -50,15 +52,13 @@ const command: GluegunCommand = {
 
     print.info("Creating semantics file");
     print.info(
-      `
-  Inputs: 
-  Input: '${semanticsTsPath}'
-  Output: '${outputPath}'
-  ${
-    translationKeyOutputPath
-      ? `Translations output: '${translationKeyOutputPath}'`
-      : ""
-  }
+      `Input: '${semanticsTsPath}'
+Output: '${outputPath}'
+${
+  translationKeyOutputPath
+    ? `Translations output: '${translationKeyOutputPath}'`
+    : ""
+}
 `,
     );
 

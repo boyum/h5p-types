@@ -27,8 +27,10 @@ export default {
       getOption<string>(options, optionTypes.output) || "library.json";
 
     if (!inputParam) {
+      const { name, alias } = options["input"];
+
       print.error(
-        `Missing path to TypeScript definition of library. Please provide one with the \`${options.input.name}\` flag (-${options.input.alias}|--${options.input.name} 'path/to/library.ts')`,
+        `Missing path to TypeScript definition of library. Please provide one with the \`${name}\` flag (-${alias}|--${name} 'path/to/library.ts')`,
       );
 
       return 1;
