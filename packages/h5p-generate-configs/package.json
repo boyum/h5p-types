@@ -1,6 +1,6 @@
 {
   "name": "h5p-generate-configs",
-  "version": "0.4.2",
+  "version": "1.0.0",
   "description": "h5p-generate-configs CLI",
   "repository": {
     "type": "git",
