@@ -13,9 +13,10 @@
   "scripts": {
     "build": "shx rm -rf dist && tsc -b",
     "prepublishOnly": "npm run build",
-    "test": "jest && npm link && npm run demo:semantics && npm run demo:library",
-    "watch": "jest --watch",
-    "coverage": "jest --coverage",
+    "test": "npm run test:unit",
+    "test:unit": "jest src/**/*.test.ts",
+    "test:unit:watch": "jest --watch",
+    "test:unit:coverage": "jest --coverage",
     "demo:semantics": "h5p-generate-configs s --type-definition demo/semantics.ts --out demo/semantics.json -t demo/TranslationKey.ts",
     "demo:library": "h5p-generate-configs l --type-definition demo/library.ts --out demo/library.json",
     "publish-to-npm": "release-it",
@@ -23,7 +24,6 @@
     "lint:fix": "npm run lint:check -- --fix",
     "version": "oclif readme && git add README.md",
     "postpack": "shx rm -f oclif.manifest.json",
-    "posttest": "npm run lint",
     "prepack": "npm run build && oclif manifest && oclif readme"
   },
   "files": [
@@ -62,17 +62,18 @@
   },
   "devDependencies": {
     "@oclif/test": "^2.3.28",
-    "@types/jest": "^29.5.3",
     "@types/node": "^20.4.1",
+    "chai": "^4.3.7",
     "copyfiles": "^2.4.1",
     "eslint-config-base": "*",
     "h5p-types": "*",
-    "jest": "^29.6.1",
+    "mocha": "^10.2.0",
     "oclif": "^3.9.1",
     "release-it": "^16.1.0",
     "shx": "^0.3.4",
     "ts-jest": "^29.1.1",
     "ts-node": "^10.9.1",
+    "tslib": "^2.6.0",
     "typescript": "^5.1.6"
   },
   "eslintConfig": {
