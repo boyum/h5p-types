@@ -1,5 +1,5 @@
-import { promises as fs, existsSync } from "fs";
-import type { GluegunPrint } from "gluegun";
+import { Command } from "@oclif/core";
+import { existsSync, promises as fs } from "fs";
 import type { H5PBehaviour, H5PField, H5PL10n } from "h5p-types";
 import type { Semantics } from "../types/Semantics";
 import { findDuplicates } from "./array.utils";
@@ -66,7 +66,8 @@ export async function generateSemantics(
   semanticsTsPath: string,
   outputPath: string,
   translationKeyOutputPath: string | undefined,
-  print: GluegunPrint,
+  debug: boolean,
+  log: Command["log"],
 ): Promise<void> {
   const path = semanticsTsPath.trim();
   const isTSFile = path.endsWith(".ts") || path.endsWith(".tsx");
@@ -75,15 +76,23 @@ export async function generateSemantics(
   }
 
   const semantics = await readSemanticsTSFile(path);
-  print.info("Found semantics file.");
+  log("Found semantics file.");
 
   if (translationKeyOutputPath) {
-    print.info("Generating type file for translation keys.");
+    if (debug) {
+      log("Generating type file for translation keys.");
+    }
+
     await createTranslationKeys(semantics, translationKeyOutputPath);
   } else {
-    print.info("Path for translation key type output file was not provided.");
+    if (debug) {
+      log("Path for translation key type output file was not provided.");
+    }
   }
 
-  print.info("Generating JSON file for semantics.");
+  log("Generating JSON file for semantics.");
   await createJsonFile(semantics, outputPath);
+
+  const filename = semanticsTsPath.split("/").at(-1);
+  log(`Finished generating ${filename}`);
 }
