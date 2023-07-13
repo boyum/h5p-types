@@ -3,3 +3,5 @@ library.json.d.ts
 semantics.json.d.ts
 *.schema.json
 .vscode-test-web
+packages/h5p-generate-configs/demo/
+packages/h5p-generate-configs/bin/

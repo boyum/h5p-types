@@ -1,0 +1,83 @@
+{
+  "name": "h5p-generate-configs",
+  "version": "0.4.2",
+  "description": "h5p-generate-configs CLI",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boyum/h5p-types.git"
+  },
+  "homepage": "https://github.com/boyum/h5p-types/tree/main/packages/h5p-generate-configs#readme",
+  "bin": {
+    "h5p-generate-configs": "./bin/run"
+  },
+  "scripts": {
+    "build": "shx rm -rf dist && tsc -b",
+    "prepublishOnly": "npm run build",
+    "test": "npm run test:unit",
+    "test:unit": "jest src/**/*.test.ts",
+    "test:unit:watch": "jest --watch",
+    "test:unit:coverage": "jest --coverage",
+    "demo:semantics": "h5p-generate-configs s --type-definition demo/semantics.ts --out demo/semantics.json -t demo/TranslationKey.ts",
+    "demo:library": "h5p-generate-configs l --type-definition demo/library.ts --out demo/library.json",
+    "publish-to-npm": "release-it",
+    "lint:check": "eslint .",
+    "lint:fix": "npm run lint:check -- --fix",
+    "version": "oclif readme && git add README.md",
+    "postpack": "shx rm -f oclif.manifest.json",
+    "prepack": "npm run build && oclif manifest && oclif readme"
+  },
+  "files": [
+    "/bin",
+    "/dist",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json"
+  ],
+  "license": "Apache-2.0",
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/*.test.ts"
+    ]
+  },
+  "oclif": {
+    "bin": "h5p-generate-configs",
+    "dirname": "h5p-generate-configs",
+    "commands": "./dist/commands",
+    "plugins": [
+      "@oclif/plugin-help",
+      "@oclif/plugin-plugins"
+    ],
+    "topicSeparator": " ",
+    "topics": {
+      "h5p-generate-configs": {
+        "description": "Generate TS and JSON definitions for H5P"
+      }
+    }
+  },
+  "dependencies": {
+    "@oclif/core": "^2.9.2",
+    "@oclif/plugin-help": "^5.2.12",
+    "@oclif/plugin-plugins": "^3.1.6"
+  },
+  "devDependencies": {
+    "@oclif/test": "^2.3.28",
+    "@types/jest": "^29.5.3",
+    "@types/node": "^20.4.2",
+    "chai": "^4.3.7",
+    "copyfiles": "^2.4.1",
+    "esbuild-register": "^3.4.2",
+    "eslint-config-base": "*",
+    "h5p-types": "*",
+    "jest": "^29.6.1",
+    "mocha": "^10.2.0",
+    "oclif": "^3.9.1",
+    "release-it": "^16.1.0",
+    "shx": "^0.3.4",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.1.6"
+  },
+  "eslintConfig": {
+    "extends": "base"
+  }
+}
