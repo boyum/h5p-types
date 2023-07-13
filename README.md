@@ -7,6 +7,7 @@ Check out the [examples](./examples) folder for more information.
 
 | Package                                                            | Description                                                                                                                                                 |
 | ------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`h5p-generate-configs`](./packages/h5p-generate-configs/)         | A tool for creating common H5P config files out of a TypeScript definition                                                                                  |
 | [`h5p-json-schemas`](./packages/h5p-json-schemas/)                 | Schemas for JSON files related to H5P [(link to schemas)](https://h5p-schema.sindre.is/)                                                                    |
 | [`h5p-qol-vscode-extension`](./packages/h5p-qol-vscode-extension/) | Quality of life improvements for H5P development in VSCode [(link to marketplace)](https://marketplace.visualstudio.com/items?itemName=sindreboyum.h5p-qol) |
 | [`h5p-types`](./packages/h5p-types/)                               | Type definitions for H5P Core                                                                                                                               |
