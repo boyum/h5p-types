@@ -1,4 +1,5 @@
 declare const json: {
+  "$schema": "https://h5p-json-schemas.vercel.app/library.schema.json",
   "title": "Content Type",
   "machineName": "H5P.ContentType",
   "majorVersion": 1,
