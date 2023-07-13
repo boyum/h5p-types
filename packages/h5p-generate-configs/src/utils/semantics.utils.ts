@@ -1,7 +1,6 @@
 import { Command } from "@oclif/core";
 import { existsSync, promises as fs } from "fs";
-import type { H5PBehaviour, H5PField, H5PL10n } from "h5p-types";
-import type { Semantics } from "../types/Semantics";
+import type { H5PBehaviour, H5PField, H5PL10n, H5PSemantics } from "h5p-types";
 import { findDuplicates } from "./array.utils";
 import { createJsonFile } from "./file.utils";
 
@@ -9,8 +8,8 @@ const isH5PL10n = (obj: H5PField | H5PBehaviour | H5PL10n): obj is H5PL10n => {
   return obj.name === "l10n";
 };
 
-async function readSemanticsTSFile(path: string): Promise<Semantics> {
-  const { semantics }: { semantics: Semantics } = await import(path);
+async function readSemanticsTSFile(path: string): Promise<H5PSemantics> {
+  const { semantics }: { semantics: H5PSemantics } = await import(path);
 
   return semantics;
 }
@@ -25,7 +24,7 @@ async function deleteTranslationKeysFile(
 }
 
 async function createTranslationKeys(
-  semantics: Semantics,
+  semantics: H5PSemantics,
   translationKeyOutputPath: string,
 ): Promise<void> {
   const translationField = semantics.find(field =>

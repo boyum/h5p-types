@@ -1,124 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "definitions": {
-        "Array": {
-            "items": {
-                "properties": {
-                    "equals": {
-                        "anyOf": [
-                            {
-                                "items": {
-                                    "type": "string"
-                                },
-                                "type": "array"
-                            },
-                            {
-                                "type": [
-                                    "string",
-                                    "boolean"
-                                ]
-                            }
-                        ]
-                    },
-                    "field": {
-                        "type": "string"
-                    }
-                },
-                "required": [
-                    "field"
-                ],
-                "type": "object"
-            },
-            "type": "array"
-        },
-        "Array_1": {
-            "items": {
-                "$ref": "#/definitions/H5PField"
-            },
-            "type": "array"
-        },
-        "Array_2": {
-            "items": {
-                "type": "string"
-            },
-            "type": "array"
-        },
-        "Array_3": {
-            "items": {
-                "properties": {
-                    "label": {
-                        "type": "string"
-                    },
-                    "name": {
-                        "type": "string"
-                    }
-                },
-                "required": [
-                    "label",
-                    "name"
-                ],
-                "type": "object"
-            },
-            "type": "array"
-        },
-        "Array_4": {
-            "items": {
-                "properties": {
-                    "label": {
-                        "type": "string"
-                    },
-                    "value": {
-                        "type": [
-                            "string",
-                            "number",
-                            "boolean"
-                        ]
-                    }
-                },
-                "required": [
-                    "label",
-                    "value"
-                ],
-                "type": "object"
-            },
-            "type": "array"
-        },
-        "Array_5": {
-            "items": {
-                "$ref": "#/definitions/H5PTextTags"
-            },
-            "type": "array"
-        },
-        "Array_6": {
-            "items": {
-                "items": {
-                    "type": "string"
-                },
-                "type": "array"
-            },
-            "type": "array"
-        },
-        "Array_7": {
-            "items": {
-                "allOf": [
-                    {
-                        "$ref": "#/definitions/StrictOmit<H5PFieldText,\"default\">"
-                    },
-                    {
-                        "properties": {
-                            "default": {
-                                "type": "string"
-                            }
-                        },
-                        "required": [
-                            "default"
-                        ],
-                        "type": "object"
-                    }
-                ]
-            },
-            "type": "array"
-        },
         "H5PEnterMode": {
             "enum": [
                 "div",
@@ -243,9 +125,6 @@
             ],
             "type": "string"
         },
-        "H5PShowWhenOptions": {
-            "$ref": "#/definitions/__type"
-        },
         "H5PTextTags": {
             "enum": [
                 "a",
@@ -339,32 +218,6 @@
             ],
             "type": "object"
         },
-        "__type": {
-            "properties": {
-                "detach": {
-                    "description": "True means field is removed from DOM when hidden.\nDefault behaviour is hiding it using CSS (display: none).",
-                    "type": "boolean"
-                },
-                "rules": {
-                    "$ref": "#/definitions/Array"
-                },
-                "type": {
-                    "default": "or",
-                    "enum": [
-                        "and",
-                        "or"
-                    ],
-                    "type": "string"
-                },
-                "widget": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "rules"
-            ],
-            "type": "object"
-        },
         "{name:\"behaviour\";label:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget?:string;type:H5PFieldType.Group|\"group\";fields:H5PField[];isSubContent?:boolean;expanded?:boolean;}": {
             "properties": {
                 "common": {
@@ -382,7 +235,10 @@
                     "type": "boolean"
                 },
                 "fields": {
-                    "$ref": "#/definitions/Array_1"
+                    "items": {
+                        "$ref": "#/definitions/H5PField"
+                    },
+                    "type": "array"
                 },
                 "importance": {
                     "$ref": "#/definitions/H5PImportance",
@@ -436,7 +292,25 @@
                     "type": "boolean"
                 },
                 "fields": {
-                    "$ref": "#/definitions/Array_7"
+                    "items": {
+                        "allOf": [
+                            {
+                                "$ref": "#/definitions/StrictOmit<H5PFieldText,\"default\">"
+                            },
+                            {
+                                "properties": {
+                                    "default": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "default"
+                                ],
+                                "type": "object"
+                            }
+                        ]
+                    },
+                    "type": "array"
                 },
                 "importance": {
                     "$ref": "#/definitions/H5PImportance",
@@ -717,7 +591,10 @@
                     "type": "string"
                 },
                 "fields": {
-                    "$ref": "#/definitions/Array_1"
+                    "items": {
+                        "$ref": "#/definitions/H5PField"
+                    },
+                    "type": "array"
                 },
                 "importance": {
                     "$ref": "#/definitions/H5PImportance",
@@ -845,7 +722,10 @@
                     "type": "boolean"
                 },
                 "options": {
-                    "$ref": "#/definitions/Array_2"
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "type": {
                     "const": "library",
@@ -920,8 +800,23 @@
                     "type": "string"
                 },
                 "widgets": {
-                    "$ref": "#/definitions/Array_3",
-                    "description": "List containing widget(s). A widget is defined as\nan object with the name of the widget and a label.\nCurrently no widgets are provided by the core system,\nbut the H5PEditor.VerticalTabs library provides\n`verticalTabs` as an option."
+                    "description": "List containing widget(s). A widget is defined as\nan object with the name of the widget and a label.\nCurrently no widgets are provided by the core system,\nbut the H5PEditor.VerticalTabs library provides\n`verticalTabs` as an option.",
+                    "items": {
+                        "properties": {
+                            "label": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "label",
+                            "name"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
                 }
             },
             "required": [
@@ -975,7 +870,26 @@
                     "type": "boolean"
                 },
                 "options": {
-                    "$ref": "#/definitions/Array_4"
+                    "items": {
+                        "properties": {
+                            "label": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "type": [
+                                    "string",
+                                    "number",
+                                    "boolean"
+                                ]
+                            }
+                        },
+                        "required": [
+                            "label",
+                            "value"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
                 },
                 "type": {
                     "const": "select",
@@ -1183,7 +1097,13 @@
                 "spectrum": {
                     "properties": {
                         "palette": {
-                            "$ref": "#/definitions/Array_6"
+                            "items": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "type": "array"
                         },
                         "showPalette": {
                             "type": "boolean"
@@ -1272,7 +1192,10 @@
                     "type": "string"
                 },
                 "tags": {
-                    "$ref": "#/definitions/Array_5"
+                    "items": {
+                        "$ref": "#/definitions/H5PTextTags"
+                    },
+                    "type": "array"
                 },
                 "type": {
                     "const": "text",
@@ -1325,7 +1248,57 @@
                     "type": "boolean"
                 },
                 "showWhen": {
-                    "$ref": "#/definitions/H5PShowWhenOptions"
+                    "properties": {
+                        "detach": {
+                            "description": "True means field is removed from DOM when hidden.\nDefault behaviour is hiding it using CSS (display: none).",
+                            "type": "boolean"
+                        },
+                        "rules": {
+                            "items": {
+                                "properties": {
+                                    "equals": {
+                                        "anyOf": [
+                                            {
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "type": "array"
+                                            },
+                                            {
+                                                "type": [
+                                                    "string",
+                                                    "boolean"
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "field": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "field"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "type": {
+                            "default": "or",
+                            "enum": [
+                                "and",
+                                "or"
+                            ],
+                            "type": "string"
+                        },
+                        "widget": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "rules"
+                    ],
+                    "type": "object"
                 },
                 "type": {
                     "const": "boolean",
@@ -1393,7 +1366,57 @@
                     "type": "boolean"
                 },
                 "showWhen": {
-                    "$ref": "#/definitions/H5PShowWhenOptions"
+                    "properties": {
+                        "detach": {
+                            "description": "True means field is removed from DOM when hidden.\nDefault behaviour is hiding it using CSS (display: none).",
+                            "type": "boolean"
+                        },
+                        "rules": {
+                            "items": {
+                                "properties": {
+                                    "equals": {
+                                        "anyOf": [
+                                            {
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "type": "array"
+                                            },
+                                            {
+                                                "type": [
+                                                    "string",
+                                                    "boolean"
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "field": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "field"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "type": {
+                            "default": "or",
+                            "enum": [
+                                "and",
+                                "or"
+                            ],
+                            "type": "string"
+                        },
+                        "widget": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "rules"
+                    ],
+                    "type": "object"
                 },
                 "steps": {
                     "type": "number"
@@ -1449,7 +1472,57 @@
                     "type": "boolean"
                 },
                 "showWhen": {
-                    "$ref": "#/definitions/H5PShowWhenOptions"
+                    "properties": {
+                        "detach": {
+                            "description": "True means field is removed from DOM when hidden.\nDefault behaviour is hiding it using CSS (display: none).",
+                            "type": "boolean"
+                        },
+                        "rules": {
+                            "items": {
+                                "properties": {
+                                    "equals": {
+                                        "anyOf": [
+                                            {
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "type": "array"
+                                            },
+                                            {
+                                                "type": [
+                                                    "string",
+                                                    "boolean"
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "field": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "field"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "type": {
+                            "default": "or",
+                            "enum": [
+                                "and",
+                                "or"
+                            ],
+                            "type": "string"
+                        },
+                        "widget": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "rules"
+                    ],
+                    "type": "object"
                 },
                 "type": {
                     "const": "audio",
@@ -1502,7 +1575,57 @@
                     "type": "boolean"
                 },
                 "showWhen": {
-                    "$ref": "#/definitions/H5PShowWhenOptions"
+                    "properties": {
+                        "detach": {
+                            "description": "True means field is removed from DOM when hidden.\nDefault behaviour is hiding it using CSS (display: none).",
+                            "type": "boolean"
+                        },
+                        "rules": {
+                            "items": {
+                                "properties": {
+                                    "equals": {
+                                        "anyOf": [
+                                            {
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "type": "array"
+                                            },
+                                            {
+                                                "type": [
+                                                    "string",
+                                                    "boolean"
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "field": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "field"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "type": {
+                            "default": "or",
+                            "enum": [
+                                "and",
+                                "or"
+                            ],
+                            "type": "string"
+                        },
+                        "widget": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "rules"
+                    ],
+                    "type": "object"
                 },
                 "type": {
                     "const": "file",
@@ -1542,7 +1665,10 @@
                     "type": "boolean"
                 },
                 "fields": {
-                    "$ref": "#/definitions/Array_1"
+                    "items": {
+                        "$ref": "#/definitions/H5PField"
+                    },
+                    "type": "array"
                 },
                 "importance": {
                     "$ref": "#/definitions/H5PImportance",
@@ -1566,7 +1692,57 @@
                     "type": "boolean"
                 },
                 "showWhen": {
-                    "$ref": "#/definitions/H5PShowWhenOptions"
+                    "properties": {
+                        "detach": {
+                            "description": "True means field is removed from DOM when hidden.\nDefault behaviour is hiding it using CSS (display: none).",
+                            "type": "boolean"
+                        },
+                        "rules": {
+                            "items": {
+                                "properties": {
+                                    "equals": {
+                                        "anyOf": [
+                                            {
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "type": "array"
+                                            },
+                                            {
+                                                "type": [
+                                                    "string",
+                                                    "boolean"
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "field": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "field"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "type": {
+                            "default": "or",
+                            "enum": [
+                                "and",
+                                "or"
+                            ],
+                            "type": "string"
+                        },
+                        "widget": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "rules"
+                    ],
+                    "type": "object"
                 },
                 "type": {
                     "const": "group",
@@ -1620,7 +1796,57 @@
                     "type": "boolean"
                 },
                 "showWhen": {
-                    "$ref": "#/definitions/H5PShowWhenOptions"
+                    "properties": {
+                        "detach": {
+                            "description": "True means field is removed from DOM when hidden.\nDefault behaviour is hiding it using CSS (display: none).",
+                            "type": "boolean"
+                        },
+                        "rules": {
+                            "items": {
+                                "properties": {
+                                    "equals": {
+                                        "anyOf": [
+                                            {
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "type": "array"
+                                            },
+                                            {
+                                                "type": [
+                                                    "string",
+                                                    "boolean"
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "field": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "field"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "type": {
+                            "default": "or",
+                            "enum": [
+                                "and",
+                                "or"
+                            ],
+                            "type": "string"
+                        },
+                        "widget": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "rules"
+                    ],
+                    "type": "object"
                 },
                 "type": {
                     "const": "image",
@@ -1676,10 +1902,63 @@
                     "type": "boolean"
                 },
                 "options": {
-                    "$ref": "#/definitions/Array_2"
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "showWhen": {
-                    "$ref": "#/definitions/H5PShowWhenOptions"
+                    "properties": {
+                        "detach": {
+                            "description": "True means field is removed from DOM when hidden.\nDefault behaviour is hiding it using CSS (display: none).",
+                            "type": "boolean"
+                        },
+                        "rules": {
+                            "items": {
+                                "properties": {
+                                    "equals": {
+                                        "anyOf": [
+                                            {
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "type": "array"
+                                            },
+                                            {
+                                                "type": [
+                                                    "string",
+                                                    "boolean"
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "field": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "field"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "type": {
+                            "default": "or",
+                            "enum": [
+                                "and",
+                                "or"
+                            ],
+                            "type": "string"
+                        },
+                        "widget": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "rules"
+                    ],
+                    "type": "object"
                 },
                 "type": {
                     "const": "library",
@@ -1746,7 +2025,57 @@
                     "type": "boolean"
                 },
                 "showWhen": {
-                    "$ref": "#/definitions/H5PShowWhenOptions"
+                    "properties": {
+                        "detach": {
+                            "description": "True means field is removed from DOM when hidden.\nDefault behaviour is hiding it using CSS (display: none).",
+                            "type": "boolean"
+                        },
+                        "rules": {
+                            "items": {
+                                "properties": {
+                                    "equals": {
+                                        "anyOf": [
+                                            {
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "type": "array"
+                                            },
+                                            {
+                                                "type": [
+                                                    "string",
+                                                    "boolean"
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "field": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "field"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "type": {
+                            "default": "or",
+                            "enum": [
+                                "and",
+                                "or"
+                            ],
+                            "type": "string"
+                        },
+                        "widget": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "rules"
+                    ],
+                    "type": "object"
                 },
                 "type": {
                     "const": "list",
@@ -1760,8 +2089,23 @@
                     "type": "string"
                 },
                 "widgets": {
-                    "$ref": "#/definitions/Array_3",
-                    "description": "List containing widget(s). A widget is defined as\nan object with the name of the widget and a label.\nCurrently no widgets are provided by the core system,\nbut the H5PEditor.VerticalTabs library provides\n`verticalTabs` as an option."
+                    "description": "List containing widget(s). A widget is defined as\nan object with the name of the widget and a label.\nCurrently no widgets are provided by the core system,\nbut the H5PEditor.VerticalTabs library provides\n`verticalTabs` as an option.",
+                    "items": {
+                        "properties": {
+                            "label": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "label",
+                            "name"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
                 }
             },
             "required": [
@@ -1812,10 +2156,79 @@
                     "type": "boolean"
                 },
                 "options": {
-                    "$ref": "#/definitions/Array_4"
+                    "items": {
+                        "properties": {
+                            "label": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "type": [
+                                    "string",
+                                    "number",
+                                    "boolean"
+                                ]
+                            }
+                        },
+                        "required": [
+                            "label",
+                            "value"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
                 },
                 "showWhen": {
-                    "$ref": "#/definitions/H5PShowWhenOptions"
+                    "properties": {
+                        "detach": {
+                            "description": "True means field is removed from DOM when hidden.\nDefault behaviour is hiding it using CSS (display: none).",
+                            "type": "boolean"
+                        },
+                        "rules": {
+                            "items": {
+                                "properties": {
+                                    "equals": {
+                                        "anyOf": [
+                                            {
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "type": "array"
+                                            },
+                                            {
+                                                "type": [
+                                                    "string",
+                                                    "boolean"
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "field": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "field"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "type": {
+                            "default": "or",
+                            "enum": [
+                                "and",
+                                "or"
+                            ],
+                            "type": "string"
+                        },
+                        "widget": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "rules"
+                    ],
+                    "type": "object"
                 },
                 "type": {
                     "const": "select",
@@ -1897,7 +2310,57 @@
                     "type": "string"
                 },
                 "showWhen": {
-                    "$ref": "#/definitions/H5PShowWhenOptions"
+                    "properties": {
+                        "detach": {
+                            "description": "True means field is removed from DOM when hidden.\nDefault behaviour is hiding it using CSS (display: none).",
+                            "type": "boolean"
+                        },
+                        "rules": {
+                            "items": {
+                                "properties": {
+                                    "equals": {
+                                        "anyOf": [
+                                            {
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "type": "array"
+                                            },
+                                            {
+                                                "type": [
+                                                    "string",
+                                                    "boolean"
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "field": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "field"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "type": {
+                            "default": "or",
+                            "enum": [
+                                "and",
+                                "or"
+                            ],
+                            "type": "string"
+                        },
+                        "widget": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "rules"
+                    ],
+                    "type": "object"
                 },
                 "type": {
                     "const": "text",
@@ -1950,7 +2413,57 @@
                     "type": "boolean"
                 },
                 "showWhen": {
-                    "$ref": "#/definitions/H5PShowWhenOptions"
+                    "properties": {
+                        "detach": {
+                            "description": "True means field is removed from DOM when hidden.\nDefault behaviour is hiding it using CSS (display: none).",
+                            "type": "boolean"
+                        },
+                        "rules": {
+                            "items": {
+                                "properties": {
+                                    "equals": {
+                                        "anyOf": [
+                                            {
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "type": "array"
+                                            },
+                                            {
+                                                "type": [
+                                                    "string",
+                                                    "boolean"
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "field": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "field"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "type": {
+                            "default": "or",
+                            "enum": [
+                                "and",
+                                "or"
+                            ],
+                            "type": "string"
+                        },
+                        "widget": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "rules"
+                    ],
+                    "type": "object"
                 },
                 "type": {
                     "const": "video",
@@ -2187,7 +2700,10 @@
                     "type": "boolean"
                 },
                 "fields": {
-                    "$ref": "#/definitions/Array_1"
+                    "items": {
+                        "$ref": "#/definitions/H5PField"
+                    },
+                    "type": "array"
                 },
                 "importance": {
                     "$ref": "#/definitions/H5PImportance",
@@ -2303,7 +2819,10 @@
                     "type": "boolean"
                 },
                 "options": {
-                    "$ref": "#/definitions/Array_2"
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "type": {
                     "const": "library",
@@ -2371,8 +2890,23 @@
                     "type": "string"
                 },
                 "widgets": {
-                    "$ref": "#/definitions/Array_3",
-                    "description": "List containing widget(s). A widget is defined as\nan object with the name of the widget and a label.\nCurrently no widgets are provided by the core system,\nbut the H5PEditor.VerticalTabs library provides\n`verticalTabs` as an option."
+                    "description": "List containing widget(s). A widget is defined as\nan object with the name of the widget and a label.\nCurrently no widgets are provided by the core system,\nbut the H5PEditor.VerticalTabs library provides\n`verticalTabs` as an option.",
+                    "items": {
+                        "properties": {
+                            "label": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "label",
+                            "name"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
                 }
             },
             "required": [
@@ -2421,7 +2955,26 @@
                     "type": "boolean"
                 },
                 "options": {
-                    "$ref": "#/definitions/Array_4"
+                    "items": {
+                        "properties": {
+                            "label": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "type": [
+                                    "string",
+                                    "number",
+                                    "boolean"
+                                ]
+                            }
+                        },
+                        "required": [
+                            "label",
+                            "value"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
                 },
                 "type": {
                     "const": "select",
