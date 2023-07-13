@@ -1,6 +1,6 @@
-import type { Library } from "h5p-types";
+import type { H5PLibrary, ReadonlyDeep } from "h5p-types";
 
-export const library: Library = {
+export const library = {
   machineName: "Demo",
   majorVersion: 1,
   minorVersion: 2,
@@ -16,4 +16,4 @@ export const library: Library = {
     minorVersion: 2,
   },
   dynamicDependencies: [],
-};
+} as const satisfies ReadonlyDeep<H5PLibrary>;

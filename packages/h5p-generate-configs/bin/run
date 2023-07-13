@@ -1,5 +1,12 @@
 #!/usr/bin/env node
+/* eslint-disable no-undef */
+/* eslint-disable @typescript-eslint/no-var-requires */
 
-const oclif = require('@oclif/core')
+const { run } = require('@oclif/core');
+const { register } = require('esbuild-register/dist/node');
 
-oclif.run().then(require('@oclif/core/flush')).catch(require('@oclif/core/handle'))
+register();
+
+run()
+  .then(require('@oclif/core/flush'))
+  .catch(require('@oclif/core/handle'));

@@ -29,6 +29,6 @@ export async function generateLibrary(
 
   await createJsonFile(library, outputPath);
 
-  const filename = libraryTsPath.split("/").at(-1);
+  const filename = outputPath.split("/").at(-1);
   log(`Finished generating ${filename}`);
 }

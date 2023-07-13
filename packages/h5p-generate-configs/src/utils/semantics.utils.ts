@@ -93,6 +93,6 @@ export async function generateSemantics(
   log("Generating JSON file for semantics.");
   await createJsonFile(semantics, outputPath);
 
-  const filename = semanticsTsPath.split("/").at(-1);
+  const filename = outputPath.split("/").at(-1);
   log(`Finished generating ${filename}`);
 }
