@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@types/jquery": "^3.5.16",
-    "type-fest": "^3.13.0"
+    "type-fest": "^4.1.0"
   },
   "devDependencies": {
     "@release-it/conventional-changelog": "^7.0.0",
