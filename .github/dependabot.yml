@@ -1,7 +1,11 @@
 version: 2
 updates:
-  - directory: /
-    package-ecosystem: github-actions
-    rebase-strategy: auto
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: daily
+
+  - package-ecosystem: github-actions
+    directory: /
     schedule:
       interval: daily

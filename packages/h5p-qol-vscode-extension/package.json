@@ -37,8 +37,8 @@
   },
   "dependencies": {
     "@actions/languageserver": "*",
-    "@vscode/vsce": "^2.19.0",
-    "vscode-languageclient": "^8.0.2"
+    "@vscode/vsce": "^2.20.1",
+    "vscode-languageclient": "^8.1.0"
   },
   "devDependencies": {
     "@vscode/test-web": "*"
