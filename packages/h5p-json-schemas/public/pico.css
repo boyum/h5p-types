@@ -646,12 +646,21 @@ a {
   color: var(--color);
   -webkit-text-decoration: var(--text-decoration);
   text-decoration: var(--text-decoration);
-  transition: background-color var(--transition), color var(--transition),
-    box-shadow var(--transition), -webkit-text-decoration var(--transition);
-  transition: background-color var(--transition), color var(--transition),
-    text-decoration var(--transition), box-shadow var(--transition);
-  transition: background-color var(--transition), color var(--transition),
-    text-decoration var(--transition), box-shadow var(--transition),
+  transition:
+    background-color var(--transition),
+    color var(--transition),
+    box-shadow var(--transition),
+    -webkit-text-decoration var(--transition);
+  transition:
+    background-color var(--transition),
+    color var(--transition),
+    text-decoration var(--transition),
+    box-shadow var(--transition);
+  transition:
+    background-color var(--transition),
+    color var(--transition),
+    text-decoration var(--transition),
+    box-shadow var(--transition),
     -webkit-text-decoration var(--transition);
 }
 [role="link"]:is([aria-current], :hover, :active, :focus),
@@ -868,8 +877,11 @@ input[type="submit"] {
   line-height: var(--line-height);
   text-align: center;
   cursor: pointer;
-  transition: background-color var(--transition), border-color var(--transition),
-    color var(--transition), box-shadow var(--transition);
+  transition:
+    background-color var(--transition),
+    border-color var(--transition),
+    color var(--transition),
+    box-shadow var(--transition);
 }
 [role="button"]:is([aria-current], :hover, :active, :focus),
 button:is([aria-current], :hover, :active, :focus),
@@ -1132,8 +1144,11 @@ textarea {
   box-shadow: var(--box-shadow);
   color: var(--color);
   font-weight: var(--font-weight);
-  transition: background-color var(--transition), border-color var(--transition),
-    color var(--transition), box-shadow var(--transition);
+  transition:
+    background-color var(--transition),
+    border-color var(--transition),
+    color var(--transition),
+    box-shadow var(--transition);
 }
 :where(select, textarea):is(:active, :focus),
 input:not(
@@ -1504,8 +1519,11 @@ input:not(
   line-height: var(--line-height);
   text-align: center;
   cursor: pointer;
-  transition: background-color var(--transition), border-color var(--transition),
-    color var(--transition), box-shadow var(--transition);
+  transition:
+    background-color var(--transition),
+    border-color var(--transition),
+    color var(--transition),
+    box-shadow var(--transition);
 }
 [type="file"]::file-selector-button:is(:hover, :active, :focus) {
   --background-color: var(--secondary-hover);
@@ -1534,11 +1552,16 @@ input:not(
   line-height: var(--line-height);
   text-align: center;
   cursor: pointer;
-  -webkit-transition: background-color var(--transition),
-    border-color var(--transition), color var(--transition),
+  -webkit-transition:
+    background-color var(--transition),
+    border-color var(--transition),
+    color var(--transition),
     box-shadow var(--transition);
-  transition: background-color var(--transition), border-color var(--transition),
-    color var(--transition), box-shadow var(--transition);
+  transition:
+    background-color var(--transition),
+    border-color var(--transition),
+    color var(--transition),
+    box-shadow var(--transition);
 }
 [type="file"]::-webkit-file-upload-button:is(:hover, :active, :focus) {
   --background-color: var(--secondary-hover);
@@ -1565,11 +1588,16 @@ input:not(
   line-height: var(--line-height);
   text-align: center;
   cursor: pointer;
-  -ms-transition: background-color var(--transition),
-    border-color var(--transition), color var(--transition),
+  -ms-transition:
+    background-color var(--transition),
+    border-color var(--transition),
+    color var(--transition),
     box-shadow var(--transition);
-  transition: background-color var(--transition), border-color var(--transition),
-    color var(--transition), box-shadow var(--transition);
+  transition:
+    background-color var(--transition),
+    border-color var(--transition),
+    color var(--transition),
+    box-shadow var(--transition);
 }
 [type="file"]::-ms-browse:is(:hover, :active, :focus) {
   --background-color: var(--secondary-hover);
@@ -1588,27 +1616,36 @@ input:not(
   height: 0.25rem;
   border-radius: var(--border-radius);
   background-color: var(--range-border-color);
-  -webkit-transition: background-color var(--transition),
+  -webkit-transition:
+    background-color var(--transition),
     box-shadow var(--transition);
-  transition: background-color var(--transition), box-shadow var(--transition);
+  transition:
+    background-color var(--transition),
+    box-shadow var(--transition);
 }
 [type="range"]::-moz-range-track {
   width: 100%;
   height: 0.25rem;
   border-radius: var(--border-radius);
   background-color: var(--range-border-color);
-  -moz-transition: background-color var(--transition),
+  -moz-transition:
+    background-color var(--transition),
     box-shadow var(--transition);
-  transition: background-color var(--transition), box-shadow var(--transition);
+  transition:
+    background-color var(--transition),
+    box-shadow var(--transition);
 }
 [type="range"]::-ms-track {
   width: 100%;
   height: 0.25rem;
   border-radius: var(--border-radius);
   background-color: var(--range-border-color);
-  -ms-transition: background-color var(--transition),
+  -ms-transition:
+    background-color var(--transition),
     box-shadow var(--transition);
-  transition: background-color var(--transition), box-shadow var(--transition);
+  transition:
+    background-color var(--transition),
+    box-shadow var(--transition);
 }
 [type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
@@ -1619,9 +1656,12 @@ input:not(
   border-radius: 50%;
   background-color: var(--range-thumb-color);
   cursor: pointer;
-  -webkit-transition: background-color var(--transition),
+  -webkit-transition:
+    background-color var(--transition),
     transform var(--transition);
-  transition: background-color var(--transition), transform var(--transition);
+  transition:
+    background-color var(--transition),
+    transform var(--transition);
 }
 [type="range"]::-moz-range-thumb {
   -webkit-appearance: none;
@@ -1632,9 +1672,12 @@ input:not(
   border-radius: 50%;
   background-color: var(--range-thumb-color);
   cursor: pointer;
-  -moz-transition: background-color var(--transition),
+  -moz-transition:
+    background-color var(--transition),
     transform var(--transition);
-  transition: background-color var(--transition), transform var(--transition);
+  transition:
+    background-color var(--transition),
+    transform var(--transition);
 }
 [type="range"]::-ms-thumb {
   -webkit-appearance: none;
@@ -1645,9 +1688,12 @@ input:not(
   border-radius: 50%;
   background-color: var(--range-thumb-color);
   cursor: pointer;
-  -ms-transition: background-color var(--transition),
+  -ms-transition:
+    background-color var(--transition),
     transform var(--transition);
-  transition: background-color var(--transition), transform var(--transition);
+  transition:
+    background-color var(--transition),
+    transform var(--transition);
 }
 [type="range"]:focus,
 [type="range"]:hover {
@@ -1692,7 +1738,9 @@ input:not(
   padding-inline-start: calc(
     var(--form-element-spacing-horizontal) + 1.75rem
   ) !important;
-  background-position: center left 1.125rem, center right 0.75rem;
+  background-position:
+    center left 1.125rem,
+    center right 0.75rem;
 }
 input:not(
     [type="checkbox"],
@@ -1730,7 +1778,9 @@ input:not(
     [type="range"],
     [type="file"]
   )[type="search"][aria-invalid] {
-  background-position: center right 1.125rem, center left 0.75rem;
+  background-position:
+    center right 1.125rem,
+    center left 0.75rem;
 }
 :where(table) {
   width: 100%;
@@ -2292,8 +2342,11 @@ details[role="list"] summary:not([role]) {
   color: var(--form-element-placeholder-color);
   line-height: inherit;
   cursor: pointer;
-  transition: background-color var(--transition), border-color var(--transition),
-    color var(--transition), box-shadow var(--transition);
+  transition:
+    background-color var(--transition),
+    border-color var(--transition),
+    color var(--transition),
+    box-shadow var(--transition);
 }
 details[role="list"] summary:not([role]):active,
 details[role="list"] summary:not([role]):focus {
