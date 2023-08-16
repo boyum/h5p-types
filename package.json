@@ -24,9 +24,9 @@
     "internal-utilities/*"
   ],
   "devDependencies": {
-    "prettier": "^2.8.8",
+    "prettier": "^3.0.2",
     "prettier-config": "github:boyum/prettier-config",
-    "turbo": "^1.10.7"
+    "turbo": "^1.10.12"
   },
   "prettier": "prettier-config"
 }
