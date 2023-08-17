@@ -23,7 +23,7 @@
     "eslint-config-base": "*",
     "h5p-types": "*",
     "tsconfig-base": "*",
-    "type-fest": "^3.13.0",
+    "type-fest": "^3.13.1",
     "typescript": "^4.9.5"
   },
   "peerDependencies": {
