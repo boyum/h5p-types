@@ -4,16 +4,16 @@ This is a collection of TypeScript type definitions for H5P.
 Each package contains type definitions for a specific H5P content type or library.
 This project aims to provide examples on how to use the type definitions in a TypeScript project.
 Check out the [examples](./examples) folder for more information.
-
-| Package                                                            | Description                                                                                                                                                 |
+change something
+| Package | Description |
 | ------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`h5p-generate-configs`](./packages/h5p-generate-configs/)         | A tool for creating common H5P config files out of a TypeScript definition                                                                                  |
-| [`h5p-json-schemas`](./packages/h5p-json-schemas/)                 | Schemas for JSON files related to H5P [(link to schemas)](https://h5p-schema.sindre.is/)                                                                    |
+| [`h5p-generate-configs`](./packages/h5p-generate-configs/) | A tool for creating common H5P config files out of a TypeScript definition |
+| [`h5p-json-schemas`](./packages/h5p-json-schemas/) | Schemas for JSON files related to H5P [(link to schemas)](https://h5p-schema.sindre.is/) |
 | [`h5p-qol-vscode-extension`](./packages/h5p-qol-vscode-extension/) | Quality of life improvements for H5P development in VSCode [(link to marketplace)](https://marketplace.visualstudio.com/items?itemName=sindreboyum.h5p-qol) |
-| [`h5p-types`](./packages/h5p-types/)                               | Type definitions for H5P Core                                                                                                                               |
-| [`h5p-types-joubel-ui`](./packages/h5p-types-joubel-ui/)           | Type definitions for [H5P JoubelUI](https://github.com/h5p/h5p-joubel-ui)                                                                                   |
-| [`h5p-utils`](./packages/h5p-utils/)                               | Abstractions and utilities for creating H5P Widgets and Content Types                                                                                       |
-| [`use-h5p`](./packages/use-h5p/)                                   | React Hooks to be used with H5P Widgets and Content Types                                                                                                   |
+| [`h5p-types`](./packages/h5p-types/) | Type definitions for H5P Core |
+| [`h5p-types-joubel-ui`](./packages/h5p-types-joubel-ui/) | Type definitions for [H5P JoubelUI](https://github.com/h5p/h5p-joubel-ui) |
+| [`h5p-utils`](./packages/h5p-utils/) | Abstractions and utilities for creating H5P Widgets and Content Types |
+| [`use-h5p`](./packages/use-h5p/) | React Hooks to be used with H5P Widgets and Content Types |
 
 ## Contributing
 
