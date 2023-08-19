@@ -16,9 +16,6 @@
     },
     "typecheck": {
       "inputs": ["src/**/*.tsx", "src/**/*.ts"]
-    },
-    "typecheck:ts-4": {
-      "inputs": ["src/**/*.tsx", "src/**/*.ts"]
     }
   }
 }
