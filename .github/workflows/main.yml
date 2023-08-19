@@ -33,12 +33,25 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    strategy:
+      fail-fast: false
+
+      matrix:
+        typescript-version:
+          - 5.0.0
+          - latest
+          - beta
+          - next
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
+
+      - name: Install TypeScript
+        run: npm install typescript@${{ matrix.typescript-version }}
 
       - name: Check types
         run: npm run typecheck
