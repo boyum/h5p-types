@@ -14,7 +14,7 @@
     "lint:fix": "npm run lint:check -- --fix"
   },
   "dependencies": {
-    "@types/jquery": "^3.5.16",
+    "@types/jquery": "^3.5.17",
     "type-fest": "^3.13.1"
   },
   "devDependencies": {
