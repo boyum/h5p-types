@@ -1,6 +1,6 @@
 {
   "name": "h5p-types-joubel-ui",
-  "version": "1.0.6",
+  "version": "2.0.0",
   "description": "Types for H5P JoubelUI",
   "types": "index.d.ts",
   "files": [
