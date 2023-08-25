@@ -14,8 +14,8 @@ Install the package:
 npm install h5p-types --save-dev
 ```
 
-`h5p-types` depends on TypeScript and requires TypeScript version 4.7 or higher to be installed.
-TypeScript 5 is supported.
+`h5p-types` depends on TypeScript and requires TypeScript version 5.0.4 or higher to be installed.
+If you need support for TypeScript 4.7, install `h5p-types@2.0.1`.
 
 ## Creating a new widget
 

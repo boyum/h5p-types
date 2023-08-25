@@ -28,7 +28,7 @@ jobs:
       - name: Check format
         run: npm run format:check
 
-  typecheck-ts-4:
+  typecheck:
     name: Check types
 
     runs-on: ubuntu-latest
@@ -38,9 +38,10 @@ jobs:
 
       matrix:
         typescript-version:
-          - 4.7
-          - next
+          - 5.0.4
           - latest
+          - beta
+          - next
 
     steps:
       - name: Checkout code
@@ -49,23 +50,8 @@ jobs:
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
 
-      - name: Install TS version
+      - name: Install TypeScript
         run: npm install typescript@${{ matrix.typescript-version }}
-
-      - name: Check types
-        run: npm run typecheck:ts-4
-
-  typecheck:
-    name: Check types
-
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Install dependencies
-        uses: bahmutov/npm-install@v1
 
       - name: Check types
         run: npm run typecheck
