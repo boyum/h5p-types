@@ -38,7 +38,7 @@ jobs:
 
       matrix:
         typescript-version:
-          - 5.0.0
+          - 5.0.4
           - latest
           - beta
           - next
