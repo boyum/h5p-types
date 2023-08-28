@@ -61,7 +61,7 @@
     "@oclif/plugin-plugins": "^3.3.0"
   },
   "devDependencies": {
-    "@oclif/test": "^2.4.7",
+    "@oclif/test": "^2.4.8",
     "@types/jest": "^29.5.4",
     "@types/node": "^20.5.6",
     "chai": "^4.3.8",
