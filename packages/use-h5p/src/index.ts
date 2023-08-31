@@ -11,4 +11,4 @@ export { useL10n, useLocalization } from "./hooks/useLocalization";
 export { useL10ns, useLocalizations } from "./hooks/useLocalizations";
 export { useTranslation } from "./hooks/useTranslation";
 
-export { Translations } from "./types/Translations";
+export type { Translations } from "./types/Translations";

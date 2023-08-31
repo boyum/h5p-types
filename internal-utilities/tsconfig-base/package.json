@@ -5,6 +5,6 @@
   "main": "index.json",
   "private": true,
   "dependencies": {
-    "@tsconfig/strictest": "^2.0.1"
+    "@tsconfig/strictest": "^2.0.2"
   }
 }
