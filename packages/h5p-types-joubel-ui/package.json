@@ -19,11 +19,11 @@
   "author": "Sindre Bøyum",
   "license": "Apache-2.0",
   "devDependencies": {
-    "@types/jquery": "^3.5.17",
+    "@types/jquery": "^3.5.18",
     "eslint-config-base": "*",
     "h5p-types": "*",
     "tsconfig-base": "*",
-    "type-fest": "^4.2.0",
+    "type-fest": "^4.3.1",
     "typescript": "^5.0.4"
   },
   "peerDependencies": {
