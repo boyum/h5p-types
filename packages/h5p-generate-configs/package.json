@@ -58,7 +58,7 @@
   "dependencies": {
     "@oclif/core": "^2.14.0",
     "@oclif/plugin-help": "^5.2.18",
-    "@oclif/plugin-plugins": "^3.3.2"
+    "@oclif/plugin-plugins": "^3.4.0"
   },
   "devDependencies": {
     "@oclif/test": "^2.5.3",
