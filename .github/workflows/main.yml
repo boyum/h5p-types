@@ -22,11 +22,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+
       - name: Install dependencies
-        uses: bahmutov/npm-install@v1
+        run: bun install --frozen-lockfile
 
       - name: Check format
-        run: npm run format:check
+        run: bun run format:check
 
   typecheck:
     name: Check types
@@ -47,14 +50,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+
       - name: Install dependencies
-        uses: bahmutov/npm-install@v1
+        run: bun install --frozen-lockfile
 
       - name: Install TypeScript
         run: npm install typescript@${{ matrix.typescript-version }}
 
       - name: Check types
-        run: npm run typecheck
+        run: bun run typecheck
 
   lint:
     name: Check lint
@@ -65,11 +71,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+
       - name: Install dependencies
-        uses: bahmutov/npm-install@v1
+        run: bun install --frozen-lockfile
 
       - name: Check lint
-        run: npm run lint:check
+        run: bun run lint:check
 
   build:
     name: Build
@@ -80,8 +89,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+
       - name: Install dependencies
-        uses: bahmutov/npm-install@v1
+        run: bun install --frozen-lockfile
 
       - name: Build
-        run: npm run build
+        run: bun run build

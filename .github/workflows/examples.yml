@@ -36,17 +36,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+
       - name: Install dependencies
-        uses: bahmutov/npm-install@v1
+        run: bun install --frozen-lockfile
 
       - name: Build all packages
-        run: npm run build
+        run: bun run build
 
       - name: Set TypeScript version
         run: npm install typescript@${{ matrix.typescript-version }} --save-dev
 
       - name: Typecheck
-        run: npm run typecheck --if-present
+        run: bun run typecheck --if-present
         working-directory: examples/${{ matrix.project }}
 
       - name: Test
@@ -54,9 +57,9 @@ jobs:
         working-directory: examples/${{ matrix.project }}
 
       - name: Lint
-        run: npm run lint --if-present
+        run: bun run lint --if-present
         working-directory: examples/${{ matrix.project }}
 
       - name: Build
-        run: npm run build --if-present
+        run: bun run build --if-present
         working-directory: examples/${{ matrix.project }}

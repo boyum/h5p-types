@@ -10,7 +10,7 @@
   "scripts": {
     "typecheck": "tsc --noEmit",
     "lint:check": "eslint .",
-    "lint:fix": "npm run lint:check -- --fix"
+    "lint:fix": "bun run lint:check -- --fix"
   },
   "keywords": [
     "h5p",
@@ -20,9 +20,9 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "@types/jquery": "^3.5.18",
-    "eslint-config-base": "*",
-    "h5p-types": "*",
-    "tsconfig-base": "*",
+    "eslint-config-base": "workspace:*",
+    "h5p-types": "workspace:*",
+    "tsconfig-base": "workspace:*",
     "type-fest": "^4.3.1",
     "typescript": "^5.0.4"
   },

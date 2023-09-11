@@ -19,11 +19,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+
       - name: Install dependencies
-        uses: bahmutov/npm-install@v1
+        run: bun install --frozen-lockfile
 
       - name: Build package
-        run: npm run build --if-present
+        run: bun run build --if-present
         working-directory: ${{ matrix.project }}
 
       - name: Check and validate ${{ matrix.project }}'s package.json

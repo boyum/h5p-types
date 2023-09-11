@@ -8,13 +8,13 @@
   },
   "license": "MIT",
   "dependencies": {
-    "h5p-utils": "*"
+    "h5p-utils": "workspace:*"
   },
   "devDependencies": {
-    "eslint-config-base": "*",
-    "h5p-types": "*",
+    "eslint-config-base": "workspace:*",
+    "h5p-types": "workspace:*",
     "ts-loader": "^9.4.4",
-    "tsconfig-base": "*",
+    "tsconfig-base": "workspace:*",
     "unplugin-json-dts": "^1.2.0",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4"

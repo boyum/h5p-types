@@ -22,6 +22,8 @@ Feel free to open an issue or a pull request.
 
 ## Development
 
+This project uses [Bun](https://bun.sh/) as the package manager.
+
 ### Adding a new package
 
 Follow these steps to add a new package that will be released to npm:
@@ -29,7 +31,7 @@ Follow these steps to add a new package that will be released to npm:
 1. Create a new folder in the `packages` folder
 1. Add a note about the package to the table above
 1. If that project should be published to npm, add it to the `project` array in the [check-npm-packages workflow](./.github/workflows/check-npm-packages.yml)
-1. If that project is a dependency of another project, add it to that project's npm dependencies and use the version `"*"`
+1. If that project is a dependency of another project, add it to that project's npm dependencies and use the version `"workspace:*"`
 
 ### Adding a new example
 

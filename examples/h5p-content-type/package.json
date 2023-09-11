@@ -6,18 +6,18 @@
     "watch": "webpack serve --hot --mode=development",
     "build": "webpack --mode=production",
     "lint:check": "eslint .",
-    "lint:fix": "npm run lint:check -- --fix"
+    "lint:fix": "bun run lint:check -- --fix"
   },
   "license": "MIT",
   "dependencies": {
-    "h5p-utils": "*"
+    "h5p-utils": "workspace:*"
   },
   "devDependencies": {
-    "eslint-config-base": "*",
-    "h5p-types": "*",
-    "h5p-types-joubel-ui": "*",
+    "eslint-config-base": "workspace:*",
+    "h5p-types": "workspace:*",
+    "h5p-types-joubel-ui": "workspace:*",
     "ts-loader": "^9.4.4",
-    "tsconfig-base": "*",
+    "tsconfig-base": "workspace:*",
     "unplugin-json-dts": "^1.2.0",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4"

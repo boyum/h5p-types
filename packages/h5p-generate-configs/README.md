@@ -48,5 +48,5 @@ $ h5p-generate-configs l --type-definition src/library.ts
 To package the CLI up for NPM, do this:
 
 ```shell
-$ npm run publish-to-npm
+$ bun run publish-to-npm
 ```

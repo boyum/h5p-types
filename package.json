@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "prettier": "prettier .",
-    "format:fix": "npm run prettier -- --write",
-    "format:check": "npm run prettier -- --check",
+    "format:fix": "bun run prettier -- --write",
+    "format:check": "bun run prettier -- --check",
     "lint:check": "turbo run lint:check",
     "lint:fix": "turbo run lint:fix",
     "test": "turbo run test",
@@ -24,6 +24,7 @@
     "internal-utilities/*"
   ],
   "devDependencies": {
+    "bun": "^1.0.0",
     "npm-check-updates": "^16.13.3",
     "prettier": "^3.0.3",
     "prettier-config": "github:boyum/prettier-config",

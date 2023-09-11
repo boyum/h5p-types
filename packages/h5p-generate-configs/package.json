@@ -12,8 +12,8 @@
   },
   "scripts": {
     "build": "shx rm -rf dist && tsc -b",
-    "prepublishOnly": "npm run build",
-    "test": "npm run test:unit",
+    "prepublishOnly": "bun run build",
+    "test": "bun run test:unit",
     "test:unit": "jest src/**/*.test.ts",
     "test:unit:watch": "jest --watch",
     "test:unit:coverage": "jest --coverage",
@@ -21,10 +21,10 @@
     "demo:library": "h5p-generate-configs l --type-definition demo/library.ts --out demo/library.json",
     "publish-to-npm": "release-it",
     "lint:check": "eslint .",
-    "lint:fix": "npm run lint:check -- --fix",
+    "lint:fix": "bun run lint:check -- --fix",
     "version": "oclif readme && git add README.md",
     "postpack": "shx rm -f oclif.manifest.json",
-    "prepack": "npm run build && oclif manifest && oclif readme"
+    "prepack": "bun run build && oclif manifest && oclif readme"
   },
   "files": [
     "/bin",
@@ -67,9 +67,8 @@
     "chai": "^4.3.8",
     "copyfiles": "^2.4.1",
     "esbuild-register": "^3.4.2",
-    "eslint-config-base": "*",
-    "h5p-types": "*",
-    "jest": "^29.7.0",
+    "eslint-config-base": "workspace:*",
+    "h5p-types": "workspace:*",
     "mocha": "^10.2.0",
     "oclif": "^3.15.1",
     "release-it": "^16.1.5",

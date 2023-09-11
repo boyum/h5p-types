@@ -19,12 +19,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+
       - name: Install dependencies
-        uses: bahmutov/npm-install@v1
+        run: bun install --frozen-lockfile
 
       - name: Build all projects
-        run: |
-          npm run build
+        run: bun run build
 
       - name: Compare the expected and actual dist/ directories
         run: |

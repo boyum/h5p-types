@@ -10,7 +10,7 @@
     "publish-to-npm": "release-it",
     "typecheck": "tsc --noEmit",
     "lint:check": "eslint .",
-    "lint:fix": "npm run lint:check -- --fix"
+    "lint:fix": "bun run lint:check -- --fix"
   },
   "dependencies": {
     "@types/jquery": "^3.5.18",
@@ -18,9 +18,9 @@
   },
   "devDependencies": {
     "@release-it/conventional-changelog": "^7.0.1",
-    "eslint-config-base": "*",
+    "eslint-config-base": "workspace:*",
     "release-it": "^16.1.5",
-    "tsconfig-base": "*",
+    "tsconfig-base": "workspace:*",
     "typescript": "^5.0.4"
   },
   "peerDependencies": {

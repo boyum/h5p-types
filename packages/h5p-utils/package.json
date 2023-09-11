@@ -27,7 +27,7 @@
     "build": "tsup index.ts --format esm,cjs --dts",
     "publish-to-npm": "release-it",
     "lint:check": "eslint .",
-    "lint:fix": "npm run lint:check -- --fix"
+    "lint:fix": "bun run lint:check -- --fix"
   },
   "repository": {
     "type": "git",
@@ -47,11 +47,11 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "@release-it/conventional-changelog": "^7.0.1",
-    "eslint-config-base": "*",
-    "h5p-types": "*",
+    "eslint-config-base": "workspace:*",
+    "h5p-types": "workspace:*",
     "release-it": "^16.1.5",
     "replace-in-file": "^7.0.1",
-    "tsconfig-base": "*",
+    "tsconfig-base": "workspace:*",
     "tsup": "^7.2.0",
     "typescript": "^5.0.4"
   },
