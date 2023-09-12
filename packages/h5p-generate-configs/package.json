@@ -14,9 +14,9 @@
     "build": "shx rm -rf dist && tsc -b",
     "prepublishOnly": "bun run build",
     "test": "bun run test:unit",
-    "test:unit": "jest src/**/*.test.ts",
-    "test:unit:watch": "jest --watch",
-    "test:unit:coverage": "jest --coverage",
+    "test:unit": "bun test src/**/*.test.ts",
+    "test:unit:watch": "bun run test:unit -- --watch",
+    "test:unit:coverage": "bun run test:unit -- --coverage",
     "demo:semantics": "h5p-generate-configs s --type-definition demo/semantics.ts --out demo/semantics.json -t demo/TranslationKey.ts",
     "demo:library": "h5p-generate-configs l --type-definition demo/library.ts --out demo/library.json",
     "publish-to-npm": "release-it",
@@ -73,7 +73,6 @@
     "oclif": "^3.15.1",
     "release-it": "^16.1.5",
     "shx": "^0.3.4",
-    "ts-jest": "^29.1.1",
     "typescript": "^5.2.2"
   },
   "eslintConfig": {
