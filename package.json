@@ -30,5 +30,6 @@
     "prettier-config": "github:boyum/prettier-config",
     "turbo": "^1.10.13"
   },
-  "prettier": "prettier-config"
+  "prettier": "prettier-config",
+  "packageManager": "yarn@1.22.10"
 }
