@@ -10,7 +10,8 @@
     "publish-to-npm": "release-it",
     "typecheck": "tsc --noEmit",
     "lint:check": "eslint .",
-    "lint:fix": "bun run lint:check -- --fix"
+    "lint:fix": "bun run lint:check -- --fix",
+    "build": "exit 0"
   },
   "dependencies": {
     "@types/jquery": "^3.5.18",
