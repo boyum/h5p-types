@@ -17,7 +17,7 @@
     "type-fest": "^4.3.1"
   },
   "devDependencies": {
-    "@release-it/conventional-changelog": "^7.0.1",
+    "@release-it/conventional-changelog": "^7.0.2",
     "eslint-config-base": "*",
     "release-it": "^16.1.5",
     "tsconfig-base": "*",
