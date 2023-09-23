@@ -67,31 +67,35 @@ export type TranslationHasParams<
   TPrefix extends string = DefaultPrefix,
 > = TTranslation extends `${string}${TPrefix}${string}` ? true : false;
 
+type EmptyArray = never[];
+
+type JoinWords<TWords extends Array<string>> = Join<TWords, " ">;
+
+type TranslationParamListToString<
+  TWords extends Array<string>,
+  TPrefix extends string,
+> = TranslationParams<JoinWords<TWords>, TPrefix>;
+
 export type TranslationParams<
   TTranslation extends string,
   TPrefix extends string = DefaultPrefix,
   _TWords extends Array<string> = SplitWords<Replace<TTranslation, "\n", " ">>,
 > = Prettify<
-  _TWords extends [infer TFirstWord, ...infer TRestWords]
-    ? TFirstWord extends string
-      ? StartsWith<TFirstWord, TPrefix> extends true
-        ? TFirstWord extends TPrefix
-          ? TRestWords extends []
-            ? {}
-            : TRestWords extends Array<string>
-            ? TranslationParams<Join<TRestWords, " ">, TPrefix>
-            : {}
-          : Record<TrimEnd<TFirstWord, StopChars>, string> &
-              (TRestWords extends []
-                ? {}
-                : TRestWords extends Array<string>
-                ? TranslationParams<Join<TRestWords, " ">, TPrefix>
-                : {})
-        : TRestWords extends []
-        ? {}
-        : TRestWords extends Array<string>
-        ? TranslationParams<Join<TRestWords, " ">, TPrefix>
-        : {}
-      : {}
+  _TWords extends [
+    infer TFirstWord extends string,
+    ...infer TRestWords extends Array<string>,
+  ]
+    ? StartsWith<TFirstWord, TPrefix> extends true
+      ? TFirstWord extends TPrefix
+        ? TRestWords extends EmptyArray
+          ? {}
+          : TranslationParamListToString<TRestWords, TPrefix>
+        : Record<TrimEnd<TFirstWord, StopChars>, string> &
+            (TRestWords extends EmptyArray
+              ? {}
+              : TranslationParamListToString<TRestWords, TPrefix>)
+      : TRestWords extends EmptyArray
+      ? {}
+      : TranslationParamListToString<TRestWords, TPrefix>
     : {}
 >;

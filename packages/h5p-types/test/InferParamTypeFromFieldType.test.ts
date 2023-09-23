@@ -263,7 +263,7 @@ namespace Test_TextField {
 }
 
 // @ts-ignore Test
-namespace Test_TextField {
+namespace Test_VideoField {
   type FieldType = H5PFieldVideo;
 
   type Expected = H5PVideo;
