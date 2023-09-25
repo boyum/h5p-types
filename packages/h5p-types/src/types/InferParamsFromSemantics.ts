@@ -40,12 +40,14 @@ import type { InferOptionalWithDefault } from "./InferParamTypeFromFieldType";
  *  ```
  */
 export type InferParamsFromSemantics<
-  TSemantics extends ReadonlyArray<ReadonlyDeep<H5PField>>,
+  TSemantics extends Array<H5PField> | ReadonlyArray<ReadonlyDeep<H5PField>>,
 > = TSemantics extends readonly [
-  infer TField extends ReadonlyDeep<H5PField>,
-  ...infer TRestFields extends ReadonlyArray<ReadonlyDeep<H5PField>>,
+  infer TField extends H5PField | ReadonlyDeep<H5PField>,
+  ...infer TRestFields extends
+    | Array<H5PField>
+    | ReadonlyArray<ReadonlyDeep<H5PField>>,
 ]
-  ? (TField extends ReadonlyDeep<L10nGroup>
+  ? (TField extends L10nGroup | ReadonlyDeep<L10nGroup>
       ? InferL10nType<TField>
       : Record<TField["name"], InferOptionalWithDefault<TField>>) &
       InferParamsFromSemantics<TRestFields>
