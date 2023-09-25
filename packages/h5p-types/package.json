@@ -1,11 +1,10 @@
 {
   "name": "h5p-types",
-  "version": "3.0.2",
+  "version": "4.0.0",
   "types": "index.d.ts",
   "files": [
     "index.d.ts",
-    "src",
-    "tsconfig.json"
+    "src"
   ],
   "scripts": {
     "publish-to-npm": "release-it",
