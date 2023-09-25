@@ -1,4 +1,8 @@
-import type { H5PLibrary, ReadonlyDeep } from "h5p-types";
+import type { H5PLibrary } from "h5p-types";
+
+type ReadonlyDeep<T> = {
+  readonly [P in keyof T]: ReadonlyDeep<T[P]>;
+};
 
 export const library = {
   machineName: "Demo",

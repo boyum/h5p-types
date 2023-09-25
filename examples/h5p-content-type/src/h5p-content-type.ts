@@ -1,13 +1,9 @@
-import type {
-  IH5PContentType,
-  InferParamsFromSemantics,
-  ReadonlyDeep,
-} from "h5p-types";
+import type { IH5PContentType, InferParamsFromSemantics } from "h5p-types";
 import { H5P, H5PContentType, registerContentType } from "h5p-utils";
 import library from "../library.json";
 import semantics from "../semantics.json";
 
-type Params = InferParamsFromSemantics<ReadonlyDeep<typeof semantics>>;
+type Params = InferParamsFromSemantics<typeof semantics>;
 
 class ContentType
   extends H5PContentType<Params>

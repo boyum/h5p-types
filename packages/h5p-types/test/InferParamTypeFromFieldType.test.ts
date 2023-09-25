@@ -62,10 +62,44 @@ namespace Test_FileField {
 }
 
 // @ts-ignore Test
-namespace Test_GroupField {
+namespace Test_GroupField_UnknownFields {
   type FieldType = H5PFieldGroup;
 
   type Expected = EmptyObject;
+  type Actual = InferParamTypeFromFieldType<FieldType>;
+
+  // @ts-ignore Test
+  type Test =
+    // prettier-ignore
+    Expect<AreEqual<Actual, Expected>>;
+}
+
+// @ts-ignore Test
+namespace Test_GroupField_NoFields {
+  type FieldType = H5PFieldGroup & { fields: [] };
+
+  type Expected = EmptyObject;
+  type Actual = InferParamTypeFromFieldType<FieldType>;
+
+  // @ts-ignore Test
+  type Test =
+    // prettier-ignore
+    Expect<AreEqual<Actual, Expected>>;
+}
+
+// @ts-ignore Test
+namespace Test_GroupField_OneField {
+  type FieldType = H5PFieldGroup & {
+    fields: [
+      {
+        label: "Name";
+        name: "name";
+        type: "text";
+      },
+    ];
+  };
+
+  type Expected = string;
   type Actual = InferParamTypeFromFieldType<FieldType>;
 
   // @ts-ignore Test

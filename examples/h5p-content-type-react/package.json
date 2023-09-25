@@ -20,6 +20,7 @@
     "h5p-types": "*",
     "ts-loader": "^9.4.4",
     "tsconfig-react": "*",
+    "typescript": "^5.2.2",
     "unplugin-json-dts": "^1.2.0",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4"

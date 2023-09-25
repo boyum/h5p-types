@@ -115,11 +115,3 @@ export { XAPIEvent } from "./src/types/XAPI/XAPIEvent";
 export { XAPIInteractionType } from "./src/types/XAPI/XAPIInteractionType";
 export { XAPIStatement } from "./src/types/XAPI/XAPIStatement";
 export { XAPIVerb } from "./src/types/XAPI/XAPIVerb";
-
-// Type-fest
-// We re-export type-fest types to avoid having to install it as a dependency
-// Until TS 5, the ReadonlyDeep type is needed when inputting types to `InferParamsFromSemantics`
-export {
-  /** @deprecated Use {@link ReadonlyDeep} */ ReadonlyDeep as DeepReadonly,
-  ReadonlyDeep,
-} from "type-fest";
