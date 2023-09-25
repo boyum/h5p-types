@@ -4,7 +4,8 @@
   "types": "index.d.ts",
   "files": [
     "index.d.ts",
-    "src"
+    "src",
+    "tsconfig.json"
   ],
   "scripts": {
     "publish-to-npm": "release-it",

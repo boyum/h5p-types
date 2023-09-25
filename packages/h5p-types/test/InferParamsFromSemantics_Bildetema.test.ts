@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment, @typescript-eslint/no-unused-vars, @typescript-eslint/no-namespace */
 
-import { InferParamsFromSemantics } from "..";
-import { AreEqual, Expect } from "../src/test-utility-types";
+import type { InferParamsFromSemantics } from "..";
+import type { AreEqual, Expect } from "../src/test-utility-types";
 
 // @ts-ignore Test
 namespace Test_InferParamsFromSemantics_Bildetema {
