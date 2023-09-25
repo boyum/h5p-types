@@ -2,6 +2,7 @@ import type { EmptyObject, ReadonlyDeep } from "type-fest";
 import type { H5PFieldGroup } from "./H5PField";
 import type { InferParamTypeFromFieldType } from "./InferParamTypeFromFieldType";
 import type { InferParamsFromSemantics } from "./InferParamsFromSemantics";
+import { Prettify } from "../utility-types";
 
 type H5PFieldGroupWithoutLabel = Omit<H5PFieldGroup, "label">;
 
@@ -27,7 +28,7 @@ type InferGroupWithOneFieldParams<
  */
 type InferGroupWithMultipleFieldsParams<
   TGroupField extends ReadonlyDeep<H5PFieldGroupWithoutLabel>,
-> = InferParamsFromSemantics<TGroupField["fields"]>;
+> = Prettify<InferParamsFromSemantics<TGroupField["fields"]>>;
 
 export type InferGroupParams<
   TGroupField extends ReadonlyDeep<H5PFieldGroupWithoutLabel>,
