@@ -2,7 +2,7 @@ import type { EmptyObject, ReadonlyDeep } from "type-fest";
 import type { H5PFieldGroup } from "./H5PField";
 import type { InferParamTypeFromFieldType } from "./InferParamTypeFromFieldType";
 import type { InferParamsFromSemantics } from "./InferParamsFromSemantics";
-import { Prettify } from "../utility-types";
+import type { Prettify } from "../utility-types";
 
 type H5PFieldGroupWithoutLabel = Omit<H5PFieldGroup, "label">;
 

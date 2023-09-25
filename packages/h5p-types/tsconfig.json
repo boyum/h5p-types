@@ -1,4 +1,7 @@
 {
+  "compilerOptions": {
+    "verbatimModuleSyntax": true
+  },
   "include": ["src", "index.d.ts", "test"],
   "extends": "tsconfig-base/index.json"
 }
