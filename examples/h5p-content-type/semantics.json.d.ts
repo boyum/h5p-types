@@ -87,7 +87,6 @@ declare const json: [
               "unit": "%"
             },
             {
-              "label": "",
               "name": "to",
               "type": "number",
               "min": 0,
