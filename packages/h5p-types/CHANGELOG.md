@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.0.1](https://github.com/boyum/h5p-types/compare/2023-09-25...4.0.1) (2023-09-25)
+
+
+### Build System
+
+* **h5p-types:** turn on `verbatimModuleSyntax` in tsconfig ([#388](https://github.com/boyum/h5p-types/issues/388)) ([d6b239a](https://github.com/boyum/h5p-types/commit/d6b239a3e4940b2988656b45166983c8b2a0108e))
+
 ## [3.0.2](https://github.com/boyum/h5p-types/compare/4.0.0...3.0.2) (2023-09-23)
 
 
