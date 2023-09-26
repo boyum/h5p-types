@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.1.0](https://github.com/boyum/h5p-types/compare/4.0.1...4.1.0) (2023-09-26)
+
+
+### Features
+
+* **h5p-types:** add `H5P.isEmpty` ([#390](https://github.com/boyum/h5p-types/issues/390)) ([d9837e8](https://github.com/boyum/h5p-types/commit/d9837e8ac844b345b997318904786ab2ceab1e86))
+
 ## [4.0.1](https://github.com/boyum/h5p-types/compare/2023-09-25...4.0.1) (2023-09-25)
 
 
