@@ -3,13 +3,13 @@ import type {
   H5PForm,
   H5PSetValue,
   IH5PWidget,
-  ParamTypeInferredFromFieldType,
+  InferParamTypeFromFieldType,
 } from "h5p-types";
 import { H5P } from "../utils/H5P.utils.js";
 
 export abstract class H5PWidget<
     TField extends H5PField = H5PField,
-    TParams = ParamTypeInferredFromFieldType<TField>,
+    TParams = InferParamTypeFromFieldType<TField>,
   >
   extends H5P.EventDispatcher
   implements IH5PWidget
