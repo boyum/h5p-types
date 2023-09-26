@@ -24,55 +24,149 @@ export interface H5PObject {
   // --- Properties ---
   $body: JQuery<HTMLBodyElement>;
 
+  /**
+   * A jQuery wrapper around `window`.
+   */
   $window: JQuery<Window>;
 
-  /** @deprecated Use `fullscreenSupported` instead */
+  /**
+   * @deprecated Use {@link H5PObject.fullscreenSupported} instead
+   */
   canHasFullscreen: boolean;
 
-  /** When embedded, the communicator helps talk to the parent page. */
+  /**
+   * When embedded, the communicator helps talk to the parent page.
+   */
   communicator: H5PCommunicator | undefined;
 
+  /**
+   * Maps copyright license codes to their human readable counterpart.
+   */
   copyrightLicenses: H5PCopyrightLicenses;
 
+  /**
+   * Indicates if H5P is embedded on an external page using iframe.
+   */
   externalEmbed?: boolean;
 
-  fullScreenBrowserPrefix: "webkit" | "moz" | "ms";
+  /**
+   * @private
+   *
+   * If the current browser supports `Element#requestFullscreen`, this property
+   * will be set to an empty string.
+   *
+   * If the current browser does not support `Element#requestFullscreen` but has a
+   * vendor-prefixed version of it, this property will contain the prefix.
+   *
+   * If the current browser does not support fullscreen mode at all, this property
+   * will be `undefined`.
+   */
+  fullScreenBrowserPrefix: "" | "webkit" | "moz" | "ms" | undefined;
 
+  /**
+   * True if the current browser supports fullscreen mode.
+   */
   fullscreenSupported: boolean;
 
+  /**
+   * A list over H5P instances on the current page.
+   */
   instances: Array<IH5PContentType>;
 
-  /** H5P content is rendered inside an iframe */
+  /**
+   * True if H5P content is rendered inside an iframe.
+   */
   isFramed: boolean;
 
-  /** H5P content is in fullscreen mode */
+  /**
+   * True if H5P content is in fullscreen mode.
+   *
+   * Use `H5P.fullscreen()` or `H5P.semiFullScreen()` to enter fullscreen mode.
+   * Use `H5P.exitFullScreen()` to exit fullscreen mode.
+   */
   isFullscreen: boolean;
 
-  /** Prevent H5P Core from initializing. Must be overriden before document ready. */
+  /**
+   * Keeps track of when each H5P content instance was initiated.
+   */
+  opened: Record<H5PContentId, Date>;
+
+  /**
+   * Prevent H5P Core from initializing. Must be overriden before document ready.
+   */
   preventInit?: boolean;
 
-  safariBrowser: number;
+  /**
+   * Is set to the Safari version number if the current browser is Safari
+   * (but only if it does not support fullscreen mode).
+   */
+  safariBrowser?: number;
 
   // --- Methods ---
   /**
    * Helper for adding a query parameter to an existing path that may already
    * contain one or a hash.
    *
-   * @param path
-   * @param parameter
+   * @example
+   *
+   * No existing query parameter
+   *
+   * ```ts
+   * const path = "https://example.com";
+   * const parameter = "foo=bar";
+   *
+   * const result = H5P.addQueryParameter(path, parameter);
+   * // result === "https://example.com?foo=bar"
+   * ```
+   *
+   * @example
+   *
+   * With existing query parameter
+   *
+   * ```ts
+   * const path = "https://example.com?foo=bar";
+   * const parameter = "baz=qux";
+   *
+   * const result = H5P.addQueryParameter(path, parameter);
+   * // result === "https://example.com?foo=bar&baz=qux"
+   * ```
+   *
+   * @example
+   *
+   * With hash
+   *
+   * ```ts
+   * const path = "https://example.com#foo";
+   * const parameter = "bar=baz";
+   *
+   * const result = H5P.addQueryParameter(path, parameter);
+   * // result === "https://example.com?bar=baz#foo"
+   * ```
+   *
+   * @param path URL to add query parameter to.
+   * @param parameter Query parameter to add on the format `key=value`.
    */
   addQueryParameter(path: string, parameter: string): string;
 
   /**
    * Show a toast message.
    *
-   * The reference element could be dom elements the toast should be attached to,
+   * The reference element could be DOM elements the toast should be attached to,
    * or e.g. the document body for general toast messages.
+   *
+   * @example
+   *
+   * ```ts
+   * const parentElement = document.body
+   * const message = "Hello world!"
+   *
+   * H5P.attachToastTo(parentElement, message)
+   * ```
    *
    * @param element Reference element to show toast message for.
    * @param message Message to show.
    * @param config Configuration.
-   * @param config.style Style name for the tooltip. Default: `h5p-toast`
+   * @param config.style Id for the tooltip. Default: `h5p-toast`
    * @param config.duration Toast message length in ms. Default: `3000`
    * @param config.position Relative positioning of the toast.
    * @param config.position.horizontal Default: `centered`
@@ -239,7 +333,7 @@ export interface H5PObject {
     | undefined;
 
   /**
-   * @deprecated Use `getPath` instead
+   * @deprecated Use {@link H5PObject.getPath} instead
    */
   getContentPath(contentId: H5PContentId): string;
 
@@ -263,11 +357,23 @@ export interface H5PObject {
   /**
    * Get the crossOrigin policy to use for img, video and audio tags on the current site.
    *
-   * @param source File object from parameters/json_content - Can also be URL(deprecated usage)
+   * @deprecated Use {@link H5PObject.getCrossOrigin} with the source as a {@link H5PMedia} instead
+   *
+   * @param source URL to the source
    *
    * @returns crossOrigin attribute value required by the source
    */
   getCrossOrigin(source: string): string | null;
+
+  /**
+   * Get the crossOrigin policy to use for img, video and audio tags on the current site.
+   * If the source points to external media, or `H5PIntegration.crossorigin` has a falsy value,
+   * `undefined` will be returned.
+   *
+   * @param source File object from parameters/json_content
+   *
+   * @returns crossOrigin attribute value required by the source
+   */
   getCrossOrigin(source: H5PMedia): string | undefined;
 
   /**
@@ -479,8 +585,23 @@ export interface H5PObject {
    * Helper for setting the crossOrigin attribute + the complete correct source.
    * Note: This will start loading the resource.
    *
+   * Runs {@link H5P.getPath} internally.
+   *
+   * @example
+   *
+   * ```ts
+   * const imageElement = document.createElement("img");
+   * const image = {
+   *  path: "path/to/image.png",
+   * };
+   * const contentId = "1";
+   *
+   * H5P.setSource(imageElement, image, contentId);
+   * // imageElement.src === "https://example.com/path/to/image.png"
+   * ```
+   *
    * @param element DOM element, typically img, video or audio
-   * @param source File object from parameters/json_content (created by H5PEditor)
+   * @param source Uploaded file object from parameters/json_content (created by H5PEditor)
    * @param contentId Needed to determine the complete correct file path
    */
   setSource(

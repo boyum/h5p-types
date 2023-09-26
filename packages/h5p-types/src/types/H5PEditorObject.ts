@@ -188,7 +188,7 @@ export interface H5PEditorObject extends Record<string, unknown> {
   /**
    * Create the HTML wrapper for field items.
    *
-   * @deprecated since version 1.12 (Jan. 2017, will be removed Jan. 2018). Use `createFieldMarkup` instead.
+   * @deprecated since version 1.12 (Jan. 2017, will be removed Jan. 2018). Use {@link H5PEditor.createFieldMarkup} instead.
    *
    * @param type Field type as string (ie. "text", "image", "number")
    * @param label Label text. Can be HTML

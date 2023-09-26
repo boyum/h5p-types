@@ -2,9 +2,11 @@ import { useContext } from "react";
 import { L10nContext } from "../contexts/LocalizationContext";
 import { TranslationKey } from "../types/Translations";
 import { getFallbackString } from "../utils";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import type { useTranslation } from "./useTranslation";
 
 /**
- * @deprecated Use `useTranslation` instead
+ * @deprecated Use {@link useTranslation} instead
  *
  * @param translationKeys A list of valid translation keys
  * @returns An object where the translation keys are keys and their translations are values
@@ -37,6 +39,6 @@ export const useLocalizations = <
 };
 
 /**
- * @deprecated Use `useTranslation` instead
+ * @deprecated Use {@link useTranslation} instead
  */
 export const useL10ns = useLocalizations;
