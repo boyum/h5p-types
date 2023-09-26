@@ -15,10 +15,7 @@ import type { IH5PWidget } from "./Interfaces/IH5PWidget";
  *
  * @see https://h5p.org/node/2468
  */
-export type H5PEditorObject<
-  TWidgetMachineName extends string = never,
-  TWidgetName extends string = never,
-> = {
+export interface H5PEditorObject extends Record<string, unknown> {
   // --- Properties ---
   constants: {
     otherLibraries: string;
@@ -43,7 +40,7 @@ export type H5PEditorObject<
 
   supportedLanguages: Record<string, string>;
 
-  widgets: Record<string, unknown> & Record<TWidgetName, unknown>;
+  widgets: Record<string, unknown>;
 
   // --- Methods ---
   /**
@@ -55,32 +52,32 @@ export type H5PEditorObject<
    * @param ancestor
    * @param skipAppendTo Skips appending the common field if set
    */
-  addCommonField: <TField extends H5PField>(
+  addCommonField<TField extends H5PField>(
     field: TField,
     parent: H5PForm,
     params: InferParamTypeFromFieldType<TField>,
     ancestor: H5PForm,
     skipAppendTo?: boolean,
-  ) => void;
+  ): void;
 
   /**
    * Bind events to important description
    */
-  bindImportantDescriptionEvents: (
+  bindImportantDescriptionEvents(
     widget: IH5PWidget,
     fieldName: string,
     parent: H5PForm,
-  ) => void;
+  ): void;
 
   /**
    * Check if clipboard can be pasted
    */
-  canPaste: (
+  canPaste(
     clipboard: {
       generic?: unknown;
     } & Record<string, unknown>,
     libs: Record<string, unknown>,
-  ) => boolean;
+  ): boolean;
 
   /**
    * Check if clipboard can be pasted and give reason if not.
@@ -89,12 +86,12 @@ export type H5PEditorObject<
    * @param libs Libraries to compare against.
    * @return Results. {canPaste: boolean, reason: string, description: string}.
    */
-  canPastePlus: (
+  canPastePlus(
     clipboard: {
       generic?: unknown;
     } & Record<string, unknown>,
     libs: Record<string, unknown>,
-  ) =>
+  ):
     | { canPaste: true }
     | {
         canPaste: false;
@@ -109,18 +106,18 @@ export type H5PEditorObject<
    * @param $input
    * @param value
    */
-  checkErrors: <
+  checkErrors<
     TValue extends string | boolean | number | Record<string, unknown>,
   >(
     $errors: JQuery,
     $input: JQuery,
     value: TValue,
-  ) => TValue | false;
+  ): TValue | false;
 
   /**
    * Confirm replace if there is content selected
    */
-  confirmReplace: (library: string, top: number, next: () => void) => void;
+  confirmReplace(library: string, top: number, next: () => void): void;
 
   /**
    * Create HTML wrapper for a boolean field item.
@@ -129,11 +126,11 @@ export type H5PEditorObject<
    * @param content
    * @param inputId
    */
-  createBooleanFieldMarkup: (
+  createBooleanFieldMarkup(
     field: H5PField,
     content: string,
     inputId?: string,
-  ) => string;
+  ): string;
 
   /**
    * Makes it easier to add consistent buttons across the editor widget
@@ -143,22 +140,22 @@ export type H5PEditorObject<
    * @param handler Action handler when triggered
    * @param displayTitle Show button with text. Default: `false`
    */
-  createButton: (
+  createButton(
     id: string,
     title: string,
     handler: () => void,
     displayTitle?: boolean,
-  ) => JQuery<HTMLDivElement>;
+  ): JQuery<HTMLDivElement>;
 
   /**
    * Generate markup for the copy and paste buttons
    */
-  createCopyPasteButtons: () => string;
+  createCopyPasteButtons(): string;
 
   /**
    * Create a description
    */
-  createDescription: (description: string, inputId?: string) => string;
+  createDescription(description: string, inputId?: string): string;
 
   /**
    * Create an error paragraph with the given message
@@ -167,7 +164,7 @@ export type H5PEditorObject<
    *
    * @returns Message wrapped in <p>-tags
    */
-  createError: (message: string) => string;
+  createError(message: string): string;
 
   /**
    * Create HTML wrapper for a field item.
@@ -179,18 +176,14 @@ export type H5PEditorObject<
    * @param content
    * @param inputId
    */
-  createFieldMarkup: (
-    field: H5PField,
-    content: string,
-    inputId?: string,
-  ) => string;
+  createFieldMarkup(field: H5PField, content: string, inputId?: string): string;
 
   /**
    * Create an important description
    */
-  createImportantDescription: (
+  createImportantDescription(
     importantDescription: H5PFieldText["important"],
-  ) => string;
+  ): string;
 
   /**
    * Create the HTML wrapper for field items.
@@ -202,12 +195,12 @@ export type H5PEditorObject<
    * @param description  Optional description text for the field. If set, it will be included beneath the field edit form
    * @param content HTML content for the field as a string. Inserted in the wrapper
    */
-  createItem: (
+  createItem(
     type: H5PField["type"],
     label: string | undefined,
     description: string | undefined,
     content: string,
-  ) => string;
+  ): string;
 
   /**
    * Create a label to wrap content in.
@@ -217,7 +210,7 @@ export type H5PEditorObject<
    *
    * @returns Label as string of HTML
    */
-  createLabel: (field: H5PField, content?: string) => string;
+  createLabel(field: H5PField, content?: string): string;
 
   /**
    * Create HTML for select options.
@@ -228,11 +221,11 @@ export type H5PEditorObject<
    *
    * @returns Option as string of HTML
    */
-  createOption: (value: string, text: string, selected?: boolean) => string;
+  createOption(value: string, text: string, selected?: boolean): string;
 
-  createImportance: <TImportance extends H5PImportance | undefined | null>(
+  createImportance<TImportance extends H5PImportance | undefined | null>(
     importance: H5PImportance | undefined | null,
-  ) => TImportance extends H5PImportance ? `importance-${TImportance}` : "";
+  ): TImportance extends H5PImportance ? `importance-${TImportance}` : "";
 
   /**
    *
@@ -244,13 +237,13 @@ export type H5PEditorObject<
    *
    * @returns Input field as string of HTML
    */
-  createText: (
+  createText(
     value?: string,
     maxLength?: number,
     placeholder?: string,
     id?: string,
     describedby?: string,
-  ) => string;
+  ): string;
 
   /**
    * Check if the current library is entitled for the metadata button. True by default.
@@ -258,14 +251,14 @@ export type H5PEditorObject<
    * @param library - Current library.
    * @return True, if form should have the metadata button.
    */
-  enableMetadata: (library: string) => boolean;
+  enableMetadata(library: string): boolean;
 
   /**
    * Find the nearest ancestor which handles `commonFields`.
    *
    * @param parent
    */
-  findAncestor: (parent: H5PForm) => H5PForm | undefined;
+  findAncestor(parent: H5PForm): H5PForm | undefined;
 
   /**
    * Find field from a path
@@ -273,20 +266,20 @@ export type H5PEditorObject<
    * @param path
    * @param parent
    */
-  findField: <
+  findField<
     TField extends H5PForm = IH5PFieldInstance,
     TParent extends H5PForm = H5PForm,
   >(
     path: string | Array<string>,
     parent: TParent,
-  ) => TField | false;
+  ): TField | false;
 
   /**
    * Find the nearest library ancestor. Used when adding common fields.
    *
    * @param parent
    */
-  findLibraryAncestor: (parent: H5PForm) => H5PForm | undefined;
+  findLibraryAncestor(parent: H5PForm): H5PForm | undefined;
 
   /**
    * Search for a field or a set of fields. Returns `null` if the field isn't found.
@@ -294,10 +287,10 @@ export type H5PEditorObject<
    * @param fieldName
    * @param semanticsStructure
    */
-  findSemanticsField: (
+  findSemanticsField(
     fieldName: string,
     semanticsStructure: H5PField | Array<H5PField>,
-  ) => H5PField | Array<H5PField> | null;
+  ): H5PField | Array<H5PField> | null;
 
   /**
    * Observe a field to get changes to its params.This is used to track changes
@@ -318,28 +311,28 @@ export type H5PEditorObject<
    * @param path Relative to the parent object
    * @param callback Gets called for params changes
    */
-  followField: <TField extends H5PField = H5PField>(
+  followField<TField extends H5PField = H5PField>(
     parent: H5PForm,
     path: string,
     callback: (params: InferParamTypeFromFieldType<TField>) => void,
-  ) => void;
+  ): void;
 
   /**
    * Helps generating a consistent description ID across fields
    */
-  getDescriptionId: (id: string) => string;
+  getDescriptionId(id: string): string;
 
   /**
    * Generates a consistent and unique field ID for the given field
    */
-  getNextFieldId: (field: H5PField) => string;
+  getNextFieldId(field: H5PField): string;
 
   /**
    * Recursively traverse parents to find the library our field belongs to
    *
    * @param parent
    */
-  getParentLibrary: (parent: H5PForm) => H5PForm | null;
+  getParentLibrary(parent: H5PForm): H5PForm | null;
 
   /**
    * Alternate the background color of fields
@@ -347,12 +340,12 @@ export type H5PEditorObject<
    * @param parent
    * @returns `odd` or `even` to determine background color of callee
    */
-  getParentZebra: (parent: H5PForm) => H5PForm["zebra"];
+  getParentZebra(parent: H5PForm): H5PForm["zebra"];
 
   /**
    * Helper function for detecting field widget
    */
-  getWidgetName: (field: H5PField) => string;
+  getWidgetName(field: H5PField): string;
 
   /**
    * Mimics a simple version of PHP htmlspecialchars. Basically replaces brackets
@@ -367,7 +360,7 @@ export type H5PEditorObject<
    * // &lt;h1&gt;&quot;Hello world&quot;&lt;/h1&gt;
    * ```
    */
-  htmlspecialchars: (escapedHtml: string) => string;
+  htmlspecialchars(escapedHtml: string): string;
 
   /**
    * Joins an array of strings if they are defined and non empty
@@ -375,21 +368,21 @@ export type H5PEditorObject<
    * @param arr
    * @param separator Default: `" "`
    */
-  joinNonEmptyStrings: (
+  joinNonEmptyStrings(
     strings: Array<string | undefined>,
     separator?: string,
-  ) => string;
+  ): string;
 
   /**
    * @deprecated Use `H5P.libraryFromString` instead
    */
-  libraryFromString: <
+  libraryFromString<
     TLibraryName extends string,
     TMajorVersion extends number,
     TMinorVersion extends number,
   >(
     library: `${TLibraryName} ${TMajorVersion}.${TMinorVersion}`,
-  ) =>
+  ):
     | {
         machineName: TLibraryName;
         majorVersion: TMajorVersion;
@@ -406,29 +399,29 @@ export type H5PEditorObject<
    * @param libraryName On the form "machineName majorVersion.minorVersion"
    * @param callback
    */
-  libraryRequested: <TSemantics = unknown>(
+  libraryRequested<TSemantics = unknown>(
     libraryName: `${string} ${number}.${number}`,
     callback: (semantics: TSemantics) => void,
-  ) => void;
+  ): void;
 
   /**
    * Translates a library object to a library string.
    *
    * @param library Library object with machineName, majorVersion and minorVersion set
    */
-  libraryToString: <
+  libraryToString<
     TLib extends Pick<
       H5PLibrary,
       "machineName" | "majorVersion" | "minorVersion"
     >,
   >(
     library: TLib,
-  ) => `${TLib["machineName"]} ${TLib["majorVersion"]}.${TLib["minorVersion"]}`;
+  ): `${TLib["machineName"]} ${TLib["majorVersion"]}.${TLib["minorVersion"]}`;
 
   /**
    * Help load JavaScripts, prevents double loading
    */
-  loadJs: (src: string, doneCallback: () => void) => void;
+  loadJs(src: string, doneCallback: () => void): void;
 
   /**
    * Loads a complete library, with semantics, scripts and CSS from the server.
@@ -437,10 +430,10 @@ export type H5PEditorObject<
    * @param libraryName
    * @param callback Callback that will be called with the library's semantics when loaded
    */
-  loadLibrary: <TSemantics = unknown>(
+  loadLibrary<TSemantics = unknown>(
     libraryName: `${string} ${number}.${number}`,
     callback: (semantics: TSemantics) => void,
-  ) => void;
+  ): void;
 
   /**
    * Recursive processing of the semantics chunks.
@@ -451,7 +444,7 @@ export type H5PEditorObject<
    * @param parent
    * @param machineName Machine name of library that is being processed
    */
-  processSemanticsChunk: <TFields extends Array<H5PField> = Array<H5PField>>(
+  processSemanticsChunk<TFields extends Array<H5PField> = Array<H5PField>>(
     semanticsChunk: TFields,
     params: Record<
       TFields[number]["name"],
@@ -460,14 +453,14 @@ export type H5PEditorObject<
     $wrapper: JQuery<HTMLElement>,
     parent: H5PForm,
     machineName?: string,
-  ) => void;
+  ): void;
 
   /**
    * Call remove on the given children
    *
    * @param children
    */
-  removeChildren: (children: Array<IH5PWidget>) => void;
+  removeChildren(children: Array<IH5PWidget>): void;
 
   /**
    * Render common fields of content type with given machine name.
@@ -475,15 +468,12 @@ export type H5PEditorObject<
    * @param machineName Machine name of content type with common fields
    * @param libraries Library data for machine name
    */
-  renderCommonField: (
-    machineName: string,
-    libraries?: Array<H5PLibrary>,
-  ) => void;
+  renderCommonField(machineName: string, libraries?: Array<H5PLibrary>): void;
 
   /**
    * Reset loaded libraries - i.e removes CSS added previously
    */
-  resetLoadedLibraries: () => void;
+  resetLoadedLibraries(): void;
 
   /**
    * Attach ancestor of parent's common fields to a new wrapper
@@ -491,7 +481,7 @@ export type H5PEditorObject<
    * @param parent Parent content type instance that common fields should be attached to
    * @param wrapper New wrapper of common fields
    */
-  setCommonFieldsWrapper: (parent: H5PForm, wrapper: HTMLElement) => void;
+  setCommonFieldsWrapper(parent: H5PForm, wrapper: HTMLElement): void;
 
   /**
    * Translate text strings
@@ -502,11 +492,11 @@ export type H5PEditorObject<
    *
    * @returns Translated string, or a default text if the translation is missing
    */
-  t: (
-    library: "core" | `H5PEditor.${string}` | `H5PEditor.${TWidgetMachineName}`,
+  t(
+    library: "core" | `H5PEditor.${string}` | string,
     key: string,
     vars?: Record<`:${string}`, string>,
-  ) => string;
+  ): string;
 
   /**
    * Update common fields default values for the given semantics.
@@ -516,11 +506,11 @@ export type H5PEditorObject<
    * @param translation
    * @param parentIsCommon Used to indicated that one of the ancestors is a common field
    */
-  updateCommonFieldsDefault: (
+  updateCommonFieldsDefault(
     semantics: Array<H5PField>,
     translation: Array<H5PField>,
     parentIsCommon?: boolean,
-  ) => void;
+  ): void;
 
   /**
    * Wraps a field with some metadata classes, and adds error field.
@@ -528,10 +518,9 @@ export type H5PEditorObject<
    * @param field
    * @param markup
    */
-  wrapFieldMarkup: (field: H5PField, markup: string) => string;
+  wrapFieldMarkup(field: H5PField, markup: string): string;
 
   // --- Classes ---
   $: typeof jQuery;
   ContentType: H5PEditorContentType;
-} & Record<string, unknown> &
-  Record<`${TWidgetMachineName}`, unknown>;
+}
