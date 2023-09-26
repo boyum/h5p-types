@@ -20,7 +20,7 @@
   "devDependencies": {
     "@release-it/conventional-changelog": "^7.0.2",
     "eslint-config-base": "*",
-    "release-it": "^16.1.5",
+    "release-it": "^16.2.0",
     "tsconfig-base": "*",
     "typedoc": "^0.25.1",
     "typescript": "^5.0.4"
