@@ -30,7 +30,7 @@ export interface H5PObject {
   $window: JQuery<Window>;
 
   /**
-   * @deprecated Use {@link H5PObject.fullscreenSupported} instead
+   * @deprecated Use {@link fullscreenSupported} instead
    */
   canHasFullscreen: boolean;
 
@@ -337,7 +337,7 @@ export interface H5PObject {
     | undefined;
 
   /**
-   * @deprecated Use {@link H5PObject.getPath} instead
+   * @deprecated Use {@link getPath} instead
    */
   getContentPath(contentId: H5PContentId): string;
 
@@ -361,7 +361,7 @@ export interface H5PObject {
   /**
    * Get the crossOrigin policy to use for img, video and audio tags on the current site.
    *
-   * @deprecated Use {@link H5PObject.getCrossOrigin} with the source as a {@link H5PMedia} instead
+   * @deprecated Use {@link getCrossOrigin} with the source as a {@link H5PMedia} instead
    *
    * @param source URL to the source
    *
@@ -589,7 +589,7 @@ export interface H5PObject {
    * Helper for setting the crossOrigin attribute + the complete correct source.
    * Note: This will start loading the resource.
    *
-   * Runs {@link H5P.getPath} internally.
+   * Runs {@link getPath} internally.
    *
    * @example
    *
