@@ -107,9 +107,7 @@ export interface H5PObject {
    * Helper for adding a query parameter to an existing path that may already
    * contain one or a hash.
    *
-   * @example
-   *
-   * No existing query parameter
+   * @example No existing query parameter
    *
    * ```ts
    * const path = "https://example.com";
@@ -119,9 +117,7 @@ export interface H5PObject {
    * // result === "https://example.com?foo=bar"
    * ```
    *
-   * @example
-   *
-   * With existing query parameter
+   * @example With existing query parameter
    *
    * ```ts
    * const path = "https://example.com?foo=bar";
@@ -131,9 +127,7 @@ export interface H5PObject {
    * // result === "https://example.com?foo=bar&baz=qux"
    * ```
    *
-   * @example
-   *
-   * Use `&` to separate parameters
+   * @example Multiple parameters
    *
    * ```ts
    * const path = "https://example.com?foo=bar";
@@ -143,9 +137,7 @@ export interface H5PObject {
    * // result === "https://example.com?foo=bar&baz=qux&quux=quuz"
    * ```
    *
-   * @example
-   *
-   * With hash
+   * @example With hash
    *
    * ```ts
    * const path = "https://example.com#foo";
