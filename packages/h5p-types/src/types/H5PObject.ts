@@ -323,6 +323,30 @@ export interface H5PObject {
   init: (target: HTMLElement) => void;
 
   /**
+   * Recursive function that detects deep empty structures.
+   *
+   * Will return true if the value is `null`, `undefined`, an empty string, an empty array or an empty object.
+   * Will also return true if the value is an array or object that contains only empty values.
+   *
+   * @example
+   *
+   * ```ts
+   * // True for all of:
+   *
+   * H5P.isEmpty({});
+   * H5P.isEmpty([]);
+   * H5P.isEmpty("");
+   * H5P.isEmpty(null);
+   * H5P.isEmpty(undefined);
+   * H5P.isEmpty({ a: "" });
+   * H5P.isEmpty({ a: ["", [], {}] });
+   * H5P.isEmpty({ a: {} });
+   * H5P.isEmpty({ a: { b: "" } });
+   * ```
+   */
+  isEmpty: (value: unknown) => boolean;
+
+  /**
    * Check if JavaScript path/key is loaded
    */
   jsLoaded: (path: string) => boolean;
