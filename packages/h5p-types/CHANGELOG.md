@@ -1,5 +1,25 @@
 # Changelog
 
+## [4.2.0](https://github.com/boyum/h5p-types/compare/4.1.0...4.2.0) (2023-09-26)
+
+
+### Features
+
+* **h5p-types:** documentation ([#398](https://github.com/boyum/h5p-types/issues/398)) ([0e81600](https://github.com/boyum/h5p-types/commit/0e816009327f00f3c898e165459ddeb171167e18))
+* **h5p-types:** remove deprecated type aliases ([#396](https://github.com/boyum/h5p-types/issues/396)) ([52da9ca](https://github.com/boyum/h5p-types/commit/52da9ca43283d1e0be2f7d11a81fe5901bc18e14))
+
+
+### Code Refactoring
+
+* change H5PObject and H5PEditorObject's function properties to methods ([#397](https://github.com/boyum/h5p-types/issues/397)) ([befba50](https://github.com/boyum/h5p-types/commit/befba50dce7c56a0befe60d9b0e435c057282e48))
+
+
+### Build System
+
+* **deps-dev:** bump @typescript-eslint/eslint-plugin ([#395](https://github.com/boyum/h5p-types/issues/395)) ([fa0bb40](https://github.com/boyum/h5p-types/commit/fa0bb401f1627ecb9fa3b897c36a0ae953c79a5d))
+* **deps-dev:** bump @typescript-eslint/parser from 6.7.2 to 6.7.3 ([#391](https://github.com/boyum/h5p-types/issues/391)) ([b60aa1d](https://github.com/boyum/h5p-types/commit/b60aa1d33626c82fff1a3a6b1eb9a64c2feefa28))
+* **deps-dev:** bump happy-dom from 12.1.6 to 12.2.0 ([#392](https://github.com/boyum/h5p-types/issues/392)) ([69d6f3f](https://github.com/boyum/h5p-types/commit/69d6f3fbba912bff4c5acbd9b3e2f6075eca9485))
+
 ## [4.1.0](https://github.com/boyum/h5p-types/compare/4.0.1...4.1.0) (2023-09-26)
 
 
