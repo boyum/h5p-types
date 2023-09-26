@@ -61,7 +61,7 @@ export interface H5PObject {
    * @param path
    * @param parameter
    */
-  addQueryParameter: (path: string, parameter: string) => string;
+  addQueryParameter(path: string, parameter: string): string;
 
   /**
    * Show a toast message.
@@ -87,7 +87,7 @@ export interface H5PObject {
    * @param config.position.noOverflowY True to prevent overflow top and bottom. Default: `false`
    * @param config.position.overflowReference DOM reference for overflow. Default: `document.body`
    */
-  attachToastTo: (
+  attachToastTo(
     element: HTMLElement,
     message: string,
     config?: {
@@ -107,20 +107,20 @@ export interface H5PObject {
         overflowReference?: HTMLElement;
       };
     },
-  ) => void;
+  ): void;
 
   buildMetadataCopyrights(metadata: H5PMetadata): H5PMediaCopyright;
 
-  classFromName: (name: `H5P.${string}`) => IH5PContentType;
+  classFromName(name: `H5P.${string}`): IH5PContentType;
 
   /**
    * Store item in the H5P Clipboard
    */
-  clipboardify: <
+  clipboardify<
     TParams extends Record<string, unknown> = Record<string, unknown>,
   >(
     clipboardItem: H5PClipboardItem<TParams> | TParams,
-  ) => void;
+  ): void;
 
   /**
    * Recursively clone the given object
@@ -129,7 +129,7 @@ export interface H5PObject {
    * @param recursive
    * @returns A clone of object
    */
-  cloneObject: <T>(object: T, recursive?: boolean) => T;
+  cloneObject<T>(object: T, recursive?: boolean): T;
 
   /**
    * Create title as an HTML string
@@ -137,14 +137,14 @@ export interface H5PObject {
    * @param rawTitle
    * @param maxLength Default: 60
    */
-  createTitle: (rawTitle: string, maxLength?: number) => string;
+  createTitle(rawTitle: string, maxLength?: number): string;
 
-  createUUID: () => string;
+  createUUID(): string;
 
   /**
    * Check if styles path/key is loaded
    */
-  cssLoaded: (path: string) => boolean;
+  cssLoaded(path: string): boolean;
 
   /**
    * @private
@@ -156,15 +156,15 @@ export interface H5PObject {
    * @param dataId Identifies the set of data for this content
    * @param subContentId Identifies which data belongs to sub content
    */
-  deleteUserData: (
+  deleteUserData(
     contentId: H5PContentId,
     dataId: string,
     subContentId?: H5PContentId,
-  ) => void;
+  ): void;
 
-  error: (error: Error | string) => void;
+  error(error: Error | string): void;
 
-  exitFullScreen: () => void;
+  exitFullScreen(): void;
 
   /**
    * Gather a flat list of copyright information from the given parameters.
@@ -177,7 +177,7 @@ export interface H5PObject {
    * @param extras.machineName - Library name of some kind.
    *   Metadata of the content instance.
    */
-  findCopyrights: (
+  findCopyrights(
     info: H5PContentCopyrights,
     parameters:
       | Record<
@@ -198,17 +198,17 @@ export interface H5PObject {
         >,
     contentId: H5PContentId,
     extras?: { metadata: H5PMetadata; machineName: string },
-  ) => void;
+  ): void;
 
-  fullScreen: (
+  fullScreen(
     $element: JQuery,
     instance: IH5PContentType,
-    exitCallback?: () => void,
+    exitCallback: () => void,
     body?: JQuery,
     forceSemiFullScreen?: boolean,
-  ) => void;
+  ): void;
 
-  getClipboard: () =>
+  getClipboard():
     | ({
         generic?: unknown;
       } & Record<string, unknown>)
@@ -220,7 +220,7 @@ export interface H5PObject {
    * @param {number} contentId
    * @return {Object}
    */
-  getContentForInstance: (contentId?: H5PContentId) =>
+  getContentForInstance(contentId?: H5PContentId):
     | {
         contentUserData?: Array<unknown> | undefined;
         displayOptions?: H5PDisplayOptions;
@@ -241,7 +241,7 @@ export interface H5PObject {
   /**
    * @deprecated Use `getPath` instead
    */
-  getContentPath: (contentId: H5PContentId) => string;
+  getContentPath(contentId: H5PContentId): string;
 
   /**
    * Gather copyright information for the given content.
@@ -267,16 +267,15 @@ export interface H5PObject {
    *
    * @returns crossOrigin attribute value required by the source
    */
-  getCrossOrigin:
-    | ((source: string) => string | null)
-    | ((source: H5PMedia) => string | undefined);
+  getCrossOrigin(source: string): string | null;
+  getCrossOrigin(source: H5PMedia): string | undefined;
 
   /**
    * Get config for a library
    *
    * @param string machineName
    */
-  getLibraryConfig: (machineName: string) => unknown | Record<string, never>;
+  getLibraryConfig(machineName: string): unknown | Record<string, never>;
 
   /**
    * Get the path to the library
@@ -284,7 +283,7 @@ export interface H5PObject {
    * @param library The library identifier in the format "machineName-majorVersion.minorVersion".
    * @returns The full path to the library
    */
-  getLibraryPath: (library: `${string}-${number}.${number}`) => string;
+  getLibraryPath(library: `${string}-${number}.${number}`): string;
 
   /**
    * Find the path to the content files based on the id of the content.
@@ -295,7 +294,7 @@ export interface H5PObject {
    *
    * @returns Complete URL to path
    */
-  getPath: (path: string, contentId: H5PContentId) => string;
+  getPath(path: string, contentId: H5PContentId): string;
 
   /**
    * @private
@@ -307,12 +306,12 @@ export interface H5PObject {
    * @param done Callback with error and data parameters
    * @param subContentId Identifies which data belongs to sub content
    */
-  getUserData: (
+  getUserData(
     contentId: H5PContentId,
     dataId: string,
     done: (error?: Error, data?: Record<string, unknown> | null) => void,
     subContentId?: H5PContentId,
-  ) => void;
+  ): void;
 
   /**
    * Initialize H5P content.
@@ -320,7 +319,7 @@ export interface H5PObject {
    *
    * @param target DOM Element
    */
-  init: (target: HTMLElement) => void;
+  init(target: HTMLElement): void;
 
   /**
    * Recursive function that detects deep empty structures.
@@ -344,12 +343,12 @@ export interface H5PObject {
    * H5P.isEmpty({ a: { b: "" } });
    * ```
    */
-  isEmpty: (value: unknown) => boolean;
+  isEmpty(value: unknown): boolean;
 
   /**
    * Check if JavaScript path/key is loaded
    */
-  jsLoaded: (path: string) => boolean;
+  jsLoaded(path: string): boolean;
 
   /**
    * Parse library string into values.
@@ -358,13 +357,13 @@ export interface H5PObject {
    * @returns library as an object with machineName, majorVersion and minorVersion properties,
    *          or false if the library parameter is invalid
    */
-  libraryFromString: <
+  libraryFromString<
     TLibraryName extends string,
     TMajorVersion extends number,
     TMinorVersion extends number,
   >(
     library: `${TLibraryName} ${TMajorVersion}.${TMinorVersion}`,
-  ) =>
+  ):
     | {
         machineName: TLibraryName;
         majorVersion: TMajorVersion;
@@ -383,7 +382,7 @@ export interface H5PObject {
    *
    * @returns Instance
    */
-  newRunnable: <
+  newRunnable<
     TLibraryParam extends H5PNewRunnableLibraryParam,
     TState = unknown,
   >(
@@ -392,17 +391,17 @@ export interface H5PObject {
     $attachTo?: JQuery,
     skipResize?: boolean,
     extras?: H5PExtrasWithState<TState>,
-  ) => IH5PContentType & {
+  ): IH5PContentType & {
     $: typeof jQuery;
     libraryInfo: H5PLibraryInfo;
     subContentId: TLibraryParam["subContentId"];
   };
 
-  on: <TData = unknown>(
+  on<TData = unknown>(
     instance: EventDispatcher,
     eventType: string,
     handler: (event: H5PEvent<TData>) => void,
-  ) => void;
+  ): void;
 
   /**
    * Display a dialog containing the embed code
@@ -412,7 +411,7 @@ export interface H5PObject {
    * @param resizeCode The advanced resize code
    * @param size The content's size
    */
-  openEmbedDialog: (
+  openEmbedDialog(
     $element: JQuery<HTMLElement>,
     embedCode: string,
     resizeCode: string,
@@ -420,12 +419,12 @@ export interface H5PObject {
       width: number;
       height: number;
     },
-  ) => void;
+  ): void;
 
   /**
    * Display a dialog containing the download button and copy button
    */
-  openReuseDialog: (
+  openReuseDialog(
     $element: JQuery<HTMLElement>,
     contentData: {
       displayOptions: H5PDisplayOptions;
@@ -433,7 +432,7 @@ export interface H5PObject {
     library: ConstructorParameters<typeof H5PClipboardItem>[0],
     instance: IH5PContentType,
     contentId: H5PContentId,
-  ) => void;
+  ): void;
 
   /**
    * Enter semi fullscreen for the given H5P instance
@@ -443,21 +442,21 @@ export interface H5PObject {
    * @param exitCallback Callback function called when user exits fullscreen.
    * @param $body For internal use. Gives the body of the iframe.
    */
-  semiFullScreen: (
+  semiFullScreen(
     $element: Parameters<H5PObject["fullScreen"]>[0],
     instance: Parameters<H5PObject["fullScreen"]>[1],
     exitCallback: Parameters<H5PObject["fullScreen"]>[2],
     $body: Parameters<H5PObject["fullScreen"]>[3],
-  ) => void;
+  ): void;
 
   /**
    * Set item in the H5P Clipboard
    *
    * @param clipboardItem Data to be set
    */
-  setClipboard: <TParams extends Record<string, unknown>>(
+  setClipboard<TParams extends Record<string, unknown>>(
     clipboardItem: H5PClipboardItem<TParams> | TParams,
-  ) => void;
+  ): void;
 
   /**
    * Post finished results for user
@@ -469,12 +468,12 @@ export interface H5PObject {
    * @param maxScore The maximum score/points that can be achieved
    * @param time Reported time consumption/usage
    */
-  setFinished: (
+  setFinished(
     contentId: H5PContentId,
     score: number,
     maxScore: number,
     time?: number,
-  ) => void;
+  ): void;
 
   /**
    * Helper for setting the crossOrigin attribute + the complete correct source.
@@ -484,11 +483,11 @@ export interface H5PObject {
    * @param source File object from parameters/json_content (created by H5PEditor)
    * @param contentId Needed to determine the complete correct file path
    */
-  setSource: (
+  setSource(
     element: HTMLImageElement | HTMLVideoElement | HTMLAudioElement,
     source: H5PMedia,
     contentId: H5PContentId,
-  ) => void;
+  ): void;
 
   /**
    * @private
@@ -505,7 +504,7 @@ export interface H5PObject {
    * @param extras.errorCallback Callback with error as parameters
    * @param extras.async Default: `true`
    */
-  setUserData: (
+  setUserData(
     contentId: H5PContentId,
     dataId: string,
     data: unknown,
@@ -513,17 +512,17 @@ export interface H5PObject {
       subContentId?: H5PContentId;
       preloaded?: boolean;
       deleteOnChange?: boolean;
-      errorCallback?: (error: Error) => void;
+      errorCallback(error: Error): void;
       async?: boolean;
     },
-  ) => void;
+  ): void;
 
   /**
    * Shuffle an array in place
    *
    * @deprecated Use [Array#sort](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort) instead
    */
-  shuffleArray: <T>(array: Array<T>) => Array<T>;
+  shuffleArray<T>(array: Array<T>): Array<T>;
 
   /**
    * Translate text strings.
@@ -535,11 +534,11 @@ export interface H5PObject {
    *
    * @returns Translated text
    */
-  t: (
+  t(
     key: string,
     placeholderVars?: Record<string, string>,
     namespace?: string,
-  ) => string;
+  ): string;
 
   /**
    * Trigger an event on an instance
@@ -551,19 +550,19 @@ export interface H5PObject {
    * @param data
    * @param extras
    */
-  trigger: <TData = unknown>(
+  trigger<TData = unknown>(
     instance: EventDispatcher,
     eventType: Parameters<EventDispatcher["trigger"]>[0],
     data: TData,
     extras: Parameters<EventDispatcher["trigger"]>[2],
-  ) => void;
+  ): void;
 
   /**
    * Remove all empty spaces before and after the value
    *
    * @deprecated Use [`String#trim`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim) instead
    */
-  trim: (value: string) => string;
+  trim(value: string): string;
 
   // --- Classes ---
   jQuery: typeof jQuery;
