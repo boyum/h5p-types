@@ -17,11 +17,15 @@ npm install h5p-types --save-dev
 `h5p-types` depends on TypeScript and requires TypeScript version 5.0.4 or higher to be installed.
 If you need support for TypeScript 4.7, install `h5p-types@2.0.1`.
 
-## Creating a new widget
+## Docs
+
+Go to the [documentation site](https://h5p-types-docs.vercel.app/) to see each type, interface and class in detail.
+
+### Creating a new widget
 
 A new H5P widget is a class that has certain properties and is found on the global `window.H5P` object.
 
-### Example widget
+#### Example widget
 
 ```typescript
 class MyWidget extends H5PWidget implements IH5PWidget {
@@ -48,7 +52,7 @@ class MyWidget extends H5PWidget implements IH5PWidget {
 }
 ```
 
-### Example widget with specified field type
+#### Example widget with specified field type
 
 The `H5PWidget` class infers its `Params` type field based on the type of the first Field type argument. By setting `H5PWidget<H5PFieldText>`, `this.params` is now of type `string`. If it was set to `H5PFieldBoolean` it would be `boolean`, and so on.
 
@@ -77,7 +81,7 @@ class MyWidget extends H5PWidget<H5PFieldText> implements IH5PWidget {
 }
 ```
 
-### Example group widget
+#### Example group widget
 
 If the field type is `H5PFieldGroup`, the type of `this.params` can be anything. Therefore, its type is `unknown | Record<string, unknown>` for now. We can override the Params type to handle this.
 

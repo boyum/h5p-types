@@ -10,7 +10,8 @@
     "publish-to-npm": "release-it",
     "typecheck": "tsc --noEmit",
     "lint:check": "eslint .",
-    "lint:fix": "npm run lint:check -- --fix"
+    "lint:fix": "npm run lint:check -- --fix",
+    "generate-docs": "typedoc ./index.d.ts"
   },
   "dependencies": {
     "@types/jquery": "^3.5.19",
@@ -21,6 +22,7 @@
     "eslint-config-base": "*",
     "release-it": "^16.1.5",
     "tsconfig-base": "*",
+    "typedoc": "^0.25.1",
     "typescript": "^5.0.4"
   },
   "peerDependencies": {
