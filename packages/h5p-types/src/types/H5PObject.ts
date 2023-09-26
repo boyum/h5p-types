@@ -133,6 +133,18 @@ export interface H5PObject {
    *
    * @example
    *
+   * Use `&` to separate parameters
+   *
+   * ```ts
+   * const path = "https://example.com?foo=bar";
+   * const parameter = "baz=qux&quux=quuz";
+   *
+   * const result = H5P.addQueryParameter(path, parameter);
+   * // result === "https://example.com?foo=bar&baz=qux&quux=quuz"
+   * ```
+   *
+   * @example
+   *
    * With hash
    *
    * ```ts
@@ -144,7 +156,7 @@ export interface H5PObject {
    * ```
    *
    * @param path URL to add query parameter to.
-   * @param parameter Query parameter to add on the format `key=value`.
+   * @param parameter Query parameter to add on the format `key1=value1&key2=value2`.
    */
   addQueryParameter(path: string, parameter: string): string;
 
