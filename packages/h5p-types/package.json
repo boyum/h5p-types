@@ -14,7 +14,7 @@
     "generate-docs": "typedoc ./index.d.ts"
   },
   "dependencies": {
-    "@types/jquery": "^3.5.19",
+    "@types/jquery": "^3.5.20",
     "type-fest": "^4.3.1"
   },
   "devDependencies": {
