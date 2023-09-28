@@ -5,6 +5,9 @@ import type { H5PFieldWidgetExtension } from "./H5PFieldWidgetExtension";
 import type { H5PImportance } from "./H5PImportance";
 import type { H5PTextFieldWidgetExtension } from "./H5PTextFieldWidgetExtension";
 
+/**
+ * @category H5PField
+ */
 type H5PFieldCommon = {
   /**
    * Internal name of the field. Must be a valid JavaScript identifier string.
@@ -63,6 +66,79 @@ type H5PFieldCommon = {
   common?: boolean;
 };
 
+/**
+ * @category H5PField
+ *
+ * @see https://h5p.org/semantics
+ *
+ * The H5PField type contains all the different types of fields that
+ * H5P's `semantics.json` describes.
+ *
+ * When defining fields in semantics, the type property is used to mark
+ * what type of field it is. Each field type has its own set of properties
+ * and each field type is described in its own H5PField type.
+ *
+ * H5P fields can be one of the following types:
+ *
+ * - `H5PFieldAudio`
+ * - `H5PFieldBoolean`
+ * - `H5PFieldFile`
+ * - `H5PFieldGroup`
+ * - `H5PFieldImage`
+ * - `H5PFieldLibrary`
+ * - `H5PFieldList`
+ * - `H5PFieldNumber`
+ * - `H5PFieldSelect`
+ * - `H5PFieldText`
+ * - `H5PFieldVideo`
+ *
+ * The `InferParamTypeFromFieldType` utility type can be used to infer
+ * the type of a field based on its type property:
+ *
+ * @example
+ * ```ts
+ * // semantics.json:
+ * [{
+ *   "label": "Name",
+ *   "name": "myName",
+ *   "type": "text"
+ * }]
+ *
+ * // content-type.ts:
+ * import type { InferParamTypeFromFieldType } from "h5p-types";
+ * import semantics from "./semantics.json"
+ *
+ * type NameField = InferParamTypeFromFieldType<typeof semantics[0]>;
+ * // `string`
+ * ```
+ *
+ * The `InferParamsFromSemantics` utility type is a more advanced version
+ * which will infer the type of all fields in a `semantics.json` file:
+ *
+ * @example
+ * ```ts
+ * // semantics.json:
+ * [{
+ *   "label": "Name",
+ *   "name": "myName",
+ *   "type": "text"
+ * },
+ * {
+ *   "label": "Age",
+ *   "name": "myAge",
+ *   "type": "number"
+ * }]
+ *
+ * // content-type.ts:
+ * import type { InferParamsFromSemantics } from "h5p-types";
+ * import semantics from "./semantics.json"
+ *
+ * type Params = InferParamsFromSemantics<typeof semantics>;
+ * // {
+ * //   myName: string;
+ * //   myAge: number;
+ * // }
+ */
 export type H5PField =
   | H5PFieldAudio
   | H5PFieldBoolean

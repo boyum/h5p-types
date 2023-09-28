@@ -11,7 +11,10 @@
     "typecheck": "tsc --noEmit",
     "lint:check": "eslint .",
     "lint:fix": "npm run lint:check -- --fix",
-    "generate-docs": "typedoc ./index.d.ts"
+    "generate-docs": "typedoc ./index.d.ts --plugin typedoc-plugin-coverage --plugin typedoc-plugin-mdn-links --plugin typedoc-umlclass",
+    "generate-docs:serve": "http-server ./docs -p 3000",
+    "generate-docs:watch": "npm run generate-docs -- --watch",
+    "generate-docs:run": "npm-run-all --parallel generate-docs:serve generate-docs:watch"
   },
   "dependencies": {
     "@types/jquery": "^3.5.20",
@@ -20,9 +23,14 @@
   "devDependencies": {
     "@release-it/conventional-changelog": "^7.0.2",
     "eslint-config-base": "*",
+    "http-server": "^14.1.1",
+    "npm-run-all": "^4.1.5",
     "release-it": "^16.2.1",
     "tsconfig-base": "*",
     "typedoc": "^0.25.1",
+    "typedoc-plugin-coverage": "^2.2.0",
+    "typedoc-plugin-mdn-links": "^3.1.0",
+    "typedoc-umlclass": "^0.8.0",
     "typescript": "^5.0.4"
   },
   "peerDependencies": {
