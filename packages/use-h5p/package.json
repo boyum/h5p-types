@@ -56,7 +56,7 @@
     "eslint-config-react": "*",
     "h5p-types": "*",
     "h5p-utils": "*",
-    "happy-dom": "^12.5.0",
+    "happy-dom": "^12.6.0",
     "react-dom": "^18.2.0",
     "release-it": "^16.2.1",
     "tsconfig-react": "*",
