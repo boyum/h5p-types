@@ -24,7 +24,7 @@
     "internal-utilities/*"
   ],
   "devDependencies": {
-    "npm-check-updates": "^16.14.4",
+    "npm-check-updates": "^16.14.5",
     "prettier": "^3.0.3",
     "prettier-config": "github:boyum/prettier-config",
     "turbo": "^1.10.14"
