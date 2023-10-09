@@ -16,7 +16,7 @@
     "eslint-config-base": "*",
     "h5p-types": "*",
     "h5p-types-joubel-ui": "*",
-    "ts-loader": "^9.4.4",
+    "ts-loader": "^9.5.0",
     "tsconfig-base": "*",
     "typescript": "^5.2.2",
     "unplugin-json-dts": "^1.2.0",
