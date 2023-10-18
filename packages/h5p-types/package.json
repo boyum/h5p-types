@@ -17,7 +17,7 @@
     "generate-docs:run": "npm-run-all --parallel generate-docs:serve generate-docs:watch"
   },
   "dependencies": {
-    "@types/jquery": "^3.5.22",
+    "@types/jquery": "^3.5.23",
     "type-fest": "^4.3.1"
   },
   "devDependencies": {
