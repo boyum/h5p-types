@@ -301,7 +301,7 @@ export interface H5PObject {
   fullScreen(
     $element: JQuery,
     instance: IH5PContentType,
-    exitCallback: () => void,
+    exitCallback?: () => void,
     body?: JQuery,
     forceSemiFullScreen?: boolean,
   ): void;
