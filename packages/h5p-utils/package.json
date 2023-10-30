@@ -50,7 +50,7 @@
     "eslint-config-base": "*",
     "h5p-types": "*",
     "release-it": "^16.2.1",
-    "replace-in-file": "^7.0.1",
+    "replace-in-file": "^7.0.2",
     "tsconfig-base": "*",
     "tsup": "^7.2.0",
     "typescript": "^5.0.4"
