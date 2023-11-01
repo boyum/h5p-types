@@ -27,6 +27,6 @@ jobs:
         working-directory: ${{ matrix.project }}
 
       - name: Check and validate ${{ matrix.project }}'s package.json
-        uses: boyum/attw-action@v1
+        uses: boyum/attw-action@v1.1
         with:
           working-directory: ${{ matrix.project }}
