@@ -29,8 +29,5 @@
     "prettier-config": "github:boyum/prettier-config",
     "turbo": "^1.10.16"
   },
-  "prettier": "prettier-config",
-  "dependencies": {
-    "h5p-standalone": "^3.6.0"
-  }
+  "prettier": "prettier-config"
 }
