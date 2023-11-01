@@ -28,6 +28,7 @@ jobs:
           - h5p-content-type-vite
           - h5p-resumable-content-type
           - h5p-widget
+          - h5p-widget-vite
 
         typescript-version:
           - 4.7
