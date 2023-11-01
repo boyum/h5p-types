@@ -24,7 +24,7 @@
   },
   "scripts": {
     "test": "tsc --project demo/tsconfig.json",
-    "build": "tsup index.ts --format esm,cjs --dts",
+    "build": "tsup index.ts --format esm,cjs --dts --clean",
     "publish-to-npm": "release-it",
     "lint:check": "eslint .",
     "lint:fix": "npm run lint:check -- --fix"
