@@ -1,0 +1,26 @@
+{
+  "name": "h5p-content-type-vite",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "watch": "vite",
+    "build": "vite build",
+    "lint:check": "eslint .",
+    "lint:fix": "npm run lint:check -- --fix"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "h5p-utils": "*"
+  },
+  "devDependencies": {
+    "eslint-config-base": "*",
+    "h5p-types": "*",
+    "h5p-types-joubel-ui": "*",
+    "tsconfig-base": "*",
+    "typescript": "5.0",
+    "unplugin-json-dts": "^1.2.0"
+  },
+  "eslintConfig": {
+    "extends": "base"
+  }
+}

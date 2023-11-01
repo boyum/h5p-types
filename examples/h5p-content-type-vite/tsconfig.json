@@ -1,0 +1,4 @@
+{
+  "include": ["src", "h5p-extensions.d.ts"],
+  "extends": "tsconfig-base/index.json"
+}

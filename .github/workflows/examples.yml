@@ -25,6 +25,7 @@ jobs:
         project:
           - h5p-content-type
           - h5p-content-type-react
+          - h5p-content-type-vite
           - h5p-resumable-content-type
           - h5p-widget
 
