@@ -49,7 +49,7 @@
   "homepage": "https://github.com/boyum/h5p-types/tree/main/packages/use-h5p#readme",
   "devDependencies": {
     "@release-it/conventional-changelog": "^7.0.2",
-    "@testing-library/react": "^14.0.0",
+    "@testing-library/react": "^14.1.0",
     "@types/node": "^20.9.0",
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.15",
