@@ -38,26 +38,26 @@ type FieldToParamType<TField extends ReadonlyDeep<H5PFieldWithoutLabel>> =
   TField extends ReadonlyDeep<H5PFieldAudioWithoutLabel>
     ? H5PAudio
     : TField extends ReadonlyDeep<H5PFieldBooleanWithoutLabel>
-    ? boolean
-    : TField extends ReadonlyDeep<H5PFieldFileWithoutLabel>
-    ? H5PMedia
-    : TField extends ReadonlyDeep<H5PFieldGroupWithoutLabel>
-    ? InferGroupParams<TField>
-    : TField extends ReadonlyDeep<H5PFieldImageWithoutLabel>
-    ? H5PImage
-    : TField extends ReadonlyDeep<H5PFieldLibraryWithoutLabel>
-    ? IH5PContentType
-    : TField extends ReadonlyDeep<H5PFieldListWithoutLabel>
-    ? Array<FieldToParamType<TField["field"]>>
-    : TField extends ReadonlyDeep<H5PFieldNumberWithoutLabel>
-    ? number
-    : TField extends ReadonlyDeep<H5PFieldSelectWithoutLabel>
-    ? TField["options"][number]["value"]
-    : TField extends ReadonlyDeep<H5PFieldTextWithoutLabel>
-    ? string
-    : TField extends ReadonlyDeep<H5PFieldVideoWithoutLabel>
-    ? H5PVideo
-    : never;
+      ? boolean
+      : TField extends ReadonlyDeep<H5PFieldFileWithoutLabel>
+        ? H5PMedia
+        : TField extends ReadonlyDeep<H5PFieldGroupWithoutLabel>
+          ? InferGroupParams<TField>
+          : TField extends ReadonlyDeep<H5PFieldImageWithoutLabel>
+            ? H5PImage
+            : TField extends ReadonlyDeep<H5PFieldLibraryWithoutLabel>
+              ? IH5PContentType
+              : TField extends ReadonlyDeep<H5PFieldListWithoutLabel>
+                ? Array<FieldToParamType<TField["field"]>>
+                : TField extends ReadonlyDeep<H5PFieldNumberWithoutLabel>
+                  ? number
+                  : TField extends ReadonlyDeep<H5PFieldSelectWithoutLabel>
+                    ? TField["options"][number]["value"]
+                    : TField extends ReadonlyDeep<H5PFieldTextWithoutLabel>
+                      ? string
+                      : TField extends ReadonlyDeep<H5PFieldVideoWithoutLabel>
+                        ? H5PVideo
+                        : never;
 
 type InferOptional<TField extends ReadonlyDeep<H5PFieldWithoutLabel>> =
   TField["optional"] extends true
@@ -93,5 +93,5 @@ export type InferParamTypeFromFieldType<
 > = TField extends ReadonlyDeep<FieldTypesThatSupportsOnlyOptional>
   ? InferOptional<TField>
   : TField extends ReadonlyDeep<FieldTypesThatSupportsOptionalAndDefault>
-  ? InferOptionalWithDefault<TField>
-  : never;
+    ? InferOptionalWithDefault<TField>
+    : never;

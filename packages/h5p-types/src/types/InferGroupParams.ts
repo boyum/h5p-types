@@ -36,5 +36,5 @@ export type InferGroupParams<
 > = TNumberOfFields extends 0
   ? InferEmptyGroupParams
   : TNumberOfFields extends 1
-  ? InferGroupWithOneFieldParams<TGroupField>
-  : InferGroupWithMultipleFieldsParams<TGroupField>;
+    ? InferGroupWithOneFieldParams<TGroupField>
+    : InferGroupWithMultipleFieldsParams<TGroupField>;
