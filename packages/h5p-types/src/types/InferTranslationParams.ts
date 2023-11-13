@@ -95,7 +95,7 @@ export type TranslationParams<
               ? {}
               : TranslationParamListToString<TRestWords, TPrefix>)
       : TRestWords extends EmptyArray
-      ? {}
-      : TranslationParamListToString<TRestWords, TPrefix>
+        ? {}
+        : TranslationParamListToString<TRestWords, TPrefix>
     : {}
 >;
