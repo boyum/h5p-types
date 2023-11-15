@@ -18,7 +18,7 @@
     "@types/react-dom": "^18.2.15",
     "eslint-config-react": "*",
     "h5p-types": "*",
-    "ts-loader": "^9.5.0",
+    "ts-loader": "^9.5.1",
     "tsconfig-react": "*",
     "typescript": "^5.2.2",
     "unplugin-json-dts": "^1.2.0",
