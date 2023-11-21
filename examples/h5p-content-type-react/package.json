@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@types/react": "^18.2.37",
-    "@types/react-dom": "^18.2.15",
+    "@types/react-dom": "^18.2.16",
     "eslint-config-react": "*",
     "h5p-types": "*",
     "ts-loader": "^9.5.1",
