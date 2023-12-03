@@ -17,7 +17,7 @@
     "h5p-types": "*",
     "h5p-types-joubel-ui": "*",
     "tsconfig-base": "*",
-    "typescript": "^5.2.2",
+    "typescript": "^5.3.2",
     "unplugin-json-dts": "^1.2.0",
     "webpack-cli": "^5.1.4"
   },
