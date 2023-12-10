@@ -1,23 +1,21 @@
 {
   "name": "h5p-qol",
   "displayName": "H5P Quality of Life",
-  "publisher": "sindreboyum",
-  "license": "MIT",
-  "repository": {
-    "url": "https://github.com/boyum/h5p-types.git"
-  },
-  "description": "Quality of life improvements for H5P development in VSCode",
   "version": "0.1.0",
-  "engines": {
-    "vscode": "^1.72.0",
-    "node": ">= 16"
-  },
-  "extensionKind": [
-    "workspace"
-  ],
+  "description": "Quality of life improvements for H5P development in VSCode",
   "categories": [
     "Other"
   ],
+  "repository": {
+    "url": "https://github.com/boyum/h5p-types.git"
+  },
+  "license": "MIT",
+  "publisher": "sindreboyum",
+  "scripts": {
+    "open-in-browser": "vscode-test-web --extensionDevelopmentPath=. .",
+    "package": "vsce package --no-dependencies",
+    "publish": "vsce publish --no-dependencies"
+  },
   "contributes": {
     "jsonValidation": [
       {
@@ -30,11 +28,6 @@
       }
     ]
   },
-  "scripts": {
-    "package": "vsce package --no-dependencies",
-    "publish": "vsce publish --no-dependencies",
-    "open-in-browser": "vscode-test-web --extensionDevelopmentPath=. ."
-  },
   "dependencies": {
     "@actions/languageserver": "*",
     "@vscode/vsce": "^2.22.0",
@@ -42,5 +35,12 @@
   },
   "devDependencies": {
     "@vscode/test-web": "*"
-  }
+  },
+  "engines": {
+    "node": ">= 16",
+    "vscode": "^1.72.0"
+  },
+  "extensionKind": [
+    "workspace"
+  ]
 }

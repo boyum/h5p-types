@@ -2,22 +2,30 @@
   "name": "h5p-types-joubel-ui",
   "version": "2.0.0",
   "description": "Types for H5P JoubelUI",
+  "keywords": [
+    "h5p",
+    "JoubelUI"
+  ],
+  "homepage": "https://github.com/boyum/h5p-types/tree/main/packages/h5p-types-joubel-ui#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boyum/h5p-types.git"
+  },
+  "license": "Apache-2.0",
+  "author": "Sindre Bøyum",
   "types": "index.d.ts",
   "files": [
     "index.d.ts",
     "src"
   ],
   "scripts": {
-    "typecheck": "tsc --noEmit",
     "lint:check": "eslint .",
-    "lint:fix": "npm run lint:check -- --fix"
+    "lint:fix": "npm run lint:check -- --fix",
+    "typecheck": "tsc --noEmit"
   },
-  "keywords": [
-    "h5p",
-    "JoubelUI"
-  ],
-  "author": "Sindre Bøyum",
-  "license": "Apache-2.0",
+  "eslintConfig": {
+    "extends": "base"
+  },
   "devDependencies": {
     "@types/jquery": "^3.5.29",
     "eslint-config-base": "*",
@@ -28,13 +36,5 @@
   },
   "peerDependencies": {
     "h5p-types": ">= 1.17.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/boyum/h5p-types.git"
-  },
-  "homepage": "https://github.com/boyum/h5p-types/tree/main/packages/h5p-types-joubel-ui#readme",
-  "eslintConfig": {
-    "extends": "base"
   }
 }

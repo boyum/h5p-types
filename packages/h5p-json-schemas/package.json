@@ -2,6 +2,16 @@
   "name": "h5p-json-schemas",
   "version": "1.0.0",
   "description": "Schemas for H5P related JSON files",
+  "keywords": [
+    "h5p",
+    "json",
+    "schema"
+  ],
+  "license": "ISC",
+  "author": {
+    "name": "Sindre Bøyum",
+    "url": "https://sinre.dev"
+  },
   "scripts": {
     "generate-base": "typescript-json-schema --skipLibCheck --strictNullCheck --required index.d.ts",
     "generate:library": "npm run generate-base -- H5PLibrary -o public/library.schema.json",
@@ -10,16 +20,6 @@
     "deploy": "vercel --prod",
     "start": "vercel dev"
   },
-  "keywords": [
-    "h5p",
-    "json",
-    "schema"
-  ],
-  "author": {
-    "name": "Sindre Bøyum",
-    "url": "https://sinre.dev"
-  },
-  "license": "ISC",
   "devDependencies": {
     "h5p-types": "*",
     "npm-run-all": "^4.1.5",

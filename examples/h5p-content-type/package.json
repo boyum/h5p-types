@@ -2,13 +2,16 @@
   "name": "h5p-content-type",
   "version": "1.0.0",
   "private": true,
+  "license": "MIT",
   "scripts": {
-    "watch": "webpack serve --hot --mode=development",
     "build": "webpack --mode=production",
     "lint:check": "eslint .",
-    "lint:fix": "npm run lint:check -- --fix"
+    "lint:fix": "npm run lint:check -- --fix",
+    "watch": "webpack serve --hot --mode=development"
   },
-  "license": "MIT",
+  "eslintConfig": {
+    "extends": "base"
+  },
   "dependencies": {
     "h5p-utils": "*"
   },
@@ -22,8 +25,5 @@
     "unplugin-json-dts": "^1.2.0",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4"
-  },
-  "eslintConfig": {
-    "extends": "base"
   }
 }

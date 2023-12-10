@@ -2,13 +2,24 @@
   "name": "use-h5p",
   "version": "2.0.0",
   "description": "React Hooks to be used with H5P",
-  "main": "dist/index.cjs",
-  "types": "dist/index.d.cts",
-  "files": [
-    "dist/**/*",
-    "tsconfig.json"
+  "keywords": [
+    "h5p",
+    "react"
   ],
-  "module": "dist/index.js",
+  "homepage": "https://github.com/boyum/h5p-types/tree/main/packages/use-h5p#readme",
+  "bugs": {
+    "url": "https://github.com/boyum/h5p-types/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boyum/h5p-types.git"
+  },
+  "license": "ISC",
+  "author": {
+    "name": "Sindre Bøyum",
+    "url": "https://sinre.dev"
+  },
+  "type": "module",
   "exports": {
     ".": {
       "import": {
@@ -21,32 +32,26 @@
       }
     }
   },
-  "type": "module",
-  "scripts": {
-    "test": "vitest run",
-    "test:watch": "vitest",
-    "build": "tsup ./src/index.ts --format esm,cjs --dts",
-    "publish-to-npm": "release-it",
-    "lint:check": "eslint .",
-    "lint:fix": "npm run lint:check -- --fix"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/boyum/h5p-types.git"
-  },
-  "keywords": [
-    "h5p",
-    "react"
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.cts",
+  "files": [
+    "dist/**/*",
+    "tsconfig.json"
   ],
-  "author": {
-    "name": "Sindre Bøyum",
-    "url": "https://sinre.dev"
+  "scripts": {
+    "build": "tsup ./src/index.ts --format esm,cjs --dts",
+    "lint:check": "eslint .",
+    "lint:fix": "npm run lint:check -- --fix",
+    "publish-to-npm": "release-it",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/boyum/h5p-types/issues"
+  "eslintConfig": {
+    "extends": [
+      "react"
+    ]
   },
-  "homepage": "https://github.com/boyum/h5p-types/tree/main/packages/use-h5p#readme",
   "devDependencies": {
     "@release-it/conventional-changelog": "^8.0.1",
     "@testing-library/react": "^14.1.2",
@@ -66,10 +71,5 @@
   },
   "peerDependencies": {
     "react": ">= 17.0.1"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react"
-    ]
   }
 }

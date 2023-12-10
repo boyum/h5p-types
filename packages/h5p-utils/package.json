@@ -2,14 +2,23 @@
   "name": "h5p-utils",
   "version": "4.0.0",
   "description": "A set of utility classes and functions to be used when creating H5P widgets and content types.",
-  "type": "module",
-  "main": "dist/index.cjs",
-  "types": "dist/index.d.cts",
-  "files": [
-    "dist/**/*",
-    "tsconfig.json"
+  "keywords": [
+    "h5p"
   ],
-  "module": "dist/index.js",
+  "homepage": "https://github.com/boyum/h5p-types/tree/main/packages/h5p-types#readme",
+  "bugs": {
+    "url": "https://github.com/boyum/h5p-types/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boyum/h5p-types.git"
+  },
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Sindre Bøyum",
+    "url": "https://sinre.dev"
+  },
+  "type": "module",
   "exports": {
     ".": {
       "import": {
@@ -22,29 +31,23 @@
       }
     }
   },
-  "scripts": {
-    "test": "tsc --project demo/tsconfig.json",
-    "build": "tsup index.ts --format esm,cjs --dts",
-    "publish-to-npm": "release-it",
-    "lint:check": "eslint .",
-    "lint:fix": "npm run lint:check -- --fix"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/boyum/h5p-types.git"
-  },
-  "homepage": "https://github.com/boyum/h5p-types/tree/main/packages/h5p-types#readme",
-  "bugs": {
-    "url": "https://github.com/boyum/h5p-types/issues"
-  },
-  "keywords": [
-    "h5p"
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.cts",
+  "files": [
+    "dist/**/*",
+    "tsconfig.json"
   ],
-  "author": {
-    "name": "Sindre Bøyum",
-    "url": "https://sinre.dev"
+  "scripts": {
+    "build": "tsup index.ts --format esm,cjs --dts",
+    "lint:check": "eslint .",
+    "lint:fix": "npm run lint:check -- --fix",
+    "publish-to-npm": "release-it",
+    "test": "tsc --project demo/tsconfig.json"
   },
-  "license": "Apache-2.0",
+  "eslintConfig": {
+    "extends": "base"
+  },
   "devDependencies": {
     "@release-it/conventional-changelog": "^8.0.1",
     "eslint-config-base": "*",
@@ -57,8 +60,5 @@
   },
   "engines": {
     "node": ">= 16"
-  },
-  "eslintConfig": {
-    "extends": "base"
   }
 }

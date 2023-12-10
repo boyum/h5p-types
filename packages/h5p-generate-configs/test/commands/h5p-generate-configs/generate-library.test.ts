@@ -1,5 +1,5 @@
-import { promises as fs } from "fs";
 import { expect, test } from "@oclif/test";
+import { promises as fs } from "fs";
 
 describe("Integration tests", () => {
   describe("generate-library", () => {

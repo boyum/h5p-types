@@ -1,7 +1,7 @@
 import type { JoubelHelpTextDialog } from "./src/JoubelHelpTextDialog";
 import type { JoubelMessageDialog } from "./src/JoubelMessageDialog";
-import type { JoubelProgressbar } from "./src/JoubelProgressbar";
 import type { JoubelProgressCircle } from "./src/JoubelProgressCircle";
+import type { JoubelProgressbar } from "./src/JoubelProgressbar";
 import type { JoubelScoreBar } from "./src/JoubelScoreBar";
 import type { JoubelSlider } from "./src/JoubelSlider";
 import type { JoubelSpeechBubble } from "./src/JoubelSpeechBubble";

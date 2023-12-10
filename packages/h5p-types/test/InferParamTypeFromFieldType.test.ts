@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment, @typescript-eslint/no-unused-vars, @typescript-eslint/no-namespace */
-
 import type { EmptyObject, ReadonlyDeep } from "type-fest";
 import type {
   H5PAudio,

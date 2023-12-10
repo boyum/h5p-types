@@ -2,13 +2,16 @@
   "name": "h5p-widget-vite",
   "version": "1.0.0",
   "private": true,
+  "license": "MIT",
   "scripts": {
-    "watch": "vite",
     "build": "vite build",
     "lint:check": "eslint .",
-    "lint:fix": "npm run lint:check -- --fix"
+    "lint:fix": "npm run lint:check -- --fix",
+    "watch": "vite"
   },
-  "license": "MIT",
+  "eslintConfig": {
+    "extends": "base"
+  },
   "dependencies": {
     "h5p-utils": "*"
   },
@@ -20,8 +23,5 @@
     "typescript": "^5.3.2",
     "unplugin-json-dts": "^1.2.0",
     "webpack-cli": "^5.1.4"
-  },
-  "eslintConfig": {
-    "extends": "base"
   }
 }

@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/ban-types */
-
 import type { Join, Split } from "type-fest";
 import type { Prettify } from "../utility-types";
 

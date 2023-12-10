@@ -1,9 +1,9 @@
 {
   "name": "tsconfig-base",
   "version": "1.0.0",
+  "private": true,
   "type": "module",
   "main": "index.json",
-  "private": true,
   "dependencies": {
     "@tsconfig/strictest": "^2.0.2"
   }

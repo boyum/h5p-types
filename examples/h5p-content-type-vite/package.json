@@ -2,13 +2,16 @@
   "name": "h5p-content-type-vite",
   "version": "1.0.0",
   "private": true,
+  "license": "MIT",
   "scripts": {
-    "watch": "vite",
     "build": "vite build",
     "lint:check": "eslint .",
-    "lint:fix": "npm run lint:check -- --fix"
+    "lint:fix": "npm run lint:check -- --fix",
+    "watch": "vite"
   },
-  "license": "MIT",
+  "eslintConfig": {
+    "extends": "base"
+  },
   "dependencies": {
     "h5p-utils": "*"
   },
@@ -19,8 +22,5 @@
     "tsconfig-base": "*",
     "typescript": "5.0",
     "unplugin-json-dts": "^1.2.0"
-  },
-  "eslintConfig": {
-    "extends": "base"
   }
 }

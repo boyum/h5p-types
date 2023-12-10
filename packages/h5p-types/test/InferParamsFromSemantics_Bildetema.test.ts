@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment, @typescript-eslint/no-unused-vars, @typescript-eslint/no-namespace */
-
 import type { InferParamsFromSemantics } from "..";
 import type { AreEqual, Expect } from "../src/test-utility-types";
 

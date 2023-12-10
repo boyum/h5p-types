@@ -1,6 +1,11 @@
 {
   "name": "h5p-types",
   "version": "4.2.1",
+  "homepage": "https://github.com/boyum/h5p-types/tree/main/packages/h5p-types#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boyum/h5p-types.git"
+  },
   "types": "index.d.ts",
   "files": [
     "index.d.ts",
@@ -15,6 +20,9 @@
     "generate-docs:serve": "http-server ./docs -p 3000",
     "generate-docs:watch": "npm run generate-docs -- --watch",
     "generate-docs:run": "npm-run-all --parallel generate-docs:serve generate-docs:watch"
+  },
+  "eslintConfig": {
+    "extends": "base"
   },
   "dependencies": {
     "@types/jquery": "^3.5.29",
@@ -35,13 +43,5 @@
   },
   "peerDependencies": {
     "typescript": ">= 5.0.4"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/boyum/h5p-types.git"
-  },
-  "homepage": "https://github.com/boyum/h5p-types/tree/main/packages/h5p-types#readme",
-  "eslintConfig": {
-    "extends": "base"
   }
 }

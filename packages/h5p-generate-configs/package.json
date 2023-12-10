@@ -2,29 +2,14 @@
   "name": "h5p-generate-configs",
   "version": "1.0.0",
   "description": "h5p-generate-configs CLI",
+  "homepage": "https://github.com/boyum/h5p-types/tree/main/packages/h5p-generate-configs#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/boyum/h5p-types.git"
   },
-  "homepage": "https://github.com/boyum/h5p-types/tree/main/packages/h5p-generate-configs#readme",
+  "license": "Apache-2.0",
   "bin": {
     "h5p-generate-configs": "./bin/run"
-  },
-  "scripts": {
-    "build": "shx rm -rf dist && tsc -b",
-    "prepublishOnly": "npm run build",
-    "test": "npm run test:unit",
-    "test:unit": "jest src/**/*.test.ts",
-    "test:unit:watch": "jest --watch",
-    "test:unit:coverage": "jest --coverage",
-    "demo:semantics": "h5p-generate-configs s --type-definition demo/semantics.ts --out demo/semantics.json -t demo/TranslationKey.ts",
-    "demo:library": "h5p-generate-configs l --type-definition demo/library.ts --out demo/library.json",
-    "publish-to-npm": "release-it",
-    "lint:check": "eslint .",
-    "lint:fix": "npm run lint:check -- --fix",
-    "version": "oclif readme && git add README.md",
-    "postpack": "shx rm -f oclif.manifest.json",
-    "prepack": "npm run build && oclif manifest && oclif readme"
   },
   "files": [
     "/bin",
@@ -32,28 +17,31 @@
     "/npm-shrinkwrap.json",
     "/oclif.manifest.json"
   ],
-  "license": "Apache-2.0",
+  "scripts": {
+    "build": "shx rm -rf dist && tsc -b",
+    "demo:library": "h5p-generate-configs l --type-definition demo/library.ts --out demo/library.json",
+    "demo:semantics": "h5p-generate-configs s --type-definition demo/semantics.ts --out demo/semantics.json -t demo/TranslationKey.ts",
+    "lint:check": "eslint .",
+    "lint:fix": "npm run lint:check -- --fix",
+    "prepack": "npm run build && oclif manifest && oclif readme",
+    "postpack": "shx rm -f oclif.manifest.json",
+    "prepublishOnly": "npm run build",
+    "publish-to-npm": "release-it",
+    "test": "npm run test:unit",
+    "test:unit": "jest src/**/*.test.ts",
+    "test:unit:coverage": "jest --coverage",
+    "test:unit:watch": "jest --watch",
+    "version": "oclif readme && git add README.md"
+  },
+  "eslintConfig": {
+    "extends": "base"
+  },
   "jest": {
     "preset": "ts-jest",
     "testEnvironment": "node",
     "testMatch": [
       "**/*.test.ts"
     ]
-  },
-  "oclif": {
-    "bin": "h5p-generate-configs",
-    "dirname": "h5p-generate-configs",
-    "commands": "./dist/commands",
-    "plugins": [
-      "@oclif/plugin-help",
-      "@oclif/plugin-plugins"
-    ],
-    "topicSeparator": " ",
-    "topics": {
-      "h5p-generate-configs": {
-        "description": "Generate TS and JSON definitions for H5P"
-      }
-    }
   },
   "dependencies": {
     "@oclif/core": "^3.14.1",
@@ -77,7 +65,19 @@
     "ts-jest": "^29.1.1",
     "typescript": "^5.3.2"
   },
-  "eslintConfig": {
-    "extends": "base"
+  "oclif": {
+    "bin": "h5p-generate-configs",
+    "dirname": "h5p-generate-configs",
+    "commands": "./dist/commands",
+    "plugins": [
+      "@oclif/plugin-help",
+      "@oclif/plugin-plugins"
+    ],
+    "topicSeparator": " ",
+    "topics": {
+      "h5p-generate-configs": {
+        "description": "Generate TS and JSON definitions for H5P"
+      }
+    }
   }
 }

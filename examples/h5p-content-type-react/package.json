@@ -2,11 +2,14 @@
   "name": "h5p-content-type-react",
   "version": "1.0.0",
   "private": true,
-  "scripts": {
-    "watch": "webpack serve --hot --mode=development",
-    "build": "webpack --mode=production"
-  },
   "license": "MIT",
+  "scripts": {
+    "build": "webpack --mode=production",
+    "watch": "webpack serve --hot --mode=development"
+  },
+  "eslintConfig": {
+    "extends": "react"
+  },
   "dependencies": {
     "h5p-utils": "*",
     "react": "^18.2.0",
@@ -24,8 +27,5 @@
     "unplugin-json-dts": "^1.2.0",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4"
-  },
-  "eslintConfig": {
-    "extends": "react"
   }
 }
