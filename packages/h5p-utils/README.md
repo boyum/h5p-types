@@ -121,7 +121,6 @@ export class MyWidget extends H5PWidget<Field> {
 }
 ```
 
-
 #### Example widget
 
 ```typescript
