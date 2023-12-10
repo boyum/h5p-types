@@ -8,6 +8,8 @@ type H5PFieldWithoutLabel = Omit<H5PField, "label">;
 /**
  * @category H5PField
  *
+ * @description
+ *
  * Infer the params type from a semantics array.
  *
  * ⚠️ Use with caution - If the semantics form has very many fields, this might not work.
