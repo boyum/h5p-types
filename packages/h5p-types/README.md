@@ -20,3 +20,11 @@ If you need support for TypeScript 4.7, install `h5p-types@2.0.1`.
 ## Docs
 
 Go to the [documentation site](https://h5p-types-docs.vercel.app/) to see each type, interface and class in detail.
+
+Featured types and interfaces:
+
+- [`H5PObject`](https://h5p-types-docs.vercel.app/interfaces/H5PObject.html) - The global `H5P` object.
+- [`H5PEditor`](https://h5p-types-docs.vercel.app/interfaces/H5PEditorObject.html) - The global `H5PEditor` object.
+- [`IH5PContentType`](https://h5p-types-docs.vercel.app/interfaces/IH5PContentType.html) - The interface for content types.
+- [`IH5PWidget`](https://h5p-types-docs.vercel.app/interfaces/IH5PWidget.html) - The interface for widgets.
+- [`InferParamsFromSemantics`](https://h5p-types-docs.vercel.app/types/InferParamsFromSemantics.html) - A utility type that infers the params type from a semantics object.

@@ -19,6 +19,7 @@
  * for your widget. It sets up the widget and adds the constructor parameters as
  * properties on the class. It also extends the `H5P.EventDispatcher` class, which
  * allows you to use the `trigger` and `on` methods to trigger and listen to events.
+ *
  * ⚠️ If you decide not to extend the `H5PWidget` class, you will have to extend
  * `H5P.EventDispatcher` yourself.
  *
