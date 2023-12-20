@@ -11,6 +11,7 @@
   },
   "license": "MIT",
   "publisher": "sindreboyum",
+  "type": "module",
   "scripts": {
     "open-in-browser": "vscode-test-web --extensionDevelopmentPath=. .",
     "package": "vsce package --no-dependencies",
