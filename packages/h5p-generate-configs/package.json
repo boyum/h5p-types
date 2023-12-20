@@ -8,6 +8,7 @@
     "url": "git+https://github.com/boyum/h5p-types.git"
   },
   "license": "Apache-2.0",
+  "type": "module",
   "bin": {
     "h5p-generate-configs": "./bin/run"
   },

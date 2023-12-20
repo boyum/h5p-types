@@ -1,4 +1,4 @@
-import type { OptionType } from "../types/OptionType";
+import type { OptionType } from "../types/OptionType.js";
 
 export const getOption = <Type = unknown>(
   parameters: Record<string, Type>,

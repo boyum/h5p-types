@@ -1,6 +1,6 @@
 import { Command, Flags } from "@oclif/core";
 import { join } from "path";
-import { generateSemantics } from "../../utils/semantics.utils";
+import { generateSemantics } from "../../utils/semantics.utils.js";
 
 const getPath = (path: string): string => {
   const isAbsolute = path.startsWith("/");
