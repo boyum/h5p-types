@@ -1,5 +1,5 @@
-import type { OptionType } from "../types/OptionType";
-import { getOption } from "./cli.utils";
+import type { OptionType } from "../types/OptionType.js";
+import { getOption } from "./cli.utils.js";
 
 describe("CLI Utils", () => {
   describe(getOption.name, () => {

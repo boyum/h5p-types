@@ -1,8 +1,8 @@
 import { Command } from "@oclif/core";
 import { existsSync, promises as fs } from "fs";
 import type { H5PBehaviour, H5PField, H5PL10n, H5PSemantics } from "h5p-types";
-import { findDuplicates } from "./array.utils";
-import { createJsonFile } from "./file.utils";
+import { findDuplicates } from "./array.utils.js";
+import { createJsonFile } from "./file.utils.js";
 
 const isH5PL10n = (obj: H5PField | H5PBehaviour | H5PL10n): obj is H5PL10n => {
   return obj.name === "l10n";

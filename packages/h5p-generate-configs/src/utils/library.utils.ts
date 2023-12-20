@@ -1,6 +1,6 @@
 import { Command } from "@oclif/core";
 import type { H5PLibrary } from "h5p-types";
-import { createJsonFile } from "./file.utils";
+import { createJsonFile } from "./file.utils.js";
 
 async function readLibraryTSFile(path: string): Promise<H5PLibrary> {
   const { library }: { library: H5PLibrary } = await import(path);

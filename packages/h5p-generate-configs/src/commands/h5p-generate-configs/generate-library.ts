@@ -1,6 +1,6 @@
 import { Command, Flags } from "@oclif/core";
 import { join } from "path";
-import { generateLibrary } from "../../utils/library.utils";
+import { generateLibrary } from "../../utils/library.utils.js";
 
 const getPath = (path: string): string => {
   const isAbsolute = path.startsWith("/");
