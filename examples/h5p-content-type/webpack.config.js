@@ -1,20 +1,18 @@
-/* eslint-disable no-undef, @typescript-eslint/no-var-requires */
 // @ts-check
+import { join, resolve } from "node:path";
+import jsonDts from "unplugin-json-dts/webpack";
 
-const path = require("path");
+const __dirname = resolve();
 
 const config = {
   entry: {
-    "h5p-content-type": path.join(__dirname, "src", "h5p-content-type.ts"),
+    "h5p-content-type": join(__dirname, "src", "h5p-content-type.ts"),
   },
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: resolve(__dirname, "dist"),
     filename: "[name].js",
   },
-  plugins: [
-    // @ts-expect-error - unplugin-json-dts is not typed correctly
-    require("unplugin-json-dts/webpack")(),
-  ],
+  plugins: [jsonDts()],
   module: {
     rules: [
       {
@@ -26,4 +24,4 @@ const config = {
   },
 };
 
-module.exports = config;
+export default config;
