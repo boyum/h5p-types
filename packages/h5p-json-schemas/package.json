@@ -12,6 +12,7 @@
     "name": "Sindre Bøyum",
     "url": "https://sinre.dev"
   },
+  "type": "module",
   "scripts": {
     "generate-base": "typescript-json-schema --skipLibCheck --strictNullCheck --required index.d.ts",
     "generate:library": "npm run generate-base -- H5PLibrary -o public/library.schema.json",
