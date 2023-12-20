@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "build": "webpack --mode=production",
     "watch": "webpack serve --hot --mode=development"
