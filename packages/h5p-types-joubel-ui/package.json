@@ -13,6 +13,7 @@
   },
   "license": "Apache-2.0",
   "author": "Sindre Bøyum",
+  "type": "module",
   "types": "index.d.ts",
   "files": [
     "index.d.ts",
