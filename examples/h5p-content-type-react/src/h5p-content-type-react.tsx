@@ -11,7 +11,7 @@ import {
   useTranslation,
 } from "use-h5p";
 import library from "../library.json";
-import { Params } from "./types/semantics";
+import { Params } from "./types/semantics.js";
 
 const DemoApp: React.FC = () => {
   const contentId = useContentId();
