@@ -4,6 +4,7 @@ import type { H5PCommunicator } from "./H5PCommunicator";
 import type { H5PConfirmationDialog } from "./H5PConfirmationDialog";
 import type { H5PContentCopyrights } from "./H5PContentCopyrights";
 import type { H5PContentId } from "./H5PContentId";
+import type { H5PContentType } from "./H5PContentType";
 import type { H5PCoords } from "./H5PCoords";
 import type { H5PCopyrightLicenses } from "./H5PCopyrightLicenses";
 import type { H5PDefinitionList } from "./H5PDefinitionList";
@@ -700,6 +701,18 @@ export interface H5PObject {
    * Copyrights for an H5P Content Library
    */
   ContentCopyrights: typeof H5PContentCopyrights;
+
+  /**
+   * H5P.ContentType is a base class for all content types. Used by newRunnable().
+   *
+   * Functions here may be overridable by the libraries. In special cases,
+   * it is also possible to override H5P.ContentType on a global level.
+   *
+   * NOTE that this doesn't actually 'extend' the event dispatcher but instead
+   * it creates a single instance which all content types shares as their base
+   * prototype. (in some cases this may be the root of strange event behavior)
+   */
+  ContentType: typeof H5PContentType;
 
   /**
    * @deprecated
