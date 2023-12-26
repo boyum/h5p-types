@@ -22,6 +22,10 @@ import type { H5PVersion } from "./classes/H5PVersion";
 import type { H5PCopyrightLicenses } from "./types/H5PCopyrightLicenses";
 import type { H5PExtrasWithState } from "./types/H5PExtrasWithState";
 
+/**
+ * This is an interface which represents the `window.H5P`, or simply `H5P`, object in the H5P Core library.
+ * The object works as a namespace for a lot of utilities and classes that are used when creating both widgets and content types in H5P.
+ */
 export interface H5PObject {
   // --- Properties ---
   $body: JQuery<HTMLBodyElement>;
