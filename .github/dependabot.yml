@@ -4,6 +4,23 @@ updates:
     package-ecosystem: npm
     schedule:
       interval: daily
+    groups:
+      storybook:
+        patterns:
+          - storybook
+          - "@storybook/*"
+
+      eslint:
+        patterns:
+          - eslint
+          - eslint-*
+          - "@eslint/*"
+          - "@typescript-eslint/*"
+          
+      oclif:
+        patterns:
+          - oclif
+          - "@oclif/*"
 
   - directory: /
     package-ecosystem: github-actions
