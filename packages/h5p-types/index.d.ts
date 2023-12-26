@@ -4,11 +4,9 @@ export { H5PBehaviour } from "./src/types/H5PBehaviour";
 export { H5PCCVersions } from "./src/types/H5PCCVersions";
 export { H5PContentId } from "./src/types/H5PContentId";
 export { H5PCopyright } from "./src/types/H5PCopyright";
-export { H5PCopyrightLicenses } from "./src/types/H5PCopyrightLicenses";
 export { H5PDisplayOptions } from "./src/types/H5PDisplayOptions";
 export { H5PEnterMode } from "./src/types/H5PEnterMode";
 export { H5PExtras } from "./src/types/H5PExtras";
-export { H5PExtrasWithState } from "./src/types/H5PExtrasWithState";
 export {
   H5PField,
   H5PFieldAudio,
@@ -33,7 +31,6 @@ export { H5PL10n } from "./src/types/H5PL10n";
 export { H5PLibrary } from "./src/types/H5PLibrary";
 export { H5PLibraryInfo } from "./src/types/H5PLibraryInfo";
 export { H5PMedia } from "./src/types/H5PMedia";
-export { H5PMediaCopyright } from "./src/types/H5PMediaCopyright";
 export { H5PMetadata } from "./src/types/H5PMetadata";
 export { H5PMetadataForm } from "./src/types/H5PMetadataForm";
 export { H5PNewRunnableLibraryParam } from "./src/types/H5PNewRunnableLibraryParam";
@@ -43,21 +40,12 @@ export { H5PSetValue } from "./src/types/H5PSetValue";
 // Object structs
 export { H5PEditorObject } from "./src/types/H5PEditorObject";
 export { H5PIntegrationObject } from "./src/types/H5PIntegrationObject";
-export { H5PObject } from "./src/types/H5PObject";
 
 // Classes
 export { EventDispatcher } from "./src/types/EventDispatcher";
-export { H5PClipboardItem } from "./src/types/H5PClipboardItem";
-export { H5PCommunicator } from "./src/types/H5PCommunicator";
 export { H5PConfirmationDialog } from "./src/types/H5PConfirmationDialog";
-export { H5PContentCopyrights } from "./src/types/H5PContentCopyrights";
-export { H5PCoords } from "./src/types/H5PCoords";
-export { H5PDefinitionList } from "./src/types/H5PDefinitionList";
-export { H5PDialog } from "./src/types/H5PDialog";
 export { H5PEditorContentType } from "./src/types/H5PEditorContentType";
 export { H5PEvent } from "./src/types/H5PEvent";
-export { H5PFieldClass } from "./src/types/H5PFieldClass";
-export { H5PThumbnail } from "./src/types/H5PThumbnail";
 export { H5PVideo } from "./src/types/H5PVideo";
 
 // Enums
@@ -94,3 +82,18 @@ export { XAPIEvent } from "./src/types/XAPI/XAPIEvent";
 export { XAPIInteractionType } from "./src/types/XAPI/XAPIInteractionType";
 export { XAPIStatement } from "./src/types/XAPI/XAPIStatement";
 export { XAPIVerb } from "./src/types/XAPI/XAPIVerb";
+
+// H5PObject and related types and classes
+export { H5PClipboardItem } from "./src/H5PObject/classes/H5PClipboardItem";
+export { H5PCommunicator } from "./src/H5PObject/classes/H5PCommunicator";
+export { H5PContentCopyrights } from "./src/H5PObject/classes/H5PContentCopyrights";
+export { H5PCoords } from "./src/H5PObject/classes/H5PCoords";
+export { H5PCopyrightLicenses } from "./src/H5PObject/types/H5PCopyrightLicenses";
+export { H5PDefinitionList } from "./src/H5PObject/classes/H5PDefinitionList";
+export { H5PDialog } from "./src/H5PObject/classes/H5PDialog";
+export { H5PExtrasWithState } from "./src/H5PObject/types/H5PExtrasWithState";
+export { H5PFieldClass } from "./src/H5PObject/classes/H5PFieldClass";
+export { H5PMediaCopyright } from "./src/H5PObject/classes/H5PMediaCopyright";
+export { H5PObject } from "./src/H5PObject/H5PObject";
+export { H5PThumbnail } from "./src/H5PObject/classes/H5PThumbnail";
+export { H5PVersion } from "./src/H5PObject/classes/H5PVersion";

@@ -1,25 +1,26 @@
-import type { EventDispatcher } from "./EventDispatcher";
-import type { H5PClipboardItem } from "./H5PClipboardItem";
-import type { H5PCommunicator } from "./H5PCommunicator";
-import type { H5PConfirmationDialog } from "./H5PConfirmationDialog";
-import type { H5PContentCopyrights } from "./H5PContentCopyrights";
-import type { H5PContentId } from "./H5PContentId";
-import type { H5PContentType } from "./H5PContentType";
-import type { H5PCoords } from "./H5PCoords";
-import type { H5PCopyrightLicenses } from "./H5PCopyrightLicenses";
-import type { H5PDefinitionList } from "./H5PDefinitionList";
-import type { H5PDialog } from "./H5PDialog";
-import type { H5PDisplayOptions } from "./H5PDisplayOptions";
-import type { H5PEvent } from "./H5PEvent";
-import type { H5PExtrasWithState } from "./H5PExtrasWithState";
-import type { H5PFieldClass } from "./H5PFieldClass";
-import type { H5PLibraryInfo } from "./H5PLibraryInfo";
-import type { H5PMedia } from "./H5PMedia";
-import type { H5PMediaCopyright } from "./H5PMediaCopyright";
-import type { H5PMetadata } from "./H5PMetadata";
-import type { H5PNewRunnableLibraryParam } from "./H5PNewRunnableLibraryParam";
-import type { H5PThumbnail } from "./H5PThumbnail";
-import type { IH5PContentType } from "./Interfaces/IH5PContentType";
+import type { EventDispatcher } from "../types/EventDispatcher";
+import type { H5PConfirmationDialog } from "../types/H5PConfirmationDialog";
+import type { H5PContentId } from "../types/H5PContentId";
+import type { H5PDisplayOptions } from "../types/H5PDisplayOptions";
+import type { H5PEvent } from "../types/H5PEvent";
+import type { H5PLibraryInfo } from "../types/H5PLibraryInfo";
+import type { H5PMedia } from "../types/H5PMedia";
+import type { H5PMetadata } from "../types/H5PMetadata";
+import type { H5PNewRunnableLibraryParam } from "../types/H5PNewRunnableLibraryParam";
+import type { IH5PContentType } from "../types/Interfaces/IH5PContentType";
+import type { H5PClipboardItem } from "./classes/H5PClipboardItem";
+import type { H5PCommunicator } from "./classes/H5PCommunicator";
+import type { H5PContentCopyrights } from "./classes/H5PContentCopyrights";
+import type { H5PContentType } from "./classes/H5PContentType";
+import type { H5PCoords } from "./classes/H5PCoords";
+import type { H5PDefinitionList } from "./classes/H5PDefinitionList";
+import type { H5PDialog } from "./classes/H5PDialog";
+import type { H5PFieldClass } from "./classes/H5PFieldClass";
+import type { H5PMediaCopyright } from "./classes/H5PMediaCopyright";
+import type { H5PThumbnail } from "./classes/H5PThumbnail";
+import type { H5PVersion } from "./classes/H5PVersion";
+import type { H5PCopyrightLicenses } from "./types/H5PCopyrightLicenses";
+import type { H5PExtrasWithState } from "./types/H5PExtrasWithState";
 
 export interface H5PObject {
   // --- Properties ---
@@ -433,6 +434,8 @@ export interface H5PObject {
   init(target: HTMLElement): void;
 
   /**
+   * @since next version after 1.24.4 (not released as of 2023-12-26)
+   *
    * Recursive function that detects deep empty structures.
    *
    * Will return true if the value is `null`, `undefined`, an empty string, an empty array or an empty object.
@@ -741,4 +744,6 @@ export interface H5PObject {
    * A simple and elegant class for creating thumbnails of images
    */
   Thumbnail: typeof H5PThumbnail;
+
+  Version: typeof H5PVersion;
 }
