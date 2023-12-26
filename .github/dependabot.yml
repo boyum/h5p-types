@@ -16,7 +16,7 @@ updates:
           - eslint-*
           - "@eslint/*"
           - "@typescript-eslint/*"
-          
+
       oclif:
         patterns:
           - oclif
