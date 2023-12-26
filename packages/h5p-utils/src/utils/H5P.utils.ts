@@ -3,10 +3,15 @@ import type { H5PContentType } from "../models/H5PContentType";
 import type { H5PResumableContentType } from "../models/H5PResumableContentType";
 import type { H5PWidget } from "../models/H5PWidget";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const H5P: H5PObject = (window as any).H5P ?? {};
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const H5PEditor: H5PEditorObject = (window as any).H5PEditor ?? {};
+declare global {
+  interface Window {
+    H5P: H5PObject;
+    H5PEditor: H5PEditorObject;
+  }
+}
+
+export const H5P = window.H5P ?? {};
+export const H5PEditor = window.H5PEditor ?? {};
 
 /**
  * Get absolute path to image from relative parameters path
@@ -23,10 +28,10 @@ export const getImageUrl = (imagePath: string | undefined): string | null => {
     return null;
   }
 
-  const imagePathIsAbsolute =
+  const imagePathIsUrl =
     imagePath.startsWith("http://") || imagePath.startsWith("https://");
 
-  const imageUrl = imagePathIsAbsolute
+  const imageUrl = imagePathIsUrl
     ? imagePath
     : getAbsoluteUrlFromRelativePath(imagePath);
 
@@ -45,8 +50,8 @@ export const registerContentType = <TParams = unknown, TState = unknown>(
 
 /**
  * @param h5pName The widget's logical name, usually in PascalCase
- * @param widgetName The name that's used when using the widget in semantics.json (e. g. `html`, `showWhen`)
- * @param widget
+ * @param widgetName The name that's used when using the widget in semantics.json (e.g. `html`, `showWhen`)
+ * @param widget The widget class implementation
  */
 export const registerWidget = <
   TField extends H5PField = H5PField,
