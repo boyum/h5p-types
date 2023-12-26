@@ -1,4 +1,4 @@
-import type { EventDispatcher } from "./EventDispatcher";
+import type { EventDispatcher } from "../../types/EventDispatcher";
 
 export declare class H5PContentType extends EventDispatcher {
   /**
