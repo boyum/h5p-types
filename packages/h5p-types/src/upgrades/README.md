@@ -92,7 +92,7 @@ type H5PUpgrades = {
   [libraryName: string]: {
     [majorVersion: number]: {
       [minorVersion: number]: (
-        params: unknown,
+        params: any,
         finished: H5PUpgradeFinished,
       ) => void;
     };

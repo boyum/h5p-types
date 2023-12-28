@@ -22,9 +22,8 @@ type H5PUpgradeError =
     }
   | string;
 
-type H5PUpgradeFinished =
-  | ((error: null, params: unknown) => void)
-  | ((error: H5PUpgradeError, params?: unknown) => void);
+type H5PUpgradeFinished = ((error: null, params: unknown) => void) &
+  ((error: H5PUpgradeError, params?: unknown) => void);
 
 /**
  * When updating the major or minor version of a content type, it's possible to run a script to upgrade/migrate existing content.
@@ -94,7 +93,8 @@ export type H5PUpgrades = {
   [libraryName: string]: {
     [majorVersion: number]: {
       [minorVersion: number]: (
-        params: unknown,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        params: any,
         finished: H5PUpgradeFinished,
       ) => void;
     };
