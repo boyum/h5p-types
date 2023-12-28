@@ -9,7 +9,9 @@ The minor versions should be functions which take the content type's params (fro
 
 It's advised to add thorough comments on each upgrade function, so it's easy to understand what's happening, since the scripts might be run years after they were written.
 
-```ts
+`upgrades.js`:
+
+```js
 // `H5PUpgrades` might not be defined yet, so we need to create it.
 window.H5PUpgrades = window.H5PUpgrades || {};
 
@@ -48,3 +50,84 @@ window.H5PUpgrades.MyContentType = {
 
 When adding a new version number to the script, be sure _not_ to change the existing ones.
 This is because the script will be run for each version, and the content type might be upgraded from any version to the latest.
+
+## Typing the upgrade script
+
+The upgrade script is run in the browser, so it's not possible to use TypeScript to type it.
+However, it's possible to use JSDoc to type the script, and get _some_ type checking in the editor.
+
+Because of the nature of the script, it's hard to type the `params` argument, since it can change between versions.
+However, it's possible to type the `finished` callback, which is the same for all versions.
+
+```ts
+type H5PUpgradeError =
+  | {
+      type: "errorTooHighVersion";
+      used: string;
+      supported: string;
+    }
+  | {
+      type: "errorNotSupported";
+      used: string;
+    }
+  | {
+      type: "errorParamsBroken";
+      id: number | string;
+    }
+  | {
+      type: "libraryMissing";
+      library: string;
+    }
+  | {
+      type: "scriptMissing";
+      library: string;
+    }
+  | string;
+
+type H5PUpgradeFinished =
+  | ((error: null, params: unknown) => void)
+  | ((error: H5PUpgradeError, params?: unknown) => void);
+
+type H5PUpgrades = {
+  [libraryName: string]: {
+    [majorVersion: number]: {
+      [minorVersion: number]: (
+        params: unknown,
+        finished: H5PUpgradeFinished,
+      ) => void;
+    };
+  };
+};
+```
+
+The types above are defined in `H5PUpgrades.ts` in this package, and is exported as `H5PUpgrades`.
+We can use them with the `@ts-check` comment at the top of the file to get type checking in the editor.
+
+`upgrades.js`:
+
+```js
+// Turn on type checking for this JavaScript file.
+// @ts-check
+
+/** @type {import('h5p-types').H5PUpgrades} */
+window.H5PUpgrades = window.H5PUpgrades || {};
+
+window.H5PUpgrades.MyContentType = {
+  1: {
+    0: (/** @type {Record<string, unknown>} */ params, finished) => {
+      if (typeof params.text !== "string") {
+        finished(
+          `The \`text\` field was expected to be a string, but was a ${typeof params.text}"`,
+        );
+
+        return;
+      }
+
+      // Trim params.text
+      params.text = params.text.trim();
+
+      finished(null, params);
+    },
+  },
+};
+```
