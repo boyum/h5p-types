@@ -2,6 +2,6 @@
   "compilerOptions": {
     "verbatimModuleSyntax": true
   },
-  "include": ["src", "index.d.ts", "test"],
+  "include": ["src", "index.d.ts", "test", "test/upgrades.js"],
   "extends": "tsconfig-base/index.json"
 }

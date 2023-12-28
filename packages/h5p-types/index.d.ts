@@ -97,3 +97,6 @@ export { H5PMediaCopyright } from "./src/H5PObject/classes/H5PMediaCopyright";
 export { H5PObject } from "./src/H5PObject/H5PObject";
 export { H5PThumbnail } from "./src/H5PObject/classes/H5PThumbnail";
 export { H5PVersion } from "./src/H5PObject/classes/H5PVersion";
+
+// Upgrade types
+export { H5PUpgrades } from "./src/upgrades/Upgrades";
