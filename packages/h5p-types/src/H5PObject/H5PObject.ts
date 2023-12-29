@@ -752,6 +752,8 @@ export interface H5PObject {
 
   /**
    * Create an accessible tooltip
+   *
+   * @since 1.25 / moodle-1.23
    */
   Tooltip: typeof H5PTooltip;
 
