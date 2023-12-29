@@ -1,5 +1,15 @@
 # Changelog
 
+## [5.0.0](https://github.com/boyum/h5p-types/compare/h5p-types-4.3.0...5.0.0) (2023-12-29)
+
+
+### Build System
+
+* **h5p-types-joubel-ui:** cjs -> esm ([#634](https://github.com/boyum/h5p-types/issues/634)) ([c42c3db](https://github.com/boyum/h5p-types/commit/c42c3db2984f692784247914174462e54f55b81d))
+* **h5p-types-joubel-ui:** install release-it ([4363e8c](https://github.com/boyum/h5p-types/commit/4363e8c80130eccf934f6e939edcf4561738d714))
+* **h5p-types:** change from cjs to esm ([#655](https://github.com/boyum/h5p-types/issues/655)) ([2de84c0](https://github.com/boyum/h5p-types/commit/2de84c0a95be3f8aa7e59629f6b33123f52d6bef))
+* switch root project to esm ([#251](https://github.com/boyum/h5p-types/issues/251)) ([1c1627f](https://github.com/boyum/h5p-types/commit/1c1627f44f301096a79a385ac62563a5f248c17f))
+
 ## [4.3.0](https://github.com/boyum/h5p-types/compare/4.2.2...4.3.0) (2023-12-29)
 
 
