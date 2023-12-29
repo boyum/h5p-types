@@ -1,13 +1,13 @@
 {
   "name": "h5p-types-root",
   "version": "1.0.0",
-  "type": "module",
   "private": true,
   "license": "Apache-2.0",
   "author": {
     "name": "Sindre Bøyum",
     "url": "https://sinre.dev"
   },
+  "type": "module",
   "workspaces": [
     "packages/*",
     "examples/*",
