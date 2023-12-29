@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.1.0](https://github.com/boyum/h5p-types/compare/h5p-types-5.0.0...5.1.0) (2023-12-29)
+
+
+### Code Refactoring
+
+* **h5p-types:** change `H5PField*` into interfaces ([#409](https://github.com/boyum/h5p-types/issues/409)) ([026d198](https://github.com/boyum/h5p-types/commit/026d198d733a8aa33b463081c8a67b22a9e8a64c))
+
 ## [5.0.0](https://github.com/boyum/h5p-types/compare/h5p-types-4.3.0...5.0.0) (2023-12-29)
 
 
