@@ -1,5 +1,56 @@
 # Changelog
 
+## [4.3.0](https://github.com/boyum/h5p-types/compare/4.2.2...4.3.0) (2023-12-29)
+
+
+### Features
+
+* **h5p-types:** `upgrades.js` typing and documentation ([#652](https://github.com/boyum/h5p-types/issues/652)) ([9521bb2](https://github.com/boyum/h5p-types/commit/9521bb2bfaeb8414bcb0310d68711c53d880ba18))
+* **h5p-types:** H5P Version ([#650](https://github.com/boyum/h5p-types/issues/650)) ([b10f911](https://github.com/boyum/h5p-types/commit/b10f911526d0a046195e770d8be6b4eeea54fc53))
+* **h5p-types:** H5P.ContentType ([#649](https://github.com/boyum/h5p-types/issues/649)) ([a20b20a](https://github.com/boyum/h5p-types/commit/a20b20a35a8991a7afa323c5943682c690b23f56))
+* **h5p-types:** improve upgrade function's params type ([2ccdbac](https://github.com/boyum/h5p-types/commit/2ccdbac4d75c786afa0f1f700fa7c1dbd3b77eec))
+
+
+### Bug Fixes
+
+* **h5p-types:** improve upgrade function's params type ([d83242e](https://github.com/boyum/h5p-types/commit/d83242ede41a7b015ec55af689b0af4b226985dc))
+
+
+### Code Refactoring
+
+* **h5p-utils:** small improvements to utils code ([6ed3fdb](https://github.com/boyum/h5p-types/commit/6ed3fdb8a212ed4b13351c9232e473ffd474db49))
+
+
+### Build System
+
+* **deps-dev:** bump @oclif/test from 3.1.5 to 3.1.7 ([#641](https://github.com/boyum/h5p-types/issues/641)) ([2fa56f3](https://github.com/boyum/h5p-types/commit/2fa56f36263f28835594ee2bbc9de8391e6e5af6))
+* **deps-dev:** bump @types/react from 18.2.45 to 18.2.46 ([#653](https://github.com/boyum/h5p-types/issues/653)) ([13a1e14](https://github.com/boyum/h5p-types/commit/13a1e14ec3d8a4a4c4b59b8a85d63a885a334b11))
+* **deps-dev:** bump chai from 4.3.10 to 5.0.0 ([#654](https://github.com/boyum/h5p-types/issues/654)) ([b215152](https://github.com/boyum/h5p-types/commit/b2151520a2e1e6a9a0243be4f55c6fe06d8bc58b))
+* **deps-dev:** bump eslint-plugin-prettier from 5.1.0 to 5.1.1 ([#636](https://github.com/boyum/h5p-types/issues/636)) ([a43e829](https://github.com/boyum/h5p-types/commit/a43e8295ca7cc8627f7dedc47accf2f1c9ac7fa5))
+* **deps-dev:** bump eslint-plugin-prettier from 5.1.1 to 5.1.2 ([#642](https://github.com/boyum/h5p-types/issues/642)) ([59da705](https://github.com/boyum/h5p-types/commit/59da7052493912e3ec80c7b6e9b0f80d1259cc47))
+* **deps-dev:** bump replace-in-file from 7.0.2 to 7.1.0 ([#651](https://github.com/boyum/h5p-types/issues/651)) ([03fe1e4](https://github.com/boyum/h5p-types/commit/03fe1e4c571e4ff811a1db4667b32378f07f897a))
+* **deps-dev:** bump the eslint group with 2 updates ([#647](https://github.com/boyum/h5p-types/issues/647)) ([c49d253](https://github.com/boyum/h5p-types/commit/c49d2538f2844d48dcbeffd0ff2a6769cda40b71))
+* **deps-dev:** bump typedoc-plugin-mdn-links from 3.1.8 to 3.1.9 ([#640](https://github.com/boyum/h5p-types/issues/640)) ([57d4393](https://github.com/boyum/h5p-types/commit/57d4393188fb645e9fc6f4b885b06600992164e1))
+* **deps-dev:** bump vercel from 32.7.2 to 33.0.0 ([#622](https://github.com/boyum/h5p-types/issues/622)) ([ce689dc](https://github.com/boyum/h5p-types/commit/ce689dcf7e5def38c70e0b8b11e87fe01d72d676))
+* **deps-dev:** bump vercel from 33.0.0 to 33.0.1 ([#635](https://github.com/boyum/h5p-types/issues/635)) ([4513942](https://github.com/boyum/h5p-types/commit/45139423ad4e3aedb0b99a70267b374530a61020))
+* **deps-dev:** bump vitest from 1.0.4 to 1.1.0 ([#623](https://github.com/boyum/h5p-types/issues/623)) ([23621e2](https://github.com/boyum/h5p-types/commit/23621e2d2cdfe1e418e7cdafb7e7fadd57228d62))
+* **deps:** bump @oclif/core from 3.15.0 to 3.15.1 ([#643](https://github.com/boyum/h5p-types/issues/643)) ([15a3254](https://github.com/boyum/h5p-types/commit/15a325410535cc36deaaec896a4d35f4c7681cbd))
+* **deps:** bump the oclif group with 1 update ([#648](https://github.com/boyum/h5p-types/issues/648)) ([ca645fb](https://github.com/boyum/h5p-types/commit/ca645fb710595dc0aa4a90fc08ea70a3303898c6))
+* **example-content-type-react:** switch to esm ([#626](https://github.com/boyum/h5p-types/issues/626)) ([4a94b6d](https://github.com/boyum/h5p-types/commit/4a94b6da2ef510c9b2204519d2503bc1358d84fc))
+* **example-content-type-vite:** switch to esm ([#627](https://github.com/boyum/h5p-types/issues/627)) ([0208f2b](https://github.com/boyum/h5p-types/commit/0208f2b16e626c3ae1d084a120f63febd0e7b6de))
+* **example-content-type:** switch to esm ([#625](https://github.com/boyum/h5p-types/issues/625)) ([3b8bb22](https://github.com/boyum/h5p-types/commit/3b8bb2272a96c3ce6e381d58707895fb346d790e))
+* **example-resumable-content-type:** switch to esm ([#628](https://github.com/boyum/h5p-types/issues/628)) ([8381397](https://github.com/boyum/h5p-types/commit/8381397cac2a15235a997d53abf31c8d348d04c1))
+* **example-widget-vite:** switch to esm ([#630](https://github.com/boyum/h5p-types/issues/630)) ([706426e](https://github.com/boyum/h5p-types/commit/706426ec748c53efcddd203ad2ac43f44d84448b))
+* **example-widget:** switch to esm ([#629](https://github.com/boyum/h5p-types/issues/629)) ([5cf1395](https://github.com/boyum/h5p-types/commit/5cf1395fc4970f7e521f396eb302f9c68570ef65))
+* **h5p-generate-semantics:** cjs -> esm ([#631](https://github.com/boyum/h5p-types/issues/631)) ([36a804d](https://github.com/boyum/h5p-types/commit/36a804d65ce361067f8618fe19c85c25900fce5c))
+* **h5p-json-schemas:** cjs -> esm ([#632](https://github.com/boyum/h5p-types/issues/632)) ([267f01b](https://github.com/boyum/h5p-types/commit/267f01be14088a8bff836994e05149ae4f2b114f))
+* **h5p-qol-vscode-extension:** cjs -> esm ([#633](https://github.com/boyum/h5p-types/issues/633)) ([21fa842](https://github.com/boyum/h5p-types/commit/21fa84230bc97830fb7277cfbd716c742fcfc9aa))
+
+
+### Continuous Integration
+
+* group 3rd party dependencies ([9e4a90f](https://github.com/boyum/h5p-types/commit/9e4a90f1456d1978a8c51572ed8d0d549b9c29cf))
+
 ## [4.2.2](https://github.com/boyum/h5p-types/compare/4.2.1...4.2.2) (2023-12-20)
 
 
