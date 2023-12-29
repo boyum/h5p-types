@@ -24,6 +24,7 @@ jobs:
       matrix:
         project:
           - h5p-content-type
+          - h5p-content-type-cjs
           - h5p-content-type-react
           - h5p-content-type-vite
           - h5p-resumable-content-type

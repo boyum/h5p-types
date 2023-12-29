@@ -10,8 +10,6 @@ jobs:
     strategy:
       matrix:
         project:
-          - packages/h5p-types
-          - packages/h5p-types-joubel-ui
           - packages/h5p-utils
           - packages/use-h5p
 
