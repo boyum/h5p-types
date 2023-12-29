@@ -88,13 +88,15 @@ type H5PUpgradeFinished =
   | ((error: null, params: unknown) => void)
   | ((error: H5PUpgradeError, params?: unknown) => void);
 
+type H5PUpgradeFunction = <TParams = any>(
+  params: TParams,
+  finished: H5PUpgradeFinished,
+) => void;
+
 type H5PUpgrades = {
   [libraryName: string]: {
     [majorVersion: number]: {
-      [minorVersion: number]: (
-        params: any,
-        finished: H5PUpgradeFinished,
-      ) => void;
+      [minorVersion: number]: H5PUpgradeFunction;
     };
   };
 };

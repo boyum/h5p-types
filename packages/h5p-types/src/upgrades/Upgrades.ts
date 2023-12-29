@@ -25,6 +25,13 @@ type H5PUpgradeError =
 type H5PUpgradeFinished = ((error: null, params: unknown) => void) &
   ((error: H5PUpgradeError, params?: unknown) => void);
 
+// Type `TParams` as `any` to avoid the excessive type-checking that would happen if it was set to `unknown`.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type H5PUpgradeFunction = <TParams = any>(
+  params: TParams,
+  finished: H5PUpgradeFinished,
+) => void;
+
 /**
  * When updating the major or minor version of a content type, it's possible to run a script to upgrade/migrate existing content.
  * Create a `upgrades.js` file in the root directory, and it will be run _in the browser_ when the content type is upgraded in the editor.
@@ -92,11 +99,7 @@ type H5PUpgradeFinished = ((error: null, params: unknown) => void) &
 export type H5PUpgrades = {
   [libraryName: string]: {
     [majorVersion: number]: {
-      [minorVersion: number]: (
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        params: any,
-        finished: H5PUpgradeFinished,
-      ) => void;
+      [minorVersion: number]: H5PUpgradeFunction;
     };
   };
 };
