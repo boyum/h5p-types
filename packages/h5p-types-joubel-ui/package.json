@@ -25,15 +25,18 @@
   "scripts": {
     "lint:check": "eslint .",
     "lint:fix": "npm run lint:check -- --fix",
+    "publish-to-npm": "release-it",
     "typecheck": "tsc --noEmit"
   },
   "eslintConfig": {
     "extends": "base"
   },
   "devDependencies": {
+    "@release-it/conventional-changelog": "^8.0.1",
     "@types/jquery": "^3.5.29",
     "eslint-config-base": "*",
     "h5p-types": "*",
+    "release-it": "^17.0.1",
     "tsconfig-base": "*",
     "type-fest": "^4.3.1",
     "typescript": "^5.0.4"
