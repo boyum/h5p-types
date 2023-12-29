@@ -1,0 +1,30 @@
+{
+  "name": "h5p-content-type-cjs",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "type": "commonjs",
+  "scripts": {
+    "build": "webpack --mode=production",
+    "lint:check": "eslint .",
+    "lint:fix": "npm run lint:check -- --fix",
+    "watch": "webpack serve --hot --mode=development"
+  },
+  "eslintConfig": {
+    "extends": "base"
+  },
+  "dependencies": {
+    "h5p-utils": "*"
+  },
+  "devDependencies": {
+    "eslint-config-base": "*",
+    "h5p-types": "*",
+    "h5p-types-joubel-ui": "*",
+    "ts-loader": "^9.5.1",
+    "tsconfig-base": "*",
+    "typescript": "5.0",
+    "unplugin-json-dts": "^1.2.0",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
