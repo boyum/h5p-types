@@ -25,10 +25,10 @@ type H5PUpgradeError =
 type H5PUpgradeFinished = ((error: null, params: unknown) => void) &
   ((error: H5PUpgradeError, params?: unknown) => void);
 
-// Type `TParams` as `any` to avoid the excessive type-checking that would happen if it was set to `unknown`.
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-type H5PUpgradeFunction = <TParams = any>(
-  params: TParams,
+type H5PUpgradeFunction = (
+  // Type `params` as `any` to avoid the excessive type-checking that would happen if it was set to `unknown`.
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  params: any,
   finished: H5PUpgradeFinished,
 ) => void;
 
