@@ -47,10 +47,10 @@
   "dependencies": {
     "@oclif/core": "^3.15.1",
     "@oclif/plugin-help": "^6.0.9",
-    "@oclif/plugin-plugins": "^4.1.12"
+    "@oclif/plugin-plugins": "^4.1.13"
   },
   "devDependencies": {
-    "@oclif/test": "^3.1.7",
+    "@oclif/test": "^3.1.8",
     "@types/jest": "^29.5.11",
     "@types/node": "^20.10.6",
     "chai": "^5.0.0",
