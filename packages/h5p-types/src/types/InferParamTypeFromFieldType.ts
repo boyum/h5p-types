@@ -90,8 +90,9 @@ type FieldTypesThatSupportsOptionalAndDefault =
 
 export type InferParamTypeFromFieldType<
   TField extends ReadonlyDeep<H5PFieldWithoutLabel>,
-> = TField extends ReadonlyDeep<FieldTypesThatSupportsOnlyOptional>
-  ? InferOptional<TField>
-  : TField extends ReadonlyDeep<FieldTypesThatSupportsOptionalAndDefault>
-    ? InferOptionalWithDefault<TField>
-    : never;
+> =
+  TField extends ReadonlyDeep<FieldTypesThatSupportsOnlyOptional>
+    ? InferOptional<TField>
+    : TField extends ReadonlyDeep<FieldTypesThatSupportsOptionalAndDefault>
+      ? InferOptionalWithDefault<TField>
+      : never;
