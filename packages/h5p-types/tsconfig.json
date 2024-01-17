@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "verbatimModuleSyntax": true,
-    "outDir": "dist"
+    "outDir": "dist",
   },
   "include": ["src", "index.d.ts", "test", "test/upgrades.js"],
-  "extends": "tsconfig-base/index.json"
+  "extends": "tsconfig-base/index.json",
 }
