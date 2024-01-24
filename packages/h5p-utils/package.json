@@ -52,7 +52,7 @@
     "@release-it/conventional-changelog": "^8.0.1",
     "eslint-config-base": "*",
     "h5p-types": "*",
-    "release-it": "^17.0.1",
+    "release-it": "^17.0.3",
     "replace-in-file": "^7.1.0",
     "tsconfig-base": "*",
     "tsup": "^8.0.1",
