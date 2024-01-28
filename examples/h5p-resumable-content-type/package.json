@@ -15,7 +15,6 @@
     "h5p-utils": "*"
   },
   "devDependencies": {
-    "eslint-config-base": "*",
     "h5p-types": "*",
     "ts-loader": "^9.5.1",
     "tsconfig-base": "*",

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-types */
 import type { Join, Split } from "type-fest";
 import type { Prettify } from "../utility-types";
 
@@ -87,14 +86,18 @@ export type TranslationParams<
     ? StartsWith<TFirstWord, TPrefix> extends true
       ? TFirstWord extends TPrefix
         ? TRestWords extends EmptyArray
-          ? {}
+          ? // biome-ignore lint/complexity/noBannedTypes: {} is allowed in this file
+            {}
           : TranslationParamListToString<TRestWords, TPrefix>
         : Record<TrimEnd<TFirstWord, StopChars>, string> &
             (TRestWords extends EmptyArray
-              ? {}
+              ? // biome-ignore lint/complexity/noBannedTypes: {} is allowed in this file
+                {}
               : TranslationParamListToString<TRestWords, TPrefix>)
       : TRestWords extends EmptyArray
-        ? {}
+        ? // biome-ignore lint/complexity/noBannedTypes: {} is allowed in this file
+          {}
         : TranslationParamListToString<TRestWords, TPrefix>
-    : {}
+    : // biome-ignore lint/complexity/noBannedTypes: {} is allowed in this file
+      {}
 >;

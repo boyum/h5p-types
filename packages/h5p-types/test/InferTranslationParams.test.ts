@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars, @typescript-eslint/ban-ts-comment, @typescript-eslint/no-namespace */
 import type { TranslationHasParams, TranslationParams } from "..";
 import type { AreEqual, Expect } from "../src/test-utility-types";
 
@@ -12,7 +11,7 @@ namespace Test_InferParams_One {
 
   // @ts-ignore Test
   type Test =
-    // prettier-ignore
+    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
@@ -30,7 +29,7 @@ namespace Test_InferParams_Multiple {
 
   // @ts-ignore Test
   type Test =
-    // prettier-ignore
+    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
@@ -48,7 +47,7 @@ namespace Test_InferParams_MultiLine {
 
   // @ts-ignore Test
   type Test =
-    // prettier-ignore
+    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
@@ -60,7 +59,7 @@ namespace Test_HasParams_True {
 
   // @ts-ignore Test
   type Test =
-    // prettier-ignore
+    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
@@ -72,7 +71,7 @@ namespace Test_HasParams_True {
 
   // @ts-ignore Test
   type Test =
-    // prettier-ignore
+    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
@@ -84,7 +83,7 @@ namespace Test_HasParams_False {
 
   // @ts-ignore Test
   type Test =
-    // prettier-ignore
+    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
@@ -96,7 +95,7 @@ namespace Test_HasParams_SpecifiedPrefix {
 
   // @ts-ignore Test
   type Test =
-    // prettier-ignore
+    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
@@ -117,6 +116,6 @@ namespace Test_InferParams_SpecifiedPrefix {
 
   // @ts-ignore Test
   type Test =
-    // prettier-ignore
+    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }

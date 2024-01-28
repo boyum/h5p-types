@@ -223,9 +223,7 @@ export interface H5PObject {
    */
   clipboardify<
     TParams extends Record<string, unknown> = Record<string, unknown>,
-  >(
-    clipboardItem: H5PClipboardItem<TParams> | TParams,
-  ): void;
+  >(clipboardItem: H5PClipboardItem<TParams> | TParams): void;
 
   /**
    * Recursively clone the given object

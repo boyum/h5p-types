@@ -1,5 +1,5 @@
-import { Command } from "@oclif/core";
 import { existsSync, promises as fs } from "fs";
+import { Command } from "@oclif/core";
 import type { H5PBehaviour, H5PField, H5PL10n, H5PSemantics } from "h5p-types";
 import { findDuplicates } from "./array.utils.js";
 import { createJsonFile } from "./file.utils.js";
@@ -27,7 +27,7 @@ async function createTranslationKeys(
   semantics: H5PSemantics,
   translationKeyOutputPath: string,
 ): Promise<void> {
-  const translationField = semantics.find(field =>
+  const translationField = semantics.find((field) =>
     isH5PL10n(field),
   ) as H5PL10n | null;
 

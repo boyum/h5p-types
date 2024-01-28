@@ -56,7 +56,6 @@
     "chai": "^5.1.1",
     "copyfiles": "^2.4.1",
     "esbuild-register": "^3.5.0",
-    "eslint-config-base": "*",
     "h5p-types": "*",
     "jest": "^29.7.0",
     "mocha": "^10.4.0",

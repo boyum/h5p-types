@@ -44,7 +44,7 @@ export const registerContentType = <TParams = unknown, TState = unknown>(
     | typeof H5PContentType<TParams>
     | typeof H5PResumableContentType<TParams, TState>,
 ): void => {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // biome-ignore lint/suspicious/noExplicitAny: The way to register an H5P content type is to add a new key to the global H5P object
   (H5P as any)[name] = contentType;
 };
 

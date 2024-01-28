@@ -17,7 +17,6 @@
     "h5p-utils": "*"
   },
   "devDependencies": {
-    "eslint-config-base": "*",
     "h5p-types": "*",
     "h5p-types-joubel-ui": "*",
     "tsconfig-base": "*",

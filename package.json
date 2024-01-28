@@ -8,27 +8,16 @@
     "url": "https://sinre.dev"
   },
   "type": "module",
-  "workspaces": [
-    "packages/*",
-    "examples/*",
-    "internal-utilities/*"
-  ],
+  "workspaces": ["packages/*", "examples/*", "internal-utilities/*"],
   "scripts": {
     "build": "turbo run build",
-    "format:check": "npm run prettier -- --check",
-    "format:fix": "npm run prettier -- --write",
-    "lint:check": "turbo run lint:check",
-    "lint:fix": "turbo run lint:fix",
-    "prettier": "prettier .",
+    "code-style": "biome ci .",
+    "code-style:fix": "biome check . --apply",
     "test": "turbo run test",
-    "typecheck": "turbo run typecheck",
-    "update-deps": "ncu -u --deep"
+    "typecheck": "turbo run typecheck"
   },
-  "prettier": "prettier-config",
   "devDependencies": {
-    "npm-check-updates": "^16.14.20",
-    "prettier": "^3.2.5",
-    "prettier-config": "github:boyum/prettier-config",
+    "@biomejs/biome": "1.5.3",
     "turbo": "^1.13.3"
   }
 }
