@@ -15,7 +15,7 @@ export default defineConfig({
 
     rollupOptions: {
       output: {
-        assetFileNames: assetInfo => {
+        assetFileNames: (assetInfo) => {
           // For some reason, an H5P content type's style file cannot be named `style.css`.
           // Therefore we need to change the name before saving it.
           if (assetInfo.name === "style.css") {
