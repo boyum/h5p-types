@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars, @typescript-eslint/ban-ts-comment, @typescript-eslint/no-namespace */
 import type { H5PFieldGroup, InferL10nType } from "..";
 import type { AreEqual, Expect } from "../src/test-utility-types";
 
@@ -28,6 +27,6 @@ namespace Test_InferL10nType {
 
   // @ts-ignore Test
   type Test =
-    // prettier-ignore
+    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }

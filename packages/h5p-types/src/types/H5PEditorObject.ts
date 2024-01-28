@@ -108,11 +108,7 @@ export interface H5PEditorObject extends Record<string, unknown> {
    */
   checkErrors<
     TValue extends string | boolean | number | Record<string, unknown>,
-  >(
-    $errors: JQuery,
-    $input: JQuery,
-    value: TValue,
-  ): TValue | false;
+  >($errors: JQuery, $input: JQuery, value: TValue): TValue | false;
 
   /**
    * Confirm replace if there is content selected
@@ -269,10 +265,7 @@ export interface H5PEditorObject extends Record<string, unknown> {
   findField<
     TField extends H5PForm = IH5PFieldInstance,
     TParent extends H5PForm = H5PForm,
-  >(
-    path: string | Array<string>,
-    parent: TParent,
-  ): TField | false;
+  >(path: string | Array<string>, parent: TParent): TField | false;
 
   /**
    * Find the nearest library ancestor. Used when adding common fields.

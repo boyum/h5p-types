@@ -1,0 +1,31 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.5.3/schema.json",
+  "organizeImports": {
+    "enabled": true
+  },
+  "formatter": {
+    "enabled": true,
+    "indentWidth": 2,
+    "indentStyle": "space"
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true
+    }
+  },
+  "files": {
+    "ignore": [
+      "CHANGELOG.md",
+      "library.json.d.ts",
+      "semantics.json.d.ts",
+      "*.schema.json",
+      ".vscode-test-web",
+      "packages/h5p-generate-configs/demo/",
+      "packages/h5p-generate-configs/bin/",
+      "packages/h5p-types/**/*.js",
+      "packages/h5p-types/index.d.ts",
+      "**/dist/**/*"
+    ]
+  }
+}

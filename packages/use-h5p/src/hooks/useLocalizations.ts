@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { L10nContext } from "../contexts/LocalizationContext";
 import { TranslationKey } from "../types/Translations";
 import { getFallbackString } from "../utils";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import type { useTranslation } from "./useTranslation";
 
 /**
@@ -31,7 +30,7 @@ export const useLocalizations = <
   const translations = useContext(L10nContext);
 
   return Object.fromEntries(
-    translationKeys.map(key => [
+    translationKeys.map((key) => [
       key,
       translations[key] ?? getFallbackString(key),
     ]),

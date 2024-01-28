@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars, @typescript-eslint/ban-ts-comment, @typescript-eslint/no-namespace */
 import type { H5PObject } from "h5p-types";
 import type { AreEqual, Expect } from "./test-utility-types.js";
 
@@ -9,25 +8,21 @@ H5P.JoubelUI.createScoreBar(1, "", "", "").appendTo("");
 const button1 = H5P.JoubelUI.createButton({ class: "foo" });
 const button2 = H5P.JoubelUI.createButton({});
 
-// prettier-ignore
+// biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
 // @ts-expect-error
-type Test1 = 
-  Expect<AreEqual<typeof button1, JQuery<HTMLButtonElement>>>;
+type Test1 = Expect<AreEqual<typeof button1, JQuery<HTMLButtonElement>>>;
 
-// prettier-ignore
+// biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
 // @ts-expect-error
-type Test2 = 
-  Expect<AreEqual<typeof button2, JQuery<HTMLButtonElement>>>;
+type Test2 = Expect<AreEqual<typeof button2, JQuery<HTMLButtonElement>>>;
 
 const link1 = H5P.JoubelUI.createButton({ class: "foo", href: "abc" });
 const link2 = H5P.JoubelUI.createButton({ href: "abc" });
 
-// prettier-ignore
+// biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
 // @ts-expect-error
-type Test3 =
-  Expect<AreEqual<typeof link1, JQuery<HTMLAnchorElement>>>;
+type Test3 = Expect<AreEqual<typeof link1, JQuery<HTMLAnchorElement>>>;
 
-// prettier-ignore
+// biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
 // @ts-expect-error
-type Test4 = 
-  Expect<AreEqual<typeof link2, JQuery<HTMLAnchorElement>>>;
+type Test4 = Expect<AreEqual<typeof link2, JQuery<HTMLAnchorElement>>>;

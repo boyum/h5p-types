@@ -1,12 +1,10 @@
 #!/usr/bin/env node
-/* eslint-disable no-undef */
-/* eslint-disable @typescript-eslint/no-var-requires */
 
-const { run } = require('@oclif/core');
-const { register } = require('esbuild-register/dist/node');
+const { run } = require("@oclif/core");
+const { register } = require("esbuild-register/dist/node");
 
 // In dev mode -> use dev plugins
-process.env.NODE_ENV = 'development';
+process.env.NODE_ENV = "development";
 
 register();
 
@@ -14,6 +12,4 @@ register();
 oclif.settings.debug = true;
 
 // Start the CLI
-run()
-  .then(oclif.flush)
-  .catch(oclif.Errors.handle);
+run().then(oclif.flush).catch(oclif.Errors.handle);

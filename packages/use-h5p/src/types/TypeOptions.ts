@@ -3,7 +3,7 @@
  */
 type $MergeBy<T, K> = Omit<T, keyof K> & K;
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
+// biome-ignore lint/suspicious/noEmptyInterface: `CustomTypeOptions` is to be extended by the consumer, and should be empty
 export interface CustomTypeOptions {}
 
 export type TypeOptions = $MergeBy<
