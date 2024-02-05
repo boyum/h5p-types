@@ -50,7 +50,7 @@
     "@oclif/plugin-plugins": "^4.2.1"
   },
   "devDependencies": {
-    "@oclif/test": "^3.1.13",
+    "@oclif/test": "^3.1.14",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.11.16",
     "chai": "^5.0.3",
@@ -60,7 +60,7 @@
     "h5p-types": "*",
     "jest": "^29.7.0",
     "mocha": "^10.2.0",
-    "oclif": "^4.4.2",
+    "oclif": "^4.4.4",
     "release-it": "^17.0.3",
     "shx": "^0.3.4",
     "ts-jest": "^29.1.2",
