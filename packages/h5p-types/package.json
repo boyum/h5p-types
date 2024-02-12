@@ -40,7 +40,7 @@
     "release-it": "^17.0.3",
     "tsconfig-base": "*",
     "typedoc": "^0.25.7",
-    "typedoc-plugin-coverage": "^3.0.0",
+    "typedoc-plugin-coverage": "^3.1.0",
     "typedoc-plugin-mdn-links": "^3.1.15",
     "typedoc-umlclass": "^0.8.0",
     "typescript": "^5.0.4"
