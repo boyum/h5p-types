@@ -36,7 +36,7 @@
     "@types/jquery": "^3.5.29",
     "eslint-config-base": "*",
     "h5p-types": "*",
-    "release-it": "^17.0.3",
+    "release-it": "^17.0.5",
     "tsconfig-base": "*",
     "type-fest": "^4.3.1",
     "typescript": "^5.0.4"
