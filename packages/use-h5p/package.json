@@ -63,7 +63,7 @@
     "h5p-utils": "*",
     "happy-dom": "^13.3.8",
     "react-dom": "^18.2.0",
-    "release-it": "^17.0.5",
+    "release-it": "^17.1.1",
     "tsconfig-react": "*",
     "tsup": "^8.0.2",
     "typescript": "^5.3.2",
