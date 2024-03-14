@@ -45,12 +45,12 @@
     ]
   },
   "dependencies": {
-    "@oclif/core": "^3.23.0",
+    "@oclif/core": "^3.25.0",
     "@oclif/plugin-help": "^6.0.18",
-    "@oclif/plugin-plugins": "^4.3.4"
+    "@oclif/plugin-plugins": "^4.3.5"
   },
   "devDependencies": {
-    "@oclif/test": "^3.2.3",
+    "@oclif/test": "^3.2.5",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.11.27",
     "chai": "^5.1.0",
