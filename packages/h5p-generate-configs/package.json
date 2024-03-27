@@ -59,7 +59,7 @@
     "eslint-config-base": "*",
     "h5p-types": "*",
     "jest": "^29.7.0",
-    "mocha": "^10.3.0",
+    "mocha": "^10.4.0",
     "oclif": "^4.6.3",
     "release-it": "^17.1.1",
     "shx": "^0.3.4",
