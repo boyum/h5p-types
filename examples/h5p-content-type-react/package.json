@@ -18,7 +18,7 @@
     "use-h5p": "*"
   },
   "devDependencies": {
-    "@types/react": "^18.2.74",
+    "@types/react": "^18.2.75",
     "@types/react-dom": "^18.2.24",
     "eslint-config-react": "*",
     "h5p-types": "*",
