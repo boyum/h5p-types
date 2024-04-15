@@ -45,12 +45,12 @@
     ]
   },
   "dependencies": {
-    "@oclif/core": "^3.26.2",
-    "@oclif/plugin-help": "^6.0.20",
-    "@oclif/plugin-plugins": "^5.0.7"
+    "@oclif/core": "^3.26.3",
+    "@oclif/plugin-help": "^6.0.21",
+    "@oclif/plugin-plugins": "^5.0.9"
   },
   "devDependencies": {
-    "@oclif/test": "^3.2.9",
+    "@oclif/test": "^3.2.10",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.12.6",
     "chai": "^5.1.0",
@@ -60,7 +60,7 @@
     "h5p-types": "*",
     "jest": "^29.7.0",
     "mocha": "^10.4.0",
-    "oclif": "^4.8.0",
+    "oclif": "^4.8.5",
     "release-it": "^17.2.0",
     "shx": "^0.3.4",
     "ts-jest": "^29.1.2",
