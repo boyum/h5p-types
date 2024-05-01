@@ -13,12 +13,12 @@
   },
   "dependencies": {
     "h5p-utils": "*",
-    "react": "^18.2.0",
+    "react": "^18.3.1",
     "react-dom": "^18.2.0",
     "use-h5p": "*"
   },
   "devDependencies": {
-    "@types/react": "^18.2.79",
+    "@types/react": "^18.3.1",
     "@types/react-dom": "^18.2.25",
     "eslint-config-react": "*",
     "h5p-types": "*",
