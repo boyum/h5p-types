@@ -32,8 +32,8 @@ jobs:
           - h5p-widget-vite
 
         typescript-version:
-          - 4.7
-          - 5
+          - "4.7"
+          - "5"
 
     steps:
       - name: Checkout code
