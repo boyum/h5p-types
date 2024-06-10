@@ -742,5 +742,7 @@ namespace Test_InferParamsFromSemantics_Bildetema {
   type Actual = InferParamsFromSemantics<typeof $defaultExport>;
 
   // @ts-ignore Test
-  type Test = Expect<AreEqual<Actual, Expected>>;
+  type Test =
+    // prettier-ignore
+    Expect<AreEqual<Actual, Expected>>;
 }
