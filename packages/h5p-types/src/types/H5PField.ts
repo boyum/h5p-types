@@ -18,7 +18,7 @@ type H5PFieldCommon = {
    *
    * @see https://h5p.org/semantics#attribute-label
    */
-  label: string;
+  label?: string;
 
   /**
    * Description displayed with the field in the editor.
@@ -157,6 +157,7 @@ export interface H5PFieldText extends H5PFieldCommon {
   regexp?: string;
   enterMode?: H5PEnterMode;
   font?: string;
+  placeholder?: string;
 
   /**
    * This attribute is used to give more detailed instructions and contains two parts, i.e description and example.
@@ -193,6 +194,8 @@ export interface H5PFieldNumber extends H5PFieldCommon {
    * @see https://h5p.org/semantics#attribute-decimals
    */
   decimals?: number;
+
+  unit?: string;
 }
 
 export interface H5PFieldBoolean extends H5PFieldCommon {
@@ -254,6 +257,11 @@ export interface H5PFieldList extends H5PFieldCommon {
    * @see https://h5p.org/semantics#attribute-entity
    */
   entity: string;
+
+  /**
+   * @default 1
+   */
+  defaultNum?: number;
 }
 
 export interface H5PFieldSelect extends H5PFieldCommon {
