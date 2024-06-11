@@ -193,7 +193,7 @@ namespace Test_ListField_Group {
 
   type Expected = Array<{
     name: string;
-    age: number | undefined;
+    age?: number | undefined;
   }>;
 
   type Actual = InferParamTypeFromFieldType<FieldType>;
@@ -235,7 +235,7 @@ namespace Test_ListField_Group {
 
   type Expected = Array<{
     name: string;
-    age: number | undefined;
+    age?: number | undefined;
   }>;
   type Actual = InferParamTypeFromFieldType<FieldType>;
 
@@ -272,7 +272,7 @@ namespace Test_ListField_Group_NoLabel {
 
   type Expected = Array<{
     name: string;
-    age: number | undefined;
+    age?: number | undefined;
   }>;
   type Actual = InferParamTypeFromFieldType<FieldType>;
 

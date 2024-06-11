@@ -1,7 +1,10 @@
 import type { ReadonlyDeep } from "type-fest";
 import type { H5PField } from "./H5PField";
 import type { InferL10nType, L10nGroupWithoutLabel } from "./InferL10nType";
-import type { InferOptionalWithDefault } from "./InferParamTypeFromFieldType";
+import type {
+  FieldToParamType,
+  InferOptionalWithDefault,
+} from "./InferParamTypeFromFieldType";
 
 type H5PFieldWithoutLabel = Omit<H5PField, "label">;
 
@@ -84,6 +87,11 @@ export type InferParamsFromSemantics<
 ]
   ? (TField extends ReadonlyDeep<L10nGroupWithoutLabel>
       ? InferL10nType<TField>
-      : Record<TField["name"], InferOptionalWithDefault<TField>>) &
+      : TField extends { optional: true }
+        ? TField extends { default: FieldToParamType<TField> }
+          ? Record<TField["name"], InferOptionalWithDefault<TField>>
+          : // If the field is optional but does not have a default value, we infer it as `FieldToParamType<TField> | undefined`
+            Partial<Record<TField["name"], InferOptionalWithDefault<TField>>>
+        : Record<TField["name"], InferOptionalWithDefault<TField>>) &
       InferParamsFromSemantics<TRestFields>
   : unknown;

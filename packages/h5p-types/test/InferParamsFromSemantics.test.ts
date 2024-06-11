@@ -255,14 +255,14 @@ namespace Test_OptionalFields {
 
   type Expected = {
     group: {
-      field1: number | undefined;
-      field2:
+      field1?: number | undefined;
+      field2?:
         | {
             field1: number;
             field2: string;
           }
         | undefined;
-      field3: number | undefined;
+      field3?: number | undefined;
       field4: number | undefined;
       field5: number;
       field6: number;
@@ -1077,14 +1077,14 @@ namespace Test_VocabularyDrill {
   ];
 
   type Expected = {
-    description: string | undefined;
+    description?: string | undefined;
     sourceLanguage: "de" | "en" | "fr" | "nb" | "nn" | "es";
     targetLanguage: "de" | "en" | "fr" | "nb" | "nn" | "es";
-    words: string | undefined;
+    words?: string | undefined;
     overallFeedback: Array<{
       from: number;
       to: number;
-      feedback: string | undefined;
+      feedback?: string | undefined;
     }>;
     l10n: EmptyObject;
     behaviour: {

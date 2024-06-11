@@ -177,7 +177,7 @@ namespace Test_OverallFeedback {
     | {
         from: number;
         to: number;
-        feedback: string | undefined;
+        feedback?: string | undefined;
       }[]
     | undefined;
 
