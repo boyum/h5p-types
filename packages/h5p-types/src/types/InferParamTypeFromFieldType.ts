@@ -34,7 +34,9 @@ type H5PFieldSelectWithoutLabel = Omit<H5PFieldSelect, "label">;
 type H5PFieldTextWithoutLabel = Omit<H5PFieldText, "label">;
 type H5PFieldVideoWithoutLabel = Omit<H5PFieldVideo, "label">;
 
-export type FieldToParamType<TField extends ReadonlyDeep<H5PFieldWithoutLabel>> =
+export type FieldToParamType<
+  TField extends ReadonlyDeep<H5PFieldWithoutLabel>,
+> =
   TField extends ReadonlyDeep<H5PFieldAudioWithoutLabel>
     ? H5PAudio
     : TField extends ReadonlyDeep<H5PFieldBooleanWithoutLabel>
