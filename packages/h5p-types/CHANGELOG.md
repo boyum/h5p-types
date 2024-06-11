@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.3.0](https://github.com/boyum/h5p-types/compare/5.2.0...5.3.0) (2024-06-11)
+
+
+### Features
+
+* make optional fields truly optional ([#1019](https://github.com/boyum/h5p-types/issues/1019)) ([f773731](https://github.com/boyum/h5p-types/commit/f773731611ad28c7094be0162d175191e1f0ffe4))
+
 ## [5.2.0](https://github.com/boyum/h5p-types/compare/h5p-types-5.1.0...5.2.0) (2024-06-10)
 
 
