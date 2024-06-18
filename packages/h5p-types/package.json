@@ -29,7 +29,7 @@
     "extends": "base"
   },
   "dependencies": {
-    "@types/jquery": "^3.5.29",
+    "@types/jquery": "^3.5.30",
     "type-fest": "^4.3.1"
   },
   "devDependencies": {
