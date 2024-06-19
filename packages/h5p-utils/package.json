@@ -55,7 +55,7 @@
     "release-it": "^17.2.1",
     "replace-in-file": "^7.2.0",
     "tsconfig-base": "*",
-    "tsup": "^8.0.2",
+    "tsup": "^8.1.0",
     "typescript": "^5.0.4"
   },
   "engines": {
