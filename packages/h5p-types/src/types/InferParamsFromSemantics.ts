@@ -1,5 +1,5 @@
 import type { ReadonlyDeep } from "type-fest";
-import type { H5PField } from "./H5PField";
+import type { H5PField, H5PFieldGroup } from "./H5PField";
 import type { InferL10nType, L10nGroupWithoutLabel } from "./InferL10nType";
 import type {
   FieldToParamType,
@@ -7,6 +7,7 @@ import type {
 } from "./InferParamTypeFromFieldType";
 
 type H5PFieldWithoutLabel = Omit<H5PField, "label">;
+type H5PFieldGroupWithoutLabel = Omit<H5PFieldGroup, "label">;
 
 /**
  * @category H5PField
@@ -92,6 +93,23 @@ export type InferParamsFromSemantics<
           ? Record<TField["name"], InferOptionalWithDefault<TField>>
           : // If the field is optional but does not have a default value, we infer it as `FieldToParamType<TField> | undefined`
             Partial<Record<TField["name"], InferOptionalWithDefault<TField>>>
-        : Record<TField["name"], InferOptionalWithDefault<TField>>) &
+        : TField extends ReadonlyDeep<
+              Omit<H5PFieldGroupWithoutLabel, "fields"> & {
+                fields: [
+                  infer InnerField extends ReadonlyDeep<H5PFieldWithoutLabel>,
+                ];
+              }
+            >
+          ? // In case the field is a group with only one field, we do the check
+            // once more to see if the inner field is optional
+            InnerField extends { optional: true }
+            ? InnerField extends { default: FieldToParamType<TField> }
+              ? Record<TField["name"], InferOptionalWithDefault<TField>>
+              : // If the field is optional but does not have a default value, we infer it as `FieldToParamType<TField2> | undefined`
+                Partial<
+                  Record<TField["name"], InferOptionalWithDefault<TField>>
+                >
+            : Record<TField["name"], InferOptionalWithDefault<TField>>
+          : Record<TField["name"], InferOptionalWithDefault<TField>>) &
       InferParamsFromSemantics<TRestFields>
   : unknown;

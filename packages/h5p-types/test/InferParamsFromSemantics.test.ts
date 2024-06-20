@@ -263,7 +263,7 @@ namespace Test_OptionalFields {
           }
         | undefined;
       field3?: number | undefined;
-      field4: number | undefined;
+      field4?: number | undefined;
       field5: number;
       field6: number;
     };
