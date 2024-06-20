@@ -10,13 +10,6 @@ updates:
           - storybook
           - "@storybook/*"
 
-      eslint:
-        patterns:
-          - eslint
-          - eslint-*
-          - "@eslint/*"
-          - "@typescript-eslint/*"
-
       oclif:
         patterns:
           - oclif

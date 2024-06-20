@@ -22,8 +22,6 @@
     "build": "shx rm -rf dist && tsc -b",
     "demo:library": "h5p-generate-configs l --type-definition demo/library.ts --out demo/library.json",
     "demo:semantics": "h5p-generate-configs s --type-definition demo/semantics.ts --out demo/semantics.json -t demo/TranslationKey.ts",
-    "lint:check": "eslint .",
-    "lint:fix": "npm run lint:check -- --fix",
     "prepack": "npm run build && oclif manifest && oclif readme",
     "postpack": "shx rm -f oclif.manifest.json",
     "prepublishOnly": "npm run build",
@@ -33,9 +31,6 @@
     "test:unit:coverage": "jest --coverage",
     "test:unit:watch": "jest --watch",
     "version": "oclif readme && git add README.md"
-  },
-  "eslintConfig": {
-    "extends": "base"
   },
   "jest": {
     "preset": "ts-jest",

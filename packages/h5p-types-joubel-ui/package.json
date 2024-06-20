@@ -23,13 +23,8 @@
     "./package.json": "./package.json"
   },
   "scripts": {
-    "lint:check": "eslint .",
-    "lint:fix": "npm run lint:check -- --fix",
     "publish-to-npm": "release-it",
     "typecheck": "tsc --noEmit"
-  },
-  "eslintConfig": {
-    "extends": "base"
   },
   "devDependencies": {
     "@release-it/conventional-changelog": "^8.0.1",

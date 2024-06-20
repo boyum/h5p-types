@@ -8,9 +8,6 @@
     "build": "webpack --mode=production",
     "watch": "webpack serve --hot --mode=development"
   },
-  "eslintConfig": {
-    "extends": "react"
-  },
   "dependencies": {
     "h5p-utils": "*",
     "react": "^18.3.1",
