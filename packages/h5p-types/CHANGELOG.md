@@ -1,5 +1,24 @@
 # Changelog
 
+## [5.3.1](https://github.com/boyum/h5p-types/compare/5.3.0...5.3.1) (2024-06-20)
+
+
+### Bug Fixes
+
+* **h5p-types:** Fix inferring of group with only one child field which is optional ([#1032](https://github.com/boyum/h5p-types/issues/1032)) ([c983bf1](https://github.com/boyum/h5p-types/commit/c983bf15c70fe8f6cfea2fb4b949165f5ce40c2e))
+
+
+### Build System
+
+* **deps-dev:** bump @types/react from 18.3.1 to 18.3.3 ([#1002](https://github.com/boyum/h5p-types/issues/1002)) ([bceb7db](https://github.com/boyum/h5p-types/commit/bceb7db30a9493f1f86700b1ecf2b3cad7038be4))
+* **deps-dev:** bump chai from 5.1.0 to 5.1.1 ([#999](https://github.com/boyum/h5p-types/issues/999)) ([684bf70](https://github.com/boyum/h5p-types/commit/684bf7011eb6dd2f2ffb8ff2e5110d8adb546b14))
+* **deps-dev:** bump happy-dom from 14.11.0 to 14.12.0 ([#1010](https://github.com/boyum/h5p-types/issues/1010)) ([788d5b8](https://github.com/boyum/h5p-types/commit/788d5b86a0af3c206de26588f8bb1a6d106bbdfc))
+* **deps-dev:** bump the eslint group across 1 directory with 4 updates ([#1024](https://github.com/boyum/h5p-types/issues/1024)) ([8580447](https://github.com/boyum/h5p-types/commit/85804473e3464d97d1714a516cd5534d118b9aa0))
+* **deps-dev:** bump tsup from 8.0.2 to 8.1.0 ([#1028](https://github.com/boyum/h5p-types/issues/1028)) ([d2f247d](https://github.com/boyum/h5p-types/commit/d2f247d7213a8eba0cd46f09d025019d8b89b059))
+* **deps:** bump @actions/languageserver from 0.3.9 to 0.3.10 ([#1026](https://github.com/boyum/h5p-types/issues/1026)) ([6c83d1f](https://github.com/boyum/h5p-types/commit/6c83d1fab3ba28faf78bd8716ca334ae66a31412))
+* **deps:** bump @types/jquery from 3.5.29 to 3.5.30 ([#1003](https://github.com/boyum/h5p-types/issues/1003)) ([7c8c417](https://github.com/boyum/h5p-types/commit/7c8c4176e0482651c14d5bea37dc12d681321ae4))
+* **deps:** bump the oclif group across 1 directory with 5 updates ([#1021](https://github.com/boyum/h5p-types/issues/1021)) ([b2504cd](https://github.com/boyum/h5p-types/commit/b2504cd1de471179962d4c8fe4f20c35f0d49a53))
+
 ## [5.3.0](https://github.com/boyum/h5p-types/compare/5.2.0...5.3.0) (2024-06-11)
 
 
