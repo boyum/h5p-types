@@ -2,9 +2,7 @@
   "name": "h5p-utils",
   "version": "4.0.0",
   "description": "A set of utility classes and functions to be used when creating H5P widgets and content types.",
-  "keywords": [
-    "h5p"
-  ],
+  "keywords": ["h5p"],
   "homepage": "https://github.com/boyum/h5p-types/tree/main/packages/h5p-types#readme",
   "bugs": {
     "url": "https://github.com/boyum/h5p-types/issues"
@@ -34,10 +32,7 @@
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.cts",
-  "files": [
-    "dist/**/*",
-    "tsconfig.json"
-  ],
+  "files": ["dist/**/*", "tsconfig.json"],
   "scripts": {
     "build": "tsup index.ts --format esm,cjs --dts",
     "publish-to-npm": "release-it",

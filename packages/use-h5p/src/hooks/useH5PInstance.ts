@@ -1,5 +1,5 @@
 import type { H5PContentType } from "h5p-utils";
-import { Context, useContext } from "react";
+import { type Context, useContext } from "react";
 import { H5PContext } from "../contexts/H5PContext";
 
 export const useH5PInstance = <

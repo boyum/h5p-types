@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { L10nContext } from "../contexts/LocalizationContext";
-import { Translations } from "../types/Translations";
+import type { Translations } from "../types/Translations";
 import { useL10ns, useLocalizations } from "./useLocalizations";
 
 describe(useLocalizations.name, () => {

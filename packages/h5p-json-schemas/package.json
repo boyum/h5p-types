@@ -2,11 +2,7 @@
   "name": "h5p-json-schemas",
   "version": "1.0.0",
   "description": "Schemas for H5P related JSON files",
-  "keywords": [
-    "h5p",
-    "json",
-    "schema"
-  ],
+  "keywords": ["h5p", "json", "schema"],
   "license": "ISC",
   "author": {
     "name": "Sindre Bøyum",

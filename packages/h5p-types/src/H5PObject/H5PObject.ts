@@ -18,7 +18,7 @@ import type { H5PDialog } from "./classes/H5PDialog";
 import type { H5PFieldClass } from "./classes/H5PFieldClass";
 import type { H5PMediaCopyright } from "./classes/H5PMediaCopyright";
 import type { H5PThumbnail } from "./classes/H5PThumbnail";
-import { H5PTooltip } from "./classes/H5PTooltip";
+import type { H5PTooltip } from "./classes/H5PTooltip";
 import type { H5PVersion } from "./classes/H5PVersion";
 import type { H5PCopyrightLicenses } from "./types/H5PCopyrightLicenses";
 import type { H5PExtrasWithState } from "./types/H5PExtrasWithState";

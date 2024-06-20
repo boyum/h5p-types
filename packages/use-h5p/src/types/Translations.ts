@@ -1,4 +1,4 @@
-import { TypeOptions } from "./TypeOptions";
+import type { TypeOptions } from "./TypeOptions";
 
 export type TranslationKey = TypeOptions["translationKeys"];
 

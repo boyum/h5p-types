@@ -12,7 +12,7 @@
   "scripts": {
     "build": "turbo run build",
     "code-style": "biome ci .",
-    "code-style:fix": "biome check . --apply",
+    "code-style:fix": "biome check . --write",
     "test": "turbo run test",
     "typecheck": "turbo run typecheck"
   },

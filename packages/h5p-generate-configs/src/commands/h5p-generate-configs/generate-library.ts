@@ -1,4 +1,4 @@
-import { join } from "path";
+import { join } from "node:path";
 import { Command, Flags } from "@oclif/core";
 import { generateLibrary } from "../../utils/library.utils.js";
 

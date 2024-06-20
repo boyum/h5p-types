@@ -2,10 +2,7 @@
   "name": "h5p-types-joubel-ui",
   "version": "3.0.0",
   "description": "Types for H5P JoubelUI",
-  "keywords": [
-    "h5p",
-    "JoubelUI"
-  ],
+  "keywords": ["h5p", "JoubelUI"],
   "homepage": "https://github.com/boyum/h5p-types/tree/main/packages/h5p-types-joubel-ui#readme",
   "repository": {
     "type": "git",

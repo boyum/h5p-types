@@ -21,3 +21,7 @@ class ContentType
 
 const contentTypeName = library.machineName.replace("H5P.", "");
 registerContentType(contentTypeName, ContentType);
+
+// Use the semantics object in JS space to force `unplugin-json-dts`
+// to generate the `semantics.json.d.ts` file.
+semantics;

@@ -1,5 +1,5 @@
 // @ts-check
-import { join, resolve } from "path";
+import { join, resolve } from "node:path";
 import jsonDts from "unplugin-json-dts/webpack";
 
 const __dirname = resolve();
