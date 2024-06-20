@@ -1,4 +1,4 @@
-import { join } from "path";
+import { join } from "node:path";
 import { Command, Flags } from "@oclif/core";
 import { generateSemantics } from "../../utils/semantics.utils.js";
 

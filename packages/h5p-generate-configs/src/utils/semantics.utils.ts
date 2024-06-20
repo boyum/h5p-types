@@ -1,5 +1,5 @@
-import { existsSync, promises as fs } from "fs";
-import { Command } from "@oclif/core";
+import { promises as fs, existsSync } from "node:fs";
+import type { Command } from "@oclif/core";
 import type { H5PBehaviour, H5PField, H5PL10n, H5PSemantics } from "h5p-types";
 import { findDuplicates } from "./array.utils.js";
 import { createJsonFile } from "./file.utils.js";

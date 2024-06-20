@@ -1,4 +1,4 @@
-import { TranslationKey } from "./src/types/semantics";
+import type { TranslationKey } from "./src/types/semantics";
 
 declare module "use-h5p" {
   interface CustomTypeOptions {

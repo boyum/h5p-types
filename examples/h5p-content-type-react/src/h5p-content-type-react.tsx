@@ -1,6 +1,6 @@
 import type { H5PExtras, IH5PContentType } from "h5p-types";
 import { H5PContentType, registerContentType } from "h5p-utils";
-import * as React from "react";
+import type * as React from "react";
 import { createRoot } from "react-dom/client";
 import {
   ContentIdContext,
@@ -11,7 +11,7 @@ import {
   useTranslation,
 } from "use-h5p";
 import library from "../library.json";
-import { Params } from "./types/semantics.js";
+import type { Params } from "./types/semantics.js";
 
 const DemoApp: React.FC = () => {
   const contentId = useContentId();

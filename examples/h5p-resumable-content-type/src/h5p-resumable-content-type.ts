@@ -54,3 +54,7 @@ export class ResumableContentType extends H5PResumableContentType<
 
 const contentTypeName = library.machineName.replace("H5P.", "");
 registerContentType(contentTypeName, ResumableContentType);
+
+// Use the semantics object in JS space to force `unplugin-json-dts`
+// to generate the `semantics.json.d.ts` file.
+semantics;

@@ -2,10 +2,7 @@
   "name": "h5p-types-joubel-ui",
   "version": "3.0.0",
   "description": "Types for H5P JoubelUI",
-  "keywords": [
-    "h5p",
-    "JoubelUI"
-  ],
+  "keywords": ["h5p", "JoubelUI"],
   "homepage": "https://github.com/boyum/h5p-types/tree/main/packages/h5p-types-joubel-ui#readme",
   "repository": {
     "type": "git",
@@ -30,9 +27,9 @@
     "@release-it/conventional-changelog": "^8.0.1",
     "@types/jquery": "^3.5.30",
     "h5p-types": "*",
-    "release-it": "^17.2.1",
+    "release-it": "^17.3.0",
     "tsconfig-base": "*",
-    "type-fest": "^4.3.1",
+    "type-fest": "^4.20.1",
     "typescript": "^5.0.4"
   },
   "peerDependencies": {

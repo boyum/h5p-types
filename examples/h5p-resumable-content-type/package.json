@@ -15,9 +15,9 @@
     "h5p-types": "*",
     "ts-loader": "^9.5.1",
     "tsconfig-base": "*",
-    "typescript": "^5.2.2",
+    "typescript": "^5.5.2",
     "unplugin-json-dts": "^1.2.0",
-    "webpack": "^5.91.0",
+    "webpack": "^5.92.1",
     "webpack-cli": "^5.1.4"
   }
 }
