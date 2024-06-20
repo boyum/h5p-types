@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars, @typescript-eslint/ban-ts-comment, @typescript-eslint/no-namespace */
 import type { EmptyObject, ReadonlyDeep } from "type-fest";
 import type { H5PFieldGroup, InferGroupParams } from "..";
 import type { AreEqual, Expect } from "../src/test-utility-types";
@@ -19,7 +18,7 @@ namespace Test_EmptyGroup {
 
   // @ts-ignore Test
   type Test =
-    // prettier-ignore
+    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
@@ -45,7 +44,7 @@ namespace Test_GroupWithOneField {
 
   // @ts-ignore Test
   type Test =
-    // prettier-ignore
+    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
@@ -79,7 +78,7 @@ namespace Test_GroupWithMultipleFields {
 
   // @ts-ignore Test
   type Test =
-    // prettier-ignore
+    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 

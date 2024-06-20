@@ -6,18 +6,12 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
-    "lint:check": "eslint .",
-    "lint:fix": "npm run lint:check -- --fix",
     "watch": "vite"
-  },
-  "eslintConfig": {
-    "extends": "base"
   },
   "dependencies": {
     "h5p-utils": "*"
   },
   "devDependencies": {
-    "eslint-config-base": "*",
     "h5p-types": "*",
     "h5p-types-joubel-ui": "*",
     "tsconfig-base": "*",

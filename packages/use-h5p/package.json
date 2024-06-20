@@ -41,16 +41,9 @@
   ],
   "scripts": {
     "build": "tsup ./src/index.ts --format esm,cjs --dts",
-    "lint:check": "eslint .",
-    "lint:fix": "npm run lint:check -- --fix",
     "publish-to-npm": "release-it",
     "test": "vitest run",
     "test:watch": "vitest"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react"
-    ]
   },
   "devDependencies": {
     "@release-it/conventional-changelog": "^8.0.1",
@@ -58,7 +51,6 @@
     "@types/node": "^20.12.12",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "eslint-config-react": "*",
     "h5p-types": "*",
     "h5p-utils": "*",
     "happy-dom": "^14.12.0",

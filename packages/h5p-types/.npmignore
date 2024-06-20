@@ -1,6 +1,4 @@
 tsconfig.json
-.eslintignore
-.eslintrc.cjs
 .github
 .prettierignore
 test

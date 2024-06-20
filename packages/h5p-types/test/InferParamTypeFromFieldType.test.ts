@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment, @typescript-eslint/no-unused-vars, @typescript-eslint/no-namespace */
 import type { EmptyObject, ReadonlyDeep } from "type-fest";
 import type { IsEqual } from "type-fest";
 import type {
@@ -31,7 +30,7 @@ namespace Test_AudioField {
 
   // @ts-ignore Test
   type Test =
-    // prettier-ignore
+    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
@@ -44,7 +43,7 @@ namespace Test_BooleanField {
 
   // @ts-ignore Test
   type Test =
-    // prettier-ignore
+    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
@@ -57,7 +56,7 @@ namespace Test_FileField {
 
   // @ts-ignore Test
   type Test =
-    // prettier-ignore
+    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
@@ -70,7 +69,7 @@ namespace Test_GroupField_UnknownFields {
 
   // @ts-ignore Test
   type Test =
-    // prettier-ignore
+    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
@@ -83,7 +82,7 @@ namespace Test_GroupField_NoFields {
 
   // @ts-ignore Test
   type Test =
-    // prettier-ignore
+    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
@@ -104,7 +103,7 @@ namespace Test_GroupField_OneField {
 
   // @ts-ignore Test
   type Test =
-    // prettier-ignore
+    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
@@ -117,7 +116,7 @@ namespace Test_ImageField {
 
   // @ts-ignore Test
   type Test =
-    // prettier-ignore
+    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
@@ -130,7 +129,7 @@ namespace Test_LibraryField {
 
   // @ts-ignore Test
   type Test =
-    // prettier-ignore
+    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 
   declare const library: Actual;
@@ -158,7 +157,7 @@ namespace Test_ListField_Text {
 
   // @ts-ignore Test
   type Test =
-    // prettier-ignore
+    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
@@ -200,7 +199,7 @@ namespace Test_ListField_Group {
 
   // @ts-ignore Test
   type Test =
-    // prettier-ignore
+    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
@@ -278,7 +277,7 @@ namespace Test_ListField_Group_NoLabel {
 
   // @ts-ignore Test
   type Test =
-    // prettier-ignore
+    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
@@ -291,7 +290,7 @@ namespace Test_NumberField {
 
   // @ts-ignore Test
   type Test =
-    // prettier-ignore
+    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
@@ -316,7 +315,7 @@ namespace Test_SelectField {
 
   // @ts-ignore Test
   type Test =
-    // prettier-ignore
+    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
@@ -329,7 +328,7 @@ namespace Test_TextField {
 
   // @ts-ignore Test
   type Test =
-    // prettier-ignore
+    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
@@ -371,6 +370,6 @@ namespace Test_VideoField {
 
   // @ts-ignore Test
   type Test =
-    // prettier-ignore
+    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }

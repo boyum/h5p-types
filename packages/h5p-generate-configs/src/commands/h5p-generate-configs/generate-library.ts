@@ -1,5 +1,5 @@
-import { Command, Flags } from "@oclif/core";
 import { join } from "path";
+import { Command, Flags } from "@oclif/core";
 import { generateLibrary } from "../../utils/library.utils.js";
 
 const getPath = (path: string): string => {
@@ -40,7 +40,7 @@ export class GenerateLibrary extends Command {
 
   override async run(): Promise<void> {
     const { flags } = await this.parse(GenerateLibrary);
-    const { ["type-definition"]: typeDefinition, out, debug } = flags;
+    const { "type-definition": typeDefinition, out, debug } = flags;
 
     const libraryTsPath = getPath(typeDefinition);
     const outputPath = getPath(out);

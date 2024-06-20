@@ -8,7 +8,6 @@ type Params = {
   description: string;
 };
 
-// eslint-disable-next-line @typescript-eslint/no-empty-function, @typescript-eslint/no-unused-vars
 function arrayTest(_arr: Array<unknown>): void {}
 
 class Widget extends H5PWidget<Field, Params> implements IH5PWidget {
@@ -28,7 +27,7 @@ class Widget extends H5PWidget<Field, Params> implements IH5PWidget {
     // The field is a group
     arrayTest(this.field.fields);
 
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    // biome-ignore lint/style/noNonNullAssertion: The button definitely has a value here
     this.wrapper.append(button.get(0)!);
     $container.append(this.wrapper);
   }

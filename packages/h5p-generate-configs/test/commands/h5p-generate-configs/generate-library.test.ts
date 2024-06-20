@@ -1,9 +1,9 @@
-import { expect, test } from "@oclif/test";
 import { promises as fs } from "fs";
+import { expect, test } from "@oclif/test";
 
 describe("Integration tests", () => {
   describe("generate-library", () => {
-    let tempDir: string = "";
+    let tempDir = "";
 
     beforeEach(async () => {
       tempDir = await fs.mkdtemp("library-test_");

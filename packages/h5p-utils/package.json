@@ -40,17 +40,11 @@
   ],
   "scripts": {
     "build": "tsup index.ts --format esm,cjs --dts",
-    "lint:check": "eslint .",
-    "lint:fix": "npm run lint:check -- --fix",
     "publish-to-npm": "release-it",
     "test": "tsc --project demo/tsconfig.json"
   },
-  "eslintConfig": {
-    "extends": "base"
-  },
   "devDependencies": {
     "@release-it/conventional-changelog": "^8.0.1",
-    "eslint-config-base": "*",
     "h5p-types": "*",
     "release-it": "^17.2.1",
     "replace-in-file": "^7.2.0",

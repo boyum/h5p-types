@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment, @typescript-eslint/no-unused-vars, @typescript-eslint/no-namespace */
 import type { EmptyObject, ReadonlyDeep } from "type-fest";
 import type {
   H5PField,
@@ -26,7 +25,7 @@ namespace Test_H5PFieldText {
 
   // @ts-ignore Test
   type Test =
-    // prettier-ignore
+    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
@@ -54,7 +53,7 @@ namespace Test_H5PFieldList {
 
   // @ts-ignore Test
   type Test =
-    // prettier-ignore
+    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
@@ -83,7 +82,7 @@ namespace Test_MultipleFields {
 
   // @ts-ignore Test
   type Test =
-    // prettier-ignore
+    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
@@ -108,7 +107,7 @@ namespace Test_H5PFieldGroupWithZeroFields {
 
   // @ts-ignore Test
   type Test =
-    // prettier-ignore
+    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
@@ -134,7 +133,7 @@ namespace Test_H5PFieldGroupWithOneField {
 
   // @ts-ignore Test
   type Test =
-    // prettier-ignore
+    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
@@ -166,7 +165,7 @@ namespace Test_H5PFieldGroupWithMultipleFields {
 
   // @ts-ignore Test
   type Test =
-    // prettier-ignore
+    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
@@ -295,7 +294,7 @@ namespace Test_OptionalFields {
 
   // @ts-ignore Test
   type Test =
-    // prettier-ignore
+    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
@@ -827,7 +826,7 @@ namespace Test_Bildetema {
 
   // @ts-ignore Test
   type Test =
-    // prettier-ignore
+    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
@@ -1105,7 +1104,7 @@ namespace Test_VocabularyDrill {
 
   // @ts-ignore Test
   type Test =
-    // prettier-ignore
+    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
@@ -1147,6 +1146,6 @@ namespace Test_Type {
 
   // @ts-ignore Test
   type Test =
-    // prettier-ignore
+    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
