@@ -23,6 +23,6 @@
     "tsconfig-base": "*",
     "typescript": "^5.5.2",
     "typescript-json-schema": "^0.64.0",
-    "vercel": "^34.2.7"
+    "vercel": "^34.2.8"
   }
 }
