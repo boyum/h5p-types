@@ -18,7 +18,8 @@
   "scripts": {
     "publish-to-npm": "release-it",
     "typecheck": "tsc --noEmit",
-    "generate-docs": "typedoc ./index.d.ts --plugin typedoc-plugin-coverage --plugin typedoc-plugin-mdn-links --plugin typedoc-umlclass",
+    "//generate-docs": "typedoc ./index.d.ts --plugin typedoc-plugin-coverage --plugin typedoc-plugin-mdn-links --plugin typedoc-umlclass",
+    "generate-docs": "typedoc ./index.d.ts --plugin typedoc-plugin-coverage --plugin typedoc-plugin-mdn-links",
     "generate-docs:serve": "http-server ./docs -p 3000",
     "generate-docs:watch": "npm run generate-docs -- --watch",
     "generate-docs:run": "npm-run-all --parallel generate-docs:serve generate-docs:watch"
