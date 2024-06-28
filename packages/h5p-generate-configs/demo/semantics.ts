@@ -1,6 +1,5 @@
-import type { H5PField, H5PBehaviour, H5PL10n } from "h5p-types";
+import type { H5PBehaviour, H5PField, H5PL10n } from "h5p-types";
 import { getPosition } from "./semantics-helper";
-
 
 type ReadonlyDeep<T> = {
   readonly [P in keyof T]: ReadonlyDeep<T[P]>;
@@ -57,4 +56,4 @@ export const semantics = [
       },
     ],
   },
-] as const satisfies ReadonlyDeep<Array<H5PField| H5PBehaviour | H5PL10n>>;
+] as const satisfies ReadonlyDeep<Array<H5PField | H5PBehaviour | H5PL10n>>;
