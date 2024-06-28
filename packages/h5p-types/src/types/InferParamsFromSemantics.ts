@@ -18,7 +18,6 @@ type H5PFieldGroupWithoutLabel = Omit<H5PFieldGroup, "label">;
  *
  * ⚠️ Use with caution - If the semantics form has very many fields, this might not work.
  *                      In that case, please create an issue to let us know.
- * ⚠️ Also, note that `label` is considered a required property of fields.
  *
  * @template TSemantics - The semantics array type.
  *
