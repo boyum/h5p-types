@@ -213,28 +213,32 @@ export type H5PFieldLibrary = Prettify<
 >;
 
 export type H5PFieldImage = Prettify<
-  H5PFieldCommon & {
-    type: "image" | H5PFieldType.Image;
-  } & H5PFieldWidgetExtension
+  H5PFieldWidgetExtension &
+    H5PFieldCommon & {
+      type: "image" | H5PFieldType.Image;
+    }
 >;
 
 export type H5PFieldVideo = Prettify<
-  H5PFieldCommon & {
-    type: "video" | H5PFieldType.Video;
-  } & H5PFieldWidgetExtension
+  H5PFieldWidgetExtension &
+    H5PFieldCommon & {
+      type: "video" | H5PFieldType.Video;
+    }
 >;
 
 export type H5PFieldAudio = Prettify<
-  H5PFieldCommon & {
-    type: "audio" | H5PFieldType.Audio;
-  } & H5PFieldWidgetExtension
+  H5PFieldWidgetExtension &
+    H5PFieldCommon & {
+      type: "audio" | H5PFieldType.Audio;
+    }
 >;
 
 export type H5PFieldFile = Prettify<
-  H5PFieldCommon & {
-    type: "file" | H5PFieldType.File;
-    widget?: string;
-  } & H5PFieldWidgetExtension
+  H5PFieldWidgetExtension &
+    H5PFieldCommon & {
+      type: "file" | H5PFieldType.File;
+      widget?: string;
+    }
 >;
 
 /**
