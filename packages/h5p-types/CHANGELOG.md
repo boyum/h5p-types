@@ -1,5 +1,36 @@
 # Changelog
 
+## [5.4.0](https://github.com/boyum/h5p-types/compare/5.3.1...5.4.0) (2024-06-29)
+
+
+### Bug Fixes
+
+* **h5p-types:** re-add widget extensions ([#1056](https://github.com/boyum/h5p-types/issues/1056)) ([21789c4](https://github.com/boyum/h5p-types/commit/21789c4ccebaca9f5c5db339f02c41879efb247e))
+
+
+### Styles
+
+* replace eslint and prettier with biome ([#723](https://github.com/boyum/h5p-types/issues/723)) ([0f6639b](https://github.com/boyum/h5p-types/commit/0f6639b86b30917a02804fad4139f3cbb70625ec))
+
+
+### Build System
+
+* **deps-dev:** bump @biomejs/biome from 1.8.2 to 1.8.3 ([#1055](https://github.com/boyum/h5p-types/issues/1055)) ([c53ea74](https://github.com/boyum/h5p-types/commit/c53ea7490916dd51d70c2775ac8f94f56cd1b6d8))
+* **deps-dev:** bump @types/node from 20.14.6 to 20.14.7 ([#1039](https://github.com/boyum/h5p-types/issues/1039)) ([1426940](https://github.com/boyum/h5p-types/commit/1426940fc13efb907968b51b471b7ce8dc494bc7))
+* **deps-dev:** bump @types/node from 20.14.7 to 20.14.9 ([#1047](https://github.com/boyum/h5p-types/issues/1047)) ([e8bf943](https://github.com/boyum/h5p-types/commit/e8bf94309dbad05ae8efe52ee3c21eded10a00b5))
+* **deps-dev:** bump @vscode/test-web from 0.0.54 to 0.0.55 ([#1054](https://github.com/boyum/h5p-types/issues/1054)) ([ced6fec](https://github.com/boyum/h5p-types/commit/ced6fecd6e02f3a665518bf906fdc68fde59a18a))
+* **deps-dev:** bump mocha from 10.4.0 to 10.5.2 ([#1048](https://github.com/boyum/h5p-types/issues/1048)) ([ef0055d](https://github.com/boyum/h5p-types/commit/ef0055dc7ba467d0abf07712ea2f4dff9395b310))
+* **deps-dev:** bump oclif from 4.13.8 to 4.13.10 in the oclif group ([#1040](https://github.com/boyum/h5p-types/issues/1040)) ([7dc7948](https://github.com/boyum/h5p-types/commit/7dc7948fedf04c215b28eef3315207ff7a067375))
+* **deps-dev:** bump release-it from 17.3.0 to 17.4.0 ([#1038](https://github.com/boyum/h5p-types/issues/1038)) ([52df230](https://github.com/boyum/h5p-types/commit/52df230f49aa85f010bc436c969b2b043134674f))
+* **deps-dev:** bump replace-in-file from 7.2.0 to 8.0.1 ([#1045](https://github.com/boyum/h5p-types/issues/1045)) ([060e1e2](https://github.com/boyum/h5p-types/commit/060e1e25d2e4125888ddeae8fddeddc55196bde7))
+* **deps-dev:** bump turbo from 2.0.4 to 2.0.5 ([#1046](https://github.com/boyum/h5p-types/issues/1046)) ([e2f7f67](https://github.com/boyum/h5p-types/commit/e2f7f675123d94e227d9688e8edf39c6ba6df11f))
+* **deps-dev:** bump typedoc from 0.25.13 to 0.26.3 ([#1053](https://github.com/boyum/h5p-types/issues/1053)) ([9afc3fe](https://github.com/boyum/h5p-types/commit/9afc3fef4f73c9ed3203e9e4dd010d8991fb2432))
+* **deps-dev:** bump typedoc-plugin-coverage from 3.2.0 to 3.3.0 ([#1041](https://github.com/boyum/h5p-types/issues/1041)) ([ebdbb42](https://github.com/boyum/h5p-types/commit/ebdbb426d2e703c17724d4a7adce6f9d60876339))
+* **deps-dev:** bump typedoc-plugin-mdn-links from 3.1.30 to 3.2.1 ([#1043](https://github.com/boyum/h5p-types/issues/1043)) ([0214cdc](https://github.com/boyum/h5p-types/commit/0214cdc2b99408f0da947ad2d7e52e82d8823696))
+* **deps-dev:** bump vercel from 34.2.7 to 34.2.8 ([#1051](https://github.com/boyum/h5p-types/issues/1051)) ([be0e1e2](https://github.com/boyum/h5p-types/commit/be0e1e20ec9215676ee1ae93f051874050e0afc7))
+* **deps:** bump @oclif/core from 4.0.6 to 4.0.7 in the oclif group ([#1049](https://github.com/boyum/h5p-types/issues/1049)) ([2b82830](https://github.com/boyum/h5p-types/commit/2b8283031420ca8ebb6be13d1bffe672d544bb80))
+* update turbo to v2 ([#1036](https://github.com/boyum/h5p-types/issues/1036)) ([b402451](https://github.com/boyum/h5p-types/commit/b402451b42bf96bb677c3e64582b05210552de14))
+
 ## [5.3.1](https://github.com/boyum/h5p-types/compare/5.3.0...5.3.1) (2024-06-20)
 
 
