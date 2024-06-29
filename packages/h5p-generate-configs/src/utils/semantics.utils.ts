@@ -27,7 +27,7 @@ async function createTranslationKeys(
   semantics: H5PSemantics,
   translationKeyOutputPath: string,
 ): Promise<void> {
-  const translationField = semantics.find((field) =>
+  const translationField = (semantics as Array<H5PField>).find((field) =>
     isH5PL10n(field),
   ) as H5PL10n | null;
 
@@ -36,7 +36,7 @@ async function createTranslationKeys(
     return;
   }
 
-  const translationKeys = translationField.fields.map(({ name }) => name);
+  const translationKeys = (translationField.fields as {name:string}[]).map(({ name }) => name);
 
   const duplicates = findDuplicates(translationKeys);
   const duplicateKeysExist = duplicates.length > 0;
@@ -75,6 +75,7 @@ export async function generateSemantics(
   }
 
   const semantics = await readSemanticsTSFile(path);
+  console.log("✨✨✨✨", path);
   log("Found semantics file.");
 
   if (translationKeyOutputPath) {

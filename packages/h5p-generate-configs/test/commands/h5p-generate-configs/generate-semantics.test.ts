@@ -1,5 +1,9 @@
 import { promises as fs } from "node:fs";
-import { expect, test } from "@oclif/test";
+import { runCommand } from "@oclif/test";
+// import { expect } from "chai";
+import { expect, describe, it, beforeEach, afterEach } from "vitest";
+
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 describe("Integration tests", () => {
   describe("generate-semantics", () => {
@@ -19,33 +23,36 @@ describe("Integration tests", () => {
       await fs.rm(tempDir, { recursive: true });
     });
 
-    test
-      .command([
+    it("should generate a semantics.json file", async () => {
+      await runCommand([
         "h5p-generate-configs",
         "generate-semantics",
-        `--type-definition ${tempDir}/semantics.ts`,
-        `--out ${tempDir}/semantics.json`,
-        `-t ${tempDir}/TranslationKey.ts`,
-      ])
-      .it("should generate a semantics.json file and translation keys", async () => {
-        const expectedSemantics = (
-          await fs.readFile("demo/semantics.json")
-        ).toString("utf-8");
 
-        const actualSemantics = (
-          await fs.readFile(`${tempDir}/semantics.json`)
-        ).toString("utf-8");
+        `--type-definition=${tempDir}/semantics.ts`,
+        `--out=${tempDir}/semantics.json`,
+        `-t=${tempDir}/TranslationKey.ts`,
+      ]);
 
-        const expectedTranslationKey = (
-          await fs.readFile("demo/TranslationKey.ts")
-        ).toString("utf-8");
+      await sleep(1000);
 
-        const actualTranslationKey = (
-          await fs.readFile(`${tempDir}/TranslationKey.ts`)
-        ).toString("utf-8");
+      const expectedSemantics = (
+        await fs.readFile("demo/semantics.json")
+      ).toString("utf-8");
 
-        expect(actualSemantics).to.be(expectedSemantics);
-        expect(actualTranslationKey).to.be(expectedTranslationKey);
-      });
+      const expectedTranslationKey = (
+        await fs.readFile("demo/TranslationKey.ts")
+      ).toString("utf-8");
+
+      const actualSemantics = (
+        await fs.readFile(`${tempDir}/semantics.json`)
+      ).toString("utf-8");
+
+      const actualTranslationKey = (
+        await fs.readFile(`${tempDir}/TranslationKey.ts`)
+      ).toString("utf-8");
+
+      expect(actualSemantics).to.be(expectedSemantics);
+      expect(actualTranslationKey).to.be(expectedTranslationKey);
+    });
   });
 });

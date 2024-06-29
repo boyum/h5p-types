@@ -35,8 +35,7 @@
   "files": ["dist/**/*", "tsconfig.json"],
   "scripts": {
     "build": "tsup index.ts --format esm,cjs --dts",
-    "publish-to-npm": "release-it",
-    "test": "tsc --project demo/tsconfig.json"
+    "publish-to-npm": "release-it"
   },
   "devDependencies": {
     "@release-it/conventional-changelog": "^8.0.1",

@@ -1,5 +1,5 @@
 import type { H5PField, H5PBehaviour, H5PL10n } from "h5p-types";
-import { getPosition } from "./semantics-helper";
+import { getPosition } from "./semantics-helper.js";
 
 
 type ReadonlyDeep<T> = {
@@ -18,7 +18,7 @@ export const semantics = [
     name: "description",
     type: "text",
     widget: "html",
-    tags: ["a", "p", "br"],
+    // tags: ["a", "p", "br"],
   },
   {
     label: "Image",

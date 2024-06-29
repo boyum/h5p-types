@@ -11,18 +11,19 @@ async function readLibraryTSFile(path: string): Promise<H5PLibrary> {
 export async function generateLibrary(
   libraryTsPath: string,
   outputPath: string,
-  verbose: boolean,
+  debug: boolean,
   log: Command["log"],
 ): Promise<void> {
   const path = libraryTsPath.trim();
   const isTSFile = path.endsWith(".ts") || path.endsWith(".tsx");
   if (!isTSFile) {
+    log("File not found");
     throw new Error(`${path} is not a TS or TSX file.`);
   }
 
   const library = await readLibraryTSFile(path);
 
-  if (verbose) {
+  if (debug) {
     log(`Found library file. Path: ${libraryTsPath}`);
     log("Generating JSON file for library.");
   }

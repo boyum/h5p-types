@@ -1,5 +1,6 @@
 import type { OptionType } from "../types/OptionType.js";
 import { getOption } from "./cli.utils.js";
+import {describe, it, expect} from "vitest";
 
 describe("CLI Utils", () => {
   describe(getOption.name, () => {
