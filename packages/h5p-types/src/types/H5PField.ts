@@ -1,6 +1,9 @@
+import type { Prettify } from "../utility-types";
 import type { H5PEnterMode } from "./H5PEnterMode";
 import type { H5PFieldType } from "./H5PFieldType";
+import type { H5PFieldWidgetExtension } from "./H5PFieldWidgetExtension";
 import type { H5PImportance } from "./H5PImportance";
+import type { H5PTextFieldWidgetExtension } from "./H5PTextFieldWidgetExtension";
 
 /**
  * @category H5PField
@@ -62,6 +65,181 @@ type H5PFieldCommon = {
    */
   common?: boolean;
 };
+
+export type H5PFieldText = Prettify<
+  H5PTextFieldWidgetExtension &
+    H5PFieldCommon & {
+      type: "text" | H5PFieldType.Text;
+      default?: string;
+      maxLength?: number;
+      regexp?: string;
+      enterMode?: H5PEnterMode;
+      font?: string;
+      placeholder?: string;
+
+      /**
+       * This attribute is used to give more detailed instructions and contains two parts, i.e description and example.
+       *
+       * @example
+       * ```
+       * important: {
+       *   description: "<ul><li>Marked words are added with an asterisk (*).</li><li>Asterisks can be added within marked words by adding another asterisk, *correctword*** => correctword*.</li></ul>",
+       *   example: "The correct words are marked with like this: *correctword*, an asterisk is written like this: *correctword***."
+       * }
+       * ```
+       *
+       * @see https://h5p.org/semantics#attribute-important
+       */
+      important?: {
+        description?: string;
+        example?: string;
+      };
+    }
+>;
+
+export type H5PFieldNumber = Prettify<
+  H5PFieldWidgetExtension &
+    H5PFieldCommon & {
+      type: "number" | H5PFieldType.Number;
+      default?: number;
+      min?: number;
+      max?: number;
+      steps?: number;
+
+      /**
+       * The number of decimal digits allowed. Use 0 for integer values.
+       *
+       * @default 0
+       *
+       * @see https://h5p.org/semantics#attribute-decimals
+       */
+      decimals?: number;
+
+      unit?: string;
+    }
+>;
+
+export type H5PFieldBoolean = Prettify<
+  H5PFieldWidgetExtension &
+    H5PFieldCommon & {
+      type: "boolean" | H5PFieldType.Boolean;
+      default: boolean;
+    }
+>;
+
+export type H5PFieldGroup = Prettify<
+  H5PFieldWidgetExtension &
+    H5PFieldCommon & {
+      type: "group" | H5PFieldType.Group;
+      fields: Array<H5PField>;
+      isSubContent?: boolean;
+
+      /**
+       * If set to true, group will be expanded. If set to false or not set at all, group will be collapsed. An exception is for groups in lists - they will be expanded except if this value is false.
+       *
+       * @default false
+       *
+       * @see https://h5p.org/semantics#attribute-expanded
+       */
+      expanded?: boolean;
+    }
+>;
+
+export type H5PFieldList = Prettify<
+  H5PFieldCommon & {
+    type: "list" | H5PFieldType.List;
+
+    /**
+     * List containing widget(s). A widget is defined as
+     * an object with the name of the widget and a label.
+     * Currently no widgets are provided by the core system,
+     * but the H5PEditor.VerticalTabs library provides
+     * `verticalTabs` as an option.
+     *
+     * @example
+     * ```
+     * widgets: [
+     *  {
+     *    "name": "ListEditor",
+     *    "label": "Default"
+     *  },
+     *  {
+     *    "name": "SummaryTextualEditor",
+     *    "label": "Textual"
+     *  }
+     * ]
+     * ```
+     *
+     * @see https://h5p.org/semantics#attribute-widgets
+     */
+    widgets?: Array<{ name: string; label: string }>;
+    field: H5PField;
+    min?: number;
+    max?: number;
+
+    /**
+     * Name for a single entity in the list.
+     *
+     * @see https://h5p.org/semantics#attribute-entity
+     */
+    entity: string;
+
+    /**
+     * @default 1
+     */
+    defaultNum?: number;
+  }
+>;
+
+export type H5PFieldSelect = Prettify<
+  H5PFieldWidgetExtension &
+    H5PFieldCommon & {
+      type: "select" | H5PFieldType.Select;
+      default: string | number | boolean;
+      options: Array<{
+        value: string | number | boolean;
+        label: string;
+      }>;
+    }
+>;
+
+export type H5PFieldLibrary = Prettify<
+  H5PFieldWidgetExtension &
+    H5PFieldCommon & {
+      type: "library" | H5PFieldType.Library;
+      options: Array<string>;
+      default?: string;
+    }
+>;
+
+export type H5PFieldImage = Prettify<
+  H5PFieldWidgetExtension &
+    H5PFieldCommon & {
+      type: "image" | H5PFieldType.Image;
+    }
+>;
+
+export type H5PFieldVideo = Prettify<
+  H5PFieldWidgetExtension &
+    H5PFieldCommon & {
+      type: "video" | H5PFieldType.Video;
+    }
+>;
+
+export type H5PFieldAudio = Prettify<
+  H5PFieldWidgetExtension &
+    H5PFieldCommon & {
+      type: "audio" | H5PFieldType.Audio;
+    }
+>;
+
+export type H5PFieldFile = Prettify<
+  H5PFieldWidgetExtension &
+    H5PFieldCommon & {
+      type: "file" | H5PFieldType.File;
+      widget?: string;
+    }
+>;
 
 /**
  * @category H5PField
@@ -148,155 +326,3 @@ export type H5PField =
   | H5PFieldSelect
   | H5PFieldText
   | H5PFieldVideo;
-
-export interface H5PFieldText extends H5PFieldCommon {
-  type: "text" | H5PFieldType.Text;
-  default?: string;
-  widget?: string;
-  maxLength?: number;
-  regexp?: string;
-  enterMode?: H5PEnterMode;
-  font?: string;
-  placeholder?: string;
-
-  /**
-   * This attribute is used to give more detailed instructions and contains two parts, i.e description and example.
-   *
-   * @example
-   * ```
-   * important: {
-   *   description: "<ul><li>Marked words are added with an asterisk (*).</li><li>Asterisks can be added within marked words by adding another asterisk, *correctword*** => correctword*.</li></ul>",
-   *   example: "The correct words are marked with like this: *correctword*, an asterisk is written like this: *correctword***."
-   * }
-   * ```
-   *
-   * @see https://h5p.org/semantics#attribute-important
-   */
-  important?: {
-    description?: string;
-    example?: string;
-  };
-}
-
-export interface H5PFieldNumber extends H5PFieldCommon {
-  type: "number" | H5PFieldType.Number;
-  default?: number;
-  widget?: string;
-  min?: number;
-  max?: number;
-  steps?: number;
-
-  /**
-   * The number of decimal digits allowed. Use 0 for integer values.
-   *
-   * @default 0
-   *
-   * @see https://h5p.org/semantics#attribute-decimals
-   */
-  decimals?: number;
-
-  unit?: string;
-}
-
-export interface H5PFieldBoolean extends H5PFieldCommon {
-  type: "boolean" | H5PFieldType.Boolean;
-  default: boolean;
-  widget?: string;
-}
-
-export interface H5PFieldGroup extends H5PFieldCommon {
-  type: "group" | H5PFieldType.Group;
-  widget?: string;
-  fields: Array<H5PField>;
-  isSubContent?: boolean;
-
-  /**
-   * If set to true, group will be expanded. If set to false or not set at all, group will be collapsed. An exception is for groups in lists - they will be expanded except if this value is false.
-   *
-   * @default false
-   *
-   * @see https://h5p.org/semantics#attribute-expanded
-   */
-  expanded?: boolean;
-}
-
-export interface H5PFieldList extends H5PFieldCommon {
-  type: "list" | H5PFieldType.List;
-
-  /**
-   * List containing widget(s). A widget is defined as
-   * an object with the name of the widget and a label.
-   * Currently no widgets are provided by the core system,
-   * but the H5PEditor.VerticalTabs library provides
-   * `verticalTabs` as an option.
-   *
-   * @example
-   * ```
-   * widgets: [
-   *  {
-   *    "name": "ListEditor",
-   *    "label": "Default"
-   *  },
-   *  {
-   *    "name": "SummaryTextualEditor",
-   *    "label": "Textual"
-   *  }
-   * ]
-   * ```
-   *
-   * @see https://h5p.org/semantics#attribute-widgets
-   */
-  widgets?: Array<{ name: string; label: string }>;
-  field: H5PField;
-  min?: number;
-  max?: number;
-
-  /**
-   * Name for a single entity in the list.
-   *
-   * @see https://h5p.org/semantics#attribute-entity
-   */
-  entity: string;
-
-  /**
-   * @default 1
-   */
-  defaultNum?: number;
-}
-
-export interface H5PFieldSelect extends H5PFieldCommon {
-  type: "select" | H5PFieldType.Select;
-  default: string | number | boolean;
-  options: Array<{
-    value: string | number | boolean;
-    label: string;
-  }>;
-  widget?: string;
-}
-
-export interface H5PFieldLibrary extends H5PFieldCommon {
-  type: "library" | H5PFieldType.Library;
-  options: Array<string>;
-  default?: string;
-  widget?: string;
-}
-
-export interface H5PFieldImage extends H5PFieldCommon {
-  type: "image" | H5PFieldType.Image;
-  widget?: string;
-}
-
-export interface H5PFieldVideo extends H5PFieldCommon {
-  type: "video" | H5PFieldType.Video;
-  widget?: string;
-}
-
-export interface H5PFieldAudio extends H5PFieldCommon {
-  type: "audio" | H5PFieldType.Audio;
-  widget?: string;
-}
-
-export interface H5PFieldFile extends H5PFieldCommon {
-  type: "file" | H5PFieldType.File;
-  widget?: string;
-}
