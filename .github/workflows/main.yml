@@ -41,6 +41,18 @@ jobs:
       - name: Check types
         run: npm run typecheck
 
+  validate-monorepo:
+    name: Validate monorepo
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Validate monorepo
+        run: npx sherif --ignore-dependency typescript
+
   lint:
     name: Check code style
 
