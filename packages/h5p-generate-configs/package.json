@@ -33,7 +33,7 @@
     "testMatch": ["**/*.test.ts"]
   },
   "dependencies": {
-    "@oclif/core": "^4.0.6",
+    "@oclif/core": "^4.0.7",
     "@oclif/plugin-help": "^6.2.3",
     "@oclif/plugin-plugins": "^5.3.2"
   },
