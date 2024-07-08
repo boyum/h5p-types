@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.8.3",
-    "sherif": "^0.9.0",
+    "sherif": "^0.10.0",
     "turbo": "^2.0.6"
   },
   "packageManager": "npm@10.8.1"
