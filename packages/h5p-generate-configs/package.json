@@ -50,7 +50,7 @@
     "oclif": "^4.13.12",
     "release-it": "^17.5.0",
     "shx": "^0.3.4",
-    "ts-jest": "^29.2.1",
+    "ts-jest": "^29.2.2",
     "typescript": "^5.5.2"
   },
   "oclif": {
