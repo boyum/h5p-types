@@ -35,7 +35,7 @@
   "dependencies": {
     "@oclif/core": "^4.0.17",
     "@oclif/plugin-help": "^6.2.8",
-    "@oclif/plugin-plugins": "^5.4.2"
+    "@oclif/plugin-plugins": "^5.4.4"
   },
   "devDependencies": {
     "@oclif/test": "^4.0.8",
@@ -47,7 +47,7 @@
     "h5p-types": "*",
     "jest": "^29.7.0",
     "mocha": "^10.7.0",
-    "oclif": "^4.14.15",
+    "oclif": "^4.14.19",
     "release-it": "^17.6.0",
     "shx": "^0.3.4",
     "ts-jest": "^29.2.4",
