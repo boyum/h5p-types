@@ -39,7 +39,7 @@
     "test": "tsc --project demo/tsconfig.json"
   },
   "devDependencies": {
-    "@release-it/conventional-changelog": "^8.0.1",
+    "@release-it/conventional-changelog": "^8.0.2",
     "h5p-types": "*",
     "release-it": "^17.6.0",
     "replace-in-file": "^8.1.0",
