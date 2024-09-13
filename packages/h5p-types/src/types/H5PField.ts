@@ -8,63 +8,70 @@ import type { H5PTextFieldWidgetExtension } from "./H5PTextFieldWidgetExtension"
 /**
  * @category H5PField
  */
-type H5PFieldCommon = {
-  /**
-   * Internal name of the field. Must be a valid JavaScript identifier string.
-   *
-   * @see https://h5p.org/semantics#attribute-name
-   */
-  name: string;
+type H5PFieldCommon = Prettify<
+  {
+    /**
+     * Internal name of the field. Must be a valid JavaScript identifier string.
+     *
+     * @see https://h5p.org/semantics#attribute-name
+     */
+    name: string;
 
-  /**
-   * The field's label in the editor.
-   *
-   * @see https://h5p.org/semantics#attribute-label
-   */
-  label?: string;
+    /**
+     * The field's label in the editor.
+     *
+     * @see https://h5p.org/semantics#attribute-label
+     */
+    label?: string;
 
-  /**
-   * Description displayed with the field in the editor.
-   *
-   * @see https://h5p.org/semantics#attribute-description
-   */
-  description?: string;
+    /**
+     * Description displayed with the field in the editor.
+     *
+     * @see https://h5p.org/semantics#attribute-description
+     */
+    description?: string;
 
-  /**
-   * Set to true for optional fields.
-   *
-   * @default false
-   *
-   * @see https://h5p.org/semantics#attribute-optional
-   */
-  optional?: boolean;
+    /**
+     * Set to true for optional fields.
+     *
+     * @default false
+     *
+     * @see https://h5p.org/semantics#attribute-optional
+     */
+    optional?: boolean;
 
-  /**
-   *  An indication of the field's importance.
-   *  Is typically used by the editor giving a
-   *  more prominent style on the more important
-   *  fields, but could e.g. also be used to
-   *  generate weighted input to a search engine.
-   *
-   *  @default "medium"
-   *
-   *  @see https://h5p.org/semantics#attribute-importance
-   */
-  importance?: H5PImportance;
+    /**
+     *  An indication of the field's importance.
+     *  Is typically used by the editor giving a
+     *  more prominent style on the more important
+     *  fields, but could e.g. also be used to
+     *  generate weighted input to a search engine.
+     *
+     *  @default "medium"
+     *
+     *  @see https://h5p.org/semantics#attribute-importance
+     */
+    importance?: H5PImportance;
 
-  /**
-   * If set to true, all instances of this
-   * library will use the same value for this
-   * field. The editor will display the input
-   * for this field in a "Common fields"
-   * container at the end of the editor form.
-   *
-   * @default false
-   *
-   * @see https://h5p.org/semantics#attribute-common
-   */
-  common?: boolean;
-};
+    /**
+     * If set to true, all instances of this
+     * library will use the same value for this
+     * field. The editor will display the input
+     * for this field in a "Common fields"
+     * container at the end of the editor form.
+     *
+     * @default false
+     *
+     * @see https://h5p.org/semantics#attribute-common
+     */
+    common?: boolean;
+  } & H5PFieldWidgetExtension
+  //  ^^^^^^^^^^^^^^^^^^^^^^^
+  // Add support for the `widget` property for all field types.
+  // Per the documentation, H5PFieldList should _not_ have a `widget` property,
+  // but the `processSemanticsChunk` function in `h5p-editor-php-library` does not
+  // check for this, so we will include it here.
+>;
 
 export type H5PFieldText = Prettify<
   H5PTextFieldWidgetExtension &
@@ -98,51 +105,48 @@ export type H5PFieldText = Prettify<
 >;
 
 export type H5PFieldNumber = Prettify<
-  H5PFieldWidgetExtension &
-    H5PFieldCommon & {
-      type: "number" | H5PFieldType.Number;
-      default?: number;
-      min?: number;
-      max?: number;
-      steps?: number;
+  H5PFieldCommon & {
+    type: "number" | H5PFieldType.Number;
+    default?: number;
+    min?: number;
+    max?: number;
+    steps?: number;
 
-      /**
-       * The number of decimal digits allowed. Use 0 for integer values.
-       *
-       * @default 0
-       *
-       * @see https://h5p.org/semantics#attribute-decimals
-       */
-      decimals?: number;
+    /**
+     * The number of decimal digits allowed. Use 0 for integer values.
+     *
+     * @default 0
+     *
+     * @see https://h5p.org/semantics#attribute-decimals
+     */
+    decimals?: number;
 
-      unit?: string;
-    }
+    unit?: string;
+  }
 >;
 
 export type H5PFieldBoolean = Prettify<
-  H5PFieldWidgetExtension &
-    H5PFieldCommon & {
-      type: "boolean" | H5PFieldType.Boolean;
-      default: boolean;
-    }
+  H5PFieldCommon & {
+    type: "boolean" | H5PFieldType.Boolean;
+    default: boolean;
+  }
 >;
 
 export type H5PFieldGroup = Prettify<
-  H5PFieldWidgetExtension &
-    H5PFieldCommon & {
-      type: "group" | H5PFieldType.Group;
-      fields: Array<H5PField>;
-      isSubContent?: boolean;
+  H5PFieldCommon & {
+    type: "group" | H5PFieldType.Group;
+    fields: Array<H5PField>;
+    isSubContent?: boolean;
 
-      /**
-       * If set to true, group will be expanded. If set to false or not set at all, group will be collapsed. An exception is for groups in lists - they will be expanded except if this value is false.
-       *
-       * @default false
-       *
-       * @see https://h5p.org/semantics#attribute-expanded
-       */
-      expanded?: boolean;
-    }
+    /**
+     * If set to true, group will be expanded. If set to false or not set at all, group will be collapsed. An exception is for groups in lists - they will be expanded except if this value is false.
+     *
+     * @default false
+     *
+     * @see https://h5p.org/semantics#attribute-expanded
+     */
+    expanded?: boolean;
+  }
 >;
 
 export type H5PFieldList = Prettify<
@@ -192,53 +196,46 @@ export type H5PFieldList = Prettify<
 >;
 
 export type H5PFieldSelect = Prettify<
-  H5PFieldWidgetExtension &
-    H5PFieldCommon & {
-      type: "select" | H5PFieldType.Select;
-      default: string | number | boolean;
-      options: Array<{
-        value: string | number | boolean;
-        label: string;
-      }>;
-    }
+  H5PFieldCommon & {
+    type: "select" | H5PFieldType.Select;
+    default: string | number | boolean;
+    options: Array<{
+      value: string | number | boolean;
+      label: string;
+    }>;
+  }
 >;
 
 export type H5PFieldLibrary = Prettify<
-  H5PFieldWidgetExtension &
-    H5PFieldCommon & {
-      type: "library" | H5PFieldType.Library;
-      options: Array<string>;
-      default?: string;
-    }
+  H5PFieldCommon & {
+    type: "library" | H5PFieldType.Library;
+    options: Array<string>;
+    default?: string;
+  }
 >;
 
 export type H5PFieldImage = Prettify<
-  H5PFieldWidgetExtension &
-    H5PFieldCommon & {
-      type: "image" | H5PFieldType.Image;
-    }
+  H5PFieldCommon & {
+    type: "image" | H5PFieldType.Image;
+  }
 >;
 
 export type H5PFieldVideo = Prettify<
-  H5PFieldWidgetExtension &
-    H5PFieldCommon & {
-      type: "video" | H5PFieldType.Video;
-    }
+  H5PFieldCommon & {
+    type: "video" | H5PFieldType.Video;
+  }
 >;
 
 export type H5PFieldAudio = Prettify<
-  H5PFieldWidgetExtension &
-    H5PFieldCommon & {
-      type: "audio" | H5PFieldType.Audio;
-    }
+  H5PFieldCommon & {
+    type: "audio" | H5PFieldType.Audio;
+  }
 >;
 
 export type H5PFieldFile = Prettify<
-  H5PFieldWidgetExtension &
-    H5PFieldCommon & {
-      type: "file" | H5PFieldType.File;
-      widget?: string;
-    }
+  H5PFieldCommon & {
+    type: "file" | H5PFieldType.File;
+  }
 >;
 
 /**
