@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@oclif/test": "^4.0.9",
-    "@types/jest": "^29.5.12",
+    "@types/jest": "^29.5.13",
     "@types/node": "^20.16.5",
     "chai": "^5.1.1",
     "copyfiles": "^2.4.1",
