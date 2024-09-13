@@ -65,11 +65,12 @@ type H5PFieldCommon = Prettify<
      * @see https://h5p.org/semantics#attribute-common
      */
     common?: boolean;
-  } & // Add support for the `widget` property for all field types.
+  } & H5PFieldWidgetExtension
+  //  ^^^^^^^^^^^^^^^^^^^^^^^
+  // Add support for the `widget` property for all field types.
   // Per the documentation, H5PFieldList should _not_ have a `widget` property,
   // but the `processSemanticsChunk` function in `h5p-editor-php-library` does not
   // check for this, so we will include it here.
-  H5PFieldWidgetExtension
 >;
 
 export type H5PFieldText = Prettify<
