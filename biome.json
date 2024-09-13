@@ -26,6 +26,7 @@
       "packages/h5p-generate-configs/bin/",
       "packages/h5p-types/**/*.js",
       "packages/h5p-types/index.d.ts",
+      "packages/h5p-json-schemas/public/pico.css",
       "**/dist/**/*"
     ]
   }
