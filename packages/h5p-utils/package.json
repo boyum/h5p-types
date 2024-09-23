@@ -42,7 +42,7 @@
     "@release-it/conventional-changelog": "^8.0.2",
     "h5p-types": "*",
     "release-it": "^17.6.0",
-    "replace-in-file": "^8.1.0",
+    "replace-in-file": "^8.2.0",
     "tsconfig-base": "*",
     "tsup": "^8.3.0",
     "typescript": "^5.0.4"
