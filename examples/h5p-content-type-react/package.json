@@ -22,7 +22,7 @@
     "tsconfig-react": "*",
     "typescript": "^5.5.2",
     "unplugin-json-dts": "^1.2.0",
-    "webpack": "^5.94.0",
+    "webpack": "^5.95.0",
     "webpack-cli": "^5.1.4"
   }
 }
