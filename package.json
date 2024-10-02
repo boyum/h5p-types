@@ -18,7 +18,7 @@
     "validate-monorepo": "sherif --ignore-dependency typescript"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.2",
+    "@biomejs/biome": "1.9.3",
     "sherif": "^1.0.0",
     "turbo": "^2.1.3"
   },
