@@ -27,7 +27,7 @@
     "@release-it/conventional-changelog": "^8.0.2",
     "@types/jquery": "^3.5.31",
     "h5p-types": "*",
-    "release-it": "^17.7.0",
+    "release-it": "^17.8.2",
     "tsconfig-base": "*",
     "type-fest": "^4.20.1",
     "typescript": "^5.0.4"
