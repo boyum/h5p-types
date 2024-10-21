@@ -8,7 +8,7 @@ import type { H5PTextFieldWidgetExtension } from "./H5PTextFieldWidgetExtension"
 /**
  * @category H5PField
  */
-type H5PFieldCommon = Prettify<
+type H5PFieldCommon = 
   {
     /**
      * Internal name of the field. Must be a valid JavaScript identifier string.
@@ -71,7 +71,7 @@ type H5PFieldCommon = Prettify<
   // Per the documentation, H5PFieldList should _not_ have a `widget` property,
   // but the `processSemanticsChunk` function in `h5p-editor-php-library` does not
   // check for this, so we will include it here.
->;
+
 
 export type H5PFieldText = Prettify<
   H5PTextFieldWidgetExtension &
