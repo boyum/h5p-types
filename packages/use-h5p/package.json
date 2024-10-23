@@ -43,7 +43,7 @@
     "@release-it/conventional-changelog": "^9.0.1",
     "@testing-library/react": "^16.0.1",
     "@types/node": "^20.16.12",
-    "@types/react": "^18.3.11",
+    "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "h5p-types": "*",
     "h5p-utils": "*",
