@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "@release-it/conventional-changelog": "^9.0.1",
-    "@types/jquery": "^3.5.31",
+    "@types/jquery": "^3.5.32",
     "h5p-types": "*",
     "release-it": "^17.10.0",
     "tsconfig-base": "*",
