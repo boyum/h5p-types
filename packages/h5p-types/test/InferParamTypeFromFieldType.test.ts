@@ -138,19 +138,21 @@ namespace Test_LibraryField {
 
 // @ts-ignore Test
 namespace Test_ListField_Text {
-  const field = {
+  const textField = {
+    label: "Text",
+    name: "text",
+    type: "text",
+  } as const satisfies H5PFieldText;
+
+  const listField = {
     label: "List",
     name: "list",
     type: "list",
     entity: "Field",
-    field: {
-      label: "Text",
-      name: "text",
-      type: "text",
-    },
+    field: textField,
   } as const satisfies H5PFieldList;
 
-  type FieldType = typeof field;
+  type FieldType = typeof listField;
 
   type Expected = Array<string>;
   type Actual = InferParamTypeFromFieldType<FieldType>;
