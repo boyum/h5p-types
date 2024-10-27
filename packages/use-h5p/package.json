@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/boyum/h5p-types.git"
   },
-  "license": "ISC",
+  "license": "Apache-2.0",
   "author": {
     "name": "Sindre Bøyum",
     "url": "https://sinre.dev"
