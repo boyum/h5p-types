@@ -1,15 +1,15 @@
 import type { TranslationParams } from "h5p-types";
 import { useContext } from "react";
 import { L10nContext } from "../contexts/LocalizationContext";
-import type { TranslationKey } from "../types/Translations";
+import type { TranslationKey, Translations } from "../types/Translations";
 import { getFallbackString } from "../utils";
 
 export const useTranslation = <
   TTranslationKey extends TranslationKey = TranslationKey,
 >() => {
-  const translations = useContext(L10nContext);
+  type TOpts = TranslationParams<Translations[TTranslationKey]>;
 
-  type Translations = typeof translations;
+  const translations = useContext(L10nContext);
 
   return {
     t: (translationKey: TTranslationKey): string => {
@@ -18,20 +18,16 @@ export const useTranslation = <
 
       return translation;
     },
-    tOpts: (
-      translationKey: TTranslationKey,
-      opts: TranslationParams<Translations[TTranslationKey]>,
-    ): string => {
+    tOpts: (translationKey: TTranslationKey, opts: TOpts): string => {
       const translation =
         translations?.[translationKey] ?? getFallbackString(translationKey);
 
       const options: Array<[string, string]> = Object.entries(opts);
 
-      return options.reduce((acc, [key, value]) => {
-        const regex = new RegExp(key, "g");
-
-        return acc.replace(regex, value);
-      }, translation);
+      return options.reduce(
+        (acc, [key, value]) => acc.replaceAll(key, value),
+        translation,
+      );
     },
   };
 };
