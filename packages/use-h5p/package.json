@@ -40,7 +40,7 @@
     "test:watch": "vitest"
   },
   "devDependencies": {
-    "@release-it/conventional-changelog": "^9.0.1",
+    "@release-it/conventional-changelog": "^9.0.2",
     "@testing-library/react": "^16.0.1",
     "@types/node": "^20.17.1",
     "@types/react": "^18.3.12",
