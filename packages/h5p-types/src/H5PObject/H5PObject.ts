@@ -388,7 +388,7 @@ export interface H5PObject {
   /**
    * Get config for a library
    *
-   * @param string machineName
+   * @param machineName
    */
   getLibraryConfig(machineName: string): unknown | Record<string, never>;
 
