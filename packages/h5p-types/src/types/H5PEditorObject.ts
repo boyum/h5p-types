@@ -358,7 +358,7 @@ export interface H5PEditorObject extends Record<string, unknown> {
   /**
    * Joins an array of strings if they are defined and non empty
    *
-   * @param arr
+   * @param strings
    * @param separator Default: `" "`
    */
   joinNonEmptyStrings(

@@ -10,11 +10,12 @@ export type H5PForm<TParams = unknown> = {
   $common: JQuery<HTMLElement> | null;
   $commonButton: JQuery<HTMLElement> | null;
   $form: JQuery<HTMLElement> | null;
+
   /**
    * Add new languages for content type.
    *
    * @param {string} libraryName
-   * @param {Array} langs
+   * @param {Array} languageCodes
    */
   addLanguages: (
     libraryName: string,
