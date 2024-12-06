@@ -1,27 +1,40 @@
-import type { H5PFieldWidgetExtension } from "./H5PFieldWidgetExtension";
+import type { OneOf, Prettify } from "../utility-types";
 import type { H5PTextTags } from "./H5PTextTags";
 
-export type H5PTextFieldWidgetExtension =
-  | H5PFieldWidgetExtension
-  | {
-      widget: "html";
-      tags: Array<H5PTextTags>;
-    }
-  | {
-      widget: "colorSelector";
-      /**
-       * @see http://bgrins.github.io/spectrum/#options
-       */
-      spectrum?: {
-        showPalette: boolean;
+type NoWidget = { widget?: never };
 
-        /**
-         * Hides the custom color picker.
-         * Requires `showPalette` to be set to `true`.
-         *
-         * @see http://bgrins.github.io/spectrum/#options-showPaletteOnly
-         */
-        showPaletteOnly?: boolean;
-        palette?: Array<Array<string>>;
-      };
-    };
+type UnknownWidget = {
+  widget: string;
+};
+
+type HtmlWidget = {
+  widget: "html";
+  tags: ReadonlyArray<H5PTextTags>;
+};
+
+type ColorSelectorWidget = {
+  widget: "colorSelector";
+
+  /**
+   * @see http://bgrins.github.io/spectrum/#options
+   */
+  spectrum?: {
+    showPalette: boolean;
+
+    /**
+     * Hides the custom color picker.
+     * Requires `showPalette` to be set to `true`.
+     *
+     * @see http://bgrins.github.io/spectrum/#options-showPaletteOnly
+     */
+    showPaletteOnly?: boolean;
+    palette?: ReadonlyArray<ReadonlyArray<string>>;
+  };
+};
+
+export type H5PTextFieldWidgetExtension2 = Prettify<
+  UnknownWidget | NoWidget | HtmlWidget | ColorSelectorWidget
+>;
+
+export type H5PTextFieldWidgetExtension = OneOf<
+  [UnknownWidget,NoWidget, HtmlWidget, ColorSelectorWidget]>
