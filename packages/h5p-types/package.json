@@ -37,7 +37,7 @@
     "typedoc": "^0.27.4",
     "typedoc-plugin-coverage": "^3.4.0",
     "typedoc-plugin-mdn-links": "^4.0.4",
-    "typedoc-umlclass": "^0.10.0",
+    "typedoc-umlclass": "^0.10.1",
     "typescript": "^5.0.4"
   },
   "peerDependencies": {
