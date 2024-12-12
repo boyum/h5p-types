@@ -42,7 +42,7 @@
   "devDependencies": {
     "@release-it/conventional-changelog": "^9.0.3",
     "@testing-library/react": "^16.1.0",
-    "@types/node": "^20.17.9",
+    "@types/node": "^20.17.10",
     "@types/react": "^18.3.13",
     "@types/react-dom": "^18.3.1",
     "h5p-types": "*",
