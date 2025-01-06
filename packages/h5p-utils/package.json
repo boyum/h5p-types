@@ -40,7 +40,7 @@
   "devDependencies": {
     "@release-it/conventional-changelog": "^9.0.4",
     "h5p-types": "*",
-    "release-it": "^17.11.0",
+    "release-it": "^18.0.0",
     "replace-in-file": "^8.3.0",
     "tsconfig-base": "*",
     "tsup": "^8.3.5",
