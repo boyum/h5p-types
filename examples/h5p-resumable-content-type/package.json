@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "h5p-types": "*",
-    "ts-loader": "^9.5.1",
+    "ts-loader": "^9.5.2",
     "tsconfig-base": "*",
     "typescript": "^5.5.2",
     "unplugin-json-dts": "^1.2.1",
