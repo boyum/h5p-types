@@ -34,11 +34,11 @@
   },
   "dependencies": {
     "@oclif/core": "^4.2.2",
-    "@oclif/plugin-help": "^6.2.20",
-    "@oclif/plugin-plugins": "^5.4.24"
+    "@oclif/plugin-help": "^6.2.21",
+    "@oclif/plugin-plugins": "^5.4.25"
   },
   "devDependencies": {
-    "@oclif/test": "^4.1.6",
+    "@oclif/test": "^4.1.7",
     "@types/jest": "^29.5.14",
     "@types/node": "^20.17.12",
     "chai": "^5.1.2",
