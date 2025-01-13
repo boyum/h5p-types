@@ -18,7 +18,7 @@
     "@types/react": "^18.3.13",
     "@types/react-dom": "^18.3.1",
     "h5p-types": "*",
-    "ts-loader": "^9.5.1",
+    "ts-loader": "^9.5.2",
     "tsconfig-react": "*",
     "typescript": "^5.5.2",
     "unplugin-json-dts": "^1.2.1",
