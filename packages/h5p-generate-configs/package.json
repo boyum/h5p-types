@@ -46,7 +46,7 @@
     "esbuild-register": "^3.6.0",
     "h5p-types": "*",
     "jest": "^29.7.0",
-    "mocha": "^11.0.1",
+    "mocha": "^11.1.0",
     "oclif": "^4.17.17",
     "release-it": "^18.1.1",
     "shx": "^0.3.4",
