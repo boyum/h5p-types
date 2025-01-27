@@ -47,7 +47,7 @@
     "@types/react-dom": "^18.3.1",
     "h5p-types": "*",
     "h5p-utils": "*",
-    "happy-dom": "^16.7.2",
+    "happy-dom": "^16.7.3",
     "react-dom": "^18.3.1",
     "release-it": "^18.1.2",
     "tsconfig-react": "*",
