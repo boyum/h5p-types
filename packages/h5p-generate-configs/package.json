@@ -33,9 +33,9 @@
     "testMatch": ["**/*.test.ts"]
   },
   "dependencies": {
-    "@oclif/core": "^4.2.4",
+    "@oclif/core": "^4.2.5",
     "@oclif/plugin-help": "^6.2.23",
-    "@oclif/plugin-plugins": "^5.4.27"
+    "@oclif/plugin-plugins": "^5.4.28"
   },
   "devDependencies": {
     "@oclif/test": "^4.1.8",
@@ -47,7 +47,7 @@
     "h5p-types": "*",
     "jest": "^29.7.0",
     "mocha": "^11.1.0",
-    "oclif": "^4.17.19",
+    "oclif": "^4.17.20",
     "release-it": "^18.1.2",
     "shx": "^0.3.4",
     "ts-jest": "^29.2.5",
