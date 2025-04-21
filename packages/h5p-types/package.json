@@ -35,7 +35,7 @@
     "release-it": "^19.0.1",
     "tsconfig-base": "*",
     "typedoc": "^0.28.2",
-    "typedoc-plugin-coverage": "^3.4.1",
+    "typedoc-plugin-coverage": "^4.0.1",
     "typedoc-plugin-mdn-links": "^5.0.1",
     "typedoc-umlclass": "^0.10.1",
     "typescript": "^5.0.4"
