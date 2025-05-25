@@ -43,7 +43,7 @@
     "release-it": "^19.0.2",
     "replace-in-file": "^8.3.0",
     "tsconfig-base": "*",
-    "tsup": "^8.4.0",
+    "tsup": "^8.5.0",
     "typescript": "^5.0.4"
   },
   "engines": {
