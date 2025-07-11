@@ -17,6 +17,6 @@
     "tsconfig-base": "*",
     "typescript": "5.0",
     "unplugin-json-dts": "^1.3.2",
-    "vite": "^6.3.5"
+    "vite": "^7.0.4"
   }
 }
