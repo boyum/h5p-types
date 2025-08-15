@@ -1,7 +1,9 @@
+/** biome-ignore-all lint/correctness/noUnusedVariables: Test namespaces */
+
 import type { InferParamsFromSemantics } from "..";
 import type { AreEqual, Expect } from "../src/test-utility-types";
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_InferParamsFromSemantics_Bildetema {
   declare const $defaultExport: [
     {
@@ -740,7 +742,7 @@ namespace Test_InferParamsFromSemantics_Bildetema {
 
   type Actual = InferParamsFromSemantics<typeof $defaultExport>;
 
-  // @ts-ignore Test
+  // @ts-expect-error Test
   type Test =
     // prettier-ignore
     Expect<AreEqual<Actual, Expected>>;

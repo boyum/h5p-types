@@ -1,4 +1,4 @@
-import { promises as fs, existsSync } from "node:fs";
+import { existsSync, promises as fs } from "node:fs";
 import type { Command } from "@oclif/core";
 import type { H5PBehaviour, H5PField, H5PL10n, H5PSemantics } from "h5p-types";
 import { findDuplicates } from "./array.utils.js";

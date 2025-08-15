@@ -3,7 +3,9 @@
   "displayName": "H5P Quality of Life",
   "version": "0.1.0",
   "description": "Quality of life improvements for H5P development in VSCode",
-  "categories": ["Other"],
+  "categories": [
+    "Other"
+  ],
   "repository": {
     "url": "https://github.com/boyum/h5p-types.git"
   },
@@ -39,5 +41,7 @@
     "node": ">= 16",
     "vscode": "^1.72.0"
   },
-  "extensionKind": ["workspace"]
+  "extensionKind": [
+    "workspace"
+  ]
 }

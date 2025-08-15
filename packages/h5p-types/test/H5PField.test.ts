@@ -1,9 +1,11 @@
+/** biome-ignore-all lint/correctness/noUnusedVariables: Test namespaces */
+
 import type { ReadonlyDeep } from "type-fest";
 import type { H5PField } from "../src/types/H5PField";
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_Widget_Html {
-  // @ts-ignore Ignore unused variable
+  // @ts-expect-error Ignore unused variable
   const field = {
     label: "Description",
     name: "description",
@@ -15,9 +17,9 @@ namespace Test_Widget_Html {
   } as const satisfies ReadonlyDeep<H5PField>;
 }
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_ListFieldSupportsWidgetProperty {
-  // @ts-ignore Ignore unused variable
+  // @ts-expect-error Ignore unused variable
   const field = {
     label: "Description",
     name: "description",

@@ -1,7 +1,9 @@
+/** biome-ignore-all lint/correctness/noUnusedVariables: Test namespaces */
+
 import type { H5PFieldGroup, InferL10nType } from "..";
 import type { AreEqual, Expect } from "../src/test-utility-types";
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_InferL10nType {
   const l10nGroup = {
     label: "Group",
@@ -25,8 +27,8 @@ namespace Test_InferL10nType {
   };
   type Actual = InferL10nType<Group>;
 
-  // @ts-ignore Test
+  // @ts-expect-error Test
   type Test =
-    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
+    // biome-ignore format: Avoid `@ts-expect-error` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }

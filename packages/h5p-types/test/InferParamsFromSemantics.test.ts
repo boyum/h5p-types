@@ -1,3 +1,5 @@
+/** biome-ignore-all lint/correctness/noUnusedVariables: Test namespaces */
+
 import type { EmptyObject, ReadonlyDeep } from "type-fest";
 import type {
   H5PField,
@@ -7,7 +9,7 @@ import type {
 } from "..";
 import type { AreEqual, Expect } from "../src/test-utility-types";
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_H5PFieldText {
   const semantics = [
     {
@@ -23,13 +25,13 @@ namespace Test_H5PFieldText {
 
   type Actual = InferParamsFromSemantics<typeof semantics>;
 
-  // @ts-ignore Test
+  // @ts-expect-error Test
   type Test =
-    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
+    // biome-ignore format: Avoid `@ts-expect-error` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_H5PFieldList {
   const listField = {
     label: "List",
@@ -51,13 +53,13 @@ namespace Test_H5PFieldList {
 
   type Actual = InferParamsFromSemantics<typeof semantics>;
 
-  // @ts-ignore Test
+  // @ts-expect-error Test
   type Test =
-    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
+    // biome-ignore format: Avoid `@ts-expect-error` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_MultipleFields {
   const semantics = [
     {
@@ -80,13 +82,13 @@ namespace Test_MultipleFields {
 
   type Actual = InferParamsFromSemantics<typeof semantics>;
 
-  // @ts-ignore Test
+  // @ts-expect-error Test
   type Test =
-    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
+    // biome-ignore format: Avoid `@ts-expect-error` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_H5PFieldGroupWithZeroFields {
   const semantics = [
     {
@@ -105,13 +107,13 @@ namespace Test_H5PFieldGroupWithZeroFields {
   // @ts-expect-error Expect that `field` has no properties
   params.field.a;
 
-  // @ts-ignore Test
+  // @ts-expect-error Test
   type Test =
-    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
+    // biome-ignore format: Avoid `@ts-expect-error` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_H5PFieldGroupWithOneField {
   const semantics = [
     {
@@ -131,13 +133,13 @@ namespace Test_H5PFieldGroupWithOneField {
   type Expected = { group: number };
   type Actual = InferParamsFromSemantics<typeof semantics>;
 
-  // @ts-ignore Test
+  // @ts-expect-error Test
   type Test =
-    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
+    // biome-ignore format: Avoid `@ts-expect-error` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_H5PFieldGroupWithMultipleFields {
   const semantics = [
     {
@@ -163,13 +165,13 @@ namespace Test_H5PFieldGroupWithMultipleFields {
   type Expected = { group: { field1: number; field2: boolean } };
   type Actual = InferParamsFromSemantics<typeof semantics>;
 
-  // @ts-ignore Test
+  // @ts-expect-error Test
   type Test =
-    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
+    // biome-ignore format: Avoid `@ts-expect-error` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_OptionalFields {
   const semantics = [
     {
@@ -292,13 +294,13 @@ namespace Test_OptionalFields {
   // Expect that `field6` is not possibly undefined
   params.group.field6.toString();
 
-  // @ts-ignore Test
+  // @ts-expect-error Test
   type Test =
-    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
+    // biome-ignore format: Avoid `@ts-expect-error` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_Bildetema {
   const l10nField = {
     name: "l10n",
@@ -824,13 +826,13 @@ namespace Test_Bildetema {
 
   type Actual = InferParamsFromSemantics<typeof semantics>;
 
-  // @ts-ignore Test
+  // @ts-expect-error Test
   type Test =
-    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
+    // biome-ignore format: Avoid `@ts-expect-error` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_VocabularyDrill {
   type Semantics = [
     {
@@ -1102,13 +1104,13 @@ namespace Test_VocabularyDrill {
   };
   type Actual = InferParamsFromSemantics<Semantics>;
 
-  // @ts-ignore Test
+  // @ts-expect-error Test
   type Test =
-    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
+    // biome-ignore format: Avoid `@ts-expect-error` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
-// @ts-ignore
+// @ts-expect-error
 namespace Test_Type {
   type Semantics = [
     {
@@ -1144,8 +1146,8 @@ namespace Test_Type {
   };
   type Actual = InferParamsFromSemantics<Semantics>;
 
-  // @ts-ignore Test
+  // @ts-expect-error Test
   type Test =
-    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
+    // biome-ignore format: Avoid `@ts-expect-error` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
