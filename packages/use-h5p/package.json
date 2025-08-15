@@ -2,7 +2,10 @@
   "name": "use-h5p",
   "version": "2.1.0",
   "description": "React Hooks to be used with H5P",
-  "keywords": ["h5p", "react"],
+  "keywords": [
+    "h5p",
+    "react"
+  ],
   "homepage": "https://github.com/boyum/h5p-types/tree/main/packages/use-h5p#readme",
   "bugs": {
     "url": "https://github.com/boyum/h5p-types/issues"
@@ -32,7 +35,10 @@
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.cts",
-  "files": ["dist/**/*", "tsconfig.json"],
+  "files": [
+    "dist/**/*",
+    "tsconfig.json"
+  ],
   "scripts": {
     "build": "tsup ./src/index.ts --format esm,cjs --dts",
     "publish-to-npm": "release-it",

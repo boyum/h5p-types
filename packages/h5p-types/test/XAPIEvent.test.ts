@@ -1,6 +1,8 @@
+/** biome-ignore-all lint/correctness/noUnusedVariables: Test namespaces */
+
 import type { XAPIEvent } from "..";
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_XAPIEvent_getVerb_True {
   declare const event: XAPIEvent;
   const verb = event.getVerb(true);
@@ -11,7 +13,7 @@ namespace Test_XAPIEvent_getVerb_True {
   verb?.length;
 }
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_XAPIEvent_getVerb_False {
   declare const event: XAPIEvent;
   const verb = event.getVerb(false);
@@ -22,7 +24,7 @@ namespace Test_XAPIEvent_getVerb_False {
   verb?.length;
 }
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_XAPIEvent_getVerb_Undefined {
   declare const event: XAPIEvent;
   const verb = event.getVerb();

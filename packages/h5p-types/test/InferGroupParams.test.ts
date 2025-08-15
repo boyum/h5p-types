@@ -1,8 +1,10 @@
+/** biome-ignore-all lint/correctness/noUnusedVariables: Test namespaces */
+
 import type { EmptyObject, ReadonlyDeep } from "type-fest";
 import type { H5PFieldGroup, InferGroupParams } from "..";
 import type { AreEqual, Expect } from "../src/test-utility-types";
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_EmptyGroup {
   const emptyGroup = {
     label: "Group",
@@ -16,13 +18,13 @@ namespace Test_EmptyGroup {
   type Expected = EmptyObject;
   type Actual = InferGroupParams<Group>;
 
-  // @ts-ignore Test
+  // @ts-expect-error Test
   type Test =
-    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
+    // biome-ignore format: Avoid `@ts-expect-error` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_GroupWithOneField {
   const groupWithOneField = {
     label: "Group",
@@ -42,13 +44,13 @@ namespace Test_GroupWithOneField {
   type Expected = string;
   type Actual = InferGroupParams<Group>;
 
-  // @ts-ignore Test
+  // @ts-expect-error Test
   type Test =
-    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
+    // biome-ignore format: Avoid `@ts-expect-error` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_GroupWithMultipleFields {
   const groupWithMultipleFields = {
     label: "Group",
@@ -76,13 +78,13 @@ namespace Test_GroupWithMultipleFields {
   };
   type Actual = InferGroupParams<Group>;
 
-  // @ts-ignore Test
+  // @ts-expect-error Test
   type Test =
-    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
+    // biome-ignore format: Avoid `@ts-expect-error` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_GroupWithFields_NoLabel {
   const group = {
     name: "group",
@@ -105,13 +107,13 @@ namespace Test_GroupWithFields_NoLabel {
   };
   type Actual = InferGroupParams<typeof group>;
 
-  // @ts-ignore Test
+  // @ts-expect-error Test
   type Test =
     // prettier-ignore
     Expect<AreEqual<Actual, Expected>>;
 }
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_OverallFeedback {
   const group = {
     name: "overallFeedback",
@@ -182,13 +184,13 @@ namespace Test_OverallFeedback {
 
   type Actual = InferGroupParams<typeof group>;
 
-  // @ts-ignore Test
+  // @ts-expect-error Test
   type Test =
     // prettier-ignore
     Expect<AreEqual<Actual, Expected>>;
 }
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_OverallFeedback_Wrapper {
   const group = {
     name: "overallFeedback",
@@ -270,7 +272,7 @@ namespace Test_OverallFeedback_Wrapper {
 
   type Actual = InferGroupParams<typeof wrapperGroup>;
 
-  // @ts-ignore Test
+  // @ts-expect-error Test
   type Test =
     // prettier-ignore
     Expect<AreEqual<Actual, Expected>>;

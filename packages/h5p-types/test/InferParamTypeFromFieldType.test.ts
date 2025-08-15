@@ -1,5 +1,6 @@
-import type { EmptyObject, ReadonlyDeep } from "type-fest";
-import type { IsEqual } from "type-fest";
+/** biome-ignore-all lint/correctness/noUnusedVariables: Test namespaces */
+
+import type { EmptyObject, IsEqual, ReadonlyDeep } from "type-fest";
 import type {
   H5PAudio,
   H5PFieldAudio,
@@ -21,72 +22,72 @@ import type {
 } from "..";
 import type { AreEqual, Expect } from "../src/test-utility-types";
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_AudioField {
   type FieldType = H5PFieldAudio;
 
   type Expected = H5PAudio;
   type Actual = InferParamTypeFromFieldType<FieldType>;
 
-  // @ts-ignore Test
+  // @ts-expect-error Test
   type Test =
-    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
+    // biome-ignore format: Avoid `@ts-expect-error` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_BooleanField {
   type FieldType = H5PFieldBoolean;
 
   type Expected = boolean;
   type Actual = InferParamTypeFromFieldType<FieldType>;
 
-  // @ts-ignore Test
+  // @ts-expect-error Test
   type Test =
-    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
+    // biome-ignore format: Avoid `@ts-expect-error` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_FileField {
   type FieldType = H5PFieldFile;
 
   type Expected = H5PMedia;
   type Actual = InferParamTypeFromFieldType<FieldType>;
 
-  // @ts-ignore Test
+  // @ts-expect-error Test
   type Test =
-    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
+    // biome-ignore format: Avoid `@ts-expect-error` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_GroupField_UnknownFields {
   type FieldType = H5PFieldGroup;
 
   type Expected = EmptyObject;
   type Actual = InferParamTypeFromFieldType<FieldType>;
 
-  // @ts-ignore Test
+  // @ts-expect-error Test
   type Test =
-    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
+    // biome-ignore format: Avoid `@ts-expect-error` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_GroupField_NoFields {
   type FieldType = H5PFieldGroup & { fields: [] };
 
   type Expected = EmptyObject;
   type Actual = InferParamTypeFromFieldType<FieldType>;
 
-  // @ts-ignore Test
+  // @ts-expect-error Test
   type Test =
-    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
+    // biome-ignore format: Avoid `@ts-expect-error` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_GroupField_OneField {
   type FieldType = H5PFieldGroup & {
     fields: [
@@ -101,42 +102,42 @@ namespace Test_GroupField_OneField {
   type Expected = string;
   type Actual = InferParamTypeFromFieldType<FieldType>;
 
-  // @ts-ignore Test
+  // @ts-expect-error Test
   type Test =
-    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
+    // biome-ignore format: Avoid `@ts-expect-error` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_ImageField {
   type FieldType = H5PFieldImage;
 
   type Expected = H5PImage;
   type Actual = InferParamTypeFromFieldType<FieldType>;
 
-  // @ts-ignore Test
+  // @ts-expect-error Test
   type Test =
-    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
+    // biome-ignore format: Avoid `@ts-expect-error` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_LibraryField {
   type FieldType = H5PFieldLibrary;
 
   type Expected = IH5PContentType;
   type Actual = InferParamTypeFromFieldType<FieldType>;
 
-  // @ts-ignore Test
+  // @ts-expect-error Test
   type Test =
-    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
+    // biome-ignore format: Avoid `@ts-expect-error` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 
   declare const library: Actual;
   library.attach;
 }
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_ListField_Text {
   const field = {
     label: "List",
@@ -155,13 +156,13 @@ namespace Test_ListField_Text {
   type Expected = Array<string>;
   type Actual = InferParamTypeFromFieldType<FieldType>;
 
-  // @ts-ignore Test
+  // @ts-expect-error Test
   type Test =
-    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
+    // biome-ignore format: Avoid `@ts-expect-error` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_ListField_Group {
   const field = {
     label: "List",
@@ -197,13 +198,13 @@ namespace Test_ListField_Group {
 
   type Actual = InferParamTypeFromFieldType<FieldType>;
 
-  // @ts-ignore Test
+  // @ts-expect-error Test
   type Test =
-    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
+    // biome-ignore format: Avoid `@ts-expect-error` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_ListField_Group {
   const field = {
     label: "List",
@@ -238,13 +239,13 @@ namespace Test_ListField_Group {
   }>;
   type Actual = InferParamTypeFromFieldType<FieldType>;
 
-  // @ts-ignore Test
+  // @ts-expect-error Test
   type Test =
     // prettier-ignore
     Expect<AreEqual<Actual, Expected>>;
 }
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_ListField_Group_NoLabel {
   const field = {
     name: "list",
@@ -275,26 +276,26 @@ namespace Test_ListField_Group_NoLabel {
   }>;
   type Actual = InferParamTypeFromFieldType<FieldType>;
 
-  // @ts-ignore Test
+  // @ts-expect-error Test
   type Test =
-    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
+    // biome-ignore format: Avoid `@ts-expect-error` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_NumberField {
   type FieldType = H5PFieldNumber;
 
   type Expected = number;
   type Actual = InferParamTypeFromFieldType<FieldType>;
 
-  // @ts-ignore Test
+  // @ts-expect-error Test
   type Test =
-    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
+    // biome-ignore format: Avoid `@ts-expect-error` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_SelectField {
   const field = {
     label: "Select",
@@ -313,39 +314,39 @@ namespace Test_SelectField {
   type Expected = "a" | "b" | "c";
   type Actual = InferParamTypeFromFieldType<FieldType>;
 
-  // @ts-ignore Test
+  // @ts-expect-error Test
   type Test =
-    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
+    // biome-ignore format: Avoid `@ts-expect-error` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_TextField {
   type FieldType = H5PFieldText;
 
   type Expected = string;
   type Actual = InferParamTypeFromFieldType<FieldType>;
 
-  // @ts-ignore Test
+  // @ts-expect-error Test
   type Test =
-    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
+    // biome-ignore format: Avoid `@ts-expect-error` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_TextField_Optional {
   type FieldType = Omit<H5PFieldText, "optional"> & { optional: true };
 
   type Expected = string | undefined;
   type Actual = InferParamTypeFromFieldType<FieldType>;
 
-  // @ts-ignore Test
+  // @ts-expect-error Test
   type Test =
     // prettier-ignore
     Expect<IsEqual<Actual, Expected>>;
 }
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_TextField_NoLabel {
   const textField = {
     name: "text",
@@ -355,21 +356,21 @@ namespace Test_TextField_NoLabel {
   type Expected = string;
   type Actual = InferParamTypeFromFieldType<typeof textField>;
 
-  // @ts-ignore Test
+  // @ts-expect-error Test
   type Test =
     // prettier-ignore
     Expect<IsEqual<Actual, Expected>>;
 }
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_VideoField {
   type FieldType = H5PFieldVideo;
 
   type Expected = H5PVideo;
   type Actual = InferParamTypeFromFieldType<FieldType>;
 
-  // @ts-ignore Test
+  // @ts-expect-error Test
   type Test =
-    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
+    // biome-ignore format: Avoid `@ts-expect-error` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }

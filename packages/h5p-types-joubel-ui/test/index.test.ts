@@ -8,21 +8,29 @@ H5P.JoubelUI.createScoreBar(1, "", "", "").appendTo("");
 const button1 = H5P.JoubelUI.createButton({ class: "foo" });
 const button2 = H5P.JoubelUI.createButton({});
 
-// biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
+// biome-ignore format: Avoid `@ts-expect-error` from ignoring test assertion
 // @ts-expect-error
-type Test1 = Expect<AreEqual<typeof button1, JQuery<HTMLButtonElement>>>;
+// biome-ignore lint/correctness/noUnusedVariables: Type testing
+type Test1 =
+  Expect<AreEqual<typeof button1, JQuery<HTMLButtonElement>>>;
 
-// biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
+// biome-ignore format: Avoid `@ts-expect-error` from ignoring test assertion
 // @ts-expect-error
-type Test2 = Expect<AreEqual<typeof button2, JQuery<HTMLButtonElement>>>;
+// biome-ignore lint/correctness/noUnusedVariables: Type testing
+type Test2 =
+  Expect<AreEqual<typeof button2, JQuery<HTMLButtonElement>>>;
 
 const link1 = H5P.JoubelUI.createButton({ class: "foo", href: "abc" });
 const link2 = H5P.JoubelUI.createButton({ href: "abc" });
 
-// biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
+// biome-ignore format: Avoid `@ts-expect-error` from ignoring test assertion
 // @ts-expect-error
-type Test3 = Expect<AreEqual<typeof link1, JQuery<HTMLAnchorElement>>>;
+// biome-ignore lint/correctness/noUnusedVariables: Type testing
+type Test3 =
+  Expect<AreEqual<typeof link1, JQuery<HTMLAnchorElement>>>;
 
-// biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
+// biome-ignore format: Avoid `@ts-expect-error` from ignoring test assertion
 // @ts-expect-error
-type Test4 = Expect<AreEqual<typeof link2, JQuery<HTMLAnchorElement>>>;
+// biome-ignore lint/correctness/noUnusedVariables: Type testing
+type Test4 =
+  Expect<AreEqual<typeof link2, JQuery<HTMLAnchorElement>>>;

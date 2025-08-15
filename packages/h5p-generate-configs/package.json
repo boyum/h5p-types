@@ -12,7 +12,12 @@
   "bin": {
     "h5p-generate-configs": "./bin/run"
   },
-  "files": ["/bin", "/dist", "/npm-shrinkwrap.json", "/oclif.manifest.json"],
+  "files": [
+    "/bin",
+    "/dist",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json"
+  ],
   "scripts": {
     "build": "shx rm -rf dist && tsc -b",
     "demo:library": "h5p-generate-configs l --type-definition demo/library.ts --out demo/library.json",
@@ -30,7 +35,9 @@
   "jest": {
     "preset": "ts-jest",
     "testEnvironment": "node",
-    "testMatch": ["**/*.test.ts"]
+    "testMatch": [
+      "**/*.test.ts"
+    ]
   },
   "dependencies": {
     "@oclif/core": "^4.5.2",
@@ -57,7 +64,10 @@
     "bin": "h5p-generate-configs",
     "dirname": "h5p-generate-configs",
     "commands": "./dist/src/commands",
-    "plugins": ["@oclif/plugin-help", "@oclif/plugin-plugins"],
+    "plugins": [
+      "@oclif/plugin-help",
+      "@oclif/plugin-plugins"
+    ],
     "topicSeparator": " ",
     "topics": {
       "h5p-generate-configs": {

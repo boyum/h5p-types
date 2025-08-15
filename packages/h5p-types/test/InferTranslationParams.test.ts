@@ -1,7 +1,9 @@
+/** biome-ignore-all lint/correctness/noUnusedVariables: Test namespaces */
+
 import type { TranslationHasParams, TranslationParams } from "..";
 import type { AreEqual, Expect } from "../src/test-utility-types";
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_InferParams_One {
   type Expected = {
     ":count": string;
@@ -9,13 +11,13 @@ namespace Test_InferParams_One {
 
   type Actual = TranslationParams<":count cats">;
 
-  // @ts-ignore Test
+  // @ts-expect-error Test
   type Test =
-    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
+    // biome-ignore format: Avoid `@ts-expect-error` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_InferParams_Multiple {
   type Expected = {
     ":count": string;
@@ -27,13 +29,13 @@ namespace Test_InferParams_Multiple {
   type Actual =
     TranslationParams<"We have :count :animal in :zoo-name. They are :adjective!">;
 
-  // @ts-ignore Test
+  // @ts-expect-error Test
   type Test =
-    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
+    // biome-ignore format: Avoid `@ts-expect-error` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_InferParams_MultiLine {
   type Expected = {
     ":count": string;
@@ -45,61 +47,61 @@ namespace Test_InferParams_MultiLine {
   type Actual = TranslationParams<`We have :count :animal in :zoo-name.
   They are :adjective!`>;
 
-  // @ts-ignore Test
+  // @ts-expect-error Test
   type Test =
-    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
+    // biome-ignore format: Avoid `@ts-expect-error` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_HasParams_True {
   type Expected = true;
 
   type Actual = TranslationHasParams<":count cat">;
 
-  // @ts-ignore Test
+  // @ts-expect-error Test
   type Test =
-    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
+    // biome-ignore format: Avoid `@ts-expect-error` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_HasParams_True {
   type Expected = true;
 
   type Actual = TranslationHasParams<"Our :count cats">;
 
-  // @ts-ignore Test
+  // @ts-expect-error Test
   type Test =
-    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
+    // biome-ignore format: Avoid `@ts-expect-error` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_HasParams_False {
   type Expected = false;
 
   type Actual = TranslationHasParams<"cat">;
 
-  // @ts-ignore Test
+  // @ts-expect-error Test
   type Test =
-    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
+    // biome-ignore format: Avoid `@ts-expect-error` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_HasParams_SpecifiedPrefix {
   type Expected = true;
 
   type Actual = TranslationHasParams<"Our @count cats", "@">;
 
-  // @ts-ignore Test
+  // @ts-expect-error Test
   type Test =
-    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
+    // biome-ignore format: Avoid `@ts-expect-error` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }
 
-// @ts-ignore Test
+// @ts-expect-error Test
 namespace Test_InferParams_SpecifiedPrefix {
   type Expected = {
     "@count": string;
@@ -114,8 +116,8 @@ namespace Test_InferParams_SpecifiedPrefix {
     "@"
   >;
 
-  // @ts-ignore Test
+  // @ts-expect-error Test
   type Test =
-    // biome-ignore format: Avoid `@ts-ignore` from ignoring test assertion
+    // biome-ignore format: Avoid `@ts-expect-error` from ignoring test assertion
     Expect<AreEqual<Actual, Expected>>;
 }

@@ -1,8 +1,6 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.5.3/schema.json",
-  "organizeImports": {
-    "enabled": true
-  },
+  "$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
+  "assist": { "actions": { "source": { "organizeImports": "on" } } },
   "formatter": {
     "enabled": true,
     "indentWidth": 2,
@@ -15,19 +13,20 @@
     }
   },
   "files": {
-    "ignore": [
-      "CHANGELOG.md",
-      "library.json.d.ts",
-      "semantics.json.d.ts",
-      "*.schema.json",
-      ".vscode-test-web",
-      "packages/h5p-generate-configs/demo/*.json",
-      "packages/h5p-generate-configs/demo/TranslationKey.ts",
-      "packages/h5p-generate-configs/bin/",
-      "packages/h5p-types/**/*.js",
-      "packages/h5p-types/index.d.ts",
-      "packages/h5p-json-schemas/public/pico.css",
-      "**/dist/**/*"
+    "includes": [
+      "**",
+      "!**/CHANGELOG.md",
+      "!**/library.json.d.ts",
+      "!**/semantics.json.d.ts",
+      "!**/*.schema.json",
+      "!**/.vscode-test-web",
+      "!**/packages/h5p-generate-configs/demo/**/*.json",
+      "!**/packages/h5p-generate-configs/demo/TranslationKey.ts",
+      "!**/packages/h5p-generate-configs/bin/",
+      "!**/packages/h5p-types/**/*.js",
+      "!**/packages/h5p-types/index.d.ts",
+      "!**/packages/h5p-json-schemas/public/pico.css",
+      "!**/dist/**/*"
     ]
   }
 }
