@@ -30,7 +30,7 @@
     "@release-it/conventional-changelog": "^10.0.0",
     "@types/jquery": "^3.5.32",
     "h5p-types": "*",
-    "release-it": "^19.0.3",
+    "release-it": "^19.0.4",
     "tsconfig-base": "*",
     "type-fest": "^4.20.1",
     "typescript": "^5.0.4"
