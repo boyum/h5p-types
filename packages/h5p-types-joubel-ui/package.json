@@ -32,7 +32,7 @@
     "h5p-types": "*",
     "release-it": "^19.0.5",
     "tsconfig-base": "*",
-    "type-fest": "^4.20.1",
+    "type-fest": "^5.0.1",
     "typescript": "^5.0.4"
   },
   "peerDependencies": {
