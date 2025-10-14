@@ -36,7 +36,7 @@
     "tsconfig-base": "*",
     "typedoc": "^0.28.10",
     "typedoc-plugin-coverage": "^4.0.1",
-    "typedoc-plugin-mdn-links": "^5.0.9",
+    "typedoc-plugin-mdn-links": "^5.0.10",
     "typedoc-umlclass": "^0.10.2",
     "typescript": "^5.0.4"
   },
