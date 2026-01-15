@@ -59,7 +59,7 @@
     "tsconfig-react": "*",
     "tsup": "^8.5.1",
     "typescript": "^5.5.2",
-    "vitest": "^4.0.14"
+    "vitest": "^4.0.17"
   },
   "peerDependencies": {
     "react": ">= 17.0.1"
