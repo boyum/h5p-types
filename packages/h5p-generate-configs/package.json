@@ -48,7 +48,7 @@
     "@oclif/test": "^4.1.16",
     "@types/jest": "^30.0.0",
     "@types/node": "^20.17.30",
-    "chai": "^6.2.1",
+    "chai": "^6.2.2",
     "copyfiles": "^2.4.1",
     "esbuild-register": "^3.6.0",
     "h5p-types": "*",
