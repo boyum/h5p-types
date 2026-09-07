@@ -22,7 +22,6 @@ declare const $defaultExport: {
   author: typeof author,
   embedTypes: typeof embedTypes,
   preloadedDependencies: typeof preloadedDependencies,
-  preloadedJs: typeof preloadedJs,
+  preloadedJs
 };
-
 export default $defaultExport;

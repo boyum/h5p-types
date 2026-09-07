@@ -11,121 +11,121 @@
         "H5PField": {
             "anyOf": [
                 {
-                    "$ref": "#/definitions/{widget?:string;name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;type:\"text\"|H5PFieldType.Text;default?:string;maxLength?:number;regexp?:string;enterMode?:H5PEnterMode;font?:string;placeholder?:string;important?:{description?:string;example?:string;};}"
+                    "$ref": "#/definitions/%7Bwidget%3F%3Astring%3Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Btype%3A%22text%22%7CH5PFieldType.Text%3Bdefault%3F%3Astring%3BmaxLength%3F%3Anumber%3Bregexp%3F%3Astring%3BenterMode%3F%3AH5PEnterMode%3Bfont%3F%3Astring%3Bplaceholder%3F%3Astring%3Bimportant%3F%3A%7Bdescription%3F%3Astring%3Bexample%3F%3Astring%3B%7D%3B%7D"
                 },
                 {
-                    "$ref": "#/definitions/{widget:\"showWhen\"|\"NDLAShowWhen\";name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;showWhen:H5PShowWhenOptions;type:\"text\"|H5PFieldType.Text;default?:string;maxLength?:number;regexp?:string;enterMode?:H5PEnterMode;font?:string;placeholder?:string;important?:{description?:string;example?:string;};}"
+                    "$ref": "#/definitions/%7Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3BshowWhen%3AH5PShowWhenOptions%3Btype%3A%22text%22%7CH5PFieldType.Text%3Bdefault%3F%3Astring%3BmaxLength%3F%3Anumber%3Bregexp%3F%3Astring%3BenterMode%3F%3AH5PEnterMode%3Bfont%3F%3Astring%3Bplaceholder%3F%3Astring%3Bimportant%3F%3A%7Bdescription%3F%3Astring%3Bexample%3F%3Astring%3B%7D%3B%7D"
                 },
                 {
-                    "$ref": "#/definitions/{widget:\"NDLATagsPicker\";name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;fieldNameToWatch:string;type:\"text\"|H5PFieldType.Text;default?:string;maxLength?:number;regexp?:string;enterMode?:H5PEnterMode;font?:string;placeholder?:string;important?:{description?:string;example?:string;};}"
+                    "$ref": "#/definitions/%7Bwidget%3A%22NDLATagsPicker%22%3Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3BfieldNameToWatch%3Astring%3Btype%3A%22text%22%7CH5PFieldType.Text%3Bdefault%3F%3Astring%3BmaxLength%3F%3Anumber%3Bregexp%3F%3Astring%3BenterMode%3F%3AH5PEnterMode%3Bfont%3F%3Astring%3Bplaceholder%3F%3Astring%3Bimportant%3F%3A%7Bdescription%3F%3Astring%3Bexample%3F%3Astring%3B%7D%3B%7D"
                 },
                 {
-                    "$ref": "#/definitions/{widget:\"showWhen\"|\"NDLAShowWhen\";showWhen:H5PShowWhenOptions;name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;type:\"text\"|H5PFieldType.Text;default?:string;maxLength?:number;regexp?:string;enterMode?:H5PEnterMode;font?:string;placeholder?:string;important?:{description?:string;example?:string;};}"
+                    "$ref": "#/definitions/%7Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Btype%3A%22text%22%7CH5PFieldType.Text%3Bdefault%3F%3Astring%3BmaxLength%3F%3Anumber%3Bregexp%3F%3Astring%3BenterMode%3F%3AH5PEnterMode%3Bfont%3F%3Astring%3Bplaceholder%3F%3Astring%3Bimportant%3F%3A%7Bdescription%3F%3Astring%3Bexample%3F%3Astring%3B%7D%3B%7D"
                 },
                 {
-                    "$ref": "#/definitions/{widget:\"showWhen\"|\"NDLAShowWhen\";showWhen:H5PShowWhenOptions;name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;type:\"text\"|H5PFieldType.Text;default?:string;maxLength?:number;regexp?:string;enterMode?:H5PEnterMode;font?:string;placeholder?:string;important?:{description?:string;example?:string;};}_1"
+                    "$ref": "#/definitions/%7Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Btype%3A%22text%22%7CH5PFieldType.Text%3Bdefault%3F%3Astring%3BmaxLength%3F%3Anumber%3Bregexp%3F%3Astring%3BenterMode%3F%3AH5PEnterMode%3Bfont%3F%3Astring%3Bplaceholder%3F%3Astring%3Bimportant%3F%3A%7Bdescription%3F%3Astring%3Bexample%3F%3Astring%3B%7D%3B%7D_1"
                 },
                 {
-                    "$ref": "#/definitions/{widget:\"NDLATagsPicker\";fieldNameToWatch:string;name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;type:\"text\"|H5PFieldType.Text;default?:string;maxLength?:number;regexp?:string;enterMode?:H5PEnterMode;font?:string;placeholder?:string;important?:{description?:string;example?:string;};}"
+                    "$ref": "#/definitions/%7Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Btype%3A%22text%22%7CH5PFieldType.Text%3Bdefault%3F%3Astring%3BmaxLength%3F%3Anumber%3Bregexp%3F%3Astring%3BenterMode%3F%3AH5PEnterMode%3Bfont%3F%3Astring%3Bplaceholder%3F%3Astring%3Bimportant%3F%3A%7Bdescription%3F%3Astring%3Bexample%3F%3Astring%3B%7D%3B%7D"
                 },
                 {
-                    "$ref": "#/definitions/{widget:\"NDLATagsPicker\";fieldNameToWatch:string;name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;type:\"text\"|H5PFieldType.Text;default?:string;maxLength?:number;regexp?:string;enterMode?:H5PEnterMode;font?:string;placeholder?:string;important?:{description?:string;example?:string;};}_1"
+                    "$ref": "#/definitions/%7Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Btype%3A%22text%22%7CH5PFieldType.Text%3Bdefault%3F%3Astring%3BmaxLength%3F%3Anumber%3Bregexp%3F%3Astring%3BenterMode%3F%3AH5PEnterMode%3Bfont%3F%3Astring%3Bplaceholder%3F%3Astring%3Bimportant%3F%3A%7Bdescription%3F%3Astring%3Bexample%3F%3Astring%3B%7D%3B%7D_1"
                 },
                 {
-                    "$ref": "#/definitions/{widget:\"html\";tags:H5PTextTags[];name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;type:\"text\"|H5PFieldType.Text;default?:string;maxLength?:number;regexp?:string;enterMode?:H5PEnterMode;font?:string;placeholder?:string;important?:{description?:string;example?:string;};}"
+                    "$ref": "#/definitions/%7Bwidget%3A%22html%22%3Btags%3AH5PTextTags%5B%5D%3Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Btype%3A%22text%22%7CH5PFieldType.Text%3Bdefault%3F%3Astring%3BmaxLength%3F%3Anumber%3Bregexp%3F%3Astring%3BenterMode%3F%3AH5PEnterMode%3Bfont%3F%3Astring%3Bplaceholder%3F%3Astring%3Bimportant%3F%3A%7Bdescription%3F%3Astring%3Bexample%3F%3Astring%3B%7D%3B%7D"
                 },
                 {
-                    "$ref": "#/definitions/{widget:\"colorSelector\";spectrum?:{showPalette:boolean;showPaletteOnly?:boolean;palette?:string[][];};name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;type:\"text\"|H5PFieldType.Text;default?:string;maxLength?:number;regexp?:string;enterMode?:H5PEnterMode;font?:string;placeholder?:string;important?:{description?:string;example?:string;};}"
+                    "$ref": "#/definitions/%7Bwidget%3A%22colorSelector%22%3Bspectrum%3F%3A%7BshowPalette%3Aboolean%3BshowPaletteOnly%3F%3Aboolean%3Bpalette%3F%3Astring%5B%5D%5B%5D%3B%7D%3Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Btype%3A%22text%22%7CH5PFieldType.Text%3Bdefault%3F%3Astring%3BmaxLength%3F%3Anumber%3Bregexp%3F%3Astring%3BenterMode%3F%3AH5PEnterMode%3Bfont%3F%3Astring%3Bplaceholder%3F%3Astring%3Bimportant%3F%3A%7Bdescription%3F%3Astring%3Bexample%3F%3Astring%3B%7D%3B%7D"
                 },
                 {
-                    "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget?:string;type:\"number\"|H5PFieldType.Number;default?:number;min?:number;max?:number;steps?:number;decimals?:number;unit?:string;}"
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22number%22%7CH5PFieldType.Number%3Bdefault%3F%3Anumber%3Bmin%3F%3Anumber%3Bmax%3F%3Anumber%3Bsteps%3F%3Anumber%3Bdecimals%3F%3Anumber%3Bunit%3F%3Astring%3B%7D"
                 },
                 {
-                    "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"showWhen\"|\"NDLAShowWhen\";showWhen:H5PShowWhenOptions;type:\"number\"|H5PFieldType.Number;default?:number;min?:number;max?:number;steps?:number;decimals?:number;unit?:string;}"
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Btype%3A%22number%22%7CH5PFieldType.Number%3Bdefault%3F%3Anumber%3Bmin%3F%3Anumber%3Bmax%3F%3Anumber%3Bsteps%3F%3Anumber%3Bdecimals%3F%3Anumber%3Bunit%3F%3Astring%3B%7D"
                 },
                 {
-                    "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"NDLATagsPicker\";fieldNameToWatch:string;type:\"number\"|H5PFieldType.Number;default?:number;min?:number;max?:number;steps?:number;decimals?:number;unit?:string;}"
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3A%22number%22%7CH5PFieldType.Number%3Bdefault%3F%3Anumber%3Bmin%3F%3Anumber%3Bmax%3F%3Anumber%3Bsteps%3F%3Anumber%3Bdecimals%3F%3Anumber%3Bunit%3F%3Astring%3B%7D"
                 },
                 {
-                    "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget?:string;type:\"boolean\"|H5PFieldType.Boolean;default:boolean;}"
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22boolean%22%7CH5PFieldType.Boolean%3Bdefault%3Aboolean%3B%7D"
                 },
                 {
-                    "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"showWhen\"|\"NDLAShowWhen\";showWhen:H5PShowWhenOptions;type:\"boolean\"|H5PFieldType.Boolean;default:boolean;}"
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Btype%3A%22boolean%22%7CH5PFieldType.Boolean%3Bdefault%3Aboolean%3B%7D"
                 },
                 {
-                    "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"NDLATagsPicker\";fieldNameToWatch:string;type:\"boolean\"|H5PFieldType.Boolean;default:boolean;}"
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3A%22boolean%22%7CH5PFieldType.Boolean%3Bdefault%3Aboolean%3B%7D"
                 },
                 {
-                    "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget?:string;type:\"audio\"|H5PFieldType.Audio;}"
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22audio%22%7CH5PFieldType.Audio%3B%7D"
                 },
                 {
-                    "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"showWhen\"|\"NDLAShowWhen\";showWhen:H5PShowWhenOptions;type:\"audio\"|H5PFieldType.Audio;}"
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Btype%3A%22audio%22%7CH5PFieldType.Audio%3B%7D"
                 },
                 {
-                    "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"NDLATagsPicker\";fieldNameToWatch:string;type:\"audio\"|H5PFieldType.Audio;}"
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3A%22audio%22%7CH5PFieldType.Audio%3B%7D"
                 },
                 {
-                    "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget?:string;type:\"file\"|H5PFieldType.File;}"
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22file%22%7CH5PFieldType.File%3B%7D"
                 },
                 {
-                    "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"showWhen\"|\"NDLAShowWhen\";showWhen:H5PShowWhenOptions;type:\"file\"|H5PFieldType.File;}"
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Btype%3A%22file%22%7CH5PFieldType.File%3B%7D"
                 },
                 {
-                    "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"NDLATagsPicker\";fieldNameToWatch:string;type:\"file\"|H5PFieldType.File;}"
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3A%22file%22%7CH5PFieldType.File%3B%7D"
                 },
                 {
-                    "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget?:string;type:\"group\"|H5PFieldType.Group;fields:H5PField[];isSubContent?:boolean;expanded?:boolean;}"
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22group%22%7CH5PFieldType.Group%3Bfields%3AH5PField%5B%5D%3BisSubContent%3F%3Aboolean%3Bexpanded%3F%3Aboolean%3B%7D"
                 },
                 {
-                    "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"showWhen\"|\"NDLAShowWhen\";showWhen:H5PShowWhenOptions;type:\"group\"|H5PFieldType.Group;fields:H5PField[];isSubContent?:boolean;expanded?:boolean;}"
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Btype%3A%22group%22%7CH5PFieldType.Group%3Bfields%3AH5PField%5B%5D%3BisSubContent%3F%3Aboolean%3Bexpanded%3F%3Aboolean%3B%7D"
                 },
                 {
-                    "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"NDLATagsPicker\";fieldNameToWatch:string;type:\"group\"|H5PFieldType.Group;fields:H5PField[];isSubContent?:boolean;expanded?:boolean;}"
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3A%22group%22%7CH5PFieldType.Group%3Bfields%3AH5PField%5B%5D%3BisSubContent%3F%3Aboolean%3Bexpanded%3F%3Aboolean%3B%7D"
                 },
                 {
-                    "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget?:string;type:\"image\"|H5PFieldType.Image;}"
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22image%22%7CH5PFieldType.Image%3B%7D"
                 },
                 {
-                    "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"showWhen\"|\"NDLAShowWhen\";showWhen:H5PShowWhenOptions;type:\"image\"|H5PFieldType.Image;}"
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Btype%3A%22image%22%7CH5PFieldType.Image%3B%7D"
                 },
                 {
-                    "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"NDLATagsPicker\";fieldNameToWatch:string;type:\"image\"|H5PFieldType.Image;}"
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3A%22image%22%7CH5PFieldType.Image%3B%7D"
                 },
                 {
-                    "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget?:string;type:\"library\"|H5PFieldType.Library;options:string[];default?:string;}"
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22library%22%7CH5PFieldType.Library%3Boptions%3Astring%5B%5D%3Bdefault%3F%3Astring%3B%7D"
                 },
                 {
-                    "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"showWhen\"|\"NDLAShowWhen\";showWhen:H5PShowWhenOptions;type:\"library\"|H5PFieldType.Library;options:string[];default?:string;}"
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Btype%3A%22library%22%7CH5PFieldType.Library%3Boptions%3Astring%5B%5D%3Bdefault%3F%3Astring%3B%7D"
                 },
                 {
-                    "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"NDLATagsPicker\";fieldNameToWatch:string;type:\"library\"|H5PFieldType.Library;options:string[];default?:string;}"
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3A%22library%22%7CH5PFieldType.Library%3Boptions%3Astring%5B%5D%3Bdefault%3F%3Astring%3B%7D"
                 },
                 {
-                    "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget?:string;type:\"list\"|H5PFieldType.List;widgets?:{name:string;label:string;}[];field:H5PField;min?:number;max?:number;entity:string;defaultNum?:number;}"
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22list%22%7CH5PFieldType.List%3Bwidgets%3F%3A%7Bname%3Astring%3Blabel%3Astring%3B%7D%5B%5D%3Bfield%3AH5PField%3Bmin%3F%3Anumber%3Bmax%3F%3Anumber%3Bentity%3Astring%3BdefaultNum%3F%3Anumber%3B%7D"
                 },
                 {
-                    "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"showWhen\"|\"NDLAShowWhen\";showWhen:H5PShowWhenOptions;type:\"list\"|H5PFieldType.List;widgets?:{name:string;label:string;}[];field:H5PField;min?:number;max?:number;entity:string;defaultNum?:number;}"
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Btype%3A%22list%22%7CH5PFieldType.List%3Bwidgets%3F%3A%7Bname%3Astring%3Blabel%3Astring%3B%7D%5B%5D%3Bfield%3AH5PField%3Bmin%3F%3Anumber%3Bmax%3F%3Anumber%3Bentity%3Astring%3BdefaultNum%3F%3Anumber%3B%7D"
                 },
                 {
-                    "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"NDLATagsPicker\";fieldNameToWatch:string;type:\"list\"|H5PFieldType.List;widgets?:{name:string;label:string;}[];field:H5PField;min?:number;max?:number;entity:string;defaultNum?:number;}"
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3A%22list%22%7CH5PFieldType.List%3Bwidgets%3F%3A%7Bname%3Astring%3Blabel%3Astring%3B%7D%5B%5D%3Bfield%3AH5PField%3Bmin%3F%3Anumber%3Bmax%3F%3Anumber%3Bentity%3Astring%3BdefaultNum%3F%3Anumber%3B%7D"
                 },
                 {
-                    "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget?:string;type:\"select\"|H5PFieldType.Select;default:string|number|boolean;options:{value:string|number|boolean;label:string;}[];}"
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22select%22%7CH5PFieldType.Select%3Bdefault%3Astring%7Cnumber%7Cboolean%3Boptions%3A%7Bvalue%3Astring%7Cnumber%7Cboolean%3Blabel%3Astring%3B%7D%5B%5D%3B%7D"
                 },
                 {
-                    "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"showWhen\"|\"NDLAShowWhen\";showWhen:H5PShowWhenOptions;type:\"select\"|H5PFieldType.Select;default:string|number|boolean;options:{value:string|number|boolean;label:string;}[];}"
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Btype%3A%22select%22%7CH5PFieldType.Select%3Bdefault%3Astring%7Cnumber%7Cboolean%3Boptions%3A%7Bvalue%3Astring%7Cnumber%7Cboolean%3Blabel%3Astring%3B%7D%5B%5D%3B%7D"
                 },
                 {
-                    "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"NDLATagsPicker\";fieldNameToWatch:string;type:\"select\"|H5PFieldType.Select;default:string|number|boolean;options:{value:string|number|boolean;label:string;}[];}"
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3A%22select%22%7CH5PFieldType.Select%3Bdefault%3Astring%7Cnumber%7Cboolean%3Boptions%3A%7Bvalue%3Astring%7Cnumber%7Cboolean%3Blabel%3Astring%3B%7D%5B%5D%3B%7D"
                 },
                 {
-                    "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget?:string;type:\"video\"|H5PFieldType.Video;}"
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22video%22%7CH5PFieldType.Video%3B%7D"
                 },
                 {
-                    "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"showWhen\"|\"NDLAShowWhen\";showWhen:H5PShowWhenOptions;type:\"video\"|H5PFieldType.Video;}"
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Btype%3A%22video%22%7CH5PFieldType.Video%3B%7D"
                 },
                 {
-                    "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"NDLATagsPicker\";fieldNameToWatch:string;type:\"video\"|H5PFieldType.Video;}"
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3A%22video%22%7CH5PFieldType.Video%3B%7D"
                 }
             ]
         },
@@ -308,7 +308,7 @@
                     "items": {
                         "allOf": [
                             {
-                                "$ref": "#/definitions/StrictOmit<H5PFieldText,\"default\">"
+                                "$ref": "#/definitions/StrictOmit%3CH5PFieldText%2C%22default%22%3E"
                             },
                             {
                                 "properties": {
@@ -3547,127 +3547,127 @@
     "items": {
         "anyOf": [
             {
-                "$ref": "#/definitions/{widget?:string;name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;type:\"text\"|H5PFieldType.Text;default?:string;maxLength?:number;regexp?:string;enterMode?:H5PEnterMode;font?:string;placeholder?:string;important?:{description?:string;example?:string;};}"
+                "$ref": "#/definitions/%7Bwidget%3F%3Astring%3Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Btype%3A%22text%22%7CH5PFieldType.Text%3Bdefault%3F%3Astring%3BmaxLength%3F%3Anumber%3Bregexp%3F%3Astring%3BenterMode%3F%3AH5PEnterMode%3Bfont%3F%3Astring%3Bplaceholder%3F%3Astring%3Bimportant%3F%3A%7Bdescription%3F%3Astring%3Bexample%3F%3Astring%3B%7D%3B%7D"
             },
             {
-                "$ref": "#/definitions/{widget:\"showWhen\"|\"NDLAShowWhen\";name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;showWhen:H5PShowWhenOptions;type:\"text\"|H5PFieldType.Text;default?:string;maxLength?:number;regexp?:string;enterMode?:H5PEnterMode;font?:string;placeholder?:string;important?:{description?:string;example?:string;};}"
+                "$ref": "#/definitions/%7Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3BshowWhen%3AH5PShowWhenOptions%3Btype%3A%22text%22%7CH5PFieldType.Text%3Bdefault%3F%3Astring%3BmaxLength%3F%3Anumber%3Bregexp%3F%3Astring%3BenterMode%3F%3AH5PEnterMode%3Bfont%3F%3Astring%3Bplaceholder%3F%3Astring%3Bimportant%3F%3A%7Bdescription%3F%3Astring%3Bexample%3F%3Astring%3B%7D%3B%7D"
             },
             {
-                "$ref": "#/definitions/{widget:\"NDLATagsPicker\";name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;fieldNameToWatch:string;type:\"text\"|H5PFieldType.Text;default?:string;maxLength?:number;regexp?:string;enterMode?:H5PEnterMode;font?:string;placeholder?:string;important?:{description?:string;example?:string;};}"
+                "$ref": "#/definitions/%7Bwidget%3A%22NDLATagsPicker%22%3Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3BfieldNameToWatch%3Astring%3Btype%3A%22text%22%7CH5PFieldType.Text%3Bdefault%3F%3Astring%3BmaxLength%3F%3Anumber%3Bregexp%3F%3Astring%3BenterMode%3F%3AH5PEnterMode%3Bfont%3F%3Astring%3Bplaceholder%3F%3Astring%3Bimportant%3F%3A%7Bdescription%3F%3Astring%3Bexample%3F%3Astring%3B%7D%3B%7D"
             },
             {
-                "$ref": "#/definitions/{widget:\"showWhen\"|\"NDLAShowWhen\";showWhen:H5PShowWhenOptions;name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;type:\"text\"|H5PFieldType.Text;default?:string;maxLength?:number;regexp?:string;enterMode?:H5PEnterMode;font?:string;placeholder?:string;important?:{description?:string;example?:string;};}"
+                "$ref": "#/definitions/%7Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Btype%3A%22text%22%7CH5PFieldType.Text%3Bdefault%3F%3Astring%3BmaxLength%3F%3Anumber%3Bregexp%3F%3Astring%3BenterMode%3F%3AH5PEnterMode%3Bfont%3F%3Astring%3Bplaceholder%3F%3Astring%3Bimportant%3F%3A%7Bdescription%3F%3Astring%3Bexample%3F%3Astring%3B%7D%3B%7D"
             },
             {
-                "$ref": "#/definitions/{widget:\"showWhen\"|\"NDLAShowWhen\";showWhen:H5PShowWhenOptions;name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;type:\"text\"|H5PFieldType.Text;default?:string;maxLength?:number;regexp?:string;enterMode?:H5PEnterMode;font?:string;placeholder?:string;important?:{description?:string;example?:string;};}_1"
+                "$ref": "#/definitions/%7Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Btype%3A%22text%22%7CH5PFieldType.Text%3Bdefault%3F%3Astring%3BmaxLength%3F%3Anumber%3Bregexp%3F%3Astring%3BenterMode%3F%3AH5PEnterMode%3Bfont%3F%3Astring%3Bplaceholder%3F%3Astring%3Bimportant%3F%3A%7Bdescription%3F%3Astring%3Bexample%3F%3Astring%3B%7D%3B%7D_1"
             },
             {
-                "$ref": "#/definitions/{widget:\"NDLATagsPicker\";fieldNameToWatch:string;name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;type:\"text\"|H5PFieldType.Text;default?:string;maxLength?:number;regexp?:string;enterMode?:H5PEnterMode;font?:string;placeholder?:string;important?:{description?:string;example?:string;};}"
+                "$ref": "#/definitions/%7Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Btype%3A%22text%22%7CH5PFieldType.Text%3Bdefault%3F%3Astring%3BmaxLength%3F%3Anumber%3Bregexp%3F%3Astring%3BenterMode%3F%3AH5PEnterMode%3Bfont%3F%3Astring%3Bplaceholder%3F%3Astring%3Bimportant%3F%3A%7Bdescription%3F%3Astring%3Bexample%3F%3Astring%3B%7D%3B%7D"
             },
             {
-                "$ref": "#/definitions/{widget:\"NDLATagsPicker\";fieldNameToWatch:string;name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;type:\"text\"|H5PFieldType.Text;default?:string;maxLength?:number;regexp?:string;enterMode?:H5PEnterMode;font?:string;placeholder?:string;important?:{description?:string;example?:string;};}_1"
+                "$ref": "#/definitions/%7Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Btype%3A%22text%22%7CH5PFieldType.Text%3Bdefault%3F%3Astring%3BmaxLength%3F%3Anumber%3Bregexp%3F%3Astring%3BenterMode%3F%3AH5PEnterMode%3Bfont%3F%3Astring%3Bplaceholder%3F%3Astring%3Bimportant%3F%3A%7Bdescription%3F%3Astring%3Bexample%3F%3Astring%3B%7D%3B%7D_1"
             },
             {
-                "$ref": "#/definitions/{widget:\"html\";tags:H5PTextTags[];name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;type:\"text\"|H5PFieldType.Text;default?:string;maxLength?:number;regexp?:string;enterMode?:H5PEnterMode;font?:string;placeholder?:string;important?:{description?:string;example?:string;};}"
+                "$ref": "#/definitions/%7Bwidget%3A%22html%22%3Btags%3AH5PTextTags%5B%5D%3Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Btype%3A%22text%22%7CH5PFieldType.Text%3Bdefault%3F%3Astring%3BmaxLength%3F%3Anumber%3Bregexp%3F%3Astring%3BenterMode%3F%3AH5PEnterMode%3Bfont%3F%3Astring%3Bplaceholder%3F%3Astring%3Bimportant%3F%3A%7Bdescription%3F%3Astring%3Bexample%3F%3Astring%3B%7D%3B%7D"
             },
             {
-                "$ref": "#/definitions/{widget:\"colorSelector\";spectrum?:{showPalette:boolean;showPaletteOnly?:boolean;palette?:string[][];};name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;type:\"text\"|H5PFieldType.Text;default?:string;maxLength?:number;regexp?:string;enterMode?:H5PEnterMode;font?:string;placeholder?:string;important?:{description?:string;example?:string;};}"
+                "$ref": "#/definitions/%7Bwidget%3A%22colorSelector%22%3Bspectrum%3F%3A%7BshowPalette%3Aboolean%3BshowPaletteOnly%3F%3Aboolean%3Bpalette%3F%3Astring%5B%5D%5B%5D%3B%7D%3Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Btype%3A%22text%22%7CH5PFieldType.Text%3Bdefault%3F%3Astring%3BmaxLength%3F%3Anumber%3Bregexp%3F%3Astring%3BenterMode%3F%3AH5PEnterMode%3Bfont%3F%3Astring%3Bplaceholder%3F%3Astring%3Bimportant%3F%3A%7Bdescription%3F%3Astring%3Bexample%3F%3Astring%3B%7D%3B%7D"
             },
             {
-                "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget?:string;type:\"number\"|H5PFieldType.Number;default?:number;min?:number;max?:number;steps?:number;decimals?:number;unit?:string;}"
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22number%22%7CH5PFieldType.Number%3Bdefault%3F%3Anumber%3Bmin%3F%3Anumber%3Bmax%3F%3Anumber%3Bsteps%3F%3Anumber%3Bdecimals%3F%3Anumber%3Bunit%3F%3Astring%3B%7D"
             },
             {
-                "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"showWhen\"|\"NDLAShowWhen\";showWhen:H5PShowWhenOptions;type:\"number\"|H5PFieldType.Number;default?:number;min?:number;max?:number;steps?:number;decimals?:number;unit?:string;}"
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Btype%3A%22number%22%7CH5PFieldType.Number%3Bdefault%3F%3Anumber%3Bmin%3F%3Anumber%3Bmax%3F%3Anumber%3Bsteps%3F%3Anumber%3Bdecimals%3F%3Anumber%3Bunit%3F%3Astring%3B%7D"
             },
             {
-                "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"NDLATagsPicker\";fieldNameToWatch:string;type:\"number\"|H5PFieldType.Number;default?:number;min?:number;max?:number;steps?:number;decimals?:number;unit?:string;}"
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3A%22number%22%7CH5PFieldType.Number%3Bdefault%3F%3Anumber%3Bmin%3F%3Anumber%3Bmax%3F%3Anumber%3Bsteps%3F%3Anumber%3Bdecimals%3F%3Anumber%3Bunit%3F%3Astring%3B%7D"
             },
             {
-                "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget?:string;type:\"boolean\"|H5PFieldType.Boolean;default:boolean;}"
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22boolean%22%7CH5PFieldType.Boolean%3Bdefault%3Aboolean%3B%7D"
             },
             {
-                "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"showWhen\"|\"NDLAShowWhen\";showWhen:H5PShowWhenOptions;type:\"boolean\"|H5PFieldType.Boolean;default:boolean;}"
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Btype%3A%22boolean%22%7CH5PFieldType.Boolean%3Bdefault%3Aboolean%3B%7D"
             },
             {
-                "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"NDLATagsPicker\";fieldNameToWatch:string;type:\"boolean\"|H5PFieldType.Boolean;default:boolean;}"
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3A%22boolean%22%7CH5PFieldType.Boolean%3Bdefault%3Aboolean%3B%7D"
             },
             {
-                "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget?:string;type:\"audio\"|H5PFieldType.Audio;}"
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22audio%22%7CH5PFieldType.Audio%3B%7D"
             },
             {
-                "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"showWhen\"|\"NDLAShowWhen\";showWhen:H5PShowWhenOptions;type:\"audio\"|H5PFieldType.Audio;}"
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Btype%3A%22audio%22%7CH5PFieldType.Audio%3B%7D"
             },
             {
-                "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"NDLATagsPicker\";fieldNameToWatch:string;type:\"audio\"|H5PFieldType.Audio;}"
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3A%22audio%22%7CH5PFieldType.Audio%3B%7D"
             },
             {
-                "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget?:string;type:\"file\"|H5PFieldType.File;}"
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22file%22%7CH5PFieldType.File%3B%7D"
             },
             {
-                "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"showWhen\"|\"NDLAShowWhen\";showWhen:H5PShowWhenOptions;type:\"file\"|H5PFieldType.File;}"
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Btype%3A%22file%22%7CH5PFieldType.File%3B%7D"
             },
             {
-                "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"NDLATagsPicker\";fieldNameToWatch:string;type:\"file\"|H5PFieldType.File;}"
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3A%22file%22%7CH5PFieldType.File%3B%7D"
             },
             {
-                "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget?:string;type:\"group\"|H5PFieldType.Group;fields:H5PField[];isSubContent?:boolean;expanded?:boolean;}"
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22group%22%7CH5PFieldType.Group%3Bfields%3AH5PField%5B%5D%3BisSubContent%3F%3Aboolean%3Bexpanded%3F%3Aboolean%3B%7D"
             },
             {
-                "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"showWhen\"|\"NDLAShowWhen\";showWhen:H5PShowWhenOptions;type:\"group\"|H5PFieldType.Group;fields:H5PField[];isSubContent?:boolean;expanded?:boolean;}"
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Btype%3A%22group%22%7CH5PFieldType.Group%3Bfields%3AH5PField%5B%5D%3BisSubContent%3F%3Aboolean%3Bexpanded%3F%3Aboolean%3B%7D"
             },
             {
-                "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"NDLATagsPicker\";fieldNameToWatch:string;type:\"group\"|H5PFieldType.Group;fields:H5PField[];isSubContent?:boolean;expanded?:boolean;}"
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3A%22group%22%7CH5PFieldType.Group%3Bfields%3AH5PField%5B%5D%3BisSubContent%3F%3Aboolean%3Bexpanded%3F%3Aboolean%3B%7D"
             },
             {
-                "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget?:string;type:\"image\"|H5PFieldType.Image;}"
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22image%22%7CH5PFieldType.Image%3B%7D"
             },
             {
-                "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"showWhen\"|\"NDLAShowWhen\";showWhen:H5PShowWhenOptions;type:\"image\"|H5PFieldType.Image;}"
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Btype%3A%22image%22%7CH5PFieldType.Image%3B%7D"
             },
             {
-                "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"NDLATagsPicker\";fieldNameToWatch:string;type:\"image\"|H5PFieldType.Image;}"
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3A%22image%22%7CH5PFieldType.Image%3B%7D"
             },
             {
-                "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget?:string;type:\"library\"|H5PFieldType.Library;options:string[];default?:string;}"
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22library%22%7CH5PFieldType.Library%3Boptions%3Astring%5B%5D%3Bdefault%3F%3Astring%3B%7D"
             },
             {
-                "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"showWhen\"|\"NDLAShowWhen\";showWhen:H5PShowWhenOptions;type:\"library\"|H5PFieldType.Library;options:string[];default?:string;}"
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Btype%3A%22library%22%7CH5PFieldType.Library%3Boptions%3Astring%5B%5D%3Bdefault%3F%3Astring%3B%7D"
             },
             {
-                "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"NDLATagsPicker\";fieldNameToWatch:string;type:\"library\"|H5PFieldType.Library;options:string[];default?:string;}"
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3A%22library%22%7CH5PFieldType.Library%3Boptions%3Astring%5B%5D%3Bdefault%3F%3Astring%3B%7D"
             },
             {
-                "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget?:string;type:\"list\"|H5PFieldType.List;widgets?:{name:string;label:string;}[];field:H5PField;min?:number;max?:number;entity:string;defaultNum?:number;}"
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22list%22%7CH5PFieldType.List%3Bwidgets%3F%3A%7Bname%3Astring%3Blabel%3Astring%3B%7D%5B%5D%3Bfield%3AH5PField%3Bmin%3F%3Anumber%3Bmax%3F%3Anumber%3Bentity%3Astring%3BdefaultNum%3F%3Anumber%3B%7D"
             },
             {
-                "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"showWhen\"|\"NDLAShowWhen\";showWhen:H5PShowWhenOptions;type:\"list\"|H5PFieldType.List;widgets?:{name:string;label:string;}[];field:H5PField;min?:number;max?:number;entity:string;defaultNum?:number;}"
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Btype%3A%22list%22%7CH5PFieldType.List%3Bwidgets%3F%3A%7Bname%3Astring%3Blabel%3Astring%3B%7D%5B%5D%3Bfield%3AH5PField%3Bmin%3F%3Anumber%3Bmax%3F%3Anumber%3Bentity%3Astring%3BdefaultNum%3F%3Anumber%3B%7D"
             },
             {
-                "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"NDLATagsPicker\";fieldNameToWatch:string;type:\"list\"|H5PFieldType.List;widgets?:{name:string;label:string;}[];field:H5PField;min?:number;max?:number;entity:string;defaultNum?:number;}"
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3A%22list%22%7CH5PFieldType.List%3Bwidgets%3F%3A%7Bname%3Astring%3Blabel%3Astring%3B%7D%5B%5D%3Bfield%3AH5PField%3Bmin%3F%3Anumber%3Bmax%3F%3Anumber%3Bentity%3Astring%3BdefaultNum%3F%3Anumber%3B%7D"
             },
             {
-                "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget?:string;type:\"select\"|H5PFieldType.Select;default:string|number|boolean;options:{value:string|number|boolean;label:string;}[];}"
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22select%22%7CH5PFieldType.Select%3Bdefault%3Astring%7Cnumber%7Cboolean%3Boptions%3A%7Bvalue%3Astring%7Cnumber%7Cboolean%3Blabel%3Astring%3B%7D%5B%5D%3B%7D"
             },
             {
-                "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"showWhen\"|\"NDLAShowWhen\";showWhen:H5PShowWhenOptions;type:\"select\"|H5PFieldType.Select;default:string|number|boolean;options:{value:string|number|boolean;label:string;}[];}"
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Btype%3A%22select%22%7CH5PFieldType.Select%3Bdefault%3Astring%7Cnumber%7Cboolean%3Boptions%3A%7Bvalue%3Astring%7Cnumber%7Cboolean%3Blabel%3Astring%3B%7D%5B%5D%3B%7D"
             },
             {
-                "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"NDLATagsPicker\";fieldNameToWatch:string;type:\"select\"|H5PFieldType.Select;default:string|number|boolean;options:{value:string|number|boolean;label:string;}[];}"
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3A%22select%22%7CH5PFieldType.Select%3Bdefault%3Astring%7Cnumber%7Cboolean%3Boptions%3A%7Bvalue%3Astring%7Cnumber%7Cboolean%3Blabel%3Astring%3B%7D%5B%5D%3B%7D"
             },
             {
-                "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget?:string;type:\"video\"|H5PFieldType.Video;}"
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22video%22%7CH5PFieldType.Video%3B%7D"
             },
             {
-                "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"showWhen\"|\"NDLAShowWhen\";showWhen:H5PShowWhenOptions;type:\"video\"|H5PFieldType.Video;}"
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Btype%3A%22video%22%7CH5PFieldType.Video%3B%7D"
             },
             {
-                "$ref": "#/definitions/{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"NDLATagsPicker\";fieldNameToWatch:string;type:\"video\"|H5PFieldType.Video;}"
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3A%22video%22%7CH5PFieldType.Video%3B%7D"
             },
             {
-                "$ref": "#/definitions/{name:\"behaviour\";label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget?:string;type:\"group\"|H5PFieldType.Group;fields:H5PField[];isSubContent?:boolean;expanded?:boolean;}"
+                "$ref": "#/definitions/%7Bname%3A%22behaviour%22%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22group%22%7CH5PFieldType.Group%3Bfields%3AH5PField%5B%5D%3BisSubContent%3F%3Aboolean%3Bexpanded%3F%3Aboolean%3B%7D"
             },
             {
-                "$ref": "#/definitions/{name:\"l10n\";fields:(StrictOmit<H5PFieldText,\"default\">&{default:string;})[];common:boolean;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;widget?:string;type:\"group\"|H5PFieldType.Group;isSubContent?:boolean;expanded?:boolean;}"
+                "$ref": "#/definitions/%7Bname%3A%22l10n%22%3Bfields%3A(StrictOmit%3CH5PFieldText%2C%22default%22%3E%26%7Bdefault%3Astring%3B%7D)%5B%5D%3Bcommon%3Aboolean%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bwidget%3F%3Astring%3Btype%3A%22group%22%7CH5PFieldType.Group%3BisSubContent%3F%3Aboolean%3Bexpanded%3F%3Aboolean%3B%7D"
             }
         ]
     },
