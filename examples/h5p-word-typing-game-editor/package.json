@@ -1,0 +1,24 @@
+{
+  "name": "h5p-word-typing-game-editor",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "webpack --mode=production",
+    "watch": "webpack serve --hot --mode=development"
+  },
+  "dependencies": {
+    "h5p-utils": "*",
+    "h5p-word-typing-game-words": "*"
+  },
+  "devDependencies": {
+    "h5p-types": "*",
+    "ts-loader": "^9.6.2",
+    "tsconfig-base": "*",
+    "typescript": "^5.5.2",
+    "unplugin-json-dts": "^1.3.2",
+    "webpack": "^5.110.3",
+    "webpack-cli": "^7.2.3"
+  }
+}
