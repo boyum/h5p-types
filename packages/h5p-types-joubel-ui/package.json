@@ -27,12 +27,12 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@release-it/conventional-changelog": "^10.0.2",
-    "@types/jquery": "^3.5.33",
+    "@release-it/conventional-changelog": "^12.0.0",
+    "@types/jquery": "^4.0.1",
     "h5p-types": "*",
-    "release-it": "^19.0.6",
+    "release-it": "^21.0.2",
     "tsconfig-base": "*",
-    "type-fest": "^4.20.1",
+    "type-fest": "^5.9.0",
     "typescript": "^5.0.4"
   },
   "peerDependencies": {
