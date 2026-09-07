@@ -97,6 +97,13 @@ export { H5PMediaCopyright } from "./src/H5PObject/classes/H5PMediaCopyright";
 export { H5PObject } from "./src/H5PObject/H5PObject";
 export { H5PThumbnail } from "./src/H5PObject/classes/H5PThumbnail";
 export { H5PVersion } from "./src/H5PObject/classes/H5PVersion";
+export { H5PTooltip } from "./src/H5PObject/classes/H5PTooltip";
+export { H5PContentType } from "./src/H5PObject/classes/H5PContentType";
+export { H5PActionBar } from "./src/H5PObject/classes/H5PActionBar";
+export { H5PRequestQueue } from "./src/H5PObject/classes/H5PRequestQueue";
+export { H5POfflineRequestQueue } from "./src/H5PObject/classes/H5POfflineRequestQueue";
+export { H5PContentUpgradeProcess } from "./src/H5PObject/classes/H5PContentUpgradeProcess";
 
 // Upgrade types
 export { H5PUpgrades } from "./src/upgrades/Upgrades";
+export type { H5PUpgradeError, H5PUpgradeFinished } from "./src/upgrades/Upgrades";

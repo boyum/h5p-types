@@ -44,6 +44,49 @@ export interface H5PEditorObject extends Record<string, unknown> {
 
   // --- Methods ---
   /**
+   * Initialize the H5P editor.
+   *
+   * @param $form The form to submit the content through
+   * @param $type Radio group for choosing between upload and create
+   * @param $upload The upload widget
+   * @param $create The create widget
+   * @param $editor Element the editor should be created in
+   * @param $library Hidden input containing the selected library
+   * @param $params Hidden input containing the JSON params
+   * @param $maxScore Hidden input for the max score
+   * @param $title Input for the title
+   * @param cancelSubmitCallback Optionally prevent form submission
+   */
+  init(
+    $form: JQuery<HTMLFormElement>,
+    $type: JQuery<HTMLInputElement>,
+    $upload: JQuery<HTMLElement>,
+    $create: JQuery<HTMLButtonElement>,
+    $editor: JQuery<HTMLElement>,
+    $library: JQuery<HTMLInputElement>,
+    $params: JQuery<HTMLInputElement>,
+    $maxScore: JQuery<HTMLInputElement>,
+    $title: JQuery<HTMLInputElement>,
+    cancelSubmitCallback?: () => boolean,
+  ): void;
+
+  /**
+   * Get the ajax URL for the given action.
+   *
+   * @param action
+   * @param parameters
+   */
+  getAjaxUrl(
+    action: string,
+    parameters?: Record<string, string | number>,
+  ): string;
+
+  /**
+   * Show a toast message. Alias for {@link H5P.attachToastTo}.
+   */
+  attachToastTo(element: HTMLElement, message: string, config?: unknown): void;
+
+  /**
    * Adds a field to the Common Fields container. Used internally by `H5PEditor.processSemanticsChunk`.
    *
    * @param field

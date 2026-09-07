@@ -1,4 +1,4 @@
-type H5PUpgradeError =
+export type H5PUpgradeError =
   | {
       type: "errorTooHighVersion";
       used: string;
@@ -22,7 +22,7 @@ type H5PUpgradeError =
     }
   | string;
 
-type H5PUpgradeFinished = ((error: null, params: unknown) => void) &
+export type H5PUpgradeFinished = ((error: null, params: unknown) => void) &
   ((error: H5PUpgradeError, params?: unknown) => void);
 
 type H5PUpgradeFunction = (
