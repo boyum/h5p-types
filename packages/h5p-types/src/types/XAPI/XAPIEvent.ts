@@ -73,6 +73,20 @@ export declare class XAPIEvent extends H5PEvent<XAPIData> {
   setActor(): void;
 
   /**
+   * Get the max value of the result - score part of the statement
+   *
+   * @returns The max score, or null if not defined
+   */
+  getMaxScore(): number | null;
+
+  /**
+   * Get the raw value of the result - score part of the statement
+   *
+   * @returns The score, or null if not defined
+   */
+  getScore(): number | null;
+
+  /**
    * Figure out if a property exists in the statement and return it
    *
    * @param keys

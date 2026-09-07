@@ -73,4 +73,34 @@ export declare class EventDispatcher {
     verb: TVerb,
     extra: unknown,
   ): XAPIEvent;
+
+  /**
+   * Helper function to create xAPI completed events.
+   *
+   * @deprecated Use {@link triggerXAPIScored} instead
+   */
+  triggerXAPICompleted(score: number, maxScore: number, success: boolean): void;
+
+  /**
+   * Helper function to create scored xAPI events
+   *
+   * @param score Will be set as the 'raw' value of the score object
+   * @param maxScore Will be set as the "max" value of the score object
+   * @param verb Short form of adl verb
+   * @param completion Is this a statement from a completed activity?
+   * @param success Is this a statement from an activity that was done successfully?
+   */
+  triggerXAPIScored(
+    score: number,
+    maxScore: number,
+    verb: XAPIVerb,
+    completion: boolean,
+    success: boolean,
+  ): void;
+
+  /**
+   * Mark the activity as started. Triggers the `attempted` xAPI event the
+   * first time it's called for an instance.
+   */
+  setActivityStarted(): void;
 }

@@ -34,3 +34,21 @@ namespace Test_XAPIEvent_getVerb_Undefined {
 
   verb?.length;
 }
+
+// @ts-expect-error Test
+namespace Test_XAPIEvent_getMaxScore {
+  declare const event: XAPIEvent;
+
+  const maxScore: number | null = event.getMaxScore();
+
+  void maxScore;
+}
+
+// @ts-expect-error Test
+namespace Test_XAPIEvent_getScore {
+  declare const event: XAPIEvent;
+
+  const score: number | null = event.getScore();
+
+  void score;
+}

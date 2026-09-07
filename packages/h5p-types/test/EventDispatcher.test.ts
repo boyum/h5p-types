@@ -66,3 +66,27 @@ namespace Test_OnceAnyEvent {
       Expect<AreEqual<Actual, Expected>>;
   });
 }
+
+// @ts-expect-error Test
+namespace Test_TriggerXAPIScored {
+  declare const contentType: EventDispatcher;
+
+  contentType.triggerXAPIScored(3, 4, "answered", true, true);
+
+  // @ts-expect-error Verb must be a known xAPI verb
+  contentType.triggerXAPIScored(3, 4, "not-a-verb", true, true);
+}
+
+// @ts-expect-error Test
+namespace Test_TriggerXAPICompleted {
+  declare const contentType: EventDispatcher;
+
+  contentType.triggerXAPICompleted(3, 4, true);
+}
+
+// @ts-expect-error Test
+namespace Test_SetActivityStarted {
+  declare const contentType: EventDispatcher;
+
+  contentType.setActivityStarted();
+}

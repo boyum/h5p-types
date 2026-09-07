@@ -8,15 +8,19 @@ import type { H5PMedia } from "../types/H5PMedia";
 import type { H5PMetadata } from "../types/H5PMetadata";
 import type { H5PNewRunnableLibraryParam } from "../types/H5PNewRunnableLibraryParam";
 import type { IH5PContentType } from "../types/Interfaces/IH5PContentType";
+import type { H5PActionBar } from "./classes/H5PActionBar";
 import type { H5PClipboardItem } from "./classes/H5PClipboardItem";
 import type { H5PCommunicator } from "./classes/H5PCommunicator";
 import type { H5PContentCopyrights } from "./classes/H5PContentCopyrights";
 import type { H5PContentType } from "./classes/H5PContentType";
+import type { H5PContentUpgradeProcess } from "./classes/H5PContentUpgradeProcess";
 import type { H5PCoords } from "./classes/H5PCoords";
 import type { H5PDefinitionList } from "./classes/H5PDefinitionList";
 import type { H5PDialog } from "./classes/H5PDialog";
 import type { H5PFieldClass } from "./classes/H5PFieldClass";
 import type { H5PMediaCopyright } from "./classes/H5PMediaCopyright";
+import type { H5POfflineRequestQueue } from "./classes/H5POfflineRequestQueue";
+import type { H5PRequestQueue } from "./classes/H5PRequestQueue";
 import type { H5PThumbnail } from "./classes/H5PThumbnail";
 import type { H5PTooltip } from "./classes/H5PTooltip";
 import type { H5PVersion } from "./classes/H5PVersion";
@@ -52,6 +56,12 @@ export interface H5PObject {
   copyrightLicenses: H5PCopyrightLicenses;
 
   /**
+   * Global event dispatcher for external listeners.
+   * Dispatches events that external code can subscribe to.
+   */
+  externalDispatcher: EventDispatcher;
+
+  /**
    * Indicates if H5P is embedded on an external page using iframe.
    */
   externalEmbed?: boolean;
@@ -74,6 +84,11 @@ export interface H5PObject {
    * True if the current browser supports fullscreen mode.
    */
   fullscreenSupported: boolean;
+
+  /**
+   * Disable fullscreen mode for H5P content.
+   */
+  fullscreenDisabled: boolean;
 
   /**
    * A list over H5P instances on the current page.
@@ -699,6 +714,12 @@ export interface H5PObject {
   // --- Classes ---
   jQuery: typeof jQuery;
 
+  /**
+   * Action bar for H5P content, with buttons for e.g. "Download",
+   * "Copyright" and "Embed" based on the display options.
+   */
+  ActionBar: typeof H5PActionBar;
+
   ClipboardItem: typeof H5PClipboardItem;
 
   ConfirmationDialog: typeof H5PConfirmationDialog;
@@ -717,8 +738,17 @@ export interface H5PObject {
    * NOTE that this doesn't actually 'extend' the event dispatcher but instead
    * it creates a single instance which all content types shares as their base
    * prototype. (in some cases this may be the root of strange event behavior)
+   *
+   * @param isRootLibrary Is the library standalone or not? Not being standalone,
+   * means it is included in another library.
    */
-  ContentType: typeof H5PContentType;
+  ContentType: (isRootLibrary: boolean) => typeof H5PContentType;
+
+  /**
+   * Handle content upgrades. Converts content of an older version to a
+   * newer version by running the registered upgrade hooks.
+   */
+  ContentUpgradeProcess: typeof H5PContentUpgradeProcess;
 
   /**
    * @deprecated
@@ -742,6 +772,16 @@ export interface H5PObject {
    * An ordered list of copyright fields for media
    */
   MediaCopyright: typeof H5PMediaCopyright;
+
+  /**
+   * A queue for requests, will be automatically processed when regaining connection
+   */
+  RequestQueue: typeof H5PRequestQueue;
+
+  /**
+   * Request queue for retrying failing requests, will automatically retry them when you come online
+   */
+  offlineRequestQueue?: H5POfflineRequestQueue;
 
   /**
    * A simple and elegant class for creating thumbnails of images

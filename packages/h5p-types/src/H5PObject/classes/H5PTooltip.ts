@@ -20,6 +20,11 @@ type Options = {
    * Accepted positions are "top" (default), "left", "right" and "bottom"
    */
   position?: "top" | "left" | "bottom" | "right";
+
+  /**
+   * Attribute of `triggeringElement` to use as the tooltip source (default: `aria-label`)
+   */
+  tooltipSource?: string;
 };
 
 /**
@@ -39,7 +44,17 @@ export declare class H5PTooltip {
   setText(text: string): void;
 
   /**
+   * Hide the tooltip
+   */
+  hide(): void;
+
+  /**
    * Retrieve tooltip element
    */
   getElement(): HTMLDivElement;
+
+  /**
+   * Remove tooltip
+   */
+  remove(): void;
 }
