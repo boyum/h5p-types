@@ -1,0 +1,79 @@
+name: Build and deploy Storybook
+
+on:
+  pull_request:
+
+  push:
+    branches:
+      - main
+
+env:
+  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+  TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+  TURBO_REMOTE_ONLY: true
+
+jobs:
+  storybook:
+    name: Build Storybook
+
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        uses: bahmutov/npm-install@v1
+
+      - name: Build workspace packages
+        run: npm run build
+
+      - name: Detect related changes
+        id: filter
+        uses: dorny/paths-filter@v3
+        with:
+          filters: |
+            related:
+              - 'internal-utilities/**'
+              - 'packages/h5p-storybook-harness/**'
+              - 'packages/h5p-types/**'
+              - 'packages/h5p-types-joubel-ui/**'
+              - 'packages/h5p-utils/**'
+              - 'packages/h5p-word-typing-game-words/**'
+              - 'examples/h5p-word-typing-game/**'
+              - 'examples/h5p-word-typing-game-editor/**'
+              - '.github/workflows/storybook.yml'
+
+      - name: Deploy preview
+        if: steps.filter.outputs.related == 'true' && github.event_name == 'pull_request' && secrets.VERCEL_TOKEN != ''
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        working-directory: packages/h5p-storybook-harness
+        run: |
+          npx --yes vercel@latest pull --yes --environment=preview --token=$VERCEL_TOKEN
+          npx --yes vercel@latest build --yes --token=$VERCEL_TOKEN
+          npx --yes vercel@latest deploy --prebuilt --yes --token=$VERCEL_TOKEN
+
+      - name: Deploy production
+        if: steps.filter.outputs.related == 'true' && github.event_name == 'push' && github.ref == 'refs/heads/main' && secrets.VERCEL_TOKEN != ''
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        working-directory: packages/h5p-storybook-harness
+        run: |
+          npx --yes vercel@latest pull --yes --environment=production --token=$VERCEL_TOKEN
+          npx --yes vercel@latest build --yes --prod --token=$VERCEL_TOKEN
+          npx --yes vercel@latest deploy --prebuilt --yes --prod --token=$VERCEL_TOKEN

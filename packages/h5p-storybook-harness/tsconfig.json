@@ -1,0 +1,12 @@
+{
+  "include": ["src", ".storybook"],
+  "extends": "tsconfig-base/index.json",
+  "compilerOptions": {
+    "paths": {
+      "@storybook/html-vite": [
+        "./node_modules/@storybook/html-vite/dist/index.d.ts"
+      ],
+      "@storybook/html": ["./node_modules/@storybook/html/dist/index.d.ts"]
+    }
+  }
+}

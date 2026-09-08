@@ -1,0 +1,51 @@
+{
+  "name": "h5p-storybook-harness",
+  "version": "1.0.0",
+  "description": "Storybook harness for developing and testing H5P content types and editor widgets.",
+  "keywords": [
+    "h5p",
+    "storybook",
+    "testing"
+  ],
+  "license": "Apache-2.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.cts",
+  "files": [
+    "dist/**/*",
+    "tsconfig.json"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@storybook/html-vite": "^10.6.0",
+    "h5p-utils": "*",
+    "h5p-word-typing-game-words": "*",
+    "storybook": "^10.6.0",
+    "vite": "^8.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.1",
+    "h5p-types": "*",
+    "tsconfig-base": "*",
+    "tsup": "^8.5.1",
+    "typescript": "^5.5.2"
+  }
+}
