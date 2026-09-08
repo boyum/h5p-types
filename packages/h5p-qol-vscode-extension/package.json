@@ -30,7 +30,7 @@
     ]
   },
   "dependencies": {
-    "@actions/languageserver": "*",
+    "@actions/languageserver": "^0.3.61",
     "@vscode/vsce": "^3.9.2",
     "vscode-languageclient": "^10.1.1"
   },
