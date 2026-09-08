@@ -6,11 +6,7 @@ const __dirname = resolve();
 
 const config = {
   entry: {
-    "h5p-word-typing-game": join(
-      __dirname,
-      "src",
-      "h5p-word-typing-game.ts",
-    ),
+    "h5p-word-typing-game": join(__dirname, "src", "h5p-word-typing-game.ts"),
   },
   output: {
     path: resolve(__dirname, "dist"),

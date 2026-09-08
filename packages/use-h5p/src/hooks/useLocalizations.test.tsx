@@ -11,7 +11,6 @@ describe(useLocalizations.name, () => {
     const Component = () => {
       const { title } = useL10ns("title");
 
-      // biome-ignore lint/correctness/useUniqueElementIds: It's safe to use a static ID here for testing purposes.
       return <span id="test">{title}</span>;
     };
 
@@ -33,7 +32,6 @@ describe(useLocalizations.name, () => {
     const Component = () => {
       const { body } = useL10ns("body");
 
-      // biome-ignore lint/correctness/useUniqueElementIds: It's safe to use a static ID here for testing purposes.
       return <span id="test">{body}</span>;
     };
 

@@ -13,7 +13,6 @@ describe(useTranslation.name, () => {
       const Component = () => {
         const { t } = useTranslation<keyof typeof translations>();
 
-        // biome-ignore lint/correctness/useUniqueElementIds: It's safe to use a static ID here for testing purposes.
         return <span id="test">{t("title")}</span>;
       };
 
@@ -35,7 +34,6 @@ describe(useTranslation.name, () => {
       const Component = () => {
         const { t } = useTranslation();
 
-        // biome-ignore lint/correctness/useUniqueElementIds: It's safe to use a static ID here for testing purposes.
         return <span id="test">{t("missingTranslation")}</span>;
       };
 
@@ -59,7 +57,6 @@ describe(useTranslation.name, () => {
       const Component = () => {
         const { tOpts } = useTranslation<keyof typeof translations>();
 
-        // biome-ignore lint/correctness/useUniqueElementIds: It's safe to use a static ID here for testing purposes.
         return <span id="test">{tOpts("title", { "{name}": "World" })}</span>;
       };
 
