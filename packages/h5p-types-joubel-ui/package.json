@@ -27,7 +27,7 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@release-it/conventional-changelog": "^12.0.0",
+    "@release-it/conventional-changelog": "^12.0.2",
     "@types/jquery": "^4.0.1",
     "h5p-types": "*",
     "release-it": "^21.0.3",
