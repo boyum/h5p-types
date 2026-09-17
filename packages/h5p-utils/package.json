@@ -43,7 +43,7 @@
     "publish-to-npm": "release-it"
   },
   "devDependencies": {
-    "@release-it/conventional-changelog": "^12.0.0",
+    "@release-it/conventional-changelog": "^12.0.2",
     "h5p-types": "*",
     "release-it": "^21.0.3",
     "replace-in-file": "^9.0.0",
