@@ -25,7 +25,7 @@
     "@biomejs/biome": "^2.5.13",
     "@types/node": "^20.17.30",
     "sherif": "^1.13.0",
-    "turbo": "^2.10.12",
+    "turbo": "^2.10.13",
     "webpack-cli": "^7.2.3"
   },
   "packageManager": "npm@12.0.2"
