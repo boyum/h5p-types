@@ -1,9 +1,4 @@
 #!/usr/bin/env node
+import { run } from "../dist/cli.js";
 
-(async () => {
-  const oclif = await import("@oclif/core");
-  await oclif.execute({
-    type: "esm",
-    dir: import.meta.url,
-  });
-})();
+process.exitCode = await run(process.argv.slice(2));

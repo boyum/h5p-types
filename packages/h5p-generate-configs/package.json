@@ -9,70 +9,63 @@
   },
   "license": "Apache-2.0",
   "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
   "bin": {
-    "h5p-generate-configs": "./bin/run"
+    "h5p-generate-configs": "./bin/run.js"
   },
   "files": [
     "/bin",
-    "/dist",
-    "/npm-shrinkwrap.json",
-    "/oclif.manifest.json"
+    "/dist"
   ],
   "scripts": {
-    "build": "shx rm -rf dist && tsc -b",
+    "build": "shx rm -rf dist && tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
     "demo:library": "h5p-generate-configs l --type-definition demo/library.ts --out demo/library.json",
     "demo:semantics": "h5p-generate-configs s --type-definition demo/semantics.ts --out demo/semantics.json -t demo/TranslationKey.ts",
-    "prepack": "npm run build && oclif manifest && oclif readme",
-    "postpack": "shx rm -f oclif.manifest.json",
+    "prepack": "npm run build",
     "prepublishOnly": "npm run build",
     "publish-to-npm": "release-it",
     "test": "npm run test:unit",
-    "test:unit": "jest src/**/*.test.ts",
-    "test:unit:coverage": "jest --coverage",
-    "test:unit:watch": "jest --watch",
-    "version": "oclif readme && git add README.md"
+    "test:unit": "jest --passWithNoTests",
+    "test:unit:coverage": "jest --coverage --passWithNoTests",
+    "test:unit:watch": "jest --watch"
   },
   "jest": {
     "preset": "ts-jest",
     "testEnvironment": "node",
+    "extensionsToTreatAsEsm": [
+      ".ts"
+    ],
+    "moduleNameMapper": {
+      "^(\\.{1,2}/.*)\\.js$": "$1"
+    },
     "testMatch": [
       "**/*.test.ts"
-    ]
-  },
-  "dependencies": {
-    "@oclif/core": "^5.1.2",
-    "@oclif/plugin-help": "^7.0.2",
-    "@oclif/plugin-plugins": "^7.0.3"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": [
+        "ts-jest",
+        {
+          "useESM": true,
+          "diagnostics": {
+            "ignoreCodes": [
+              151002
+            ]
+          }
+        }
+      ]
+    }
   },
   "devDependencies": {
-    "@oclif/test": "^5.0.1",
     "@types/jest": "^30.0.0",
     "@types/node": "^20.17.30",
-    "chai": "^6.2.2",
-    "copyfiles": "^2.4.1",
-    "esbuild-register": "^3.6.0",
     "h5p-types": "*",
     "jest": "^30.5.2",
-    "mocha": "^12.0.2",
-    "oclif": "^6.0.2",
     "release-it": "^21.1.0",
     "shx": "^0.4.0",
     "ts-jest": "^29.4.14",
     "typescript": "^5.5.2"
-  },
-  "oclif": {
-    "bin": "h5p-generate-configs",
-    "dirname": "h5p-generate-configs",
-    "commands": "./dist/src/commands",
-    "plugins": [
-      "@oclif/plugin-help",
-      "@oclif/plugin-plugins"
-    ],
-    "topicSeparator": " ",
-    "topics": {
-      "h5p-generate-configs": {
-        "description": "Generate TS and JSON definitions for H5P"
-      }
-    }
   }
 }
