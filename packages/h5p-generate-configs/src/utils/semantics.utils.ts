@@ -1,8 +1,9 @@
 import { existsSync, promises as fs } from "node:fs";
-import type { Command } from "@oclif/core";
+import { basename } from "node:path";
 import type { H5PBehaviour, H5PField, H5PL10n, H5PSemantics } from "h5p-types";
 import { findDuplicates } from "./array.utils.js";
 import { createJsonFile } from "./file.utils.js";
+import type { LogFn } from "./log.utils.js";
 
 const isH5PL10n = (obj: H5PField | H5PBehaviour | H5PL10n): obj is H5PL10n => {
   return obj.name === "l10n";
@@ -49,9 +50,9 @@ async function createTranslationKeys(
   const translationKeysString = translationKeys.join(`"\n  | "`);
 
   const textContent = `// --------- ⚠️  WARNING  ⚠️ ---------
-// This file is generated from the values within \`semantics.json\`'s l10n group. 
-// Do not change it manually, but rather change \`semantics.ts\` and run
-// \`npm run generate-semantics\`.
+// This file is generated from the values within \`semantics.json\`'s l10n group.
+// Do not change it manually, but rather change \`semantics.ts\` and re-run
+// \`h5p-generate-configs generate-semantics\`.
 // -----------------------------------
 
 export type TranslationKey =
@@ -66,7 +67,7 @@ export async function generateSemantics(
   outputPath: string,
   translationKeyOutputPath: string | undefined,
   debug: boolean,
-  log: Command["log"],
+  log: LogFn,
 ): Promise<void> {
   const path = semanticsTsPath.trim();
   const isTSFile = path.endsWith(".ts") || path.endsWith(".tsx");
@@ -92,6 +93,5 @@ export async function generateSemantics(
   log("Generating JSON file for semantics.");
   await createJsonFile(semantics, outputPath);
 
-  const filename = outputPath.split("/").at(-1);
-  log(`Finished generating ${filename}`);
+  log(`Finished generating ${basename(outputPath)}`);
 }

@@ -10,6 +10,7 @@ jobs:
     strategy:
       matrix:
         project:
+          - packages/h5p-generate-configs
           - packages/h5p-utils
           - packages/use-h5p
 

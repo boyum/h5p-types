@@ -10,11 +10,6 @@ updates:
           - storybook
           - "@storybook/*"
 
-      oclif:
-        patterns:
-          - oclif
-          - "@oclif/*"
-
   - directory: /
     package-ecosystem: github-actions
     schedule:

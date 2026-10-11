@@ -1,6 +1,7 @@
-import type { Command } from "@oclif/core";
+import { basename } from "node:path";
 import type { H5PLibrary } from "h5p-types";
 import { createJsonFile } from "./file.utils.js";
+import type { LogFn } from "./log.utils.js";
 
 async function readLibraryTSFile(path: string): Promise<H5PLibrary> {
   const { library }: { library: H5PLibrary } = await import(path);
@@ -12,7 +13,7 @@ export async function generateLibrary(
   libraryTsPath: string,
   outputPath: string,
   verbose: boolean,
-  log: Command["log"],
+  log: LogFn,
 ): Promise<void> {
   const path = libraryTsPath.trim();
   const isTSFile = path.endsWith(".ts") || path.endsWith(".tsx");
@@ -29,6 +30,5 @@ export async function generateLibrary(
 
   await createJsonFile(library, outputPath);
 
-  const filename = outputPath.split("/").at(-1);
-  log(`Finished generating ${filename}`);
+  log(`Finished generating ${basename(outputPath)}`);
 }

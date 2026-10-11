@@ -22,7 +22,6 @@
       "!**/.vscode-test-web",
       "!**/packages/h5p-generate-configs/demo/**/*.json",
       "!**/packages/h5p-generate-configs/demo/TranslationKey.ts",
-      "!**/packages/h5p-generate-configs/bin/",
       "!**/packages/h5p-types/**/*.js",
       "!**/packages/h5p-types/index.d.ts",
       "!**/packages/h5p-json-schemas/public/pico.css",
