@@ -6,7 +6,7 @@
       "outputs": ["dist/**/*", "public/**/*"]
     },
     "test": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["h5p-types#build"],
       "inputs": ["src/**/*.tsx", "src/**/*.ts", "test/**/*.ts", "test/**/*.tsx"]
     },
     "dev": {
@@ -14,8 +14,12 @@
       "persistent": true
     },
     "typecheck": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["h5p-types#build"],
       "inputs": ["src/**/*.tsx", "src/**/*.ts"]
+    },
+    "h5p-generate-configs#test": {
+      "dependsOn": ["build"],
+      "inputs": ["src/**/*.tsx", "src/**/*.ts", "test/**/*.ts", "test/**/*.tsx"]
     }
   }
 }
