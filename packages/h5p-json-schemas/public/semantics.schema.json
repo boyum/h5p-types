@@ -56,6 +56,60 @@
                     "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3A%22boolean%22%7CH5PFieldType.Boolean%3Bdefault%3Aboolean%3B%7D"
                 },
                 {
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22group%22%7CH5PFieldType.Group%3Bfields%3AH5PField%5B%5D%3BisSubContent%3F%3Aboolean%3Bexpanded%3F%3Aboolean%3B%7D"
+                },
+                {
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Btype%3A%22group%22%7CH5PFieldType.Group%3Bfields%3AH5PField%5B%5D%3BisSubContent%3F%3Aboolean%3Bexpanded%3F%3Aboolean%3B%7D"
+                },
+                {
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3A%22group%22%7CH5PFieldType.Group%3Bfields%3AH5PField%5B%5D%3BisSubContent%3F%3Aboolean%3Bexpanded%3F%3Aboolean%3B%7D"
+                },
+                {
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3AH5PFieldType.List%7C%22list%22%3Bwidgets%3F%3A%7Bname%3Astring%3Blabel%3Astring%3B%7D%5B%5D%3Bfield%3AH5PField%3Bmin%3F%3Anumber%3Bmax%3F%3Anumber%3Bentity%3Astring%3BdefaultNum%3F%3Anumber%3B%7D"
+                },
+                {
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Btype%3AH5PFieldType.List%7C%22list%22%3Bwidgets%3F%3A%7Bname%3Astring%3Blabel%3Astring%3B%7D%5B%5D%3Bfield%3AH5PField%3Bmin%3F%3Anumber%3Bmax%3F%3Anumber%3Bentity%3Astring%3BdefaultNum%3F%3Anumber%3B%7D"
+                },
+                {
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3AH5PFieldType.List%7C%22list%22%3Bwidgets%3F%3A%7Bname%3Astring%3Blabel%3Astring%3B%7D%5B%5D%3Bfield%3AH5PField%3Bmin%3F%3Anumber%3Bmax%3F%3Anumber%3Bentity%3Astring%3BdefaultNum%3F%3Anumber%3B%7D"
+                },
+                {
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22select%22%7CH5PFieldType.Select%3Bdefault%3Astring%7Cnumber%7Cboolean%3Boptions%3A%7Bvalue%3Astring%7Cnumber%7Cboolean%3Blabel%3Astring%3B%7D%5B%5D%3B%7D"
+                },
+                {
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Btype%3A%22select%22%7CH5PFieldType.Select%3Bdefault%3Astring%7Cnumber%7Cboolean%3Boptions%3A%7Bvalue%3Astring%7Cnumber%7Cboolean%3Blabel%3Astring%3B%7D%5B%5D%3B%7D"
+                },
+                {
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3A%22select%22%7CH5PFieldType.Select%3Bdefault%3Astring%7Cnumber%7Cboolean%3Boptions%3A%7Bvalue%3Astring%7Cnumber%7Cboolean%3Blabel%3Astring%3B%7D%5B%5D%3B%7D"
+                },
+                {
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3AH5PFieldType.Library%7C%22library%22%3Boptions%3Astring%5B%5D%3Bdefault%3F%3Astring%3B%7D"
+                },
+                {
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Btype%3AH5PFieldType.Library%7C%22library%22%3Boptions%3Astring%5B%5D%3Bdefault%3F%3Astring%3B%7D"
+                },
+                {
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3AH5PFieldType.Library%7C%22library%22%3Boptions%3Astring%5B%5D%3Bdefault%3F%3Astring%3B%7D"
+                },
+                {
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22image%22%7CH5PFieldType.Image%3B%7D"
+                },
+                {
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Btype%3A%22image%22%7CH5PFieldType.Image%3B%7D"
+                },
+                {
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3A%22image%22%7CH5PFieldType.Image%3B%7D"
+                },
+                {
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22video%22%7CH5PFieldType.Video%3B%7D"
+                },
+                {
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Btype%3A%22video%22%7CH5PFieldType.Video%3B%7D"
+                },
+                {
+                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3A%22video%22%7CH5PFieldType.Video%3B%7D"
+                },
+                {
                     "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22audio%22%7CH5PFieldType.Audio%3B%7D"
                 },
                 {
@@ -72,60 +126,6 @@
                 },
                 {
                     "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3A%22file%22%7CH5PFieldType.File%3B%7D"
-                },
-                {
-                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22group%22%7CH5PFieldType.Group%3Bfields%3AH5PField%5B%5D%3BisSubContent%3F%3Aboolean%3Bexpanded%3F%3Aboolean%3B%7D"
-                },
-                {
-                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Btype%3A%22group%22%7CH5PFieldType.Group%3Bfields%3AH5PField%5B%5D%3BisSubContent%3F%3Aboolean%3Bexpanded%3F%3Aboolean%3B%7D"
-                },
-                {
-                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3A%22group%22%7CH5PFieldType.Group%3Bfields%3AH5PField%5B%5D%3BisSubContent%3F%3Aboolean%3Bexpanded%3F%3Aboolean%3B%7D"
-                },
-                {
-                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22image%22%7CH5PFieldType.Image%3B%7D"
-                },
-                {
-                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Btype%3A%22image%22%7CH5PFieldType.Image%3B%7D"
-                },
-                {
-                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3A%22image%22%7CH5PFieldType.Image%3B%7D"
-                },
-                {
-                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22library%22%7CH5PFieldType.Library%3Boptions%3Astring%5B%5D%3Bdefault%3F%3Astring%3B%7D"
-                },
-                {
-                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Btype%3A%22library%22%7CH5PFieldType.Library%3Boptions%3Astring%5B%5D%3Bdefault%3F%3Astring%3B%7D"
-                },
-                {
-                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3A%22library%22%7CH5PFieldType.Library%3Boptions%3Astring%5B%5D%3Bdefault%3F%3Astring%3B%7D"
-                },
-                {
-                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22list%22%7CH5PFieldType.List%3Bwidgets%3F%3A%7Bname%3Astring%3Blabel%3Astring%3B%7D%5B%5D%3Bfield%3AH5PField%3Bmin%3F%3Anumber%3Bmax%3F%3Anumber%3Bentity%3Astring%3BdefaultNum%3F%3Anumber%3B%7D"
-                },
-                {
-                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Btype%3A%22list%22%7CH5PFieldType.List%3Bwidgets%3F%3A%7Bname%3Astring%3Blabel%3Astring%3B%7D%5B%5D%3Bfield%3AH5PField%3Bmin%3F%3Anumber%3Bmax%3F%3Anumber%3Bentity%3Astring%3BdefaultNum%3F%3Anumber%3B%7D"
-                },
-                {
-                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3A%22list%22%7CH5PFieldType.List%3Bwidgets%3F%3A%7Bname%3Astring%3Blabel%3Astring%3B%7D%5B%5D%3Bfield%3AH5PField%3Bmin%3F%3Anumber%3Bmax%3F%3Anumber%3Bentity%3Astring%3BdefaultNum%3F%3Anumber%3B%7D"
-                },
-                {
-                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22select%22%7CH5PFieldType.Select%3Bdefault%3Astring%7Cnumber%7Cboolean%3Boptions%3A%7Bvalue%3Astring%7Cnumber%7Cboolean%3Blabel%3Astring%3B%7D%5B%5D%3B%7D"
-                },
-                {
-                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Btype%3A%22select%22%7CH5PFieldType.Select%3Bdefault%3Astring%7Cnumber%7Cboolean%3Boptions%3A%7Bvalue%3Astring%7Cnumber%7Cboolean%3Blabel%3Astring%3B%7D%5B%5D%3B%7D"
-                },
-                {
-                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3A%22select%22%7CH5PFieldType.Select%3Bdefault%3Astring%7Cnumber%7Cboolean%3Boptions%3A%7Bvalue%3Astring%7Cnumber%7Cboolean%3Blabel%3Astring%3B%7D%5B%5D%3B%7D"
-                },
-                {
-                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22video%22%7CH5PFieldType.Video%3B%7D"
-                },
-                {
-                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Btype%3A%22video%22%7CH5PFieldType.Video%3B%7D"
-                },
-                {
-                    "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3A%22video%22%7CH5PFieldType.Video%3B%7D"
                 }
             ]
         },
@@ -232,7 +232,7 @@
             ],
             "type": "object"
         },
-        "{name:\"behaviour\";label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget?:string;type:\"group\"|H5PFieldType.Group;fields:H5PField[];isSubContent?:boolean;expanded?:boolean;}": {
+        "{name:\"behaviour\";label?:string;expanded?:boolean;optional?:boolean;description?:string;importance?:H5PImportance;common?:boolean;widget?:string;type:\"group\"|H5PFieldType.Group;fields:H5PField[];isSubContent?:boolean;}": {
             "properties": {
                 "common": {
                     "default": false,
@@ -290,7 +290,7 @@
             ],
             "type": "object"
         },
-        "{name:\"l10n\";fields:(StrictOmit<H5PFieldText,\"default\">&{default:string;})[];common:boolean;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;widget?:string;type:\"group\"|H5PFieldType.Group;isSubContent?:boolean;expanded?:boolean;}": {
+        "{name:\"l10n\";fields:(StrictOmit<H5PFieldText,\"default\">&{default:string;})[];common:boolean;label?:string;expanded?:boolean;optional?:boolean;description?:string;importance?:H5PImportance;widget?:string;type:\"group\"|H5PFieldType.Group;isSubContent?:boolean;}": {
             "properties": {
                 "common": {
                     "type": "boolean"
@@ -626,152 +626,6 @@
             ],
             "type": "object"
         },
-        "{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"NDLATagsPicker\";fieldNameToWatch:string;type:\"library\"|H5PFieldType.Library;options:string[];default?:string;}": {
-            "properties": {
-                "common": {
-                    "default": false,
-                    "description": "If set to true, all instances of this\nlibrary will use the same value for this\nfield. The editor will display the input\nfor this field in a \"Common fields\"\ncontainer at the end of the editor form.",
-                    "type": "boolean"
-                },
-                "default": {
-                    "type": "string"
-                },
-                "description": {
-                    "description": "Description displayed with the field in the editor.",
-                    "type": "string"
-                },
-                "fieldNameToWatch": {
-                    "type": "string"
-                },
-                "importance": {
-                    "$ref": "#/definitions/H5PImportance",
-                    "default": "medium",
-                    "description": "An indication of the field's importance.\nIs typically used by the editor giving a\nmore prominent style on the more important\nfields, but could e.g. also be used to\ngenerate weighted input to a search engine."
-                },
-                "label": {
-                    "description": "The field's label in the editor.",
-                    "type": "string"
-                },
-                "name": {
-                    "description": "Internal name of the field. Must be a valid JavaScript identifier string.",
-                    "type": "string"
-                },
-                "optional": {
-                    "default": false,
-                    "description": "Set to true for optional fields.",
-                    "type": "boolean"
-                },
-                "options": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "type": {
-                    "const": "library",
-                    "type": "string"
-                },
-                "widget": {
-                    "const": "NDLATagsPicker",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "fieldNameToWatch",
-                "name",
-                "options",
-                "type",
-                "widget"
-            ],
-            "type": "object"
-        },
-        "{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"NDLATagsPicker\";fieldNameToWatch:string;type:\"list\"|H5PFieldType.List;widgets?:{name:string;label:string;}[];field:H5PField;min?:number;max?:number;entity:string;defaultNum?:number;}": {
-            "properties": {
-                "common": {
-                    "default": false,
-                    "description": "If set to true, all instances of this\nlibrary will use the same value for this\nfield. The editor will display the input\nfor this field in a \"Common fields\"\ncontainer at the end of the editor form.",
-                    "type": "boolean"
-                },
-                "defaultNum": {
-                    "default": 1,
-                    "type": "number"
-                },
-                "description": {
-                    "description": "Description displayed with the field in the editor.",
-                    "type": "string"
-                },
-                "entity": {
-                    "description": "Name for a single entity in the list.",
-                    "type": "string"
-                },
-                "field": {
-                    "$ref": "#/definitions/H5PField"
-                },
-                "fieldNameToWatch": {
-                    "type": "string"
-                },
-                "importance": {
-                    "$ref": "#/definitions/H5PImportance",
-                    "default": "medium",
-                    "description": "An indication of the field's importance.\nIs typically used by the editor giving a\nmore prominent style on the more important\nfields, but could e.g. also be used to\ngenerate weighted input to a search engine."
-                },
-                "label": {
-                    "description": "The field's label in the editor.",
-                    "type": "string"
-                },
-                "max": {
-                    "type": "number"
-                },
-                "min": {
-                    "type": "number"
-                },
-                "name": {
-                    "description": "Internal name of the field. Must be a valid JavaScript identifier string.",
-                    "type": "string"
-                },
-                "optional": {
-                    "default": false,
-                    "description": "Set to true for optional fields.",
-                    "type": "boolean"
-                },
-                "type": {
-                    "const": "list",
-                    "type": "string"
-                },
-                "widget": {
-                    "const": "NDLATagsPicker",
-                    "type": "string"
-                },
-                "widgets": {
-                    "description": "List containing widget(s). A widget is defined as\nan object with the name of the widget and a label.\nCurrently no widgets are provided by the core system,\nbut the H5PEditor.VerticalTabs library provides\n`verticalTabs` as an option.",
-                    "items": {
-                        "properties": {
-                            "label": {
-                                "type": "string"
-                            },
-                            "name": {
-                                "type": "string"
-                            }
-                        },
-                        "required": [
-                            "label",
-                            "name"
-                        ],
-                        "type": "object"
-                    },
-                    "type": "array"
-                }
-            },
-            "required": [
-                "entity",
-                "field",
-                "fieldNameToWatch",
-                "name",
-                "type",
-                "widget"
-            ],
-            "type": "object"
-        },
         "{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"NDLATagsPicker\";fieldNameToWatch:string;type:\"number\"|H5PFieldType.Number;default?:number;min?:number;max?:number;steps?:number;decimals?:number;unit?:string;}": {
             "properties": {
                 "common": {
@@ -963,6 +817,152 @@
                 }
             },
             "required": [
+                "fieldNameToWatch",
+                "name",
+                "type",
+                "widget"
+            ],
+            "type": "object"
+        },
+        "{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"NDLATagsPicker\";fieldNameToWatch:string;type:H5PFieldType.Library|\"library\";options:string[];default?:string;}": {
+            "properties": {
+                "common": {
+                    "default": false,
+                    "description": "If set to true, all instances of this\nlibrary will use the same value for this\nfield. The editor will display the input\nfor this field in a \"Common fields\"\ncontainer at the end of the editor form.",
+                    "type": "boolean"
+                },
+                "default": {
+                    "type": "string"
+                },
+                "description": {
+                    "description": "Description displayed with the field in the editor.",
+                    "type": "string"
+                },
+                "fieldNameToWatch": {
+                    "type": "string"
+                },
+                "importance": {
+                    "$ref": "#/definitions/H5PImportance",
+                    "default": "medium",
+                    "description": "An indication of the field's importance.\nIs typically used by the editor giving a\nmore prominent style on the more important\nfields, but could e.g. also be used to\ngenerate weighted input to a search engine."
+                },
+                "label": {
+                    "description": "The field's label in the editor.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Internal name of the field. Must be a valid JavaScript identifier string.",
+                    "type": "string"
+                },
+                "optional": {
+                    "default": false,
+                    "description": "Set to true for optional fields.",
+                    "type": "boolean"
+                },
+                "options": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "type": {
+                    "const": "library",
+                    "type": "string"
+                },
+                "widget": {
+                    "const": "NDLATagsPicker",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "fieldNameToWatch",
+                "name",
+                "options",
+                "type",
+                "widget"
+            ],
+            "type": "object"
+        },
+        "{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"NDLATagsPicker\";fieldNameToWatch:string;type:H5PFieldType.List|\"list\";widgets?:{name:string;label:string;}[];field:H5PField;min?:number;max?:number;entity:string;defaultNum?:number;}": {
+            "properties": {
+                "common": {
+                    "default": false,
+                    "description": "If set to true, all instances of this\nlibrary will use the same value for this\nfield. The editor will display the input\nfor this field in a \"Common fields\"\ncontainer at the end of the editor form.",
+                    "type": "boolean"
+                },
+                "defaultNum": {
+                    "default": 1,
+                    "type": "number"
+                },
+                "description": {
+                    "description": "Description displayed with the field in the editor.",
+                    "type": "string"
+                },
+                "entity": {
+                    "description": "Name for a single entity in the list.",
+                    "type": "string"
+                },
+                "field": {
+                    "$ref": "#/definitions/H5PField"
+                },
+                "fieldNameToWatch": {
+                    "type": "string"
+                },
+                "importance": {
+                    "$ref": "#/definitions/H5PImportance",
+                    "default": "medium",
+                    "description": "An indication of the field's importance.\nIs typically used by the editor giving a\nmore prominent style on the more important\nfields, but could e.g. also be used to\ngenerate weighted input to a search engine."
+                },
+                "label": {
+                    "description": "The field's label in the editor.",
+                    "type": "string"
+                },
+                "max": {
+                    "type": "number"
+                },
+                "min": {
+                    "type": "number"
+                },
+                "name": {
+                    "description": "Internal name of the field. Must be a valid JavaScript identifier string.",
+                    "type": "string"
+                },
+                "optional": {
+                    "default": false,
+                    "description": "Set to true for optional fields.",
+                    "type": "boolean"
+                },
+                "type": {
+                    "const": "list",
+                    "type": "string"
+                },
+                "widget": {
+                    "const": "NDLATagsPicker",
+                    "type": "string"
+                },
+                "widgets": {
+                    "description": "List containing widget(s). A widget is defined as\nan object with the name of the widget and a label.\nCurrently no widgets are provided by the core system,\nbut the H5PEditor.VerticalTabs library provides\n`verticalTabs` as an option.",
+                    "items": {
+                        "properties": {
+                            "label": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "label",
+                            "name"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "entity",
+                "field",
                 "fieldNameToWatch",
                 "name",
                 "type",
@@ -1499,258 +1499,6 @@
             ],
             "type": "object"
         },
-        "{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"showWhen\"|\"NDLAShowWhen\";showWhen:H5PShowWhenOptions;type:\"library\"|H5PFieldType.Library;options:string[];default?:string;}": {
-            "properties": {
-                "common": {
-                    "default": false,
-                    "description": "If set to true, all instances of this\nlibrary will use the same value for this\nfield. The editor will display the input\nfor this field in a \"Common fields\"\ncontainer at the end of the editor form.",
-                    "type": "boolean"
-                },
-                "default": {
-                    "type": "string"
-                },
-                "description": {
-                    "description": "Description displayed with the field in the editor.",
-                    "type": "string"
-                },
-                "importance": {
-                    "$ref": "#/definitions/H5PImportance",
-                    "default": "medium",
-                    "description": "An indication of the field's importance.\nIs typically used by the editor giving a\nmore prominent style on the more important\nfields, but could e.g. also be used to\ngenerate weighted input to a search engine."
-                },
-                "label": {
-                    "description": "The field's label in the editor.",
-                    "type": "string"
-                },
-                "name": {
-                    "description": "Internal name of the field. Must be a valid JavaScript identifier string.",
-                    "type": "string"
-                },
-                "optional": {
-                    "default": false,
-                    "description": "Set to true for optional fields.",
-                    "type": "boolean"
-                },
-                "options": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "showWhen": {
-                    "properties": {
-                        "detach": {
-                            "description": "True means field is removed from DOM when hidden.\nDefault behaviour is hiding it using CSS (display: none).",
-                            "type": "boolean"
-                        },
-                        "rules": {
-                            "items": {
-                                "properties": {
-                                    "equals": {
-                                        "anyOf": [
-                                            {
-                                                "items": {
-                                                    "type": "string"
-                                                },
-                                                "type": "array"
-                                            },
-                                            {
-                                                "type": [
-                                                    "string",
-                                                    "boolean"
-                                                ]
-                                            }
-                                        ]
-                                    },
-                                    "field": {
-                                        "type": "string"
-                                    }
-                                },
-                                "required": [
-                                    "field"
-                                ],
-                                "type": "object"
-                            },
-                            "type": "array"
-                        },
-                        "type": {
-                            "default": "or",
-                            "enum": [
-                                "and",
-                                "or"
-                            ],
-                            "type": "string"
-                        },
-                        "widget": {
-                            "type": "string"
-                        }
-                    },
-                    "required": [
-                        "rules"
-                    ],
-                    "type": "object"
-                },
-                "type": {
-                    "const": "library",
-                    "type": "string"
-                },
-                "widget": {
-                    "enum": [
-                        "NDLAShowWhen",
-                        "showWhen"
-                    ],
-                    "type": "string"
-                }
-            },
-            "required": [
-                "name",
-                "options",
-                "showWhen",
-                "type",
-                "widget"
-            ],
-            "type": "object"
-        },
-        "{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"showWhen\"|\"NDLAShowWhen\";showWhen:H5PShowWhenOptions;type:\"list\"|H5PFieldType.List;widgets?:{name:string;label:string;}[];field:H5PField;min?:number;max?:number;entity:string;defaultNum?:number;}": {
-            "properties": {
-                "common": {
-                    "default": false,
-                    "description": "If set to true, all instances of this\nlibrary will use the same value for this\nfield. The editor will display the input\nfor this field in a \"Common fields\"\ncontainer at the end of the editor form.",
-                    "type": "boolean"
-                },
-                "defaultNum": {
-                    "default": 1,
-                    "type": "number"
-                },
-                "description": {
-                    "description": "Description displayed with the field in the editor.",
-                    "type": "string"
-                },
-                "entity": {
-                    "description": "Name for a single entity in the list.",
-                    "type": "string"
-                },
-                "field": {
-                    "$ref": "#/definitions/H5PField"
-                },
-                "importance": {
-                    "$ref": "#/definitions/H5PImportance",
-                    "default": "medium",
-                    "description": "An indication of the field's importance.\nIs typically used by the editor giving a\nmore prominent style on the more important\nfields, but could e.g. also be used to\ngenerate weighted input to a search engine."
-                },
-                "label": {
-                    "description": "The field's label in the editor.",
-                    "type": "string"
-                },
-                "max": {
-                    "type": "number"
-                },
-                "min": {
-                    "type": "number"
-                },
-                "name": {
-                    "description": "Internal name of the field. Must be a valid JavaScript identifier string.",
-                    "type": "string"
-                },
-                "optional": {
-                    "default": false,
-                    "description": "Set to true for optional fields.",
-                    "type": "boolean"
-                },
-                "showWhen": {
-                    "properties": {
-                        "detach": {
-                            "description": "True means field is removed from DOM when hidden.\nDefault behaviour is hiding it using CSS (display: none).",
-                            "type": "boolean"
-                        },
-                        "rules": {
-                            "items": {
-                                "properties": {
-                                    "equals": {
-                                        "anyOf": [
-                                            {
-                                                "items": {
-                                                    "type": "string"
-                                                },
-                                                "type": "array"
-                                            },
-                                            {
-                                                "type": [
-                                                    "string",
-                                                    "boolean"
-                                                ]
-                                            }
-                                        ]
-                                    },
-                                    "field": {
-                                        "type": "string"
-                                    }
-                                },
-                                "required": [
-                                    "field"
-                                ],
-                                "type": "object"
-                            },
-                            "type": "array"
-                        },
-                        "type": {
-                            "default": "or",
-                            "enum": [
-                                "and",
-                                "or"
-                            ],
-                            "type": "string"
-                        },
-                        "widget": {
-                            "type": "string"
-                        }
-                    },
-                    "required": [
-                        "rules"
-                    ],
-                    "type": "object"
-                },
-                "type": {
-                    "const": "list",
-                    "type": "string"
-                },
-                "widget": {
-                    "enum": [
-                        "NDLAShowWhen",
-                        "showWhen"
-                    ],
-                    "type": "string"
-                },
-                "widgets": {
-                    "description": "List containing widget(s). A widget is defined as\nan object with the name of the widget and a label.\nCurrently no widgets are provided by the core system,\nbut the H5PEditor.VerticalTabs library provides\n`verticalTabs` as an option.",
-                    "items": {
-                        "properties": {
-                            "label": {
-                                "type": "string"
-                            },
-                            "name": {
-                                "type": "string"
-                            }
-                        },
-                        "required": [
-                            "label",
-                            "name"
-                        ],
-                        "type": "object"
-                    },
-                    "type": "array"
-                }
-            },
-            "required": [
-                "entity",
-                "field",
-                "name",
-                "showWhen",
-                "type",
-                "widget"
-            ],
-            "type": "object"
-        },
         "{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"showWhen\"|\"NDLAShowWhen\";showWhen:H5PShowWhenOptions;type:\"number\"|H5PFieldType.Number;default?:number;min?:number;max?:number;steps?:number;decimals?:number;unit?:string;}": {
             "properties": {
                 "common": {
@@ -2108,6 +1856,258 @@
             ],
             "type": "object"
         },
+        "{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"showWhen\"|\"NDLAShowWhen\";showWhen:H5PShowWhenOptions;type:H5PFieldType.Library|\"library\";options:string[];default?:string;}": {
+            "properties": {
+                "common": {
+                    "default": false,
+                    "description": "If set to true, all instances of this\nlibrary will use the same value for this\nfield. The editor will display the input\nfor this field in a \"Common fields\"\ncontainer at the end of the editor form.",
+                    "type": "boolean"
+                },
+                "default": {
+                    "type": "string"
+                },
+                "description": {
+                    "description": "Description displayed with the field in the editor.",
+                    "type": "string"
+                },
+                "importance": {
+                    "$ref": "#/definitions/H5PImportance",
+                    "default": "medium",
+                    "description": "An indication of the field's importance.\nIs typically used by the editor giving a\nmore prominent style on the more important\nfields, but could e.g. also be used to\ngenerate weighted input to a search engine."
+                },
+                "label": {
+                    "description": "The field's label in the editor.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Internal name of the field. Must be a valid JavaScript identifier string.",
+                    "type": "string"
+                },
+                "optional": {
+                    "default": false,
+                    "description": "Set to true for optional fields.",
+                    "type": "boolean"
+                },
+                "options": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "showWhen": {
+                    "properties": {
+                        "detach": {
+                            "description": "True means field is removed from DOM when hidden.\nDefault behaviour is hiding it using CSS (display: none).",
+                            "type": "boolean"
+                        },
+                        "rules": {
+                            "items": {
+                                "properties": {
+                                    "equals": {
+                                        "anyOf": [
+                                            {
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "type": "array"
+                                            },
+                                            {
+                                                "type": [
+                                                    "string",
+                                                    "boolean"
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "field": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "field"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "type": {
+                            "default": "or",
+                            "enum": [
+                                "and",
+                                "or"
+                            ],
+                            "type": "string"
+                        },
+                        "widget": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "rules"
+                    ],
+                    "type": "object"
+                },
+                "type": {
+                    "const": "library",
+                    "type": "string"
+                },
+                "widget": {
+                    "enum": [
+                        "NDLAShowWhen",
+                        "showWhen"
+                    ],
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name",
+                "options",
+                "showWhen",
+                "type",
+                "widget"
+            ],
+            "type": "object"
+        },
+        "{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget:\"showWhen\"|\"NDLAShowWhen\";showWhen:H5PShowWhenOptions;type:H5PFieldType.List|\"list\";widgets?:{name:string;label:string;}[];field:H5PField;min?:number;max?:number;entity:string;defaultNum?:number;}": {
+            "properties": {
+                "common": {
+                    "default": false,
+                    "description": "If set to true, all instances of this\nlibrary will use the same value for this\nfield. The editor will display the input\nfor this field in a \"Common fields\"\ncontainer at the end of the editor form.",
+                    "type": "boolean"
+                },
+                "defaultNum": {
+                    "default": 1,
+                    "type": "number"
+                },
+                "description": {
+                    "description": "Description displayed with the field in the editor.",
+                    "type": "string"
+                },
+                "entity": {
+                    "description": "Name for a single entity in the list.",
+                    "type": "string"
+                },
+                "field": {
+                    "$ref": "#/definitions/H5PField"
+                },
+                "importance": {
+                    "$ref": "#/definitions/H5PImportance",
+                    "default": "medium",
+                    "description": "An indication of the field's importance.\nIs typically used by the editor giving a\nmore prominent style on the more important\nfields, but could e.g. also be used to\ngenerate weighted input to a search engine."
+                },
+                "label": {
+                    "description": "The field's label in the editor.",
+                    "type": "string"
+                },
+                "max": {
+                    "type": "number"
+                },
+                "min": {
+                    "type": "number"
+                },
+                "name": {
+                    "description": "Internal name of the field. Must be a valid JavaScript identifier string.",
+                    "type": "string"
+                },
+                "optional": {
+                    "default": false,
+                    "description": "Set to true for optional fields.",
+                    "type": "boolean"
+                },
+                "showWhen": {
+                    "properties": {
+                        "detach": {
+                            "description": "True means field is removed from DOM when hidden.\nDefault behaviour is hiding it using CSS (display: none).",
+                            "type": "boolean"
+                        },
+                        "rules": {
+                            "items": {
+                                "properties": {
+                                    "equals": {
+                                        "anyOf": [
+                                            {
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "type": "array"
+                                            },
+                                            {
+                                                "type": [
+                                                    "string",
+                                                    "boolean"
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "field": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "field"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "type": {
+                            "default": "or",
+                            "enum": [
+                                "and",
+                                "or"
+                            ],
+                            "type": "string"
+                        },
+                        "widget": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "rules"
+                    ],
+                    "type": "object"
+                },
+                "type": {
+                    "const": "list",
+                    "type": "string"
+                },
+                "widget": {
+                    "enum": [
+                        "NDLAShowWhen",
+                        "showWhen"
+                    ],
+                    "type": "string"
+                },
+                "widgets": {
+                    "description": "List containing widget(s). A widget is defined as\nan object with the name of the widget and a label.\nCurrently no widgets are provided by the core system,\nbut the H5PEditor.VerticalTabs library provides\n`verticalTabs` as an option.",
+                    "items": {
+                        "properties": {
+                            "label": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "label",
+                            "name"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "entity",
+                "field",
+                "name",
+                "showWhen",
+                "type",
+                "widget"
+            ],
+            "type": "object"
+        },
         "{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget?:string;type:\"audio\"|H5PFieldType.Audio;}": {
             "properties": {
                 "common": {
@@ -2342,140 +2342,6 @@
             ],
             "type": "object"
         },
-        "{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget?:string;type:\"library\"|H5PFieldType.Library;options:string[];default?:string;}": {
-            "properties": {
-                "common": {
-                    "default": false,
-                    "description": "If set to true, all instances of this\nlibrary will use the same value for this\nfield. The editor will display the input\nfor this field in a \"Common fields\"\ncontainer at the end of the editor form.",
-                    "type": "boolean"
-                },
-                "default": {
-                    "type": "string"
-                },
-                "description": {
-                    "description": "Description displayed with the field in the editor.",
-                    "type": "string"
-                },
-                "importance": {
-                    "$ref": "#/definitions/H5PImportance",
-                    "default": "medium",
-                    "description": "An indication of the field's importance.\nIs typically used by the editor giving a\nmore prominent style on the more important\nfields, but could e.g. also be used to\ngenerate weighted input to a search engine."
-                },
-                "label": {
-                    "description": "The field's label in the editor.",
-                    "type": "string"
-                },
-                "name": {
-                    "description": "Internal name of the field. Must be a valid JavaScript identifier string.",
-                    "type": "string"
-                },
-                "optional": {
-                    "default": false,
-                    "description": "Set to true for optional fields.",
-                    "type": "boolean"
-                },
-                "options": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "type": {
-                    "const": "library",
-                    "type": "string"
-                },
-                "widget": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "name",
-                "options",
-                "type"
-            ],
-            "type": "object"
-        },
-        "{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget?:string;type:\"list\"|H5PFieldType.List;widgets?:{name:string;label:string;}[];field:H5PField;min?:number;max?:number;entity:string;defaultNum?:number;}": {
-            "properties": {
-                "common": {
-                    "default": false,
-                    "description": "If set to true, all instances of this\nlibrary will use the same value for this\nfield. The editor will display the input\nfor this field in a \"Common fields\"\ncontainer at the end of the editor form.",
-                    "type": "boolean"
-                },
-                "defaultNum": {
-                    "default": 1,
-                    "type": "number"
-                },
-                "description": {
-                    "description": "Description displayed with the field in the editor.",
-                    "type": "string"
-                },
-                "entity": {
-                    "description": "Name for a single entity in the list.",
-                    "type": "string"
-                },
-                "field": {
-                    "$ref": "#/definitions/H5PField"
-                },
-                "importance": {
-                    "$ref": "#/definitions/H5PImportance",
-                    "default": "medium",
-                    "description": "An indication of the field's importance.\nIs typically used by the editor giving a\nmore prominent style on the more important\nfields, but could e.g. also be used to\ngenerate weighted input to a search engine."
-                },
-                "label": {
-                    "description": "The field's label in the editor.",
-                    "type": "string"
-                },
-                "max": {
-                    "type": "number"
-                },
-                "min": {
-                    "type": "number"
-                },
-                "name": {
-                    "description": "Internal name of the field. Must be a valid JavaScript identifier string.",
-                    "type": "string"
-                },
-                "optional": {
-                    "default": false,
-                    "description": "Set to true for optional fields.",
-                    "type": "boolean"
-                },
-                "type": {
-                    "const": "list",
-                    "type": "string"
-                },
-                "widget": {
-                    "type": "string"
-                },
-                "widgets": {
-                    "description": "List containing widget(s). A widget is defined as\nan object with the name of the widget and a label.\nCurrently no widgets are provided by the core system,\nbut the H5PEditor.VerticalTabs library provides\n`verticalTabs` as an option.",
-                    "items": {
-                        "properties": {
-                            "label": {
-                                "type": "string"
-                            },
-                            "name": {
-                                "type": "string"
-                            }
-                        },
-                        "required": [
-                            "label",
-                            "name"
-                        ],
-                        "type": "object"
-                    },
-                    "type": "array"
-                }
-            },
-            "required": [
-                "entity",
-                "field",
-                "name",
-                "type"
-            ],
-            "type": "object"
-        },
         "{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget?:string;type:\"number\"|H5PFieldType.Number;default?:number;min?:number;max?:number;steps?:number;decimals?:number;unit?:string;}": {
             "properties": {
                 "common": {
@@ -2651,6 +2517,140 @@
                 }
             },
             "required": [
+                "name",
+                "type"
+            ],
+            "type": "object"
+        },
+        "{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget?:string;type:H5PFieldType.Library|\"library\";options:string[];default?:string;}": {
+            "properties": {
+                "common": {
+                    "default": false,
+                    "description": "If set to true, all instances of this\nlibrary will use the same value for this\nfield. The editor will display the input\nfor this field in a \"Common fields\"\ncontainer at the end of the editor form.",
+                    "type": "boolean"
+                },
+                "default": {
+                    "type": "string"
+                },
+                "description": {
+                    "description": "Description displayed with the field in the editor.",
+                    "type": "string"
+                },
+                "importance": {
+                    "$ref": "#/definitions/H5PImportance",
+                    "default": "medium",
+                    "description": "An indication of the field's importance.\nIs typically used by the editor giving a\nmore prominent style on the more important\nfields, but could e.g. also be used to\ngenerate weighted input to a search engine."
+                },
+                "label": {
+                    "description": "The field's label in the editor.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Internal name of the field. Must be a valid JavaScript identifier string.",
+                    "type": "string"
+                },
+                "optional": {
+                    "default": false,
+                    "description": "Set to true for optional fields.",
+                    "type": "boolean"
+                },
+                "options": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "type": {
+                    "const": "library",
+                    "type": "string"
+                },
+                "widget": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name",
+                "options",
+                "type"
+            ],
+            "type": "object"
+        },
+        "{name:string;label?:string;description?:string;optional?:boolean;importance?:H5PImportance;common?:boolean;widget?:string;type:H5PFieldType.List|\"list\";widgets?:{name:string;label:string;}[];field:H5PField;min?:number;max?:number;entity:string;defaultNum?:number;}": {
+            "properties": {
+                "common": {
+                    "default": false,
+                    "description": "If set to true, all instances of this\nlibrary will use the same value for this\nfield. The editor will display the input\nfor this field in a \"Common fields\"\ncontainer at the end of the editor form.",
+                    "type": "boolean"
+                },
+                "defaultNum": {
+                    "default": 1,
+                    "type": "number"
+                },
+                "description": {
+                    "description": "Description displayed with the field in the editor.",
+                    "type": "string"
+                },
+                "entity": {
+                    "description": "Name for a single entity in the list.",
+                    "type": "string"
+                },
+                "field": {
+                    "$ref": "#/definitions/H5PField"
+                },
+                "importance": {
+                    "$ref": "#/definitions/H5PImportance",
+                    "default": "medium",
+                    "description": "An indication of the field's importance.\nIs typically used by the editor giving a\nmore prominent style on the more important\nfields, but could e.g. also be used to\ngenerate weighted input to a search engine."
+                },
+                "label": {
+                    "description": "The field's label in the editor.",
+                    "type": "string"
+                },
+                "max": {
+                    "type": "number"
+                },
+                "min": {
+                    "type": "number"
+                },
+                "name": {
+                    "description": "Internal name of the field. Must be a valid JavaScript identifier string.",
+                    "type": "string"
+                },
+                "optional": {
+                    "default": false,
+                    "description": "Set to true for optional fields.",
+                    "type": "boolean"
+                },
+                "type": {
+                    "const": "list",
+                    "type": "string"
+                },
+                "widget": {
+                    "type": "string"
+                },
+                "widgets": {
+                    "description": "List containing widget(s). A widget is defined as\nan object with the name of the widget and a label.\nCurrently no widgets are provided by the core system,\nbut the H5PEditor.VerticalTabs library provides\n`verticalTabs` as an option.",
+                    "items": {
+                        "properties": {
+                            "label": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "label",
+                            "name"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "entity",
+                "field",
                 "name",
                 "type"
             ],
@@ -3592,6 +3592,60 @@
                 "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3A%22boolean%22%7CH5PFieldType.Boolean%3Bdefault%3Aboolean%3B%7D"
             },
             {
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22group%22%7CH5PFieldType.Group%3Bfields%3AH5PField%5B%5D%3BisSubContent%3F%3Aboolean%3Bexpanded%3F%3Aboolean%3B%7D"
+            },
+            {
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Btype%3A%22group%22%7CH5PFieldType.Group%3Bfields%3AH5PField%5B%5D%3BisSubContent%3F%3Aboolean%3Bexpanded%3F%3Aboolean%3B%7D"
+            },
+            {
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3A%22group%22%7CH5PFieldType.Group%3Bfields%3AH5PField%5B%5D%3BisSubContent%3F%3Aboolean%3Bexpanded%3F%3Aboolean%3B%7D"
+            },
+            {
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3AH5PFieldType.List%7C%22list%22%3Bwidgets%3F%3A%7Bname%3Astring%3Blabel%3Astring%3B%7D%5B%5D%3Bfield%3AH5PField%3Bmin%3F%3Anumber%3Bmax%3F%3Anumber%3Bentity%3Astring%3BdefaultNum%3F%3Anumber%3B%7D"
+            },
+            {
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Btype%3AH5PFieldType.List%7C%22list%22%3Bwidgets%3F%3A%7Bname%3Astring%3Blabel%3Astring%3B%7D%5B%5D%3Bfield%3AH5PField%3Bmin%3F%3Anumber%3Bmax%3F%3Anumber%3Bentity%3Astring%3BdefaultNum%3F%3Anumber%3B%7D"
+            },
+            {
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3AH5PFieldType.List%7C%22list%22%3Bwidgets%3F%3A%7Bname%3Astring%3Blabel%3Astring%3B%7D%5B%5D%3Bfield%3AH5PField%3Bmin%3F%3Anumber%3Bmax%3F%3Anumber%3Bentity%3Astring%3BdefaultNum%3F%3Anumber%3B%7D"
+            },
+            {
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22select%22%7CH5PFieldType.Select%3Bdefault%3Astring%7Cnumber%7Cboolean%3Boptions%3A%7Bvalue%3Astring%7Cnumber%7Cboolean%3Blabel%3Astring%3B%7D%5B%5D%3B%7D"
+            },
+            {
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Btype%3A%22select%22%7CH5PFieldType.Select%3Bdefault%3Astring%7Cnumber%7Cboolean%3Boptions%3A%7Bvalue%3Astring%7Cnumber%7Cboolean%3Blabel%3Astring%3B%7D%5B%5D%3B%7D"
+            },
+            {
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3A%22select%22%7CH5PFieldType.Select%3Bdefault%3Astring%7Cnumber%7Cboolean%3Boptions%3A%7Bvalue%3Astring%7Cnumber%7Cboolean%3Blabel%3Astring%3B%7D%5B%5D%3B%7D"
+            },
+            {
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3AH5PFieldType.Library%7C%22library%22%3Boptions%3Astring%5B%5D%3Bdefault%3F%3Astring%3B%7D"
+            },
+            {
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Btype%3AH5PFieldType.Library%7C%22library%22%3Boptions%3Astring%5B%5D%3Bdefault%3F%3Astring%3B%7D"
+            },
+            {
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3AH5PFieldType.Library%7C%22library%22%3Boptions%3Astring%5B%5D%3Bdefault%3F%3Astring%3B%7D"
+            },
+            {
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22image%22%7CH5PFieldType.Image%3B%7D"
+            },
+            {
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Btype%3A%22image%22%7CH5PFieldType.Image%3B%7D"
+            },
+            {
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3A%22image%22%7CH5PFieldType.Image%3B%7D"
+            },
+            {
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22video%22%7CH5PFieldType.Video%3B%7D"
+            },
+            {
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Btype%3A%22video%22%7CH5PFieldType.Video%3B%7D"
+            },
+            {
+                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3A%22video%22%7CH5PFieldType.Video%3B%7D"
+            },
+            {
                 "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22audio%22%7CH5PFieldType.Audio%3B%7D"
             },
             {
@@ -3610,64 +3664,10 @@
                 "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3A%22file%22%7CH5PFieldType.File%3B%7D"
             },
             {
-                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22group%22%7CH5PFieldType.Group%3Bfields%3AH5PField%5B%5D%3BisSubContent%3F%3Aboolean%3Bexpanded%3F%3Aboolean%3B%7D"
+                "$ref": "#/definitions/%7Bname%3A%22behaviour%22%3Blabel%3F%3Astring%3Bexpanded%3F%3Aboolean%3Boptional%3F%3Aboolean%3Bdescription%3F%3Astring%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22group%22%7CH5PFieldType.Group%3Bfields%3AH5PField%5B%5D%3BisSubContent%3F%3Aboolean%3B%7D"
             },
             {
-                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Btype%3A%22group%22%7CH5PFieldType.Group%3Bfields%3AH5PField%5B%5D%3BisSubContent%3F%3Aboolean%3Bexpanded%3F%3Aboolean%3B%7D"
-            },
-            {
-                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3A%22group%22%7CH5PFieldType.Group%3Bfields%3AH5PField%5B%5D%3BisSubContent%3F%3Aboolean%3Bexpanded%3F%3Aboolean%3B%7D"
-            },
-            {
-                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22image%22%7CH5PFieldType.Image%3B%7D"
-            },
-            {
-                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Btype%3A%22image%22%7CH5PFieldType.Image%3B%7D"
-            },
-            {
-                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3A%22image%22%7CH5PFieldType.Image%3B%7D"
-            },
-            {
-                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22library%22%7CH5PFieldType.Library%3Boptions%3Astring%5B%5D%3Bdefault%3F%3Astring%3B%7D"
-            },
-            {
-                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Btype%3A%22library%22%7CH5PFieldType.Library%3Boptions%3Astring%5B%5D%3Bdefault%3F%3Astring%3B%7D"
-            },
-            {
-                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3A%22library%22%7CH5PFieldType.Library%3Boptions%3Astring%5B%5D%3Bdefault%3F%3Astring%3B%7D"
-            },
-            {
-                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22list%22%7CH5PFieldType.List%3Bwidgets%3F%3A%7Bname%3Astring%3Blabel%3Astring%3B%7D%5B%5D%3Bfield%3AH5PField%3Bmin%3F%3Anumber%3Bmax%3F%3Anumber%3Bentity%3Astring%3BdefaultNum%3F%3Anumber%3B%7D"
-            },
-            {
-                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Btype%3A%22list%22%7CH5PFieldType.List%3Bwidgets%3F%3A%7Bname%3Astring%3Blabel%3Astring%3B%7D%5B%5D%3Bfield%3AH5PField%3Bmin%3F%3Anumber%3Bmax%3F%3Anumber%3Bentity%3Astring%3BdefaultNum%3F%3Anumber%3B%7D"
-            },
-            {
-                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3A%22list%22%7CH5PFieldType.List%3Bwidgets%3F%3A%7Bname%3Astring%3Blabel%3Astring%3B%7D%5B%5D%3Bfield%3AH5PField%3Bmin%3F%3Anumber%3Bmax%3F%3Anumber%3Bentity%3Astring%3BdefaultNum%3F%3Anumber%3B%7D"
-            },
-            {
-                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22select%22%7CH5PFieldType.Select%3Bdefault%3Astring%7Cnumber%7Cboolean%3Boptions%3A%7Bvalue%3Astring%7Cnumber%7Cboolean%3Blabel%3Astring%3B%7D%5B%5D%3B%7D"
-            },
-            {
-                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Btype%3A%22select%22%7CH5PFieldType.Select%3Bdefault%3Astring%7Cnumber%7Cboolean%3Boptions%3A%7Bvalue%3Astring%7Cnumber%7Cboolean%3Blabel%3Astring%3B%7D%5B%5D%3B%7D"
-            },
-            {
-                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3A%22select%22%7CH5PFieldType.Select%3Bdefault%3Astring%7Cnumber%7Cboolean%3Boptions%3A%7Bvalue%3Astring%7Cnumber%7Cboolean%3Blabel%3Astring%3B%7D%5B%5D%3B%7D"
-            },
-            {
-                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22video%22%7CH5PFieldType.Video%3B%7D"
-            },
-            {
-                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22showWhen%22%7C%22NDLAShowWhen%22%3BshowWhen%3AH5PShowWhenOptions%3Btype%3A%22video%22%7CH5PFieldType.Video%3B%7D"
-            },
-            {
-                "$ref": "#/definitions/%7Bname%3Astring%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3A%22NDLATagsPicker%22%3BfieldNameToWatch%3Astring%3Btype%3A%22video%22%7CH5PFieldType.Video%3B%7D"
-            },
-            {
-                "$ref": "#/definitions/%7Bname%3A%22behaviour%22%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bcommon%3F%3Aboolean%3Bwidget%3F%3Astring%3Btype%3A%22group%22%7CH5PFieldType.Group%3Bfields%3AH5PField%5B%5D%3BisSubContent%3F%3Aboolean%3Bexpanded%3F%3Aboolean%3B%7D"
-            },
-            {
-                "$ref": "#/definitions/%7Bname%3A%22l10n%22%3Bfields%3A(StrictOmit%3CH5PFieldText%2C%22default%22%3E%26%7Bdefault%3Astring%3B%7D)%5B%5D%3Bcommon%3Aboolean%3Blabel%3F%3Astring%3Bdescription%3F%3Astring%3Boptional%3F%3Aboolean%3Bimportance%3F%3AH5PImportance%3Bwidget%3F%3Astring%3Btype%3A%22group%22%7CH5PFieldType.Group%3BisSubContent%3F%3Aboolean%3Bexpanded%3F%3Aboolean%3B%7D"
+                "$ref": "#/definitions/%7Bname%3A%22l10n%22%3Bfields%3A(StrictOmit%3CH5PFieldText%2C%22default%22%3E%26%7Bdefault%3Astring%3B%7D)%5B%5D%3Bcommon%3Aboolean%3Blabel%3F%3Astring%3Bexpanded%3F%3Aboolean%3Boptional%3F%3Aboolean%3Bdescription%3F%3Astring%3Bimportance%3F%3AH5PImportance%3Bwidget%3F%3Astring%3Btype%3A%22group%22%7CH5PFieldType.Group%3BisSubContent%3F%3Aboolean%3B%7D"
             }
         ]
     },
