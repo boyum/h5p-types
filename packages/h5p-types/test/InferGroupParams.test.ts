@@ -261,11 +261,13 @@ namespace Test_OverallFeedback_Wrapper {
     // If the group (in this case overallFeedback) has only one field,
     // then that group should inherit all properties from that field
     // including `optional`.
-    overallFeedback?: {
-      from: number;
-      to: number;
-      feedback?: string | undefined;
-    }[];
+    overallFeedback?:
+      | {
+          from: number;
+          to: number;
+          feedback?: string | undefined;
+        }[]
+      | undefined;
 
     text: string;
   };

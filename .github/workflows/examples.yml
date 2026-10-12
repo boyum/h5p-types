@@ -31,9 +31,12 @@ jobs:
           - h5p-widget
           - h5p-widget-vite
 
+        # Only the supported floor. ts-loader reads `ts.sys.fileExists`, which
+        # the TypeScript 7 native port does not expose (`ts.sys` is undefined
+        # there), so the webpack-based examples cannot build against it.
+        # TypeScript 7 is still covered for type checking by main.yml.
         typescript-version:
-          - "4.7"
-          - "5"
+          - "5.9.3"
 
     steps:
       - name: Checkout code
